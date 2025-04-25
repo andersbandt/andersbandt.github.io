@@ -9,7 +9,6 @@
   </head>
 
 
-
   <!--Main Heading -->
   <div id="heading">
     <h1>Anders' page</h1>
@@ -49,23 +48,19 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  .coming-soon {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #444;
-  }
 </style>
 
-<div class="coming-soon">Coming Soon</div>
 
 <div class="blog-image-container">
   <img src="../images/IMG_2816.JPG" alt="Preview 1">
 </div>
 
+      <div class="blog-image-container">
+  <img src="../images/van_trip_rough_map.JPG" alt="Preview 2">
+</div>
+
 <div class="blog-image-container">
-  <img src="../images/IMG_2845.JPG" alt="Preview 2">
+  <img src="../images/IMG_2845.JPG" alt="Preview 3">
 </div>
 
 
@@ -86,5 +81,9 @@
   <!--#include virtual="/common/footer.html" -->
   
 
-
+<div id="footer">
+    <p>&copy; - {{ current_year }} by Anders Bandt</p>
+    <p>Template Revision: {{ template_revision }}</p>
+    <p>Page generated on {{ generated_date }}</p>
+</div>
 </html>
