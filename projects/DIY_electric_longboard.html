@@ -58,12 +58,9 @@
     </header>
 
 
-    <main>
+<main>
+  <article>
 
-
-      <article>
-
-        <div class="bodytext"><p>Modified on: <code>=this.file.mtime</code></p></div>
 <h2 id="introduction" class="section_heading">Introduction</h2>
 <hr />
 <h3>Background</h3>
@@ -116,7 +113,6 @@
 <blockquote>
 <div class="bodytext"><p>early sketches of what is </p></div>
 </blockquote>
-<div class="bodytext"><p>==can delete this section for smaller articles. If you do then delete all subheadings in this section==</p></div>
 <h3>Design Approach</h3>
 <blockquote>
 <div class="bodytext"><p>(methods, models, etc.)</p></div>
@@ -125,8 +121,8 @@
 <div class="bodytext"><p>Batteries are a crucial part of the build because essentially they determine how fast and how far you go. The type of motor you want is somewhat dependent on what kind of battery setup you have, so I personally would suggest securing your battery design and information before making a motor purchase. Batteries come in a few different types, but I would say only lithium types are suitable for electric longboards. Other types have disadvantages. Lead Acid and Nickel Cadmium are heavy and Nickel-Metal hybrid batteries don't last that long. Lithium is the wave to ride. Within lithium batteries the two main types are LiPo and Li-ion.</p></div>
 <div class="bodytext"><p>LiPo, however, have significant downsides that limit their use in commercial boards. For one, they are less safe and could start a fire if not handled properly. They also require a user to drain the battery to a specific charge for storage, so they just aren't for the everyone. On top of that, they have a shorter life-cycle compared to a Li-ion and LiFePo4 battery.</p></div>
 <div class="bodytext"><p>This is a picture of one of my packs in my build. It is made from 18650 cells, a very standard cell size. I bought them from <a href="https://www.imrbatteries.com/samsung-25r-18650-2500mah-20a-battery/">here, IMR batteries</a>. The pack in the picture is called a 6s2p pack, which means it contains 6 cells in series and then 2 in parallel, hence the 6 batteries lined up in a row with each row connected in parallel. My whole board however, uses 2 of these 6s2p packs in series to get a total of 12s2p. The reason I did this was because I had bought <a href="https://www.amazon.com/SKYRC-Professional-Balance-Discharger-Charging/dp/B00L5YBJI2/ref=pd_lpo_sbs_21_t_2?_encoding=UTF8&amp;psc=1&amp;refRID=YMB4V5NNMBGRYFY7EPRG">this</a> charger which only can support 6 cell charging. Therefore my board has two charging ports, one for each battery. If you purchase a charger that can support a higher cell count, then go for a higher cell pack just for simplicity of wiring.</p></div>
-<p><strong>Building the battery pack</strong>
-Now if you selected LiPo, your pack is premade and you are done! Just wire it up! But if you selected lithium-ion and just bought a bunch of individual cells like me, you will have to somehow assemble those into a pack.</p>
+<h5>Building the battery pack</h5>
+<p>Now if you selected LiPo, your pack is premade and you are done! Just wire it up! But if you selected lithium-ion and just bought a bunch of individual cells like me, you will have to somehow assemble those into a pack.</p>
 <div class="bodytext"><p>I was in a real dilemma at this stage because I wanted to spot weld my battery pack. You can read about spot welding <a href="https://en.wikipedia.org/wiki/Electric_resistance_welding">here</a>. Essentially it is a welding process that is very quick which is ideal for lithium-ion batteries because if you heat them up they will get damaged and lose potential charge. I searched everywhere at my college and found a spot welder, but the terminals of it were for welding plates together and not for batteries. Here is a picture of a battery spot welder.</p></div>
 <div class="bodytext"><p>These can be bought for about $170 bucks which is money I did not have. My next approach was to build my own spot welder which can be <a href="https://www.youtube.com/watch?v=neR_RFTblqg">done with a microwave transformer</a>. Again, there is a tradeoff between time/money here. The reading I did about microwave transformer spot welders led me to believe that there is a lot that goes into them and more often than not they don't produce enough volts to create a good weld. So I decided to explore other options.</p></div>
 <div class="bodytext"><p>An option similiar to spot welding would be soldering nickel strips on the cells. This is fairly easy to do, but the heat produced by the solder iron is more likely than not to leave some damage on the cells.</p></div>
@@ -142,30 +138,23 @@ Now if you selected LiPo, your pack is premade and you are done! Just wire it up
 <li>Motor shaft gear</li>
 <li>Belt</li>
 </ul></div>
-<p><strong>Motor Mount</strong>
-The part I spent the most time on was the motor mount. I had bought the Caliber II trucks because they had a nice flat surface on one edge. My hope was that I could save some money and CNC mill my own motor mount. This was a lot easier said than done. I did come up with a model, but it required a little reworking to be functional and I had to go home for the summer, losing access to the machine shop at my university.</p>
+<h5>Motor Mount</h5>
+<p></p>The part I spent the most time on was the motor mount. I had bought the Caliber II trucks because they had a nice flat surface on one edge. My hope was that I could save some money and CNC mill my own motor mount. This was a lot easier said than done. I did come up with a model, but it required a little reworking to be functional and I had to go home for the summer, losing access to the machine shop at my university.</p>
 <div class="bodytext"><p>At home I spent roughly 30 minutes trying to reshape the mount with a Sawzall before realizing I needed another solution. After shopping around a bit online I found out that premade mounts for the Caliber II trucks are pretty widespread, <a href="https://boardnamics.com/product/surfrodz-63mm-motor-mount-stealth-edition/">here</a> is an example. This is not the exact mount I bought, but it's a very similiar price and design. One VERY important note is to add Loctite to all your nuts and bolts.</p></div>
 <h4>Casing</h4>
 <div class="bodytext"><p>My case is constructed from fiberglass, a super strong and lightweight material. I had done some fiberglass work on my dad's car before this, so I had at least some experience. If you don't have any fiberglass experience, don't worry it is still very doable to construct but maybe do some practice before.</p></div>
 <div class="bodytext"><p>Before I talk more about my case, I'm going to bring up the other options. Time and money again. Your first option is buying a premade case. <a href="https://psychotiller.com/collections">This website</a> is super cool and has a lot of other components</p></div>
 <div class="bodytext"><p>The first step in creating my case was a cardboard core. I measured the dimensions of my battery pack and constructed the cardboard cutout, leaving a little clearance for the eventual fiberglass layers. After this I laid down 2-3 layers over the whole thing, allowing a fair amount of drying time between layers. The eventual case is super sturdy and has survived multiple hard collisions with curbs!</p></div>
-<h2 id="implementation-building" class="section_heading">Implementation / Building</h2>
-<hr />
-<h3>Process</h3>
-<h3>Wins</h3>
-<div class="bodytext"><p>==possibly change the name of this section depending on the project context==</p></div>
-<h3>Challenges</h3>
 <h2 id="conclusion" class="section_heading">Conclusion</h2>
 <hr />
 <h3>Status and Results</h3>
-<div class="bodytext"><p>The board is no longer-functional and it's parts have completely been dismantled and harvested.</p></div>
+<div class="bodytext"><p>The board is no longer-functional and it's parts have completely been dismantled and harvested!</p></div>
 <h3>Reflection</h3>
-<div class="bodytext"><p>This project fills me with a lot of pride. I remember the moment I got my motor to spin, installing the component case, the first test ride. I think it's beautiful that an idea in my brain is now a real, functional thing. I hope this guide helps anyone else with their build!</p></div>
 <h2 id="additional-information" class="section_heading">Additional Information</h2>
 <hr />
 <h3>Online Resources</h3>
 <div class="bodytext"><ul>
-<li><a href="fuck you">link</a></li>
+<li><a href="https://www.instructables.com/DIY-Electric-Longboard/">link</a></li>
 </ul></div> <!-- This is where the Markdown content will be injected -->
 
       </article>
