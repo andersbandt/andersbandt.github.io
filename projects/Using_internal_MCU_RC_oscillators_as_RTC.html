@@ -104,8 +104,8 @@
 <hr />
 <h3>Introduction to calculating time from clock frequency</h3>
 <div class="bodytext"><p>Let's just introduce ourself to the basic arithmetic needed to calculate the passage of timing using "number of ticks" of a clock. The number of clock ticks is often tracked internally by MCU devices and can be read from a register. Let's write out the two variables we will use to calculate time, ticks (cycles) and frequency (HZ).</p></div>
-<p>$$t \text{ (cycles)}$$
-$$f \text{ (HZ)}$$</p>
+<div class="bodytext"<p>$$t \text{ (cycles)}$$
+$$f \text{ (HZ)}$$</p></div>
 <div class="bodytext"><p>we can convert Hz into what it really means, which is how many cycles of something happened per second. The inverse of this would be seconds per cycle.</p></div>
 <p>$$\frac{1}{f} \text{ (seconds/cycles)}$$
 With these two variables, we can form an equation to calculate time. Units cancel on the left hand side to be left with just seconds on on the right.</p>
@@ -122,15 +122,15 @@ With these two variables, we can form an equation to calculate time. Units cance
 <div class="bodytext"><p>Let's start looking at some equations for this, specifically what our model looks like. Any linear relationship can be represented using a vector of coefficients. For example, matrix <strong>A</strong> is commonly used to represent the inputs to the model, and the goal is to solve for the coefficients <strong>w</strong>.</p></div>
 <div class="bodytext"><p>$$[y] = [A]*[w]$$</p></div>
 <div class="bodytext"><p>as a very brief example, let's use the classic linear fit equation of <strong>y = mx + b</strong></p></div>
-<p>$$[A] = \begin{bmatrix} x &amp; 1 \end{bmatrix}$$
-and </p>
+<div class="bodytext"<p>$$[A] = \begin{bmatrix} x &amp; 1 \end{bmatrix}$$
+and </p></div>
 <div class="bodytext"><p>$$[w] = \begin{bmatrix} m \ b \end{bmatrix}$$</p></div>
 <div class="bodytext"><p>By computing the matrix multiplication of these two matrices you get the final product <strong>y</strong>.</p></div>
 <div class="bodytext"><p>This technique is highly effective for finding the coefficients of <strong>linear</strong> relationships. It's important to note that "linear" doesn't just refer to simple equations like <strong>y = mx + b</strong>. In this context, "linear" applies to any system that exhibits certain properties, such as scaling the inputs resulting in proportional scaling of the outputs. For more information on what qualifies as a linear system, consider looking into <a href="https://en.wikipedia.org/wiki/Superposition_principle">the superposition principle</a>.</p></div>
 <h4>calculating our coefficients</h4>
 <div class="bodytext"><p>So what is the techinque for finding the vector <strong>w</strong>? Well, what we need to gather is data on our input variables (matrix <strong>A</strong>) along with what our output should be (matrix <strong>y</strong>). Let's go back to our matrix equation</p></div>
-<p>$$[y] = [A]<em>[w]$$
-I won't get into the detailed mathemtical proof, but will just go over the higlights. As I mentioned briefly earlier, what we really want to do is turn this into a miniization problem such that for all </em><em>w</em>* we have</p>
+<p>$$[y] = [A]<em>[w]$$</p>
+<p>I won't get into the detailed mathemtical proof, but will just go over the higlights. As I mentioned briefly earlier, what we really want to do is turn this into a miniization problem such that for all </em><em>w</em>* we have</p>
 <p>$$\left\| A w - \bar{y} \right\| \leq \left\| A x - \bar{y} \right\|$$
 this is essentially minimizing the residual between our computed value and our known truth value <strong>y</strong>
 I will skip all the actual basis for this and skip straight to the solution.
@@ -142,7 +142,7 @@ If you are interested in reading more about the topic, <a href="https://www.math
 <div class="bodytext"><p>Let's also assume we have a simple linear relationship between the system time and real-time. I actually did try higher-order fits with little success, so let's keep it simple with this coefficient matrix <strong>A</strong>, where <strong>t</strong> in this case is the number of ticks</p></div>
 <div class="bodytext"><p>$$[A] = \begin{bmatrix} t &amp; 1 \end{bmatrix}$$</p></div>
 <div class="bodytext"><p>We basically want to find the values of the coefficient vector $w$ where the relation is of the following form</p></div>
-<div class="bodytext"><p>$$\text{Real ms}=[w_0]<em>t+w[_1]</em>1$$</p></div>
+<p>$$\text{Real ms}=[w_0]<em>t+w[_1]</em>1$$</p>
 <div class="bodytext"><p>Essentially we need to solve our model with <strong>N</strong> datapoints of training data, forming an <strong>N x M</strong> matrix where <strong>M - 1</strong> is the order of our relationship equation. As we have 2 variables, we have a first order (linear fit) relationship.</p></div>
 <div class="bodytext"><p>If you want to do the raw math, I wrote a function using the <code>numpy</code> package to solve this.</p></div>
 <pre><code class="prettyprint" class="python"># LeastSquares: Compute Least Squares Matrix Regression  
