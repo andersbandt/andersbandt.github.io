@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="icon" href="../favicon.ico" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+        <!-- Google Archive code-prettify -->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   </head>
 
 
@@ -18,7 +20,6 @@
     </div>
 
 
-    <!-- Navigation Bar -->
     <!-- Navigation Bar -->
 <div id="cssmenu">
   <ul id="navbar">
@@ -59,41 +60,45 @@
 
 
     <main>
-
-
       <article>
 
-        <div class="bodytext"><p>Modified on: <code>=this.file.mtime</code></p></div>
+<div class="bodytext"><p>NOTE: this article is severely lacking. Might be better to just check out <a href="https://github.com/andersbandt/Financial-Analyzer"my GitHub page for this project</a></p></div> 
 <h2 id="introduction" class="section_heading">Introduction</h2>
 <hr />
-<h3>Background</h3>
-<div class="bodytext"><p>Spending money. We do it nearly every day of our lives. It is a need for living in the modern world.</p></div>
 <h3>Motivations</h3>
-<div class="bodytext"><p>I mainly started this project to</p></div>
-<div class="bodytext"><ul>
-<li>capture my financial data from multiple sources and </li>
-<li>Didn’t like idea of financial data being held by 3rd party company</li>
-<li>Building tool to use for the long term</li>
-<li>Also just kinda fun to code J</li>
-</ul></div>
-<div class="bodytext"><p>I'm fully aware companies are out there that do this stuff for you, but what if they shut down? Example: Mint.</p></div>
+<div class="bodytext"><p>I mainly started this project to build a tool to perform analysis on my financial incomes, spending, and investments</p></div>
+<div class="bodytext">
+  <ul>
+  <li>capture my financial data from multiple sources and store it in my own database</li>
+  <li>Building a tool to use for the long term</li>
+  <li>Also just kinda fun to code :)</li>
+  </ul>
+</div>
+<div class="bodytext"><p>I'm fully aware companies are out there that do this stuff for you, but what if they shut down? Example: <a href="https://www.forbes.com/advisor/banking/mint-disappearing-what-to-do/">Mint</a>.</p></div>
 <h2 id="requirements" class="section_heading">Requirements</h2>
 <hr />
 <h3>Scope of work</h3>
-<div class="bodytext"><p>•Python CLI application</p></div>
-<div class="bodytext"><p>•Data has to be loaded in “manually” (currently through .csv files)</p></div>
-<div class="bodytext"><p>•LARGEST TURN OFF FOR MOST USERS</p></div>
-<div class="bodytext"><p>•SQLite backend, stored in a singular .db file</p></div>
-<blockquote>
-<div class="bodytext"><p>What work is required of this project?</p></div>
-</blockquote>
+  <blockquote>
+  <div class="bodytext"><p>What work is required of this project?</p></div>
+  </blockquote>
+        <ul>
+          <li>Python CLI applicatoin</li>
+          <li>Data has to be loaded in "manually" --> I'm parsing .csv files. This is the biggest turn off for most users currently</li>
+          <li>SQLite backend, stored in a portable .db file</li>
+        </ul>
+        
 <h3>Capabilities</h3>
 <div class="bodytext"><p>•By being in control of my data and software, I have more flexibility in performing the type of analysis I want to perform</p></div>
 <div class="bodytext"><p>•Wanted to be able to have very specific spending categories!!!</p></div>
 <div class="bodytext"><p>•Fast food vs. restaurants vs. grocery</p></div>
 <div class="bodytext"><p>•Niche tracking of shopping spending</p></div>
 <div class="bodytext"><p>•Analysis on investments and account balances</p></div>
-<div class="bodytext"><p><img src="images/historical_price_data_of_portfolio_snapshot.png"></p></div>
+        
+<figure>
+  <img src="images/historical_price_data_of_portfolio_snapshot.png" width="500"/>
+  <figcaption>Note: dummy account values ... I wish :)</figcaption>
+</figure>
+        
 <h3>Resources</h3>
 <blockquote>
 <div class="bodytext"><p>Time, budget, and tools needed</p></div>
@@ -102,39 +107,19 @@
 <hr />
 <h3>Sketches, Diagrams, or Mockups</h3>
 <p>Early on I chose to use a GUI. I used the Tkinter framework.
-I got basic functionality working for many of the sub menus, although to a much lesser extent than the program state was today.\</p>
-<div class="bodytext"><p><img src="images/Pasted image 20250416223953.png" width="350"></p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20250416223959.png" width="350"></p></div>
-<h3>Design Approach</h3>
-<blockquote>
-<div class="bodytext"><p>(methods, models, etc.)</p></div>
-</blockquote>
+I got basic functionality working for many of the sub menus, although to a much lesser extent than the program state was today.</p>
+<div class="bodytext"><p><img src="images/Pasted image 20250416223953.png" width="550"></p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20250416223959.png" width="550"></p></div>
+
+
+<!-- SECTION -->
 <h2 id="implementation-building" class="section_heading">Implementation / Building</h2>
 <hr />
 <h3>Process</h3>
-<h3>Wins</h3>
-<div class="bodytext"><p>==possibly change the name of this section depending on the project context==</p></div>
-<h3>Challenges</h3>
-<div class="bodytext"><p>This is a solo project and I've definitely moved beyond dedicating more than an hour at a time to it.</p></div>
-<div class="bodytext"><p>==add some details about the brief open source community here==</p></div>
-<h2 id="conclusion" class="section_heading">Conclusion</h2>
-<hr />
-<h3>Status and Results</h3>
-<h3>Reflection</h3>
-<h3>Looking forward</h3>
-<h2 id="additional-information" class="section_heading">Additional Information</h2>
-<hr />
-<h3>Online Resources</h3>
-<div class="bodytext"><ul>
-<li><a href="fuck you">link</a></li>
-</ul></div> <!-- This is where the Markdown content will be injected -->
-
+<div class="bodytext"><p>I really just work on this project in my spare spare time. Once I got the main features working it's definitely taken a back seat in my project priorities</p></div>
+        
       </article>
-    </main>
-
-
-    <!-- Google Archive code-prettify -->
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+      </main>
   </body>
 
   <!-- Footer -->
