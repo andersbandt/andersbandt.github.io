@@ -51,19 +51,15 @@
         <div id="toc_container">
           <p class="toc_title">Table of Contents</p>
           <ul class="toc_list">
-            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements-" id="toc_section">Requirements </a></li><li><a href="#design-" id="toc_section">Design </a></li><li><a href="#implementation-/-building" id="toc_section">Implementation / Building</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
+            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements" id="toc_section">Requirements </a></li><li><a href="#design" id="toc_section">Design </a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
           </ul>
         </div>
     </nav>
     </header>
 
-
     <main>
-
-
       <article>
 
-        <div class="bodytext"><p>Modified on: <code>=this.file.mtime</code></p></div>
 <h2 id="introduction" class="section_heading">Introduction</h2>
 <hr />
 <h3>Background</h3>
@@ -151,7 +147,7 @@ except KeyboardInterrupt:
 <li>compiling program</li>
 <li>flashing compiled program to target<ul>
 <li>multiple power options as well</li>
-</ul></div>
+</ul>
 </li>
 <li>picking debug probe to use based on serial number</li>
 </ul>
@@ -189,36 +185,38 @@ except KeyboardInterrupt:
 <div class="bodytext"><p>tially, all I'm doing is connecting the GPIO inputs to </p></div>
 <h3>Resources</h3>
 <div class="bodytext"><p>This project is pretty resource intensive. There is a decent amount of hardware that I purchased, along with all the test equipment.</p></div>
-<div class="bodytext"><ul>
-<li><strong>Power supply</strong> <ul>
-<li>(programmable is a requirement)</li>
-<li>I used the SPD3303X from Siglent</li>
-</ul></div>
+<div class="bodytext">
+  <ul>
+    <li><strong>Power supply</strong>
+      <ul>
+        <li>(programmable is a requirement)</li>
+        <li>I used the SPD3303X from Siglent</li>
+      </ul>
 </li>
 <li><strong>Digital multimeter</strong> <div class="bodytext"><ul>
 <li>(again, programmable)</li>
 <li>I used the OWON XDM1041, a fairly common hobbyist multimeter</li>
-</ul></div>
+</ul>
 </li>
-<li><strong>Debug probes</strong> <div class="bodytext"><ul>
+<li><strong>Debug probes</strong><ul>
 <li>with some executable API for flashing</li>
-</ul></div>
+</ul>
 </li>
-<li><strong>USB relay module</strong><div class="bodytext"><ul>
+<li><strong>USB relay module</strong><ul>
 <li>Combined this with </li>
-</ul></div>
+</ul>
 </li>
 </ul>
 <div class="bodytext"><p><img src="images/Pasted image 20241224113855.png" width="400"></p></div>
 <div class="bodytext"><p><em>SPD3303X-E Programmable DC Power supply from Siglent</em></p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20241224113932.png" width="500"></p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20241224113932.png" width="400"></p></div>
 <div class="bodytext"><p><em>OWON XDM1041 digital multimeter</em></p></div>
 <div class="bodytext"><p>I also have the whole software package running on a decent Linux Ubuntu machine. In theory I was thinking about what running this on a Raspberry Pi would entail, but really if you want any change of managing a GUI front-end and want cool features like webcam support to just work and not bog down your system, I recommend a full-fledged PC. But I think someone could certainly modify my code and get this thing running on a Pi quite easily.</p></div>
 <h2 id="design" class="section_heading">Design</h2>
 <hr />
 <h3>Sketches, Diagrams, or Mockups</h3>
 <div class="bodytext"><p>To start the design process I made a block diagram to see what all the inputs and outputs I would want in my system are.</p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20241224114201.png" width="400"></p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20241224114201.png" width="850"></p></div>
 <div class="bodytext"><p>You can see the main inputs and outputs in the right hand side of the block diagram. Mainly USB outputs that are controlled through the relay and power outputs through banana jacks. </p></div>
 <h3>Design Approach</h3>
 <div class="bodytext"><p>I would like to discuss the design approach of the software solution. From the software engineering crowd, my choices here might upset some people. But I stand by my choices, for reasons I'll explain.</p></div>
@@ -230,16 +228,16 @@ except KeyboardInterrupt:
 <div class="bodytext"><p>The build process has been incredibly non-linear. I had a vision on some aspects of this project, but because I developed this in parallel with the device that I was actually trying to test I had bursts of feature additions and then long periods of solely working on device debug. Which is good, I was actually using what I built!</p></div>
 <h4>USB relay</h4>
 <div class="bodytext"><p>I first focused on getting my USB relay working as that was one of the main reasons I started the project. For that I had to purchase a USB controllable relay and a standard USB hub. For the USB hub I found a nice one on Aliexpress that had good indicator lights and most importantly some manual switches.</p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20241224151601.png" width="400"></p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20241224151601.png" width="250"></p></div>
 <div class="bodytext"><p>The next component was a USB relay module. This one below seems to be the standard online.</p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20241224151735.png" width="400"></p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20241224151735.png" width="250"></p></div>
 <div class="bodytext"><p><em>USB relay module in all its glory</em></p></div>
 <div class="bodytext"><p>I combined these two items in a nice wooden box, and after inadvertenly blowing a motherboard up on my host test PC computer trying to supply USB power I had it working</p></div>
 <h4>embedded debug probe flashing</h4>
 <div class="bodytext"><p>The next thing I wanted to do was interface with my specific debug probe. I'm using the XDS110 from Texas Instruments. It is a pretty standard debug probe, nothing crazy. Retails for about 150 dollars.</p></div>
 <div class="bodytext"><p><img src="images/Pasted image 20241224151259.png" width="400"></p></div>
 <div class="bodytext"><p><em>XDS110 debug probe from Texas Instruments</em></p></div>
-<div class="bodytext"><p>I already explained in [[#Debug probe toolsets - reset, compilation, flashing]] how some executables are installed</p></div>
+<div class="bodytext"><p>I already explained above how some executables are installed</p></div>
 <div class="bodytext"><p>For doing this I mainly rely on the Python submodule <strong>subprocess</strong>. This module is great for executing files on your system, and more importantly, getting the output back in great STDOUT and STDERR pipes.</p></div>
 <h4>power supply capabilities</h4>
 <div class="bodytext"><p>The last develomental milestone I'll talk about is power supply capabilities. </p></div>
