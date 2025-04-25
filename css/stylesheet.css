@@ -112,6 +112,12 @@ h4 {
   margin-left: 84px;
 }
 
+h5 {
+  font-size: 20px;
+  color: var(--color5);
+  margin-left: 84px;
+}
+
 
 /* WEBSITE AND ARTICLE HEADINGS*/
 #heading {
