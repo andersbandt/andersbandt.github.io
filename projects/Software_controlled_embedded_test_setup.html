@@ -72,7 +72,7 @@
 <li><strong>Automated control</strong>: Everything is wired once and controlled via relays, eliminating the need to manually toggle switches or connect/disconnect cables.</li>
 <li><strong>Built-in protection</strong>: The software minimizes the risk of accidental over-voltage or under-voltage condition</li>
 </ul></div>
-<div class="bodytext"><p>These features create a safer, more efficient debugging experience and enable remote testing capabilities.k.</p></div>
+<div class="bodytext"><p>These features create a safer, more efficient debugging experience and enable remote testing capabilities.</p></div>
 <h3>Motivations</h3>
 <div class="bodytext"><p>In my personal projects, I primarily work with embedded systems. The testing and debug of embedded systems requires many of the same capabilities as a semiconductor test platform:</p></div>
 <div class="bodytext"><ul>
@@ -88,7 +88,7 @@
 <h3>Scope of work</h3>
 <p><strong>Hardware side</strong>
 On the hardware side, I needed a versatile PCB that could interface with various test equipment using banana jacks while also connecting seamlessly to my DUT. This board would need to handle power delivery, signal measurement, and possibly even in-circuit programming capabilities. Since my goal was to replicate some of the convenience of ATE systems, I also considered integrating relays or digital switches to automate power control and signal routing.</p>
-<div class="bodytext"><p><img src="images/Pasted image 20250210130915.png" width="400"></p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20250210130915.png" width="250"></p></div>
 <div class="bodytext"><p><em>Banana jacks, the standard connector for most electrical test equipment</em></p></div>
 <p><strong>Software side</strong>
 Like most modern electronics projects, a significant portion of my time has been spent on software development. Fortunately, I enjoy coding, and much of my programming happens "on the fly" as I actively use the software. When necessary, I jot down TODOs so I can revisit certain features later without needing to be physically connected to the hardware</p>
@@ -151,6 +151,7 @@ except KeyboardInterrupt:
 </li>
 <li>picking debug probe to use based on serial number</li>
 </ul>
+</div>
 <div class="bodytext"><p>There is also some other capabilities including being able to assert nRESET low or high.</p></div>
 <div class="bodytext"><p>In my test setup I have two of these connected. This may not be needed for most test setups, but I find it useful when I have two prototypes with just slightly different hardware configurations.</p></div>
 <div class="bodytext"><p>You can set and then call a specific serial number to issue commands to.</p></div>
