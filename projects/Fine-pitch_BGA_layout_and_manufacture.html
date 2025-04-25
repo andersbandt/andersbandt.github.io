@@ -69,11 +69,9 @@
 <h3>Background</h3>
 <div class="bodytext"><p>A ball grid array (BGA) package is a type of package that leverages a grid array of solder balls on the bottom of your IC package to make a connection to the PCB. The PCB footprint would look like a grid of exposed pads, and the device IC will have solder balls placed along the underside of the device.</p></div>
 <div class="bodytext"><p>When reflowed, the solder balls will melt and collapse into the pad below. </p></div>
-<div class="bodytext"><p>==add some sick photo==</p></div>
 <div class="bodytext"><p>BGA technology is primarily used for high density devices. Often this is microcontrollers or processors that have many pics, but the technology can also be used for low-pin count devices that want to have the smallest PCB footprint possible.</p></div>
 <h3>Motivations</h3>
 <div class="bodytext"><p>I first had a need for using BGA packages when I started making small wearables. Specifically, I wanted to use an advanced IC for heart-rate sensing, the AFE4432 from Texas Instruments. I also used the BQ25120A (also from TI) in the project because the additional cost of using another BGA package was minimal. </p></div>
-<div class="bodytext"><p>==add some pics of the IC devices in question==</p></div>
 <h2 id="requirements" class="section_heading">Requirements</h2>
 <hr />
 <h3>Scope of work</h3>
@@ -91,12 +89,10 @@
 <div class="bodytext"><p><img src="images/Pasted image 20231113193000.png" width="350"></p></div>
 <div class="bodytext"><p><em>A pic of the hot air soldering station I purchased off eBay. Only 115 bucks, a steal compared to the 700 retail they charge.</em></p></div>
 <div class="bodytext"><p>An alternative and equally viable solution is to use a proper reflow oven. </p></div>
-<div class="bodytext"><p>==add some details about reflow ovens==</p></div>
 <h2 id="design" class="section_heading">Design</h2>
 <hr />
 <h3>Sketches, Diagrams, or Mockups</h3>
 <div class="bodytext"><p>Let's first discuss the two major pad types for PCB design. These include SMD (solder-mask defined) and NSMD (non-solder-mask defined). The difference is really in the name, the relationship between the solder mask clearance and the exposed copper pad.</p></div>
-<div class="bodytext"><p>==add some details and photos here==</p></div>
 <h3>Design Approach</h3>
 <div class="bodytext"><p>As mentioned above, all the "design" is really done in your ECAD software. Altium is a pretty top-tier development software and the capabilities show.</p></div>
 <h2 id="implementation-building" class="section_heading">Implementation / Building</h2>

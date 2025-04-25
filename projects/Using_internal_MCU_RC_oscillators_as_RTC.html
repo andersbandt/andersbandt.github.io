@@ -100,7 +100,6 @@
 <li><strong>Analysis Tools</strong>: Python scripts to analyze frequency drift, calculate corrections, and visualize results.</li>
 </ul></div>
 <div class="bodytext"><p>I have provided sample code linked at the bottom of this document, which can be used to facilitate data logging, analysis, and corrections. This code serves as a foundation for the project, but it may require adjustments for specific MCUs or communication protocols you are intending to use</p></div>
-<div class="bodytext"><p>==need to actually make this link==</p></div>
 <h2 id="concept-and-design" class="section_heading">Concept and Design</h2>
 <hr />
 <h3>Introduction to calculating time from clock frequency</h3>
@@ -116,11 +115,9 @@ With these two variables, we can form an equation to calculate time. Units cance
 <div class="bodytext"><p>This is great if our frequency (period) is known exactly, but in the real-world there will very likely be a deviation between the calculated period and real period. We need to come up with a way to correlate our system time with real-time.</p></div>
 <h3>A brief aside on least squares best-fit</h3>
 <div class="bodytext"><p>Ok, so we know we need a way to correlate our system time with real-time, but how do we arrive at what correlation to use? How can we input some sample data and get out exactly what coefficients and equation to use to perform this mapping of times? Well, that's where the least squares best-fit method comes in. This is a common method used in machine learning, but can be used for finding any statistical relationship. I will try and provide some mathematical background behind the method and how we will use it in this project.</p></div>
-<div class="bodytext"><p>==clean up previous introduction paragraph==</p></div>
 <blockquote>
 <div class="bodytext"><p>The least squares best-fit method is essentially an optimization problem where the goal is to minimize the sum of the squared residuals (Euclidean norm) between an equation output and some known "truth values"</p></div>
 </blockquote>
-<div class="bodytext"><p>==really improve the thing above because it's a quote so lots of people will read if skimming the article==</p></div>
 <div class="bodytext"><p>Whoa, lots to unpack there. Optimization problems, are fairly straightforward, we typically want to find the maximum or minimum of some value. Residuals are the differences between the measured values and the values predicted by our model. Often the Euclidean norm is used to capture these differences well. So putting it all together, least squares best-fit minimizing the difference between what our model would output and what we input as what our actual "truth values".</p></div>
 <div class="bodytext"><p>Let's start looking at some equations for this, specifically what our model looks like. Any linear relationship can be represented using a vector of coefficients. For example, matrix <strong>A</strong> is commonly used to represent the inputs to the model, and the goal is to solve for the coefficients <strong>w</strong>.</p></div>
 <div class="bodytext"><p>$$[y] = [A]*[w]$$</p></div>
@@ -180,7 +177,6 @@ def linear_fit(x_arr, y_arr):
 <div class="bodytext"><p>Ok, I think I explained all the background needed. Now I'll talk about execution.</p></div>
 <div class="bodytext"><p>Really the first step was to get sample data on the clock. I hooked up my board over UART/USB and flashed a simple program to output the system (microcontroller) time. With the host PC, I was able to sync up real-time and system time and log each datapoint to a CSV file.</p></div>
 <div class="bodytext"><p>Now, we run some Python code to perform the least-squares best fit analysis on. I won't do a deep dive on the code here, if you are interested you should just check out the GitHub repo.</p></div>
-<div class="bodytext"><p>==need to add link to the GitHub repo==</p></div>
 <div class="bodytext"><p>Basically when I run my Python script I get the following for $w$</p></div>
 <div class="bodytext"><p>$$[w] =\begin{bmatrix} w_1 \ w_0 \end{bmatrix} = \begin{bmatrix} 9.9006656*10^{-7} \ -2.149 \end{bmatrix}$$</p></div>
 <div class="bodytext"><p>this would translate to an equation like so, with $t$ as our system ticks.</p></div>

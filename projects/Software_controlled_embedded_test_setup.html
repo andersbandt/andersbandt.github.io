@@ -157,9 +157,7 @@ except KeyboardInterrupt:
 </ul>
 <div class="bodytext"><p>There is also some other capabilities including being able to assert nRESET low or high.</p></div>
 <div class="bodytext"><p>In my test setup I have two of these connected. This may not be needed for most test setups, but I find it useful when I have two prototypes with just slightly different hardware configurations.</p></div>
-<div class="bodytext"><p>==insert photo of my test setup==</p></div>
 <div class="bodytext"><p>You can set and then call a specific serial number to issue commands to.</p></div>
-<div class="bodytext"><p>==insert a screenshot of grabbing the serial number from my XDS110==</p></div>
 <div class="bodytext"><p>Being able to separate myself from an IDE allowed me to do most of my coding in Emacs, a text editor I started using in late 2022.</p></div>
 <div class="bodytext"><p>I have not yet figured out how to actually perform debug abilities without usage of the IDE (breakpoints, reading from register memories, etc.) Maybe in a future update ....</p></div>
 <h4>Test equipment control</h4>
@@ -180,14 +178,12 @@ except KeyboardInterrupt:
 <div class="bodytext"><p>With power supplies I can power my DUT's voltage rails to a known voltage everytime. Let's say I'm powering some 24V device, forget that's what the voltage is set at, and come back to turn on my device that needs a 3.3V signal. Well, everything on that voltage rail is probably smoke after turning on that power supply!</p></div>
 <div class="bodytext"><p>With a software controlled solution, I can save the device voltage off in a configuration file and </p></div>
 <div class="bodytext"><p>Because I'm using a power supply to power my device's voltage, I also know how much current it's drawing.</p></div>
-<div class="bodytext"><p>==would be really sick to add a live plot graph of current readings .......===</p></div>
 <h4>HIL controller</h4>
 <h4>usage of Arduino as HIL controller</h4>
 <div class="bodytext"><p>The embedded project I was working on for this ATE software development included buttons. I wanted a way to be able to remotely "push" those buttons to expand my debug capabilities away from my lab. </p></div>
 <div class="bodytext"><p>This is one of the simpest examples of a hardware-in-loop (HIL) controller. That is, a controller used to simulate some environment condition to often test hardware. A much more complicated example is car manufacturers, where they are actually simulating sensors and actuators. A processor may be running that is emulating the engine dynamics.</p></div>
 <div class="bodytext"><p>My example can hardly be called a HIL controller compared to that.</p></div>
 <div class="bodytext"><p>Essentially, all I'm doing is connecting the GPIO inputs to my button input leg (direct connect to the MCU). The pins are tri-stated on the Arduino by </p></div>
-<div class="bodytext"><p>==add the line of code where I'm tri-stating the GPIO pins==</p></div>
 <div class="bodytext"><p>when I want to press them, I write them to go to ground (0V) and as my buttons are active-high </p></div>
 <div class="bodytext"><p>I even took some oscilloscope shots of what my "average" human press looked like, and arrived at roughly</p></div>
 <div class="bodytext"><p>tially, all I'm doing is connecting the GPIO inputs to </p></div>
@@ -227,9 +223,7 @@ except KeyboardInterrupt:
 <h3>Design Approach</h3>
 <div class="bodytext"><p>I would like to discuss the design approach of the software solution. From the software engineering crowd, my choices here might upset some people. But I stand by my choices, for reasons I'll explain.</p></div>
 <div class="bodytext"><p>I will be using <a href="https://docs.python.org/3/library/tkinter.html">tkinter</a> as the front-end, which is a standard Python interface to the Tcl/Tk GUI toolkit. This is available on Unix systems and Windows. The usage of this front-end gets a lot of hate from software engineers I know. Many people think it's dated and ugly looking. Some would prefer to use a more modern interface like PyQt. I however, love how simple it is to use.</p></div>
-<div class="bodytext"><p>==add some example photos of what Tkinter looks like==</p></div>
 <div class="bodytext"><p>I think it's quite easy to sink a lot of development time into a beautiful looking user interface. Yes, there are quite good frameworks that make it easy. But I don't need many GUI features in this project. Simple buttons and labels and colors and text fields is all I really need. The most complex item is probably a drop-down menu with certain options.</p></div>
-<div class="bodytext"><p>==add another few photos of the actual applications==</p></div>
 <h2 id="implementation-building" class="section_heading">Implementation / Building</h2>
 <hr />
 <h3>Process</h3>
@@ -241,14 +235,12 @@ except KeyboardInterrupt:
 <div class="bodytext"><p><img src="images/Pasted image 20241224151735.png" width="400"></p></div>
 <div class="bodytext"><p><em>USB relay module in all its glory</em></p></div>
 <div class="bodytext"><p>I combined these two items in a nice wooden box, and after inadvertenly blowing a motherboard up on my host test PC computer trying to supply USB power I had it working</p></div>
-<div class="bodytext"><p>=add actual photo of this thing in use==</p></div>
 <h4>embedded debug probe flashing</h4>
 <div class="bodytext"><p>The next thing I wanted to do was interface with my specific debug probe. I'm using the XDS110 from Texas Instruments. It is a pretty standard debug probe, nothing crazy. Retails for about 150 dollars.</p></div>
 <div class="bodytext"><p><img src="images/Pasted image 20241224151259.png" width="400"></p></div>
 <div class="bodytext"><p><em>XDS110 debug probe from Texas Instruments</em></p></div>
 <div class="bodytext"><p>I already explained in [[#Debug probe toolsets - reset, compilation, flashing]] how some executables are installed</p></div>
 <div class="bodytext"><p>For doing this I mainly rely on the Python submodule <strong>subprocess</strong>. This module is great for executing files on your system, and more importantly, getting the output back in great STDOUT and STDERR pipes.</p></div>
-<div class="bodytext"><p>==add a screenshot of flashing the target with the debug probe==</p></div>
 <h4>power supply capabilities</h4>
 <div class="bodytext"><p>The last develomental milestone I'll talk about is power supply capabilities. </p></div>
 <h3>Wins</h3>
@@ -258,7 +250,6 @@ except KeyboardInterrupt:
 <div class="bodytext"><p>But that's a lame answer as that's applicable for many projects!</p></div>
 <div class="bodytext"><p>Specifically for this project, one challenge was support for multiple operating systems. I started develoment on my main Windows computer, and made the switch over to a custom Linux PC I built. This was useful because Linux is completely free and (although slightly more complicated), allowed more control over how I wanted everything to interface with the host PC.</p></div>
 <div class="bodytext"><p>In practice, this mainly relies on an operating system check and multiple path options</p></div>
-<div class="bodytext"><p>==add some code snippets of multiple operating system work==</p></div>
 <div class="bodytext"><p>The other challenge was code testing. In order to fully test some features and discover bugs, I had to be fully connected to specific hardware. </p></div>
 <div class="bodytext"><p>However, as I mentioned previously in some ways this turned into an advantage. There was multiple vacations where I got a ton of major code work done because I wasn't constantly re-running the program and tweaking things. I had time to do big refactors and improvements offline, and then tweak the final details when I was back at my test setup.</p></div>
 <h2 id="conclusion" class="section_heading">Conclusion</h2>
@@ -273,12 +264,9 @@ except KeyboardInterrupt:
 <h3>Looking forward</h3>
 <div class="bodytext"><p>I think I will continue to interface with project in the same way that 90% of the development has happened, really just slowly adding features as I use it more and more.</p></div>
 <div class="bodytext"><p>One thing that will cause an issue in the future is if I ever replace any of my test equipment. I have abstracted away much of the finer details of the code implementation through classes, but there will still have to be some API written and formatted for each device.</p></div>
-<div class="bodytext"><p>==maybe add examples of my EEequipment repository ?==</p></div>
 <div class="bodytext"><p>I think also in the future my hardware design will become more and more complex. Right now it is pretty much a glorified connector interface, with banana jack inputs and header pins. In the future, I would like to add more active component such as an FTDI converter for UART to USB conversion or some current-sensing module built in.</p></div>
 <div class="bodytext"><p>I would also like to integrate more closely with my [[Probe testing for embedded devices]] hardware. </p></div>
-<div class="bodytext"><p>==add some picture of my probe hardware==</p></div>
 <div class="bodytext"><p>It would be interesting to add a tab in the software application with a nice graphical display of all the various voltage levels the probe pins are at .... maybe something like this</p></div>
-<div class="bodytext"><p>==add really basic sketch </p></div>
 <h2 id="additional-information" class="section_heading">Additional Information</h2>
 <hr />
 <h3>Online Resources</h3>
