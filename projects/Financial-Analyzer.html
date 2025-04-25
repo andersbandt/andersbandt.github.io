@@ -62,7 +62,7 @@
     <main>
       <article>
 
-<div class="bodytext"><p>NOTE: this article is severely lacking. Might be better to just check out <a href="https://github.com/andersbandt/Financial-Analyzer"my GitHub page for this project</a></p></div> 
+<div class="bodytext"><p>NOTE: this article is severely lacking. Might be better to just check out <a href="https://github.com/andersbandt/Financial-Analyzer">my GitHub page for this project</a></p></div> 
 <h2 id="introduction" class="section_heading">Introduction</h2>
 <hr />
 <h3>Motivations</h3>
@@ -81,37 +81,46 @@
   <blockquote>
   <div class="bodytext"><p>What work is required of this project?</p></div>
   </blockquote>
+  <div class="bodytext">
         <ul>
           <li>Python CLI applicatoin</li>
           <li>Data has to be loaded in "manually" --> I'm parsing .csv files. This is the biggest turn off for most users currently</li>
           <li>SQLite backend, stored in a portable .db file</li>
         </ul>
+  </div>
         
 <h3>Capabilities</h3>
-<div class="bodytext"><p>•By being in control of my data and software, I have more flexibility in performing the type of analysis I want to perform</p></div>
-<div class="bodytext"><p>•Wanted to be able to have very specific spending categories!!!</p></div>
-<div class="bodytext"><p>•Fast food vs. restaurants vs. grocery</p></div>
-<div class="bodytext"><p>•Niche tracking of shopping spending</p></div>
-<div class="bodytext"><p>•Analysis on investments and account balances</p></div>
-        
-<figure>
-  <img src="images/historical_price_data_of_portfolio_snapshot.png" width="500"/>
+<div class="bodytext"><p•By being in control of my data and software, I have more flexibility in performing the type of analysis I want to perform</p></div>
+<div class="bodytext">
+  <ul>
+    <li>Creation of very niche spending categories
+      <ul>
+        <li>Example: fast food vs. restaurants vs. grocery</li>
+        <li>Example: shopping spending on clothes vs. electronics</li>
+    </li>
+    <li>Analysis on investments and account balances
+      <ul>
+        <li><figure>
+  <img src="images/historical_price_data_of_portfolio_snapshot.png" width="750"/>
   <figcaption>Note: dummy account values ... I wish :)</figcaption>
-</figure>
+</figure></li>
+      </ul>
+    </li>
+    <li></li>
+  </ul>
         
-<h3>Resources</h3>
-<blockquote>
-<div class="bodytext"><p>Time, budget, and tools needed</p></div>
-</blockquote>
+
 <h2 id="design" class="section_heading">Design</h2>
 <hr />
 <h3>Sketches, Diagrams, or Mockups</h3>
 <p>Early on I chose to use a GUI. I used the Tkinter framework.
 I got basic functionality working for many of the sub menus, although to a much lesser extent than the program state was today.</p>
-<div class="bodytext"><p><img src="images/Pasted image 20250416223953.png" width="550"></p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20250416223959.png" width="550"></p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20250416223953.png" width="750"></p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20250416223959.png" width="750"></p></div>
 
-
+<p>However, about 2 years ago I switched to a CLI version. I really did this after being exposed to how powerful doing everything on text in the keyboard is. Even more "powerful" though is how easy programming is compared to a CLI</p>
+<p>With GUI development I found that often for simple feature updates, half the time would be spent on adding the buttons and linking them properly to specific actions. With everything text based you can simply just rock print statements and everything is super fluid and flexible.</p>
+  
 <!-- SECTION -->
 <h2 id="implementation-building" class="section_heading">Implementation / Building</h2>
 <hr />
