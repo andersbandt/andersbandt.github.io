@@ -149,30 +149,9 @@ If you are interested in reading more about the topic, <a href="https://www.math
 <div class="bodytext"><p>$$\text{Real ms}=[w_0]<em>t+w[_1]</em>1$$</p></div>
 <div class="bodytext"><p>Essentially we need to solve our model with <strong>N</strong> datapoints of training data, forming an <strong>N x M</strong> matrix where <strong>M - 1</strong> is the order of our relationship equation. As we have 2 variables, we have a first order (linear fit) relationship.</p></div>
 <div class="bodytext"><p>If you want to do the raw math, I wrote a function using the <code>numpy</code> package to solve this.</p></div>
-<pre><code class="python"># LeastSquares: Compute Least Squares Matrix Regression  
-#       This function computes the least squares regression of Aw=d where  
-# A = matrix of input values according to predefined equation  
-# d = input truth values to train with   
-def least_squares(A, d):  
-    # Create matrices and find w from data  
-    w = np.linalg.inv(A.transpose() @ A) @ A.transpose() @ d  
-    return w</code></pre>
+<div class="bodytext"><p>prettyprint</p></div>
 <div class="bodytext"><p>This can also be accomplished quite simply in Python with the <code>linregress</code> function from the <code>scipy</code> Python package.</p></div>
-<pre><code class="python"># get linear fit in the form of y = m*x + b  
-def linear_fit(x_arr, y_arr):  
-    # Calculate linear regression parameters  
-    slope, intercept, r_value, p_value, std_err = linregress(x_arr, y_arr)  
-    print(f"y=mx+b &lt;&lt;&lt; --- &gt;&gt;&gt;   {slope}*[x] + {intercept}")  
-
-    # make a plot of residuals  
-    plotter.time_plot(  
-        x_arr,  
-        residuals(x_arr, y_arr),  
-        "Time series",  
-        "Linear best fit residuals"  
-    )  
-    stats = [slope, intercept, r_value, p_value, std_err]
-    return stats</code></pre>
+<div class="bodytext"><p>prettyprint</p></div>
 <h2 class="section_heading" id="implementation-building">Implementation / Building</h2>
 <hr/>
 <h3>Process</h3>
@@ -189,53 +168,14 @@ Although I included a constant offset in my equation, in practice it doesn't mak
 <h4>embedded C code</h4>
 <div class="bodytext"><p>Now that we have done all our math, we have our final coefficients that we can implement on our device. We can then plug this into our embedded C code on the device to compute actual time with several functions</p></div>
 <div class="bodytext"><p>The first function simply gets the raw, uncalibrated system time. There is some extra code in this function to handle the ticks register overflowing, I will talk about that later.</p></div>
-<pre><code class="c">uint32_t get_raw_ticks() {
-    uint32_t ticks = ClockP_getSystemTicks();
-
-    // handle overflow condition
-    if (ticks &lt; prev_ticks) {
-        ticks_overflow++;
-    }
-    prev_ticks = ticks;
-
-    return ticks;
-}</code></pre>
+<div class="bodytext"><p>prettyprint</p></div>
 <div class="bodytext"><p>we can then take our raw tick value and convert that into actual milliseconds of system run time</p></div>
-<pre><code class="c">uint32_t get_ms(void) {
-    raw_ticks = get_raw_ticks();
-    raw_ticks = raw_ticks - tick_offset;
-
-    double slope = 9900.6656;
-    uint32_t correction = slope*raw_ms / 10000;
-
-    uint32_t y = raw_ticks - correction;
-    y = y + ticks_overflow*(UINT32_MAX - slope*UINT32_MAX / 10000);
-    return y;
-}</code></pre>
+<div class="bodytext"><p>prettyprint</p></div>
 <div class="bodytext"><p>However, who understands time intuitively in milliseconds? We need a function to convert that milliseconds into actual human time. </p></div>
-<pre><code class="c">/*
- * update_time:
- */
-Time get_sys_time() {
-    Time sys_time;
-    uint32_t cur_ms = get_ms();
-
-    // Calculate hours
-    sys_time.hours = cur_ms / (3600 * 1000);
-
-    // Calculate minutes (remaining milliseconds after hours are removed)
-    sys_time.minutes = (cur_ms % (3600 * 1000)) / (60 * 1000);
-
-    // Calculate seconds (remaining milliseconds after minutes are removed)
-    sys_time.seconds = (cur_ms % (60 * 1000)) / 1000;
-
-    return sys_time;
-}</code></pre>
+<div class="bodytext"><p>prettyprint</p></div>
 <div class="bodytext"><p>and the actual last part (which may or may not be needed depending on your application and use-case) would be to adjust the offset of our system time to actually line up with time of day.</p></div>
 <div class="bodytext"><p>I will just flash the basics of my function, which are missing a <code>struct</code> for handling <code>Time</code> with hours, minutes, and seconds and a function for adding two times together and handling overwrap into the next day.</p></div>
-<pre><code class="c">Time get_current_time() {
-    return add_time(get_sys_time(), time_offset);
-}</code></pre>
+<div class="bodytext"><p>prettyprint</p></div>
 <h3>Wins</h3>
 <div class="bodytext"><p>Once I got the basic data collection and analysis skeleton down, getting more data and analyzing it was super seamless. It was actually quite enjoyable compared to other analysis like when I'm analyzing my IMU where I actually need some physical stimuli to perform analysis. With the clock I could just hook up my embedded target and crank away collecting data with ease.</p></div>
 <div class="bodytext"><p>I was also greatly helped on the least-squares analysis side by the fact that I've used this in at least a couple projects before, mainly in the context of sensor calibration. I was able to leverage some of the same code and get something running much faster than if I was doing all the research and code writing from scratch.</p></div>
@@ -280,7 +220,7 @@ Time get_sys_time() {
   <div id="footer">
     <p>&copy; - 2025 <a href="../pages/form.php">Contact Me</a> by Anders Bandt</p>
     <p>Template Revision: 0.1</p>
-    <p>Page generated on 2025-09-07 20:00:50</p>
+    <p>Page generated on 2025-09-07 20:18:04</p>
 </div>
 
 </html>

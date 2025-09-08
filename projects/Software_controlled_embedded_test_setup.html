@@ -117,26 +117,7 @@ Like most modern electronics projects, a significant portion of my time has been
 </ul></div>
 <div class="bodytext"><p>Python’s <code>pyserial</code> package, through the <code>serial</code> module, provides a flexible way to interface with serial devices. It allows for reading, writing, and managing serial ports programmatically. Using pyserial, I could automate serial logging while also incorporating my desired features.</p></div>
 <div class="bodytext"><p>Here is a very basic example connecting to a port on a Linux machine (because port path is at <code>/dev/tty</code> instead of the <code>COM</code> you would see on a Windows machine)</p></div>
-<pre><code class="python">import serial
-import time
-
-# Open serial port
-ser = serial.Serial('/dev/ttyUSB0', baudrate=115200, timeout=1)
-
-# Ensure connection is established
-if ser.is_open:
-    print(f"Connected to {ser.name}")
-
-# Continuously read from the serial port and log with timestamps
-try:
-    while True:
-        data = ser.readline().decode('utf-8').strip()
-        if data:
-            timestamp = time.strftime("[%Y-%m-%d %H:%M:%S]")
-            print(f"{timestamp} {data}")
-except KeyboardInterrupt:
-    print("\nClosing serial connection.")
-    ser.close()</code></pre>
+<div class="bodytext"><p>prettyprint</p></div>
 <div class="bodytext"><p>the code to write this took some time and may have slower sample rates than a standalone application, but the ability to integrity with my main application and avoid any certain limitations of 3rd-party applications make development of this aspect worth it.</p></div>
 <h4>Debug probe toolsets - reset, compilation, flashing</h4>
 <div class="bodytext"><p>In order to fully move away from using a provided IDE from your microcontroller bendor I needed a way to easily flash my program to the device in my own software application. Luckily, the debug probe I'm using includes some API where you can run scripts and flash the program. The debug probe in question I'm using is the XDS110 from Texas Instruments.</p></div>
@@ -164,14 +145,7 @@ except KeyboardInterrupt:
 <h4>Test equipment control</h4>
 <div class="bodytext"><p>The last main capability would be control over standard electrical test equipment. This is enabled primarily through <a href="https://en.wikipedia.org/wiki/Standard_Commands_for_Programmable_Instruments">SCPI</a>   commands. SCPI was defined as an additional layer on top of the IEEE 488.2-1987 specification "Standard Codes, Formats, Protocols, and Common Commands". The standard specifies a common syntax, command structure, and data formats to be used with all instruments.</p></div>
 <div class="bodytext"><p>Similiar commands are grouped into a hierarchy or "tree" structure. The usage of the colon <code>:</code> can specify sub commands. For example, let's say we have a DMM and want to measure certain parameters. The command structure might look like</p></div>
-<pre><code class="SCPI">  :MEASure
-       :VOLTage
-            :DC?
-            :AC?
-       :CURRent
-            :DC?
-            :AC?
-              ...</code></pre>
+<div class="bodytext"><p>prettyprint</p></div>
 <div class="bodytext"><p>In this project, the actual protocol in which SCPI commands are issued varies. Some pieces of equipment may use USB / serial, some may use the industry-standard <a href="https://en.wikipedia.org/wiki/Virtual_instrument_software_architecture">VISA</a>.</p></div>
 <h5>Use-cases</h5>
 <div class="bodytext"><p>As of right now I only have power supplies and multimeters built into the project.</p></div>
@@ -295,7 +269,7 @@ except KeyboardInterrupt:
   <div id="footer">
     <p>&copy; - 2025 <a href="../pages/form.php">Contact Me</a> by Anders Bandt</p>
     <p>Template Revision: 0.1</p>
-    <p>Page generated on 2025-09-07 20:00:50</p>
+    <p>Page generated on 2025-09-07 20:18:04</p>
 </div>
 
 </html>
