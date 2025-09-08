@@ -1,5 +1,29 @@
 <div id="footer">
-    <p>&copy; - {{ current_year }} <a href="../pages/form.php">Contact Me</a> by Anders Bandt</p>
-    <p>Template Revision: {{ template_revision }}</p>
-    <p>Page generated on {{ generated_date }}</p>
+  <p>&copy; - {{ current_year }} by Anders Bandt</p>
+  <p><span id="email-link"></span></p>
+  <p>Template Revision: {{ template_revision }}</p>
+  <p>Page generated on {{ generated_date }}</p>
 </div>
+
+<!-- Placeholder for the email link -->
+
+
+<script>
+  // Split the email into parts
+  const user = "andersbandt";
+  const domain = "gmail.com";
+
+  // Combine into full email
+  const email = user + "@" + domain;
+
+  // Create the <a> element
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;       // Make it clickable
+  link.textContent = "Contact me";       // Text the user sees
+
+  // Insert it into the page
+  document.getElementById("email-link").appendChild(link);
+</script>
+
+
+
