@@ -44,15 +44,15 @@
       <div>
     <div class="about-section">
         <p>Created on: 2025-02-10 19:30:01</p>
-        <p>Modified on: 2025-09-07 16:53:59</p>
-        <p><strong>Scope:</strong> <em>the scope of this project is to create a personal finance assistant, taking in data and performing analysis on spending, balances, investments, etc.</em></p>
+        <p>Modified on: 2025-09-08 20:58:14</p>
+        <p><strong>Scope:</strong> <em>write the scope here</em></p>
     </div>
     </div>
       <nav>
         <div id="toc_container">
           <p class="toc_title">Table of Contents</p>
           <ul class="toc_list">
-            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements-" id="toc_section">Requirements </a></li><li><a href="#design-" id="toc_section">Design </a></li><li><a href="#implementation-/-building" id="toc_section">Implementation / Building</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
+            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements-" id="toc_section">Requirements </a></li><li><a href="#design-" id="toc_section">Design </a></li><li><a href="#implementation-/-building" id="toc_section">Implementation / Building</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
           </ul>
         </div>
     </nav>
@@ -64,66 +64,69 @@
 
       <article>
 
-        <div class="bodytext"><p>NOTE: this article is severely lacking. Might be better to just check out <a href="https://github.com/andersbandt/Financial-Analyzer">my GitHub page for this project</a></p></div>
+        <div class="bodytext"><p>Modified on: <code>=this.file.mtime</code></p></div>
 <h2 class="section_heading" id="introduction">Introduction</h2>
 <hr/>
-<h3>Motivations</h3>
+<h3>Background</h3>
 <div class="bodytext"><p>Spending money. We do it nearly every day of our lives. It is a need for living in the modern world.</p></div>
-<div class="bodytext"><p>I mainly started this project to build a tool to perform analysis on my financial incomes, spending, and investments</p></div>
+<h3>Motivations</h3>
+<div class="bodytext"><p>I mainly started this project to</p></div>
 <div class="bodytext"><ul>
-<li>capture my financial data from multiple sources and store it in my own database</li>
+<li>capture my financial data from multiple sources and </li>
 <li>Didn’t like idea of financial data being held by 3rd party company</li>
 <li>Building tool to use for the long term</li>
-<li>Also just kinda fun to code :)</li>
+<li>Also just kinda fun to code J</li>
 </ul></div>
-<div class="bodytext"><p>I'm fully aware companies are out there that do this stuff for you, but what if they shut down? Example: <a href="https://www.forbes.com/advisor/banking/mint-disappearing-what-to-do/">Mint</a>. It also goes against my philosophy of personal data.</p></div>
+<div class="bodytext"><p>I'm fully aware companies are out there that do this stuff for you, but what if they shut down? Example: Mint.</p></div>
 <h2 class="section_heading" id="requirements">Requirements</h2>
 <hr/>
 <h3>Scope of work</h3>
 <blockquote>
 <div class="bodytext"><p>What work is required of this project?</p></div>
 </blockquote>
-<div class="bodytext"><ul>
-<li>Python CLI application</li>
-<li>Data has to be loaded in “manually” (currently through .csv files) (this is the largest turn off for most users)</li>
-<li>SQLite backend, stored in a singular .db file</li>
-</ul></div>
+<div class="bodytext"><p>•Python CLI application
+•Data has to be loaded in “manually” (currently through .csv files) (this is the largest turn off for most users)
+•SQLite backend, stored in a singular .db file</p></div>
 <h3>Capabilities</h3>
-<div class="bodytext"><p>By being in control of my data and software, I have more flexibility in performing the type of analysis I want to perform</p></div>
-<div class="bodytext"><ul>
-<li>Creation of very niche spending categories<div class="bodytext"><ul>
-<li>example: fast food vs. restaurants vs. grocery</li>
-<li>example: shopping spending on clothes vs. electronics</li>
-</ul></div>
-</li>
-<li>Analysis in investments and account balances</li>
-</ul></div>
-<div class="bodytext"><p><img src="images/historical_price_data_of_portfolio_snapshot.png" width="650"/></p></div>
-<figcaption>Note: dummy account values (I wish!)</figcaption>
+<div class="bodytext"><p>•By being in control of my data and software, I have more flexibility in performing the type of analysis I want to perform</p></div>
+<div class="bodytext"><p>•Wanted to be able to have very specific spending categories!!!</p></div>
+<div class="bodytext"><p>•Fast food vs. restaurants vs. grocery</p></div>
+<div class="bodytext"><p>•Niche tracking of shopping spending</p></div>
+<div class="bodytext"><p>•Analysis on investments and account balances</p></div>
+<div class="bodytext"><p><img src="images/historical_price_data_of_portfolio_snapshot.png"/></p></div>
+<h3>Resources</h3>
+<blockquote>
+<div class="bodytext"><p>Time, budget, and tools needed</p></div>
+</blockquote>
 <h2 class="section_heading" id="design">Design</h2>
 <hr/>
 <h3>Sketches, Diagrams, or Mockups</h3>
-<div class="bodytext"><p>Early on I chose to use a GUI. I used the Tkinter framework. I got basic functionality working for many of the sub menus, although to a much lesser extent than the program state was today.</p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20250416223953.png" width="750"/></p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20250416223959.png" width="750"/></p></div>
-<div class="bodytext"><p>However, about 2 years ago I switched to a CLI version. I really did this after being exposed to how powerful doing everything on text in the keyboard is. Even more "powerful" though is how easy programming is compared to a CLI</p></div>
-<div class="bodytext"><p>With GUI development I found that often for simple feature updates, half the time would be spent on adding the buttons and linking them properly to specific actions. With everything text based you can simply just rock print statements and everything is super fluid and flexible.</p></div>
+<div class="bodytext"><p>Early on I chose to use a GUI. I used the Tkinter framework.
+I got basic functionality working for many of the sub menus, although to a much lesser extent than the program state was today.\</p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20250416223953.png" width="350"/></p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20250416223959.png" width="350"/></p></div>
+<h3>Design Approach</h3>
+<blockquote>
+<div class="bodytext"><p>(methods, models, etc.)</p></div>
+</blockquote>
 <h2 class="section_heading" id="implementation-building">Implementation / Building</h2>
 <hr/>
 <h3>Process</h3>
+<h3>Wins</h3>
+<div class="bodytext"><p>==possibly change the name of this section depending on the project context==</p></div>
+<h3>Challenges</h3>
 <div class="bodytext"><p>This is a solo project and I've definitely moved beyond dedicating more than an hour at a time to it.</p></div>
-<div class="bodytext"><p>My main initial effort was on solidifying the data recording process and the SQL backend. I figured </p></div>
-<div class="bodytext"><p>Now with recent AI efforts I also dream that if I just focus on having quality, tagged, financial data the analysis part will be relatively trivial for an AI to compute!</p></div>
-<div class="bodytext"><p>Once I got the main features working it's definitely taken a back seat in my project priorities.</p></div>
 <div class="bodytext"><p>==add some details about the brief open source community here==</p></div>
+<h2 class="section_heading" id="conclusion">Conclusion</h2>
+<hr/>
+<h3>Status and Results</h3>
+<h3>Reflection</h3>
+<h3>Looking forward</h3>
 <h2 class="section_heading" id="additional-information">Additional Information</h2>
 <hr/>
 <h3>Online Resources</h3>
 <div class="bodytext"><ul>
-<li><a href="">Actual Budget</a><a href="https://github.com/actualbudget/actual"></a></li>
-<li>Firefly III</li>
-<li><a href="https://wealthfolio.app/">Wealthfolio | wealthfolio.app</a></li>
-<li><a href="https://www.youtube.com/watch?v=fO9z_QgaPs8&amp;t=328s&amp;ab_channel=FoxyFi">Stock Market Analysis using Python | FoxiFi on YouTube</a></li>
+<li><a href="fuck you">link</a></li>
 </ul></div> <!-- This is where the Markdown content will be injected -->
 
       </article>
@@ -137,7 +140,7 @@
   <p>&copy; - 2025 by Anders Bandt</p>
   <p><span id="email-link"></span></p>
   <p>Template Revision: 0.1</p>
-  <p>Page generated on 2025-09-07</p>
+  <p>Page generated on 2025-09-09</p>
 </div>
 
 <!-- Placeholder for the email link -->
