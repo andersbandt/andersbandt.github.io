@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Ders' Page'</title>
+  <title>FlavoWorks Home</title>
   <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
   <link rel="icon" href="favicon.ico"/>
 </head>
@@ -10,7 +10,7 @@
 <body>
 
 <div id="heading">
-	<h1>Anders' Page'</h1>
+	<h1>FlavoWorks</h1>
 </div>
 
 
@@ -33,65 +33,26 @@
 </div>
 
 
-
 <h3>About Me</h3>
 
 <div class="bodytext">
-  <p>My name is Anders, an engineer working on embedded systems. I graduated from University of Wisconsin-Madison studying Electrical Engineering and Mathematics.</p>
+<p>My name is Anders Bandt and I'm a senior at the University of Wisconsin-Madison studying Electrical Engineering and Mathematics. My main involvement on campus is with
+<a href="https://making.engr.wisc.edu/">Makerspace</a> on campus. There, I am a student employee as well as president of a club called Mad Makers. You can check that club out at <a href="https://uwmadmakers.com/"
+>this link</a> (you'll find the site very similiar to this one... work smarter not harder :) ).</p>
+
+<p>Some of my interests include hydroponics, wearable technology, IoT devices, and light/audio design.</p>
+
+<p>My other hobbies include running, cooking, and skateboarding. I have completed several marathons, and have also started to explore triathlons - most recently completing the Madison Half Ironman.</p>
 
 
-  <p>I've always had a passion for making things, working at a<a href="https://making.engr.wisc.edu/">Makerspace</a> in college. I really enjoy all aspects of making, everything from 3D printing to woodworking to electronics work.
-    Recently, I've started to focus on some ambitious electronics projects, mainly my wearable (no project page for this one yet)</p>
 
-
-  <p>I enjoy building things from scratch that I can use in my daily life. I've been working on documenting design decisions, so when I circle back to a project years later I can pick up right where I started. This blog is trying to practice that documentation aspect!<p>
-
-  <p>Some of my areas of interest include wearable technology, IoT devices, hydroponics and light/audio design.</p>
-
-  <p>I'm confortable with the following technologies / skills</p>
-  <ul>
-    <li>PCB layout (Altium, KiCAD)</li>
-    <li>Embedded programming (mostly in C)</li>
-    <li>Hardware / software integration</li>
-    <li>Silicon validation</li>
-  </ul>
-
-  <p>My other hobbies include running / exercise, cooking, and travel.</p>
-
-  <p>You should be able to email me through the "Contact me" link at the bottom of the page. Otherwise, connect with my on <a href="https://www.linkedin.com/in/anders-bandt-31088a171/">LinkedIn</a></p>
-  
 </div>
 
 
 </body>
 
 
-
-<div id="footer">
-  <p>&copy; - {{ current_year }} by Anders Bandt</p>
-  <p><span id="email-link"></span></p>
-  <p>Template Revision: {{ template_revision }}</p>
-  <p>Page generated on {{ generated_date }}</p>
-</div>
-
-
-<script>
-  // Split the email into parts
-  const user = "andersbandt";
-  const domain = "gmail.com";
-
-  // Combine into full email
-  const email = user + "@" + domain;
-
-  // Create the <a> element
-  const link = document.createElement("a");
-  link.href = "mailto:" + email;       // Make it clickable
-  link.textContent = "Contact me";       // Text the user sees
-
-  // Insert it into the page
-  document.getElementById("email-link").appendChild(link);
-</script>
-
-
+<!-- Footer -->
+<!--#include virtual="/common/footer.html" -->
 
 </html>

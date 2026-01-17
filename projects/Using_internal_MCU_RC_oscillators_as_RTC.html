@@ -8,8 +8,6 @@
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="icon" href="../favicon.ico" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
-    <!-- Google Archive code-prettify -->
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   </head>
 
 
@@ -21,7 +19,8 @@
 
 
     <!-- Navigation Bar -->
-    <div id="cssmenu">
+    <!-- Navigation Bar -->
+<div id="cssmenu">
   <ul id="navbar">
     <li><a href="/index.html">Home</a>
     </li>
@@ -37,13 +36,8 @@
       <h2>Using internal MCU RC oscillators as RTC</h2>
       <div>
     <div class="about-section">
-<<<<<<< HEAD
         <p>Created on: 2024-12-18 13:12:02</p>
         <p>Modified on: 2026-01-17 12:19:33</p>
-=======
-        <p>Created on: 2024-12-18 15:12:02</p>
-        <p>Modified on: 2025-09-07 18:49:06</p>
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
         <p><strong>Scope:</strong> <em>this article is about calibrating the internal oscillator of an MCU to be a real-time clock (RTC)</em></p>
     </div>
     </div>
@@ -67,17 +61,10 @@
 <hr/>
 <h3>Background</h3>
 <div class="bodytext"><p>A real-time clock (RTC) is a clock that can be used to track "real-time". That is, the actual passing of seconds in the universe, with which we can keep accurate time of day. A simple alarm clock on your nightstand would be a good example. Real-time clocks often rely on some interesting techniques to keep time. Some use the power-line frequency of 60 Hz (50 Hz for those outside the Americas) as a baseline frequency to count off. Most end up using a specialized crystal oscillator that has some known frequency, commonly 32.768 kHz. This is a convenient frequency to use as 32.768 kHz is exactly 2^15 cycles per second, so it is easy to use with binary counter circuits.</p></div>
-<<<<<<< HEAD
 <div class="bodytext"><p>Compared to real-time clocks, the clocks on a typical microprocessor are built differently. Many rely on internal <a href="https://en.wikipedia.org/wiki/RC_oscillator" rel="noopener noreferrer" target="_blank">RC oscillators</a> that use a resistor-capacitor network as their frequency selective element. Internal RC oscillators are typically only good for 1-2% accuracy, this is due to a variety of factors but deviations in the production of the resistors and capacitors in the network is a common one. In addition to production tolerances, capacitors experience derating across temperature, making them difficult to use as RTC if the device experiences temperature swings. Some processors include tuning adjustment registers that allow the user to fine tune to get better results on top of the <a href="https://www.ti.com/lit/an/sbot037/sbot037.pdf" rel="noopener noreferrer" target="_blank">trim process</a> they typically do at the fab, but I believe it is not the norm to make these registers accessible to the end-user.</p></div>
 <figure><div class="bodytext"><p><img src="images/Pasted image 20241220124035.png" width="550"/></p></div><figcaption>Simple schematic showing a quartz crystal feeding the internal MPU oscillator</figcaption></figure>
-=======
-<div class="bodytext"><p>Compared to real-time clocks, the clocks on a typical microprocessor are built differently. Many rely on internal <a href="https://en.wikipedia.org/wiki/RC_oscillator">RC oscillators</a> that use a resistor-capacitor network as their frequency selective element. Internal RC oscillators are typically only good for 1-2% accuracy, this is due to a variety of factors but deviations in the production of the resistors and capacitors in the network is a common one. In addition to production tolerances, capacitors experience derating across temperature, making them difficult to use as RTC if the device experiences temperature swings. Some processors include tuning adjustment registers that allow the user to fine tune to get better results on top of the <a href="https://www.ti.com/lit/an/sbot037/sbot037.pdf">trim process</a> they typically do at the fab, but I believe it is not the norm to include these registers.</p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20241220124035.png" width="550"/></p></div>
-<div class="bodytext"><p><em>Simple schematic showing a quartz crystal feeding the internal MPU oscillator</em></p></div>
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 <div class="bodytext"><p>Many microprocessors also use crystal oscillators, which have better frequency stability compared to RC oscillators. Instead of a resistor-capacitor network, crystal oscillators use a piezoelectric crystal as the frequency-selective element. This is much more stable, and is often used to keep time in quartz wristwatches. However things are not perfect in the real world and there is typically still some error. This can be due to crystal deviations or any other number of imperfections in the circuit. </p></div>
 <h3>Motivations</h3>
-<<<<<<< HEAD
 <div class="bodytext"><p>There are many reasons why we may want to keep accurate time in an embedded system. </p></div>
 <div class="bodytext"><ul>
 <li>Reliably maintains and provides current time through disruptive system states (sleeps, reboot, shutdown, etc)<ul>
@@ -90,9 +77,6 @@
 <div class="bodytext"><p>A really neat example is a GPS receiver, which can shorten its startup time by comparing the current time according to an RTC to show when it last had a valid signal (I believe it can triangulate the GNSS satellites quicker with this information)</p></div>
 <div class="bodytext"><p>And of course, if we just want to keep time and display it (such as a watch, micro-wave, alarm-clock) we will need RTC. If we rely on those RC and crystal-oscillators I talked about in the previous section, any small error will acculumate over time and we will most certainly have some drift. Maybe this drift is fine, say a couple minutes a year. More often than not, it's a minutes per day, which quickly becomes annoying to deal with.</p></div>
 <div class="bodytext"><p>Why would this project need to be done when many RTC modules already exist? Well, in my first version design of a wearable wrist device I opted not to include an RTC module in there. The main focus of the wearable was sensing the human body, so this was not critical. However, later I did want to add time-keeping features, but the cost of each PCB was driven quite high because of my use of <a href="Fine-pitch_BGA_layout_and_manufacture.html">fine-pitch BGA footprints</a>. </p></div>
-=======
-<div class="bodytext"><p>Why would this project need to be done when many RTC modules already exist? Well, in my first version design of a wearable wrist device I opted not to include an RTC module in there. The main focus of the wearable was sensing the human body, so this was not critical. However, later I did want to add time-keeping features, but the cost of each PCB was driven quite high because of my use of [[Fine-pitch BGA layout and manufacture|fine-pitch BGA footprints]]. </p></div>
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 <h2 class="section_heading" id="requirements">Requirements</h2>
 <hr/>
 <h3>Scope of work</h3>
@@ -106,13 +90,9 @@
 <li>Characterize the frequency stability of the internal RC oscillator over time</li>
 <li>Determine techniques to reduce or compensate for frequency drift.</li>
 <li>Implement embedded C code to track and correct system time in real-time.</li>
-<li>Validate the effectiveness of any corrections by comparing the calculated time to a reference RTC or another known accurate time source.<div class="bodytext"><ul>
+<li>Validate the effectiveness of any corrections by comparing the calculated time to a reference RTC or another known accurate time source.<ul>
 <li>My goal is to have the target accuracy stay within ±10 minutes over the course of a year</li>
-<<<<<<< HEAD
 </ul>
-=======
-</ul></div>
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 </li>
 </ul></div>
 <h3>Resources</h3>
@@ -146,10 +126,7 @@ With these two variables, we can form an equation to calculate time. Units cance
 <div class="bodytext"><p>The least squares best-fit method is essentially an optimization problem where the goal is to minimize the sum of the squared residuals (Euclidean norm) between an equation output and some known "truth values"</p></div>
 </blockquote>
 <div class="bodytext"><p>==really improve the thing above because it's a quote so lots of people will read if skimming the article==</p></div>
-<<<<<<< HEAD
 <div class="bodytext"><p>==on top of improving I should add a nice picture explaining least squares fit==</p></div>
-=======
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 <div class="bodytext"><p>Whoa, lots to unpack there. Optimization problems, are fairly straightforward, we typically want to find the maximum or minimum of some value. Residuals are the differences between the measured values and the values predicted by our model. Often the Euclidean norm is used to capture these differences well. So putting it all together, least squares best-fit minimizing the difference between what our model would output and what we input as what our actual "truth values".</p></div>
 <div class="bodytext"><p>Let's start looking at some equations for this, specifically what our model looks like. Any linear relationship can be represented using a vector of coefficients. For example, matrix <strong>A</strong> is commonly used to represent the inputs to the model, and the goal is to solve for the coefficients <strong>w</strong>.</p></div>
 <div class="bodytext"><p>$$[y] = [A]*[w]$$</p></div>
@@ -161,34 +138,20 @@ and </p></div>
 <div class="bodytext"><p>This technique is highly effective for finding the coefficients of <strong>linear</strong> relationships. It's important to note that "linear" doesn't just refer to simple equations like <strong>y = mx + b</strong>. In this context, "linear" applies to any system that exhibits certain properties, such as scaling the inputs resulting in proportional scaling of the outputs. For more information on what qualifies as a linear system, consider looking into <a href="https://en.wikipedia.org/wiki/Superposition_principle" rel="noopener noreferrer" target="_blank">the superposition principle</a>.</p></div>
 <h4>calculating our coefficients</h4>
 <div class="bodytext"><p>So what is the techinque for finding the vector <strong>w</strong>? Well, what we need to gather is data on our input variables (matrix <strong>A</strong>) along with what our output should be (matrix <strong>y</strong>). Let's go back to our matrix equation</p></div>
-<<<<<<< HEAD
 <div class="bodytext"><p>$$[y] = [A]*[w]$$
 I won't get into the detailed mathemtical proof, but will just go over the higlights. As I mentioned briefly earlier, what we really want to do is turn this into a miniization problem such that for all <strong>w</strong> we have</p></div>
-=======
-<div class="bodytext"><p>$$[y] = [A]<em>[w]$$
-I won't get into the detailed mathemtical proof, but will just go over the higlights. As I mentioned briefly earlier, what we really want to do is turn this into a miniization problem such that for all </em><em>w</em>* we have</p></div>
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 <div class="bodytext"><p>$$\left\| A w - \bar{y} \right\| \leq \left\| A x - \bar{y} \right\|$$
 this is essentially minimizing the residual between our computed value and our known truth value <strong>y</strong>
 I will skip all the actual basis for this and skip straight to the solution.
 If you do the math, you eventually find that you can see that</p></div>
 <div class="bodytext"><p>$$w = (A^T*A)^{-1}A^{T}y$$
-<<<<<<< HEAD
 If you are interested in reading more about the topic, <a href="https://www.math.umd.edu/~immortal/MATH401/book/ch_least_squares.pdf" rel="noopener noreferrer" target="_blank">these notes from the University of Marlyland are a good read</a></p></div>
-=======
-If you are interested in reading more about the topic, <a href="https://www.math.umd.edu/~immortal/MATH401/book/ch_least_squares.pdf">these notes from the University of Marlyland are a good read</a></p></div>
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 <h3>Applying to our example</h3>
 <div class="bodytext"><p>In this example, we want to find the relationship between the "system" passage of time with the "real world" passage of time. We want to be able to input system time and get out real time. For our input, let's start talking in terms of microprocessor ticks as our base unit.. We could convert this to uncalibrated system time using our clock period, but it's easier to "bundle" that conversion into our final coefficients in my opinion.</p></div>
 <div class="bodytext"><p>Let's also assume we have a simple linear relationship between the system time and real-time. I actually did try higher-order fits with little success, so let's keep it simple with this coefficient matrix <strong>A</strong>, where <strong>t</strong> in this case is the number of ticks</p></div>
 <div class="bodytext"><p>$$[A] = \begin{bmatrix} t &amp; 1 \end{bmatrix}$$</p></div>
-<<<<<<< HEAD
 <div class="bodytext"><p>We basically want to find the values of the coefficient vector (w) where the relation is of the following form</p></div>
 <div class="bodytext"><p>$$ms=w_0*t+w_1*1$$</p></div>
-=======
-<div class="bodytext"><p>We basically want to find the values of the coefficient vector $w$ where the relation is of the following form</p></div>
-<div class="bodytext"><p>$$\text{Real ms}=[w_0]<em>t+w[_1]</em>1$$</p></div>
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 <div class="bodytext"><p>Essentially we need to solve our model with <strong>N</strong> datapoints of training data, forming an <strong>N x M</strong> matrix where <strong>M - 1</strong> is the order of our relationship equation. As we have 2 variables, we have a first order (linear fit) relationship.</p></div>
 <div class="bodytext"><p>If you want to do the raw math, I wrote a function using the <code>numpy</code> package to solve this.</p></div>
 <pre><code class="prettyprint"># LeastSquares: Compute Least Squares Matrix Regression  
@@ -215,30 +178,18 @@ def linear_fit(x_arr, y_arr):
     )  
     stats = [slope, intercept, r_value, p_value, std_err]
     return stats</code></pre>
-<<<<<<< HEAD
 <h2 class="section_heading" id="implementation-and-building">Implementation and Building</h2>
-=======
-<h2 class="section_heading" id="implementation-building">Implementation / Building</h2>
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 <hr/>
 <h3>Process</h3>
 <div class="bodytext"><p>Ok, I think I explained all the background needed. Now I'll talk about execution.</p></div>
 <div class="bodytext"><p>Really the first step was to get sample data on the clock. I hooked up my board over UART/USB and flashed a simple program to output the system (microcontroller) time. With the host PC, I was able to sync up real-time and system time and log each datapoint to a CSV file.</p></div>
 <div class="bodytext"><p>Now, we run some Python code to perform the least-squares best fit analysis on. I won't do a deep dive on the code here, if you are interested you should just check out the GitHub repo.</p></div>
 <div class="bodytext"><p>==need to add link to the GitHub repo==</p></div>
-<<<<<<< HEAD
 <div class="bodytext"><p>Basically when I run my Python script I get the following for (w)</p></div>
 <div class="bodytext"><p>$$[w] =\begin{bmatrix} w_1 \\ w_0 \end{bmatrix} = \begin{bmatrix} 9.9006656*10^{-7} \\ -2.149 \end{bmatrix}$$</p></div>
 <div class="bodytext"><p>this would translate to an equation like so, with (t) as our system ticks.</p></div>
 <div class="bodytext"><p>$$\text{Real ms}=[w_1]*t+[w_0]$$
 Although I included a constant offset in my equation, in practice it doesn't make much sense to include it in the final calculation. It is just a couple ticks different, which won't make any impact. So let's get rid of <strong>w0</strong>, and we are left with the following very simple equation.</p></div>
-=======
-<div class="bodytext"><p>Basically when I run my Python script I get the following for $w$</p></div>
-<div class="bodytext"><p>$$[w] =\begin{bmatrix} w_1 \ w_0 \end{bmatrix} = \begin{bmatrix} 9.9006656*10^{-7} \ -2.149 \end{bmatrix}$$</p></div>
-<div class="bodytext"><p>this would translate to an equation like so, with $t$ as our system ticks.</p></div>
-<div class="bodytext"><p>$$\text{Real ms}=[w_1]<em>t+[w_0]$$
-Although I included a constant offset in my equation, in practice it doesn't make much sense to include it in the final calculation. It is just a couple ticks different, which won't make any impact. So let's get rid of </em><em>w0</em>*, and we are left with the following very simple equation.</p></div>
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 <div class="bodytext"><p>$$\text{Real ms}=[w_1]*t$$</p></div>
 <h4>embedded C code</h4>
 <div class="bodytext"><p>Now that we have done all our math, we have our final coefficients that we can implement on our device. We can then plug this into our embedded C code on the device to compute actual time with several functions</p></div>
@@ -328,45 +279,15 @@ Time get_sys_time() {
     </main>
 
 
+    <!-- Google Archive code-prettify -->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   </body>
 
   <!-- Footer -->
   <div id="footer">
-<<<<<<< HEAD
     <p>&copy; - 2026 <a href="../pages/form.php">Contact Me</a> by Anders Bandt</p>
     <p>Template Revision: 0.1</p>
     <p>Page generated on 2026-01-17</p>
 </div>
 
-=======
-  <p>&copy; - 2025 by Anders Bandt</p>
-  <p><span id="email-link"></span></p>
-  <p>Template Revision: 0.1</p>
-  <p>Page generated on 2025-09-09</p>
-</div>
-
-<!-- Placeholder for the email link -->
-
-
-<script>
-  // Split the email into parts
-  const user = "andersbandt";
-  const domain = "gmail.com";
-
-  // Combine into full email
-  const email = user + "@" + domain;
-
-  // Create the <a> element
-  const link = document.createElement("a");
-  link.href = "mailto:" + email;       // Make it clickable
-  link.textContent = "Contact me";       // Text the user sees
-
-  // Insert it into the page
-  document.getElementById("email-link").appendChild(link);
-</script>
-
-
-
-
->>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 </html>
