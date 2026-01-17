@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="icon" href="../favicon.ico" />
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+    <!-- Google Archive code-prettify -->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   </head>
 
 
@@ -19,8 +21,7 @@
 
 
     <!-- Navigation Bar -->
-    <!-- Navigation Bar -->
-<div id="cssmenu">
+    <div id="cssmenu">
   <ul id="navbar">
     <li><a href="/index.html">Home</a>
     </li>
@@ -36,8 +37,13 @@
       <h2>Hydroponics control board</h2>
       <div>
     <div class="about-section">
+<<<<<<< HEAD
         <p>Created on: 2025-04-13 10:33:11</p>
         <p>Modified on: 2025-09-09 09:40:00</p>
+=======
+        <p>Created on: 2025-04-13 12:33:11</p>
+        <p>Modified on: 2025-09-09 11:40:00</p>
+>>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
         <p><strong>Scope:</strong> <em>this page is about a hydroponic controller I designed for regulating a hydroponic environment</em></p>
     </div>
     </div>
@@ -79,11 +85,19 @@
 <div class="bodytext"><p>We need a system that can regulate a hydroponic plants environment. What are the components of a plant environment?</p></div>
 <div class="bodytext"><ul>
 <li>light</li>
+<<<<<<< HEAD
 <li>water<ul>
 <li>nutrient content</li>
 <li>pH</li>
 <li>aeration</li>
 </ul>
+=======
+<li>water<div class="bodytext"><ul>
+<li>nutrient content</li>
+<li>pH</li>
+<li>aeration</li>
+</ul></div>
+>>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 </li>
 <li>temperature and humidity</li>
 </ul></div>
@@ -135,15 +149,43 @@
     </main>
 
 
-    <!-- Google Archive code-prettify -->
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   </body>
 
   <!-- Footer -->
   <div id="footer">
+<<<<<<< HEAD
     <p>&copy; - 2026 <a href="../pages/form.php">Contact Me</a> by Anders Bandt</p>
     <p>Template Revision: 0.1</p>
     <p>Page generated on 2026-01-17</p>
+=======
+  <p>&copy; - 2025 by Anders Bandt</p>
+  <p><span id="email-link"></span></p>
+  <p>Template Revision: 0.1</p>
+  <p>Page generated on 2025-09-09</p>
+>>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 </div>
+
+<!-- Placeholder for the email link -->
+
+
+<script>
+  // Split the email into parts
+  const user = "andersbandt";
+  const domain = "gmail.com";
+
+  // Combine into full email
+  const email = user + "@" + domain;
+
+  // Create the <a> element
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;       // Make it clickable
+  link.textContent = "Contact me";       // Text the user sees
+
+  // Insert it into the page
+  document.getElementById("email-link").appendChild(link);
+</script>
+
+
+
 
 </html>

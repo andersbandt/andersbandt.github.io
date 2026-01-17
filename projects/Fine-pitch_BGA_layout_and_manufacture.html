@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -204,4 +205,229 @@ I got some recommendations for a local Dallas (when I was living there) company 
     <p>Page generated on 2026-01-17</p>
 </div>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Fine-pitch BGA layout and manufacture</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+    <!-- Google Archive code-prettify -->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Personal Projects</a>
+    </li>
+    <li><a href="/pages/programs.html">Programs</a>
+    </li>
+    <li><a href="/pages/server.html">Server Access</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Fine-pitch BGA layout and manufacture</h2>
+      <div>
+    <div class="about-section">
+        <p>Created on: 2024-12-19 19:25:15</p>
+        <p>Modified on: 2025-09-08 08:58:03</p>
+        <p><strong>Scope:</strong> <em>this article will discuss BGA technology. A basic introduction will be given, along with PCB design and soldering advice from personal experience</em></p>
+    </div>
+    </div>
+      <nav>
+        <div id="toc_container">
+          <p class="toc_title">Table of Contents</p>
+          <ul class="toc_list">
+            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements-" id="toc_section">Requirements </a></li><li><a href="#design-" id="toc_section">Design </a></li><li><a href="#implementation-/-building" id="toc_section">Implementation / Building</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
+          </ul>
+        </div>
+    </nav>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2 class="section_heading" id="introduction">Introduction</h2>
+<hr/>
+<h3>Background</h3>
+<div class="bodytext"><p>A ball grid array (BGA) package is a type of package that leverages a grid array of solder balls on the bottom of your IC package to make a connection to the PCB. The PCB footprint would look like a grid of exposed pads, and the device IC will have solder balls placed along the underside of the device.</p></div>
+<div class="bodytext"><p>When reflowed, the solder balls will melt and collapse into the pad below. <a href="https://www.youtube.com/watch?v=xRCIi-EKvDI&amp;ab_channel=SurfaceMountProcess">Here is a nice no frills YouTube video</a> of reflow happening on the BGA balls.</p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20250907214640.png" width="550"/></p></div>
+<div class="bodytext"><p>BGA technology is primarily used for high density devices. We can provide many more interconnection pins compared to packages with pins solely along the perimeter. High density devices are typically ones with very high pin counts, and often this is microcontrollers or processors that have many pins, but the technology can also be used for low-pin count devices that want to have the smallest PCB footprint possible.</p></div>
+<h3>Motivations</h3>
+<div class="bodytext"><p>The BGA I wanted to solder on a custom PCB were two very small, fine-pitch BGA. </p></div>
+<div class="bodytext"><ol>
+<li>AFE4432, an ultrasmall integrated AFE for wearable optical biosensing</li>
+<li>BQ25120A</li>
+</ol></div>
+<div class="bodytext"><p>The AFE4432 was the smaller of the two, with 25 pins in a 1.75 x 1.75 mm package. This is a pin to pin pitch of 0.35 mm. That's small!</p></div>
+<div class="bodytext"><p>The BQ25120A was larger, 25 pins in a 2.50mm x 2.50mm package. That's a pitch of 0.4mm.</p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20250907215343.png" width="750"/></p></div>
+<figcaption>Some small chips!!!</figcaption>
+<h2 class="section_heading" id="requirements">Requirements</h2>
+<hr/>
+<h3>Scope of work</h3>
+<div class="bodytext"><p>This article will discuss the whole process of implementing BGA technology on your PCB designs, from the design to manufacture to assembly.</p></div>
+<div class="bodytext"><p>Some basic knowledge of common ECAD software such as Altium or KiCAD would be nice, as we will be making footprints in the software. I made many iterations of the footprint in software before I was happy with the final product, so some experience with footprint creation would be nice.</p></div>
+<h3>Resources</h3>
+<h4>PCB board</h4>
+<div class="bodytext"><p>It is very important that you realize manufacture of BGA boards IS NOT CHEAP! I got quotes up to the thousands of dollar range for a production run of only 5 boards. This price is mainly drive up through the very fine pitches and small features that are required for the PCB footprints. Like I mentioned earlier, the devices I was designing for had pitches of 0.35mm and 0.40 mm.</p></div>
+<div class="bodytext"><p>The main thing to keep in mind is this is a pretty technical manufacture process, and likely you'll be getting custom quotes from people. I eventually went with PCBWay (tried and true) and paid just short of 500 dollars for a quantity of 5 small 4-layer boards. I will discuss vendor selection and ordering in more detail in [[#Challenges]].</p></div>
+<h4>Tools</h4>
+<div class="bodytext"><p>As far as tools for final assembly, you will need...</p></div>
+<div class="bodytext"><ul>
+<li>some high-quality flux<div class="bodytext"><ul>
+<li>my favorite brand is MG Chemicals. Specifically for this I used some no clean flux paste #8341, but I'm sure many types would work</li>
+</ul></div>
+</li>
+<li>hot air soldering station or a reflow oven</li>
+</ul></div>
+<div class="bodytext"><p>I used a pretty worn down Hakko, which is still a nice soldering station but not the top of the line by any means.</p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20231113193000.png" width="350"/></p></div>
+<div class="bodytext"><p><em>A pic of the hot air soldering station I purchased off eBay. Only 115 bucks, a steal compared to the 700 retail they charge.</em></p></div>
+<div class="bodytext"><p>An alternative and equally viable solution is to use a proper reflow oven. These are x=sometimes tricky to get access too, as really I think there is just one hobbyist level design out there (could be wrong about that).</p></div>
+<div class="bodytext"><p><img src="images/Pasted image 20250907215503.png" width="750"/></p></div>
+<div class="bodytext"><p>People also make them out of toasters with some custom heater element controls that can actually follow a reflow curve.
+My first two boards I used a reflow oven, and actually with the way I designed it I did not have success (more on that later).</p></div>
+<div class="bodytext"><p>I think both hot-air gun soldering and reflow oven are viable solutions. The main thing to keep in mind is that a regular soldering iron WILL NOT WORK. No exposed pads to solder on!</p></div>
+<h2 class="section_heading" id="design">Design</h2>
+<hr/>
+<h3>Sketches, Diagrams, or Mockups</h3>
+<div class="bodytext"><p>Let's first discuss the two major pad types for PCB design. These include SMD (solder-mask defined) and NSMD (non-solder-mask defined). The difference between the two is the relationship between the solder mask clearance and the exposed copper pad.</p></div>
+<h3>Design Approach</h3>
+<div class="bodytext"><p>There are many things that can go wrong with BGA footprints during the assembly process. A number of them are demonstrated in this X-ray inspectino taken after soldering on a board.</p></div>
+<div class="bodytext"><p><img src="images/BGA_xray_problems.png"/></p></div>
+<div class="bodytext"><p>The solder balls shorting between one another is a common problem. For large packages, opens become more of an issue as the chip may not lie perfectly flat in the PCB, leaving an open. A solder ball may be missing on the chip as well, possibly knocked off at some point after manufacture. In my semiconductor testing days we put chips through hot-temp qualification, and I had a few chips get balls knocked off coming back from that stress.</p></div>
+<div class="bodytext"><p>We want to design our board in any such way that we can help prevent any of these issues that may occur during soldering.</p></div>
+<h2 class="section_heading" id="implementation-building">Implementation / Building</h2>
+<hr/>
+<h3>Process</h3>
+<div class="bodytext"><p>I really had to do a lot of reading to get this project going. I'm very unfamiliar with regular footprint layout, much less fine-pitch BGA layout. To make matters worse, this is a fairly niche topic at the small levels of detail I was dealing with. So not many easily accessible online resources. And the resources I found had conflicting opinions!</p></div>
+<div class="bodytext"><p>Overall the complete process will look like this, from project definition to final assembly</p></div>
+<div class="bodytext"><ol>
+<li>Pick BGA IC you need to assemble</li>
+<li>Define and create footprint<div class="bodytext"><ol>
+<li>this step may be skippable if for some reason your IC has an available footprint online, say from UltraLibrarian or SnapEDA</li>
+</ol></div>
+</li>
+<li>Lay out PCB</li>
+<li>Find manufacturer</li>
+<li>Assemble boards (reflow)</li>
+</ol></div>
+<h3>Challenges</h3>
+<div class="bodytext"><p>I would say there are two major hurdles to cross in my design, you may disagree with what is difficult in your particular case</p></div>
+<div class="bodytext"><ol>
+<li>Finalizing footprint design</li>
+<li>Finding a manufacturer and getting the board made</li>
+</ol></div>
+<div class="bodytext"><p>I think some people may say that the soldering will be difficult, but I had a decent amount of hot-air soldering experience and actually on the board I made found the BGA pins much easier to work with compared to some QFP packages.</p></div>
+<h4>footprint creation</h4>
+<div class="bodytext"><p>This part was mainly difficult for me because of</p></div>
+<div class="bodytext"><ul>
+<li>lack of online information</li>
+<li>conflicting information / viewpoints on what is best</li>
+</ul></div>
+<h4>finding a manufacturer</h4>
+<div class="bodytext"><p>After I got my design finalized, the next hurdle was finding a suitable vendor for the PCB board manufacture.</p></div>
+<div class="bodytext"><p>I got some recommendations for a local Dallas (when I was living there) company to use. They had excellent customer service, got on a design call with me to understand my requirements, and were very responsive. </p></div>
+<div class="bodytext"><p>There was only a couple issues with them, the main one being I only wanted 5 boards (their minimum quantity). No board shop with that level of design support and customer support really wants to support a production run of only 5 boards. </p></div>
+<div class="bodytext"><p>The eventual quote I got from them (and several other U.S. board shops was over a thousand dollars). Really at that level it's a quote telling you that we aren't interested in making 5 boards for you. No bueno for a personal project, no matter how motivated I was on it.</p></div>
+<div class="bodytext"><p>I eventually went back to my roots with PCBWay (not a sponsor haha!). I ordered from them in college, but didn't think their manufacturing capabilities were up to snuff with what I was looking for. However, I checked their "Advanced Capabilties" section and thought that their copper to copper clearances might be able to work with me.</p></div>
+<div class="bodytext"><p>The engineers had some questions and we want back and forth for a little bit. Their main questions were actually about the solder-mask, but I conveyed that the way I had it was intentional. They expressed concerns about problems in manufacture but I was willing to take the risk. Eventually we agreed and I got it manufactured!</p></div>
+<div class="bodytext"><p><img src="images/best_afe_bottom.jpg" width="300"/></p></div>
+<figcaption>A nice microscope shot I took of the underside of the AFE4432 on top of the PCB location</figcaption>
+<h3>Wins</h3>
+<div class="bodytext"><p>The actual soldering part of these chips went way better than anything I could have hoped for. I did hand-assembly of 5 boards over the course of many months, and the BGA chips were by far the chips I had the least problems with. Various QFN packages had many more botched solder jobs with either shorts or discontinuity.</p></div>
+<div class="bodytext"><p>My main advice for this includes </p></div>
+<div class="bodytext"><ol>
+<li>a liberal usage of flux<div class="bodytext"><ul>
+<li>this keeps the chip from flying away when you blow the hot air, as many of these are tiny</li>
+<li>keeping your air pressure low helps with this too</li>
+</ul></div>
+</li>
+<li>soldering until you see the package "snap" into place plus 10 seconds</li>
+</ol></div>
+<div class="bodytext"><p>But yeah overall whenever I had to replace one of the BGA packages I was much more enthusiastic to perform the rework compared to pretty much every other IC in the design.</p></div>
+<h2 class="section_heading" id="conclusion">Conclusion</h2>
+<hr/>
+<h3>Status and Results</h3>
+<div class="bodytext"><p>400 dollars later for a small 45 mm x 45 mm PCB, and we had the prototypes in hand.</p></div>
+<div class="bodytext"><p><img src="images/IMG_9339.jpg" width="200"/></p></div>
+<div class="bodytext"><p><em>top of the AFE4432, ignore the incorrect A1 position location :)</em></p></div>
+<h3>Reflection</h3>
+<div class="bodytext"><p>In hindsight for a hobbyist level project I don't know of these packages are worth the extra design complexity and cost. If I didn't have these packages on my board, for such a small board I could have made 5 for about 20 bucks. This would have made uprevving my design to fix first round mistakes so much easier. Instead, I was stuck with my initial design for many months as I paid so much for the samples.</p></div>
+<div class="bodytext"><p>For v2 of the project in question I designed these for (sorry, top secret for now!) I actually switched over to simpler footprints. This makes parts cheaper, layout easier, and only costs me a slight increase in part footprints on my board.</p></div>
+<h3>Looking forward</h3>
+<div class="bodytext"><p>As PCB manufacturing technology improves, I can see the cost for producing these coming way down. I'm sure the same principles of any industry cost relationship will apply, and as they become more popular as a package type economies of scale will bring the cost down.</p></div>
+<div class="bodytext"><p>Even though I will steer away from using them when I can, I realize I will encounter them again. And I'll be prepared</p></div>
+<h2 class="section_heading" id="additional-information">Additional Information</h2>
+<hr/>
+<h3>Online Resources</h3>
+<div class="bodytext"><ul>
+<li><a href="https://en.wikipedia.org/wiki/Ball_grid_array">Ball grid array | Wikipedia</a></li>
+</ul></div> <!-- This is where the Markdown content will be injected -->
+
+      </article>
+    </main>
+
+
+  </body>
+
+  <!-- Footer -->
+  <div id="footer">
+  <p>&copy; - 2025 by Anders Bandt</p>
+  <p><span id="email-link"></span></p>
+  <p>Template Revision: 0.1</p>
+  <p>Page generated on 2025-09-09</p>
+</div>
+
+<!-- Placeholder for the email link -->
+
+
+<script>
+  // Split the email into parts
+  const user = "andersbandt";
+  const domain = "gmail.com";
+
+  // Combine into full email
+  const email = user + "@" + domain;
+
+  // Create the <a> element
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;       // Make it clickable
+  link.textContent = "Contact me";       // Text the user sees
+
+  // Insert it into the page
+  document.getElementById("email-link").appendChild(link);
+</script>
+
+
+
+
+>>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 </html>

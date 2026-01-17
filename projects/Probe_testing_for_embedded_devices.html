@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -139,4 +140,180 @@ One thing to consider is the shape of the probe tip you select. Depending on you
     <p>Page generated on 2026-01-17</p>
 </div>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Probe testing for embedded devices</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+    <!-- Google Archive code-prettify -->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Personal Projects</a>
+    </li>
+    <li><a href="/pages/programs.html">Programs</a>
+    </li>
+    <li><a href="/pages/server.html">Server Access</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Probe testing for embedded devices</h2>
+      <div>
+    <div class="about-section">
+        <p>Created on: 2025-02-06 10:03:28</p>
+        <p>Modified on: 2025-09-07 18:26:29</p>
+        <p><strong>Scope:</strong> <em>to create a physical interface for accessing electrical signals on PCBs with test points. Useful in robust embedded testing</em></p>
+    </div>
+    </div>
+      <nav>
+        <div id="toc_container">
+          <p class="toc_title">Table of Contents</p>
+          <ul class="toc_list">
+            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements-" id="toc_section">Requirements </a></li><li><a href="#design-" id="toc_section">Design </a></li><li><a href="#implementation-/-building" id="toc_section">Implementation / Building</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
+          </ul>
+        </div>
+    </nav>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <div class="bodytext"><p><img src="images/embedded_probe_test.jpeg" width="750"/></p></div>
+<figcaption>What this project will build!</figcaption>
+<h2 class="section_heading" id="introduction">Introduction</h2>
+<hr/>
+<h3>Background</h3>
+<div class="bodytext"><p>This is a project I've designed to be more closely integrated with my <a href="https://andersbandt.github.io/projects/Software_controlled_embedded_test_setup.html">software controlled test setup</a> in the future</p></div>
+<div class="bodytext"><p>Really this project is not "probe testing". The term for PCB devices is often "bed of nails testing" or "ICT testing"</p></div>
+<div class="bodytext"><p>Main goal is really just to add these pins or "probes" that drive down into pad test points on a PCB board. The Test PCB will then have some other connectors on it to connect to your test equipment or host PC</p></div>
+<div class="bodytext"><p>The main motivations for making this are</p></div>
+<div class="bodytext"><ul>
+<li>My experience with probe testing on semiconductor devices and an appreciation for it</li>
+<li>My most recent personal embedded project with very small board size and not much room for large test points</li>
+</ul></div>
+<div class="bodytext"><p><img src="images/Pasted image 20250907181322.png"/></p></div>
+<figcaption>A graphical representation of a wafer prober setup</figcaption>
+<div class="bodytext"><p>When debugging my design I often have multiple boards going. Maybe one has a certain IC soldered one or I am trying different capacitor values on. This board enables me to quickly swap between designs and have all pins mapped the same way to whatever test equipment I have connected.</p></div>
+<h2 class="section_heading" id="requirements">Requirements</h2>
+<hr/>
+<h3>Scope of work</h3>
+<div class="bodytext"><p>This project is fairly simple, really it's more of a mechanical design problem than a complicated electrical schematic problem. The eventual PCB created has no actual electrical components, and is really in a sense a complicated connector.</p></div>
+<h3>Resources</h3>
+<div class="bodytext"><p>Essentially all you will need to start this project is</p></div>
+<div class="bodytext"><ul>
+<li>ECAD software (and skills)<div class="bodytext"><ul>
+<li>I used Altium, my preferred but KiCAD is a great, free open-source alternative</li>
+</ul></div>
+</li>
+<li>A PCB that you want to test<div class="bodytext"><ul>
+<li>it's really best if this PCB has mounting holes for a nice mechanical connection as well</li>
+</ul></div>
+</li>
+<li>The coordinates of all your various test points on your PCB</li>
+</ul></div>
+<h2 class="section_heading" id="design">Design</h2>
+<hr/>
+<h3>Initial Prototype</h3>
+<div class="bodytext"><p>For proof of concept I 3D printed an early prototype that just had access to UART TX and RX lines.</p></div>
+<div class="bodytext"><p><img src="images/URKS2076.jpg" width="550"/></p></div>
+<figcaption>Early 3D-printed prototype</figcaption>
+<div class="bodytext"><p>This is version 1 of the 3D print. I had alignment issues that I tried to solve with hot-glue, but that proved not to be an elegant solution. Hot glue often has a habit of seeming like a solution, but it is almost always replaced by something else!</p></div>
+<div class="bodytext"><p>Version 2 of the 3D print prototype just added lots of upwards thickness. Pretty simple solution.</p></div>
+<div class="bodytext"><p>==take and add photo of version 2==</p></div>
+<h3>Design Approach</h3>
+<div class="bodytext"><p><strong>Off-board connector</strong>
+I knew that one function of this is board is that it would connect to another test board that would provide larger connectors such as banana jacks and more 2.54mm header pins on it. Thus, we would need a connector.</p></div>
+<div class="bodytext"><p>For connector type I really have grown to like typical <a href="https://en.wikipedia.org/wiki/IDC_(electrical_connector)">IDC connectors</a>. The cables for some length / pin combinations can be expensive, but the quality of these are already really good.</p></div>
+<div class="bodytext"><p><strong>On-board test points</strong>
+I also wanted the probe PCB itself to have some test points. These can be useful for either testing my cable connection, or just simple 2.54mm header wires or probes for certain signal access.</p></div>
+<div class="bodytext"><p><img src="images/altium_ECAD_PCB.png" width="450"/></p></div>
+<div class="bodytext"><p><strong>Probes</strong>
+One thing to consider is the shape of the probe tip you select. Depending on your pad shape and type, this should be selected.</p></div>
+<div class="bodytext"><p>You can even have multiple probe tip types per design. For example, in my board all the through-hole "pads" I have that are actually for a 2.54mm header, are a different type than my standard circular pad.</p></div>
+<div class="bodytext"><p><img src="images/test_fixture_tip_types.png" width="750"/></p></div>
+<figcaption>The shape of the test tip should be selected based on what it contacts: pad, component, or hole</figcaption>
+<h2 class="section_heading" id="implementation-building">Implementation / Building</h2>
+<hr/>
+<h3>Process</h3>
+<h3>Challenges</h3>
+<div class="bodytext"><p>One challenge I had with my implementation on usage of pins depending on what components were populated on the DUT. For example, if I populated any of these side header pins on my main DUT it made probing very difficult if the corresponding probers were installed on the probe PCB.</p></div>
+<h2 class="section_heading" id="conclusion">Conclusion</h2>
+<hr/>
+<h3>Status and Results</h3>
+<h3>Reflection</h3>
+<h3>Looking forward</h3>
+<h2 class="section_heading" id="additional-information">Additional Information</h2>
+<hr/>
+<h3>Resources</h3>
+<div class="bodytext"><ul>
+<li><a href="fuck you">link</a></li>
+</ul></div> <!-- This is where the Markdown content will be injected -->
+
+      </article>
+    </main>
+
+
+  </body>
+
+  <!-- Footer -->
+  <div id="footer">
+  <p>&copy; - 2025 by Anders Bandt</p>
+  <p><span id="email-link"></span></p>
+  <p>Template Revision: 0.1</p>
+  <p>Page generated on 2025-09-09</p>
+</div>
+
+<!-- Placeholder for the email link -->
+
+
+<script>
+  // Split the email into parts
+  const user = "andersbandt";
+  const domain = "gmail.com";
+
+  // Combine into full email
+  const email = user + "@" + domain;
+
+  // Create the <a> element
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;       // Make it clickable
+  link.textContent = "Contact me";       // Text the user sees
+
+  // Insert it into the page
+  document.getElementById("email-link").appendChild(link);
+</script>
+
+
+
+
+>>>>>>> a3e4d4ae3b4a6d255c1e9218d23e83070f5db642
 </html>
