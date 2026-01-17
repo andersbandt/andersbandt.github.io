@@ -26,13 +26,7 @@
     </li>
     <li><a href="/pages/blog.html">Blog</a>
     </li>
-    <li><a href="/pages/projects.html">Personal Projects</a>
-    </li>
-    <li><a href="/pages/programs.html">Programs</a>
-    </li>
-    <li><a href="/pages/server.html">Server Access</a>
-    </li>
-    <li><a href="/pages/about-me.html">About Me</a>
+    <li><a href="/pages/projects.html">Projects</a>
     </li>
   </ul>
 </div>
@@ -42,9 +36,9 @@
       <h2>Hydroponics control board</h2>
       <div>
     <div class="about-section">
-        <p>Created on: 2025-04-13 18:33:11</p>
-        <p>Modified on: 2025-04-13 18:39:49</p>
-        <p><strong>Scope:</strong> <em>write the scope here</em></p>
+        <p>Created on: 2025-04-13 10:33:11</p>
+        <p>Modified on: 2025-09-09 09:40:00</p>
+        <p><strong>Scope:</strong> <em>this page is about a hydroponic controller I designed for regulating a hydroponic environment</em></p>
     </div>
     </div>
       <nav>
@@ -64,30 +58,46 @@
       <article>
 
         <div class="bodytext"><p>Modified on: <code>=this.file.mtime</code></p></div>
-<h2 id="introduction" class="section_heading">Introduction</h2>
-<hr />
+<h2 class="section_heading" id="introduction">Introduction</h2>
+<hr/>
 <h3>Background</h3>
-<div class="bodytext"><p>This is a report about an ongoing project I am working on. The goal of the project is to create a controller for automatically regulating a hydroponic environment. This is accomplished through various inputs and outputs. The controller is implemented option a custom PCB, designed and built by me.</p></div>
+<div class="bodytext"><p>Hydroponics is a method of growing plants (usually crops or medicinal plants) without soil. Instead, nutrient-filled water is utilized in an artificial environment. A small amount of inert medium such as perlite, gravel, or other substrates is used to support the plants roots.</p></div>
+<div class="bodytext"><p>There are lots of reasons why one may choose to use hydroponics. One is that it's very water efficient. I became interested in it as there is lots of different variables for a control system to be involved, hence my project began.</p></div>
 <h3>Motivations</h3>
 <div class="bodytext"><p>I decided to embark on this project after wanting to</p></div>
 <div class="bodytext"><ol>
 <li>explore embedded systems more by designing my own PCB</li>
 <li>an interest in automating and regulating plant growth</li>
 </ol></div>
-<h2 id="requirements" class="section_heading">Requirements</h2>
-<hr />
+<div class="bodytext"><p>The goal of the project is to create a controller for automatically regulating a hydroponic environment. This is accomplished through various inputs and outputs. The controller is implemented option a custom PCB, designed and built by me.</p></div>
+<h2 class="section_heading" id="requirements">Requirements</h2>
+<hr/>
 <h3>Scope of work</h3>
-<blockquote>
-<div class="bodytext"><p>What work is required of this project?</p></div>
-</blockquote>
+<div class="bodytext"><p>Like most of my projects, this one involves designing a custom PCB!</p></div>
+<div class="bodytext"><p>The second part of this is actually physical constructing an environment to hold my grow chamber.</p></div>
 <h3>Capabilities</h3>
-<div class="bodytext"><p>==delete this section for non-technical projects or otherwise small projects==</p></div>
+<div class="bodytext"><p>We need a system that can regulate a hydroponic plants environment. What are the components of a plant environment?</p></div>
+<div class="bodytext"><ul>
+<li>light</li>
+<li>water<ul>
+<li>nutrient content</li>
+<li>pH</li>
+<li>aeration</li>
+</ul>
+</li>
+<li>temperature and humidity</li>
+</ul></div>
+<div class="bodytext"><p>Light is fairly easy. We want to be able to turn on and off the lights. Light intensity is another feature to control through dimming, but is not critical.</p></div>
+<div class="bodytext"><p>Water control is probably the most interesting part of the build. We essentially need to add nutrients in certain doses, and also regulate the pH.</p></div>
+<div class="bodytext"><p>pH regulation is most commonly done with "pH up and down" solution.</p></div>
+<div class="bodytext"><p>The actual administration of these liquids (nutrients and pH solution) is commonly done with peristaltic pumps. These are a type of positive displacement pump used for pumping a variety of fluids.</p></div>
+<div class="bodytext"><p>Temperature and humidity control is the last component. Really the only "dials" I was able to come up to turn with this is fan speed. I know some people use misters to control humidity, I haven't gotten into that yet.</p></div>
 <h3>Resources</h3>
 <blockquote>
-<div class="bodytext"><p>Time, budget, and tools needed</p></div>
+<div class="bodytext"><p>Time, budget, and </p></div>
 </blockquote>
-<h2 id="design" class="section_heading">Design</h2>
-<hr />
+<h2 class="section_heading" id="design">Design</h2>
+<hr/>
 <h3>Sketches, Diagrams, or Mockups</h3>
 <blockquote>
 <div class="bodytext"><p>early sketches of what is </p></div>
@@ -97,22 +107,28 @@
 <blockquote>
 <div class="bodytext"><p>(methods, models, etc.)</p></div>
 </blockquote>
-<h2 id="implementation-building" class="section_heading">Implementation / Building</h2>
-<hr />
+<h2 class="section_heading" id="implementation-building">Implementation / Building</h2>
+<hr/>
 <h3>Process</h3>
+<div class="bodytext"><p>This was my first large-scale custom PCB I designed.</p></div>
+<div class="bodytext"><p>I was actually scared to add a microcontroller because of the complexity, so I chose to make this thing compatible with a Raspberry Pi GPIO breakout header.</p></div>
 <h3>Wins</h3>
 <div class="bodytext"><p>==possibly change the name of this section depending on the project context==</p></div>
 <h3>Challenges</h3>
-<h2 id="conclusion" class="section_heading">Conclusion</h2>
-<hr />
+<div class="bodytext"><p>This was my first large-scale, custom PCB bringup. As such, I was slow to recognize some common </p></div>
+<div class="bodytext"><p>I remember it took me forever to simply get my SPI transactions working.</p></div>
+<div class="bodytext"><p>There was also some issues with grounding I had.</p></div>
+<h2 class="section_heading" id="conclusion">Conclusion</h2>
+<hr/>
 <h3>Status and Results</h3>
+<div class="bodytext"><p>I actually won my senior year Transcend competition for this project, even with it unfinished. The judges were mainly impressed that I actually brought something I worked on, instead of just a slide deck about an idea.</p></div>
 <h3>Reflection</h3>
 <h3>Looking forward</h3>
-<h2 id="additional-information" class="section_heading">Additional Information</h2>
-<hr />
+<h2 class="section_heading" id="additional-information">Additional Information</h2>
+<hr/>
 <h3>Online Resources</h3>
 <div class="bodytext"><ul>
-<li><a href="fuck you">link</a></li>
+<li><a href="fuck you" rel="noopener noreferrer" target="_blank">link</a></li>
 </ul></div> <!-- This is where the Markdown content will be injected -->
 
       </article>
@@ -125,9 +141,9 @@
 
   <!-- Footer -->
   <div id="footer">
-    <p>&copy; - 2025 <a href="../pages/form.php">Contact Me</a> by Anders Bandt</p>
+    <p>&copy; - 2026 <a href="../pages/form.php">Contact Me</a> by Anders Bandt</p>
     <p>Template Revision: 0.1</p>
-    <p>Page generated on 2025-04-17 04:20:50</p>
+    <p>Page generated on 2026-01-17</p>
 </div>
 
 </html>
