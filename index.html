@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>FlavoWorks</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-  <link rel="icon" href="../favicon.ico" />
-  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
-</head>
+  <head>
+    <title>Anders Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="icon" href="favicon.ico" />
+  </head>
 
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>Anders' page</h1>
+    </div>
 
-  <!--Main Heading -->
-  <div id="heading">
-    <h1>Anders' page</h1>
-  </div>
-
-
-<!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
 <div id="cssmenu">
   <ul id="navbar">
     <li><a href="/index.html">Home</a>
@@ -26,29 +25,67 @@
     </li>
     <li><a href="/pages/projects.html">Projects</a>
     </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
   </ul>
 </div>
 
 
-<body>
-  <header>
-        <h2>Welcome to My Personal Website</h2>
-        <p>A little corner of the internet for my thoughts and projects.</p>
+    <header>
+      <h2>Welcome to My Personal Website</h2>
+      <p>A little corner of the internet for my thoughts and projects.</p>
     </header>
-        
-    <section>
-      <h3>What You'll Find Here</h2>
-       <p>Welcome to my site. I have a numerous amount of things in here, including
-        <ul>
-            <li><strong>Small Blog:</strong> My thoughts on tech, life, and random musings.</li>
-            <li><strong>Personal Projects:</strong> Various DIY and software projects I'm working on.</li>
-            <li><strong>Software Projects:</strong> A showcase of my main software project with a link to my GitHub.</li>
-            <li><strong>More About Me:</strong> A brief blurb about who I am and what I do.</li>
-        </ul>
-    </section>
-        
 
-<!-- Footer -->
-<!--#include virtual="/common/footer.html" -->
+    <section>
+      <h3>What You'll Find Here</h3>
+      <p>Welcome to my site. I have a numerous amount of things in here, including</p>
+      <ul>
+        <li><strong>Small Blog:</strong> My thoughts on tech, life, and random musings.</li>
+        <li><strong>Personal Projects:</strong> Various DIY and software projects I'm working on.</li>
+        <li><strong>Software Projects:</strong> A showcase of my main software project with a link to my GitHub.</li>
+        <li><strong>More About Me:</strong> A brief blurb about who I am and what I do.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Latest Blog Post</h3>
+      <p><em>Coming soon...</em></p>
+    </section>
+
+    <section>
+      <h3>My Main Software Project</h3>
+      <p>Check out my latest work on GitHub: <a href="https://github.com/andersbandt" target="_blank" rel="noopener noreferrer">My GitHub</a></p>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; - 2026 by Anders Bandt</p>
+  <p><span id="email-link"></span></p>
+  <p>Template Revision: 0.1</p>
+  <p>Page generated on 2026-02-05</p>
+</div>
+
+<!-- Placeholder for the email link -->
+
+
+<script>
+  // Split the email into parts
+  const user = "andersbandt";
+  const domain = "gmail.com";
+
+  // Combine into full email
+  const email = user + "@" + domain;
+
+  // Create the <a> element
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;       // Make it clickable
+  link.textContent = "Contact me";       // Text the user sees
+
+  // Insert it into the page
+  document.getElementById("email-link").appendChild(link);
+</script>
+
+
+  </body>
 
 </html>

@@ -28,6 +28,8 @@
     </li>
     <li><a href="/pages/projects.html">Projects</a>
     </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
   </ul>
 </div>
 
@@ -36,8 +38,8 @@
       <h2>On my apparent quick disgust with Amazon reselling</h2>
       <div>
     <div class="about-section">
-        <p>Created on: 2023-01-16 08:53:40</p>
-        <p>Modified on: 2023-01-16 08:54:19</p>
+        <p>Created on: 2023-01-16 10:53:40</p>
+        <p>Modified on: 2023-01-16 10:54:19</p>
         <p><strong>Scope:</strong> <em>No scope provided.</em></p>
     </div>
     </div>
@@ -69,15 +71,38 @@
     </main>
 
 
+
     <!-- Google Archive code-prettify -->
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   </body>
 
   <!-- Footer -->
   <div id="footer">
-    <p>&copy; - 2026 <a href="../pages/form.php">Contact Me</a> by Anders Bandt</p>
-    <p>Template Revision: 0.1</p>
-    <p>Page generated on 2026-01-17</p>
+  <p>&copy; - 2026 by Anders Bandt</p>
+  <p><span id="email-link"></span></p>
+  <p>Template Revision: 0.1</p>
+  <p>Page generated on 2026-02-05</p>
 </div>
+
+<!-- Placeholder for the email link -->
+
+
+<script>
+  // Split the email into parts
+  const user = "andersbandt";
+  const domain = "gmail.com";
+
+  // Combine into full email
+  const email = user + "@" + domain;
+
+  // Create the <a> element
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;       // Make it clickable
+  link.textContent = "Contact me";       // Text the user sees
+
+  // Insert it into the page
+  document.getElementById("email-link").appendChild(link);
+</script>
+
 
 </html>

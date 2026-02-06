@@ -1,45 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-  <title>FlavoWorks Home</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" href="favicon.ico"/>
-</head>
+  <head>
+    <title>Server Access - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico"/>
+  </head>
 
-<body>
-
-<div id="heading">
-	<h1>FlavoWorks</h1>
-</div>
-
-
-<!-- Navigation Bar -->
-<!--#include virtual="/common/navbar.html" -->
-
-
-<h3>Personal Server</h3>
-
-<div class="bodytext">
-  <p><b>This section is for my personal server! No content here.</p><br>
-
-<div id="server_login">
-  <form method = "post" action="server_login.php">
-    <div class="container">
-      <input type="text" placeholder="Username" name="username" required>
-      <input type="password" placeholder="Password" name="password" required>
-      <input type="submit" class="submit" id="submit_orange" value='Login'>
+  <body>
+    <div id="heading">
+      <h1>FlavoWorks</h1>
     </div>
-  </form>
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
 </div>
 
+
+    <h2>Personal Server</h2>
+
+    <div class="bodytext">
+      <p><b>This section is for my personal server! No content here.</b></p>
+      <br>
+
+      <div id="server_login">
+        <form method="post" action="../server/server_login.php">
+          <div class="container">
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="submit" class="submit" id="submit_orange" value="Login">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; - 2026 by Anders Bandt</p>
+  <p><span id="email-link"></span></p>
+  <p>Template Revision: 0.1</p>
+  <p>Page generated on 2026-02-05</p>
 </div>
 
+<!-- Placeholder for the email link -->
 
-</body>
 
-<!-- Footer -->
-<!--#include virtual="/common/footer.html" -->
+<script>
+  // Split the email into parts
+  const user = "andersbandt";
+  const domain = "gmail.com";
 
+  // Combine into full email
+  const email = user + "@" + domain;
+
+  // Create the <a> element
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;       // Make it clickable
+  link.textContent = "Contact me";       // Text the user sees
+
+  // Insert it into the page
+  document.getElementById("email-link").appendChild(link);
+</script>
+
+
+  </body>
 
 </html>

@@ -1,7 +1,7 @@
 /* FONTS */
 
 @import url(https://fonts.googleapis.com/css?family=Lato);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
 
 
 :root {
@@ -26,7 +26,6 @@
 }
 
 /* GENERAL */
-
 html {
   background-color: var(--color8);
   -webkit-background-size: cover;
@@ -220,19 +219,23 @@ th {
 
 
 /* IMAGE STYLING */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 figure {
-    margin: 2rem auto;
-    text-align: center;
-    
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 100%;
 }
 
 figcaption {
-    margin-top: 0.25rem;
-    font-size: 15px;
-    color: #666;
-    line-heigth: 1.4;
+  margin-top: 0.25rem;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.4;
 }
-
 
 .image {
   text-align: center;
@@ -422,12 +425,15 @@ code {
   display: none;
 }
 
+/* =============================================================================
+   RESPONSIVE STYLES - TABLET (max-width: 768px)
+   ============================================================================= */
 @media screen and (max-width: 768px) {
+  /* Navigation */
   #cssmenu ul li {
     float: none;
     display: block;
   }
-
 
   #cssmenu ul li a {
     width: 100%;
@@ -446,9 +452,226 @@ code {
     display: none;
   }
 
-
   #cssmenu ul li a:before {
     display: none;
   }
 
+  /* Headings */
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 32px;
+    margin-left: 20px;
+  }
+
+  h3 {
+    font-size: 22px;
+    margin-left: 20px;
+  }
+
+  h4, h5 {
+    margin-left: 20px;
+  }
+
+  #heading {
+    margin-left: 20px;
+  }
+
+  .section_heading {
+    font-size: 28px;
+  }
+
+  /* Body text */
+  p {
+    margin-left: 15px;
+    font-size: 17px;
+  }
+
+  .bodytext {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-indent: 20px;
+  }
+
+  .bodytext ul,
+  .bodytext ol {
+    margin-left: 30px;
+    margin-right: 20px;
+  }
+
+  /* Table of contents */
+  #toc_container {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
+  }
+
+  /* Code blocks */
+  pre {
+    width: 90%;
+    padding: 15px;
+  }
+
+  /* Project table - 2 columns on tablet */
+  #mainProjectTable {
+    width: 95%;
+  }
+
+  #mainProjectTable td {
+    font-size: 16px;
+  }
+
+  #mainProjectTable img {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+  }
+
+  /* Footer */
+  #footer {
+    font-size: 20px;
+    height: auto;
+    padding: 20px 10px;
+  }
+}
+
+/* =============================================================================
+   RESPONSIVE STYLES - MOBILE (max-width: 480px)
+   ============================================================================= */
+@media screen and (max-width: 480px) {
+  /* Headings */
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 26px;
+    margin-left: 15px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-left: 15px;
+  }
+
+  h4, h5 {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+
+  #heading {
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+
+  .section_heading {
+    font-size: 24px;
+  }
+
+  /* Body text */
+  p {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .bodytext {
+    margin-left: 15px;
+    margin-right: 15px;
+    text-indent: 15px;
+    line-height: 140%;
+  }
+
+  .bodytext ul,
+  .bodytext ol {
+    margin-left: 25px;
+    margin-right: 15px;
+    font-size: 15px;
+  }
+
+  /* Table of contents */
+  #toc_container {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 10px;
+  }
+
+  .toc_title {
+    font-size: 18px;
+  }
+
+  #toc_section {
+    font-size: 15px;
+  }
+
+  /* Code blocks */
+  pre {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 25px;
+  }
+
+  code {
+    font-size: 11px;
+  }
+
+  /* Project table - stack to 1 column on mobile */
+  #mainProjectTable,
+  #mainProjectTable tbody,
+  #mainProjectTable tr,
+  #mainProjectTable td {
+    display: block;
+    width: 100%;
+  }
+
+  #mainProjectTable tr {
+    margin-bottom: 15px;
+  }
+
+  #mainProjectTable td {
+    text-align: center;
+    padding: 10px 5px;
+    border: none;
+  }
+
+  #mainProjectTable td:empty {
+    display: none;
+  }
+
+  #mainProjectTable img {
+    max-width: 280px;
+    width: 90%;
+  }
+
+  /* Tables general */
+  table {
+    font-size: 14px;
+  }
+
+  .partsList {
+    margin-left: 15px;
+    margin-right: 15px;
+    overflow-x: auto;
+  }
+
+  /* Footer */
+  #footer {
+    font-size: 16px;
+    padding: 15px 10px;
+  }
+
+  #footer p {
+    margin: 5px 0;
+  }
+
+  /* Figures */
+  figure {
+    margin: 1rem auto;
+  }
+
+  figcaption {
+    font-size: 13px;
+    padding: 0 10px;
+  }
 }

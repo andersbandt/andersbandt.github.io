@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
-    <title>FlavoWorks Personal Projects</title>
+    <title>Blog - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
-    <link rel="icon" href="favicon.ico"/>
+    <link rel="icon" href="../favicon.ico"/>
   </head>
 
-
-
-  <!--Main Heading -->
-  <div id="heading">
-    <h1>Ders' page'</h1>
-  </div>
-
-
+  <body>
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
 
     <!-- Navigation Bar -->
-    <!--#include virtual="/common/navbar.html" -->
-  
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
 
 
-  <body>
-    <h2>Personal blog</h2>
+    <h2>Personal Blog</h2>
     <div class="bodytext">
       <p>I am not a good writer by any means. In high school I never got good grades on papers. I feel like I'm a good speaker, so it's interesting how
         everything seems to fall apart when I try to bring those thoughts to a page</p>
@@ -34,22 +42,62 @@
         I think it will also be fun (and valuable) to record thoughts on life and such :)</p>
 
       <p>So, anyway, hope you enjoy this small blog section. We will see how it develops.</p>
-
-      <br>
-      <br>
     </div>
 
+    <div class="bodytext">
+      <h3>Articles</h3>
+      <ul>
+        
+        <li><a href="../blog/01_a_journey_begins.html">01 A Journey Begins</a></li>
+        
+        <li><a href="../blog/02_lots_of_driving.html">02 Lots Of Driving</a></li>
+        
+        <li><a href="../blog/03_hawaii_intermission.html">03 Hawaii Intermission</a></li>
+        
+        <li><a href="../blog/04_california_coast.html">04 California Coast</a></li>
+        
+        <li><a href="../blog/A_First_Yosemite_Experience.html">A First Yosemite Experience</a></li>
+        
+        <li><a href="../blog/Environment_is_everything.html">Environment Is Everything</a></li>
+        
+        <li><a href="../blog/On_my_apparent_quick_disgust_with_Amazon_reselling.html">On My Apparent Quick Disgust With Amazon Reselling</a></li>
+        
+        <li><a href="../blog/the_life_you_want_to_live_has_to_be_lived_today.html">The Life You Want To Live Has To Be Lived Today</a></li>
+        
+        <li><a href="../blog/wtf_are_my_goals_in_life.html">Wtf Are My Goals In Life</a></li>
+        
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; - 2026 by Anders Bandt</p>
+  <p><span id="email-link"></span></p>
+  <p>Template Revision: 0.1</p>
+  <p>Page generated on 2026-02-05</p>
+</div>
+
+<!-- Placeholder for the email link -->
 
 
-    <!-- INSERT GENERATED BLOG LINK LIST HERE -->
-    
+<script>
+  // Split the email into parts
+  const user = "andersbandt";
+  const domain = "gmail.com";
+
+  // Combine into full email
+  const email = user + "@" + domain;
+
+  // Create the <a> element
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;       // Make it clickable
+  link.textContent = "Contact me";       // Text the user sees
+
+  // Insert it into the page
+  document.getElementById("email-link").appendChild(link);
+</script>
+
 
   </body>
-
-
-  <!-- Footer -->
-  <!--#include virtual="/common/footer.html" -->
-  
-
 
 </html>

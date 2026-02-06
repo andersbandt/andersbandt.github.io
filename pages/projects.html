@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
-    <title>FlavoWorks</title>
+    <title>Personal Projects - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
-    <link rel="icon" href="favicon.ico"/>
+    <link rel="icon" href="../favicon.ico"/>
   </head>
 
+  <body>
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
 
-  <div id="heading">
-	<h1>Anders' page</h1>
-  </div>
-
-<!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
 <div id="cssmenu">
   <ul id="navbar">
     <li><a href="/index.html">Home</a>
@@ -21,13 +24,17 @@
     </li>
     <li><a href="/pages/projects.html">Projects</a>
     </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
   </ul>
 </div>
 
 
-  <body>
     <h2>Personal Projects</h2>
     <div class="bodytext">
+      <p>I find a lot of joy working on my personal projects. They are a way for me to develop my technical skills
+        while creating fun or useful things. There is something so satisfying about taking an idea in my head and making it real.</p>
+      <br>
       <p>Below is a compilation of some projects I have worked on. Some reports are much more detailed than others. I use a lot of Internet
         resources for help on my projects, so I hope I can return the favor and provide some knowledge for others. Click a picture to see that project.
         Enjoy :)</p>
@@ -37,7 +44,7 @@
     <!-- Main project table -->
     <div class="mainProjectTable">
       <table class="pictureTable" id="mainProjectTable">
-        
+
         <!-- First picture/link row -->
         <tr>
           <td><a href="/projects/Software_controlled_embedded_test_setup.html"><img src="/projects/images/wwd_gui_api.PNG" height="200" width="300"/></a></td>
@@ -53,20 +60,20 @@
           <td><a href="/projects/Fine-pitch_BGA_layout_and_manufacture.html">Fine-Pitch BGA Layout and Manufacture</a></td>
         </tr>
 
-        <!-- <\!-- Second picture/link row -\-> -->
-        <!-- <tr> -->
-        <!--   <td><a href="/projects/turned_wooden_bowl.html"><img src="/projects/images/WoodenBowl/front.jpg" height="200" width="300"/></a></td> -->
-        <!--   <td><a href="/projects/DIY_Daft_punk_helmet.html"><img src="/projects/images/daft/helmet_on.jpg" height="200" width="300"/></a></td> -->
-        <!--   <td><a href="/projects/homeade_ski_mount.html"><img src="/projects/images/SkiMount/finished_mount.jpg" height="200" width="300"/></a></td> -->
-        <!--   <td><a href="/projects/hydroponics_control_board.html"><img src="/projects/images/HydroponicControl/main.jpg" height="200" width="300"/></a></td> -->
-        <!-- </tr> -->
-        <!-- <\!-- Second project title row -\-> -->
-        <!-- <tr> -->
-        <!--   <td><a href="/projects/turned_wooden_bowl.html">Wooden Bowl</a></td> -->
-        <!--   <td><a href="/projects/DIY_Daft_punk_helmet.html">Daft Punk Helmet</a></td> -->
-        <!--   <td><a href="/projects/homeade_ski_mount.html">Homemade Ski Mount</a></td> -->
-        <!--   <td><a href="/projects/hydroponics_control_board.html">Hydroponics Control Board</a></td> -->
-        <!-- </tr> -->
+        <!-- Second picture/link row -->
+        <tr>
+          <td><a href="/projects/Turning_a_wooden_bowl_from_a_maple_board.html"><img src="/projects/images/WoodenBowl/front.jpg" height="200" width="300"/></a></td>
+          <td><a href="/projects/Daft_punk_helmet.html"><img src="/projects/images/daft/helmet_on.jpg" height="200" width="300"/></a></td>
+          <td><a href="/projects/homeade_ski_mount.html"><img src="/projects/images/SkiMount/finished_mount.jpg" height="200" width="300"/></a></td>
+          <td><a href="/projects/hydroponics_control_board.html"><img src="/projects/images/HydroponicControl/main.JPG" height="200" width="300"/></a></td>
+        </tr>
+        <!-- Second project title row -->
+        <tr>
+          <td><a href="/projects/Turning_a_wooden_bowl_from_a_maple_board.html">Wooden Bowl</a></td>
+          <td><a href="/projects/Daft_punk_helmet.html">Daft Punk Helmet</a></td>
+          <td><a href="/projects/homeade_ski_mount.html">Homemade Ski Mount</a></td>
+          <td><a href="/projects/hydroponics_control_board.html">Hydroponics Control Board</a></td>
+        </tr>
 
         <!-- Third picture/link row -->
         <tr>
@@ -76,7 +83,7 @@
           <td></td>
         </tr>
         <!-- Third project title row -->
-      <tr>
+        <tr>
           <td><a href="/projects/Financial-Analyzer.html">Financial Analyzer</a></td>
           <td><a href="/projects/DIY_electric_longboard.html">Electric Longboard</a></td>
           <td></td>
@@ -87,16 +94,35 @@
     </div>
     <!-- END OF PROJECT TABLE -->
 
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; - 2026 by Anders Bandt</p>
+  <p><span id="email-link"></span></p>
+  <p>Template Revision: 0.1</p>
+  <p>Page generated on 2026-02-05</p>
+</div>
+
+<!-- Placeholder for the email link -->
+
+
+<script>
+  // Split the email into parts
+  const user = "andersbandt";
+  const domain = "gmail.com";
+
+  // Combine into full email
+  const email = user + "@" + domain;
+
+  // Create the <a> element
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;       // Make it clickable
+  link.textContent = "Contact me";       // Text the user sees
+
+  // Insert it into the page
+  document.getElementById("email-link").appendChild(link);
+</script>
 
 
   </body>
-
-  <!-- Footer -->
-  <!--#include virtual="/common/footer.html" -->
-  <div id="footer">
-    <p>&copy; - {{ current_year }} <a href="../pages/form.php">Contact Me</a> by Anders Bandt</p>
-    <p>Template Revision: {{ template_revision }}</p>
-    <p>Page generated on {{ generated_date }}</p>
-  </div>
 
 </html>
