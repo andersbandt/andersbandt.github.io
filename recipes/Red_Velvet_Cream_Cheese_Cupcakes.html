@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Red Velvet Cream Cheese Cupcakes - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Red Velvet Cream Cheese Cupcakes</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Red Velvet Cupcakes</h3>
+<div class="bodytext"><ul>
+<li>2 ½ cups all-purpose flour</li>
+<li>1 ½ cups sugar</li>
+<li>1 teaspoon baking soda</li>
+<li>1 teaspoon salt</li>
+<li>1 teaspoon cocoa powder</li>
+<li>1 ½ cups vegetable oil</li>
+<li>1 cup buttermilk, room temperature </li>
+<li>2 large eggs, room temperature</li>
+<li>2 tablespoons red food coloring</li>
+<li>1 teaspoon white distilled vinegar</li>
+<li>1 teaspoon vanilla extract</li>
+</ul></div>
+<h3>Cream Cheese Frosting</h3>
+<div class="bodytext"><ul>
+<li>1 pound cream cheese, softened</li>
+<li>2 sticks butter, softened</li>
+<li>1 teaspoon vanilla extract</li>
+<li>4 cups sifted confectioners' sugar</li>
+<li>Chopped pecans and fresh raspberries or strawberries, for garnish (optional)</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>Red Velvet Cupcakes</h3>
+<div class="bodytext"><ul>
+<li>Preheat the oven to 350°. Line 2 (12-cup) muffin pans with cupcake papers.</li>
+<li>In a medium mixing bowl, sift together the flour, sugar, baking soda, salt, and cocoa powder. In a large bowl gently beat together the oil, buttermilk, eggs, food coloring, vinegar, and vanilla with a handheld electric mixer. Add the sifted dry ingredients to the wet and mix until smooth and thoroughly combined.</li>
+<li>Divide the batter evenly among the cupcake tins about 2/3 filled. Bake in oven for about 20 to 22 minutes, turning the pans once, halfway through. Test the cupcakes with a toothpick for doneness. Remove from oven and cool completely before frosting.</li>
+</ul></div>
+<h3>Cream Cheese Frosting</h3>
+<div class="bodytext"><ul>
+<li>In a large mixing bowl, beat the cream cheese, butter and vanilla together until smooth. Add the sugar and on low speed, beat until incorporated. Increase the speed to high and mix until very light and fluffy.</li>
+<li>Garnish with chopped pecans and a fresh raspberry or strawberry.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

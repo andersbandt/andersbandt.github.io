@@ -608,6 +608,75 @@ a:hover {
 
 
 /* =============================================================================
+   RECIPES
+   ============================================================================= */
+.recipe-meta {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.recipe-meta span {
+  display: inline;
+}
+
+.recipe-back-link {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.recipe-back-link a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.recipe-back-link a:hover {
+  color: var(--color-primary);
+}
+
+.recipe-category {
+  max-width: var(--content-width);
+  margin: 0 auto 2rem;
+  padding: 0 1.5rem;
+}
+
+.recipe-category h3 {
+  margin-bottom: 0.75rem;
+}
+
+.recipe-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.recipe-list li {
+  margin-bottom: 0.4rem;
+  break-inside: avoid;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.recipe-list li a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.recipe-list li a:hover {
+  color: var(--color-primary);
+}
+
+
+/* =============================================================================
    SCROLL REVEAL ANIMATIONS
    JS adds .fade-in class; elements are hidden until IntersectionObserver
    adds .visible. Without JS, elements display normally (progressive enhancement).
@@ -725,6 +794,15 @@ a:hover {
 
   .project-card { font-size: 0.9rem; }
 
+  /* Recipes */
+  .recipe-category {
+    padding: 0 1rem;
+  }
+
+  .recipe-list {
+    columns: 1;
+  }
+
   /* Footer */
   #footer {
     padding: 1.5rem 1rem;
@@ -818,6 +896,21 @@ a:hover {
   /* Footer */
   #footer { padding: 1.25rem 0.75rem; }
   #footer p { margin: 0.15rem 0; font-size: 0.8rem; }
+
+  /* Recipes */
+  .recipe-category {
+    padding: 0 0.75rem;
+  }
+
+  .recipe-meta {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .recipe-meta span {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
 
   /* Figures */
   figure { margin: 1rem auto; }

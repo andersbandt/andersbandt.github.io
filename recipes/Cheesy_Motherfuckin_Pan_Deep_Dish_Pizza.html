@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Cheesy Motherfuckin Pan Deep Dish Pizza - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Cheesy Motherfuckin Pan Deep Dish Pizza</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pizza</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>For pizza dough</h3>
+<div class="bodytext"><ul>
+<li>2 cups warm water</li>
+<li>2 tablespoons yeast</li>
+<li>700 grams [about 4 cups] flour</li>
+<li>2 teaspoons sugar</li>
+<li>2 teaspoons salt</li>
+<li>2 tablespoons olive oil, and more for coating bowls and stuff</li>
+</ul></div>
+<h2>Toppings</h2>
+<div class="bodytext"><ul>
+<li>4 cups of pizza sauce</li>
+<li>Mozzarella cheese</li>
+<li>Ricotta cheese (for stuffing the crust, can use mozzarella or any cheese really)</li>
+<li>Meat/veggies or whatever else floats your boat</li>
+<li>Garlic + butter</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Mix the yeast into the water and let sit for about 5 minutes.</li>
+<li>In a large bowl, mix the flour, sugar, and salt.</li>
+<li>Add in olive oil and yeast mixture.</li>
+<li>Mix until a very loose, sticky ball forms then transfer to a floured surface to knead for 4-5 minutes.</li>
+<li>Let dough rise for several hours.</li>
+<li>Roll out dough onto floured surface and let sit for about 10 minutes.</li>
+<li>Transfer to an oiled baking pan and spread dough to cover whole pan surface.</li>
+<li>Line edges with ricotta cheese and fold over to form crust.</li>
+<li>Add all other toppings, layering first with cheese and meats/veggies and then pouring sauce over.</li>
+<li>Cook for about 30 minutes at 425 degrees Fahrenheit.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

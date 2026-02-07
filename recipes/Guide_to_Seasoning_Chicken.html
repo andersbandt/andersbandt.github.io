@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Guide to Seasoning Chicken - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Guide to Seasoning Chicken</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Chicken</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Herbs and Spices Blend</h3>
+<div class="bodytext"><ul>
+<li>1 ½ teaspoons sea salt</li>
+<li>1 teaspoon dried basil</li>
+<li>1 teaspoon crushed dried rosemary</li>
+<li>½ teaspoon garlic powder</li>
+<li>½ teaspoon dry mustard powder</li>
+<li>½ teaspoon paprika</li>
+<li>½ teaspoon ground black pepper</li>
+<li>½ teaspoon ground dried thyme</li>
+<li>¼ teaspoon celery seed</li>
+<li>¼ teaspoon dried parsley</li>
+<li>⅛ teaspoon ground cumin</li>
+<li>⅛ teaspoon cayenne pepper</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Simple - mix all ingredients in a blend with chicken together! Maybe add a little olive oil to help it stick!</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

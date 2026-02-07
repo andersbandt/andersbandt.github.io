@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Cinnamon Sugar Breadsticks - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Cinnamon Sugar Breadsticks</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Breadsticks</h3>
+<div class="bodytext"><ul>
+<li>1 ½ cups warm water (about 105 F)</li>
+<li>1 tablespoon active dry yeast</li>
+<li>2 tablespoons granulated sugar</li>
+<li>3-4 cups all-purpose flour</li>
+<li>½ teaspoon salt</li>
+</ul></div>
+<h3>Topping</h3>
+<div class="bodytext"><ul>
+<li>½ cup granulated sugar</li>
+<li>1 tablespoon ground cinnamon</li>
+<li>¼ cup butter (melted)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In the bowl of a stand mixer (or in a large bowl), stir together the warm water, yeast, and sugar. Let stand for 5-10 minutes or until foamy.</li>
+<li>Mix in 2 cups flour and salt. Continue adding flour a quarter cup at a time until dough clears the sides of the bowl.</li>
+<li>Knead dough for three minutes.</li>
+<li>Cover, and let the dough rest for 10 minutes.</li>
+<li>Grease an 11X17-inch baking sheet with nonstick cooking spray.</li>
+<li>Roll out the dough into about a 12x16-inch rectangle about ½-inch thick on a floured surface.</li>
+<li>Cut into 8 long strips. I like to use a pizza cutter to cut the dough.</li>
+<li>Cut the strips in half horizontally to make 16 strips.</li>
+<li>Twist strips or leave in strips.</li>
+<li>Place twist on prepared baking sheet.</li>
+<li>Repeat with remaining strips.</li>
+<li>Cover with greased plastic wrap, and let rise 20 minutes.</li>
+<li>Toward the end of the rising time, preheat oven to 350 F.</li>
+<li>Uncover, and bake 12-20 minutes or until golden brown.</li>
+<li>While breadsticks are baking, stir together granulated sugar and ground cinnamon.</li>
+<li>Brush bread sticks with half melted butter.</li>
+<li>Sprinkle with cinnamon sugar mixture.</li>
+<li>Drizzle remaining half butter over breadsticks.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Warm water: It's important that the water be the correct temperature. If the water is too hot, it will kill the yeast. If it's too cool, it will slow the rising time. If you don't have a kitchen thermometer, you can feel the water. It should feel like warm bath water. If it's too hot for you, it's too hot for the yeast. 
+Yeast: You can use an equal amount of instant yeast. If using instant yeast, there's no need to proof the yeast. 
+Butter: I use salted butter. If using unsalted butter, add a pinch or two of salt.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

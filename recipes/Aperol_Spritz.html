@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Aperol Spritz - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Aperol Spritz</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Drinks</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>3 parts of Prosecco D.O.C.</li>
+<li>2 parts of Aperol</li>
+<li>1 splash of soda</li>
+<li>1 slice of orange</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Place ice cubes in a stemmed balloon glass.</li>
+<li>Pour 3 parts of Prosecco D.O.C.</li>
+<li>Follow by pouring 2 parts of Aperol, and 1 ounce of soda.</li>
+<li>Slice an orange and use it as a garnish.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Making the perfect Aperol Spritz is as easy as 3-2-1. That’s a ratio of 3 parts Prosecco, 2 parts Aperol, 1 part soda water (or 90ml Prosecco, 60ml Aperol, and 30ml soda).
+Aperol Spritz is best served with ice, in a wine glass, garnished with a slice of orange, in good company.</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>Context here</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

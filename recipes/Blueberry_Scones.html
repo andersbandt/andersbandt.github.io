@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Blueberry Scones - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Blueberry Scones</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pastries</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 22 - 25 minutes (EFFICIENTLY)</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 25 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <div class="bodytext"><p><strong>Wait Time: </strong>At least 15 mins in the fridge</p></div>
+<h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>2 and 1/4 cups (275g) all-purpose flour (spoon &amp; leveled), plus more for hands and work surface</li>
+<li>1/2 cup (100g) granulated sugar</li>
+<li>2 and 1/2 teaspoons baking powder</li>
+<li>1 teaspoon ground cinnamon</li>
+<li>1/2 teaspoon salt</li>
+<li>1/2 cup (1 stick; 115g) unsalted butter, frozen</li>
+<li>1/2 cup (120ml) heavy cream (plus 2 tbsp for brushing)</li>
+<li>1 large egg</li>
+<li>1 and 1/2 teaspoons pure vanilla extract</li>
+<li>1 heaping cup (180g) fresh or frozen blueberries (do not thaw if using frozen)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Whisk flour, sugar, baking powder, cinnamon, and salt together in a large bowl. Grate the frozen butter using a box grater. Add it to the flour mixture and combine with a pastry cutter, two forks, or your fingers until the mixture comes together in pea-sized crumbs. Place in the refrigerator or freezer as you mix the wet ingredients together.</li>
+<li>Whisk 1/2 cup heavy cream, the egg, and vanilla extract together in a small bowl. Drizzle over the flour mixture, add the blueberries, then mix together until everything appears moistened.</li>
+<li>Pour onto the counter and, with floured hands, work dough into a ball as best you can. Dough will be sticky. If it’s too sticky, add a little more flour. If it seems too dry, add 1-2 more tablespoons heavy cream. Press into an 8-inch disc and, with a sharp knife or bench scraper, cut into 8 wedges.</li>
+<li>Brush scones with remaining heavy cream and for extra crunch, sprinkle with coarse sugar. (You can do this before or after refrigerating in the next step.)</li>
+<li>Place scones on a plate or lined baking sheet (if your fridge has space!) and refrigerate for at least 15 minutes.</li>
+<li>Meanwhile, preheat oven to 400°F (204°C).</li>
+<li>Line a large baking sheet with parchment paper or silicone baking mat. After refrigerating, arrange scones 2-3 inches apart on the prepared baking sheet(s).</li>
+<li>Bake for 22-25 minutes or until golden brown around the edges and lightly browned on top. Remove from the oven and cool for a few minutes before topping with vanilla icing.</li>
+<li>Leftover iced or un-iced scones keep well at room temperature for 2 days or in the refrigerator for 5 days.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>2% milk seems to work fine?? (I am skeptical of this note actually but I guess it deserves some merit)
+Grating the butter will help you, it is not a useless step. If you choose to cut the frozen butter with a knife instead, try to get really small cuts of the butter to avoid spending a ton of time trying to mix and smash the butter into the drys with your fingers.
+This last time I made these scones (which had some flaws) they turned out pretty airy. I wonder what needs to be changed in the recipe to make a very dense scone?
+The time after I made them, I want to comment that the dough was very wet and sticky. A little harder to handle on the cutting board before placing them on the pan, on which I used parchment paper. BUT they also turned out more dense than the airy time I commented on before. So take that into consideration.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

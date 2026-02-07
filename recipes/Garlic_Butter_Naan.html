@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Garlic Butter Naan - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Garlic Butter Naan</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breads and Doughs > Naan</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 17 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 5-7 minutes</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <div class="bodytext"><p><strong>Rise Time: </strong>2 hours, then another 15-20 minutes proof</p></div>
+<h2>Makes:</h2>
+<h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>3 garlic cloves</li>
+<li>1/3 cup warm water</li>
+<li>1 tsp white sugar</li>
+<li>1 package dry active yeast (about 2.25 teaspoons)</li>
+<li>1/4 cup butter</li>
+<li>1/4 cup plain yogurt</li>
+<li>2 cups bread flour, or more as needed or a little more than 300 grams</li>
+<li>1 tsp kosher salt</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a pan, heat some oil on high heat! Add some chopped garlic and make it yummy! Don’t burn it plz!</li>
+<li>Combine water, sugar, and yeast in a bowl. Let stand until yeast softens and forms a creamy foam, about 15 minutes.</li>
+<li>Add yogurt, bread flour, salt, and 1 tablespoon of the garlic butter to the yeast mixture. Stir with a wooden spoon until a shaggy dough forms. Knead by hand until dough pulls away from the sides of the bowl, adding more water or flour as needed. Turn dough out onto the counter and continue kneading into a smooth ball, 3 to 4 minutes.</li>
+<li>Place dough in a large bowl. Coat with a few more drizzles of garlic butter. Cover and let rise until doubled in volume, about 2 hours.</li>
+<li>Punch down dough and turn out onto the counter. Shape into a rough rectangle and cut into 6 pieces. Roll each piece into a ball and lightly dust with flour. Cover with plastic wrap and proof until slightly puffy, 15 to 20 minutes.</li>
+<li>Roll each piece into an oval about 1/8 inch thick. Sprinkle some cilantro on top and press lightly to adhere.</li>
+<li>Preheat a cast iron skillet until very, very hot, about 5 minutes. Cook each naan until large bubbles form, 1 to 2 minutes. Flip over, press gently, and cook until bubbles on the bottom are charred, 2 to 3 minutes more </li>
+<li><em>(see Notes for alternative cooking method)</em></li>
+<li>Brush naan with more garlic butter before serving.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>An alternative cooking method involves the oven. Oven at 475 F, line baking sheet with parchment paper. Place in oven for 5-7 minutes. Flip halfway through. Naan should be puffing up in the oven.</p></div>
+<div class="bodytext"><p>A cast-iron will give you a more authentic tandoori char. But oven is easy and I saw a good video where a guy did it.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

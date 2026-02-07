@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Crème Brûlée Cheesecake - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Crème Brûlée Cheesecake</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 20-30 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 90 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 8 ?? people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Crust</h3>
+<div class="bodytext"><ul>
+<li>2 cup graham cracker crumbs</li>
+<li>2 tablespoons granulated sugar</li>
+<li>1 tablespoon brown sugar</li>
+<li>1/2 teaspoon salt</li>
+<li>4 tablespoons butter, melted</li>
+</ul></div>
+<h3>Filling</h3>
+<div class="bodytext"><ul>
+<li>4 (8-oz.) cream cheese, room temperature</li>
+<li>1 cup sour cream</li>
+<li>1 cup sugar</li>
+<li>4 eggs</li>
+<li>1/4 cup all-purpose flour</li>
+<li>1 1/2 tablespoons lemon juice</li>
+<li>2 teaspoons vanilla bean paste</li>
+<li>2 tablespoons granulated sugar, divided</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat oven to 350°F</li>
+<li>In a bowl, stir together graham cracker crumbs, granulated sugar, brown sugar, and salt. Add butter and stir until dry ingredients are equally hydrated. Spray a 10-inch springform pan with cooking spray, and evenly press the graham cracker crumb mixture into the bottom of the pan.</li>
+<li>In the bowl of a stand mixer, beat cream cheese on medium-high until fluffy and satiny. Add sour cream and beat to incorporate. Scrape down sides of bowl, add sugar, and beat on low until just incorporated, then beat on medium-high for 2 minutes</li>
+<li>Add eggs, one at a time, waiting until each is fully incorporated before adding the next. Once last egg is added, beat on medium-high for 2 minutes. Add flour and mix for 1 minute. Scrape down sides of bowl and add lemon juice and vanilla bean paste; mix for an additional minute.</li>
+<li>Pour Filling over Crust in prepared springform pan. Wrap bottom and sides of the outside of the pan with several layers of heavy-duty aluminum foil. Place springform pan inside a large roasting pan, and fill the roasting pan with water so that it comes three-quarters of the way up the side of the pan. Carefully place roasting pan in oven and bake for 1 hour.</li>
+<li>Turn oven off but do not open the oven, leaving the cheesecake to sit in the cooling oven for an additional 30 minutes. Gently lift springform pan out of roasting pan and remove aluminum foil from pan. Leaving the cheesecake in the springform pan, run an offset spatula or knife around the edge of the cake, being careful not to cut the cake</li>
+<li>Allow cheesecake to cool on the counter for 45 minutes before refrigerating for 8 hours or overnight.</li>
+<li>Remove cheesecake from springform pan, sprinkle 1 tablespoon granulated sugar evenly across surface of cake. Use a blowtorch to caramelize the sugar on the surface by applying direct heat to the sugar until it takes on a light brown color, moving in small circles around the surface of the cake until it's evenly caramelized. Allow to sit for 1 minute before adding another tablespoon of sugar on top of the first layer and repeat the caramelizing process. Allow to cool for 2 minutes before slicing and serving.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>I still haven’t gotten a firm grasp on how large to make the graham cracker crumbs. However, I did adjust the amount from 1 ¼ cup to 2 cups.</p></div>
+<div class="bodytext"><p>The aluminum foil thing is pretty annoying, I dunk tested it with the crust and saw some water popping through. Not sure the impact of a small water leak on the crust quality</p></div>
+<div class="bodytext"><p>For the oven cooking, try to put it in the middle of the oven</p></div>
+<div class="bodytext"><p>I’ve made this dish 72 hours before serving, I think 24 hours might be the most optimal but who knows how much the flavor drops off</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

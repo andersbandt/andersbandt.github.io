@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Beignets - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Beignets</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Dough</h3>
+<div class="bodytext"><ul>
+<li>1/2 cup (122g) whole milk</li>
+<li>3/4 cup (177g) of water</li>
+<li>1/4 cup (60g) granulated sugar </li>
+<li>2 teaspoons (6g) instant yeast</li>
+<li>1 egg</li>
+<li>1 egg yolk</li>
+<li>3 tablespoons (42g) unsalted butter, melted</li>
+<li>3.5 cups (525g) of all-purpose flour, plus more for dusting </li>
+<li>1 teaspoon (6g) fine sea salt</li>
+<li>1/2 teaspoon (2g) amylase (optional, almost certainly not needed)</li>
+<li>Vegetable oil for frying</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a container, add water and milk; heat to 95F, whisk in yeast and sugar till dissolved. </li>
+<li>In a bowl, mix flour, salt, and amylase. To the milk mixture, whisk in whole egg and one egg yolk, and while constantly whisking, slowly stream in melted butter (&lt;100F) until everything is homogenous.</li>
+<li>Add your liquid to your stand mixer fitted with the dough hook attachment, turn it on to medium-low, and add your flour in; 1/4 cup at a time until all the flour has been added and you have a rough dough. Remove bowl from the stand mixer, and knead by hand for 3 to 5 minutes or until smooth. Next, roll your dough into a ball, place it in a greased bowl, cover with plastic wrap, and rise at room temperature for 2 hours or until doubled. </li>
+<li>Punch down your dough to release the air and place it on a lightly floured work surface. Dust it with flour and roll it out until you get an even size rectangle, about a 1/4" - 1/2" thick. Cut 2” wide long strips down your dough, then cut across the strips at 2” intervals to get 2x2” squares. Or you can make triangles. </li>
+<li>Place each square on a lined parchment paper baking sheet. Cover with plastic wrap and rest for 5 minutes. </li>
+<li>Fill a large, heavy-bottom pot halfway with oil (about 3.5 quarts for a 7 quart pot) and set it in a candy/deep fryer thermometer. Heat up to 330-360 degrees Fahrenheit and add in as many squares as you can without overcrowding; fry your squares, flipping occasionally to color both sides, for about 2 to 3 minutes or until light golden brown. Remove and drain on a plate lined with paper towels. Paper towels are a must.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>There seems to be a lot of conflicting information online about the usage of shortening vs. butter, evaporated milk vs. whole milk. Maybe in the future, try to change up the recipe! There is also conflicting information on rising at room temperature vs. in the fridge.</p></div>
+<h3>2/19/23 attempt</h3>
+<div class="bodytext"><p>I let the dough rise in a bowl, for about 6 hours. It possibly got a little less airy with the large rise time? I used whole milk and butter. I also used a food processor instead of a stand mixer and it was fine.</p></div>
+<div class="bodytext"><p>Comments on the dough, less airy than normal. The final beignets were definitely flaky, less of a large air gap in the beignet though. A little more dense. Still GAS.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

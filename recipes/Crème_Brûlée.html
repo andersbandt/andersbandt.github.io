@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Crème Brûlée - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Crème Brûlée</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>6 egg yolks</li>
+<li>6 tablespoons white sugar, divided</li>
+<li>1/2 teaspoon vanilla extract</li>
+<li>2 1/2 cups heavy cream</li>
+<li>2 tablespoons brown sugar</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat oven to 375 degrees F.</li>
+<li>Beat egg yolks, 4 tablespoons white sugar and vanilla extract in a mixing bowl until thick and creamy.</li>
+<li>Pour cream into a saucepan and stir over low heat until it almost comes to boil. Remove the cream from heat immediately. </li>
+<li>Pour a little of the hot cream into the egg mixture and whisk briskly. Then pour that mixture into the rest of the cream and whisk. There may be a lot of foam on the top, so just skim it off.</li>
+<li>Pour mixture into individual serving dishes or one dish, and then place those dishes into a larger baking dish. Pour hot water into the dish until it comes to halfway up the sides of the dishes.</li>
+<li>Bake in oven for 15-30 minutes.They are done when they jiggle just slightly in the middle when you shake the dish. </li>
+<li>Remove and let cool for 15 minutes, then remove dishes and put in the refrigerator to chill. </li>
+<li>In a small bowl combine remaining 2 tablespoons white sugar and brown sugar. Sift this mixture evenly over custard. </li>
+<li>Propane torch the top</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Instead of propane torching it, you can put it under a broiler but I’m not really sure how to do that</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

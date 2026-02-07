@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Bagels - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Bagels</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breads and Doughs > Bagels</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Bagels</h3>
+<div class="bodytext"><ul>
+<li>1 ¼ cups water</li>
+<li>4 ½ cups bread flour</li>
+<li>3 tablespoons white sugar</li>
+<li>1 teaspoon salt</li>
+<li>2 tablespoons vegetable oil</li>
+<li>1 tablespoon instant yeast</li>
+<li>4 quarts water</li>
+<li>1 cup honey (optional)</li>
+</ul></div>
+<h2>Toppings</h2>
+<div class="bodytext"><ul>
+<li>Cinnamon sugar</li>
+<li>Poppy seeds</li>
+<li>Garlic and onion flakes</li>
+<li>Sesame seeds</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Combine 1 ¼ cup water, flour, sugar, salt, vegetable oil, and yeast in the mixing bowl of a stand mixer. Mix on low speed using the dough hook until well-developed, about 8 minutes. To ensure the gluten has developed fully, cut off a walnut-sized piece of dough. Flour your fingers, and then stretch the dough: if it tears immediately, the dough needs more kneading. Fully developed dough should form a thin translucent "windowpane."</li>
+<li>Transfer the dough to a lightly oiled bowl, cover it with plastic wrap and a kitchen towel, and let rise for 2 hours.</li>
+<li>Punch the dough down, place it on a lightly floured work surface, and use a knife or dough scraper to divide the dough into 6 pieces (or more, for smaller bagels). Roll each piece of dough into a sausage shape about 6 inches long. Join the ends to form a circle. Repeat with the remaining dough, and let the bagels rest for 15 minutes.</li>
+<li>Preheat oven to 475°. Line a baking sheet with parchment paper. Arrange small plates with poppy seeds, sesame seeds, and onion flakes next to the baking sheet.</li>
+<li>Bring 4 quarts water to a boil in a large pot. Add honey, if desired. Boil the bagels, three at a time, until they rise to the surface of the pot, about 1 minute per side. Remove the bagels with a slotted spoon and place them on the parchment-lined baking sheet.</li>
+<li>Dip the tops of the wet bagels into the toppings and arrange them, seeds up, on the baking sheet. Sprinkle with coarse salt, if desired. Bake in the preheated oven until the bagels begin to brown, 15 to 20 minutes.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Cream Puffs - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Cream Puffs</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pastries</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 cup water</li>
+<li>1/2 cup butter</li>
+<li>1/4 teaspoon salt</li>
+<li>1 cup all-purpose flour</li>
+<li>4 eggs</li>
+<li>2 tablespoons milk</li>
+<li>1 egg yolk, lightly beaten</li>
+<li>2 cups heavy whipping cream</li>
+<li>1/4 cup confectioners' sugar</li>
+<li>1/2 teaspoon vanilla extract</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a large saucepan, bring the water, butter and salt to a boil over medium heat. Add flour all at once and stir until a smooth ball forms. Remove from the heat; let stand for 5 minutes. Add eggs, one at a time, beating well after each addition. Continue beating until mixture is smooth and shiny.</li>
+<li>Drop by 1/4 cupfuls 3 in. apart onto greased baking sheets. Combine milk and egg yolk; brush over puffs. Bake at 400° for 30-35 minutes or until golden brown. Remove to wire racks. Immediately cut a slit in each for steam to escape; cool.</li>
+<li>In a large bowl, beat cream until it begins to thicken. Add sugar and vanilla; beat until almost stiff. Split cream puffs; discard soft dough from inside. Fill the cream puffs just before serving. Dust with confectioners' sugar. Refrigerate leftovers.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

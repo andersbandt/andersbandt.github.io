@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Buddha Bowls - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Buddha Bowls</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Vegetarian</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>1 protein source</h3>
+<div class="bodytext"><ul>
+<li>Chickpeas</li>
+<li>Tofu</li>
+<li>Meat (chicken)</li>
+<li>Sashimi style fish</li>
+</ul></div>
+<h3>2 cups cooked grain</h3>
+<div class="bodytext"><ul>
+<li>Brown rice</li>
+<li>Quinoa</li>
+<li>Couscous</li>
+</ul></div>
+<h3>2 cups mixed vegetables</h3>
+<div class="bodytext"><ul>
+<li>Bell peppers</li>
+<li>Broccoli</li>
+<li>Carrots</li>
+<li>Cucumber</li>
+<li>Zucchini</li>
+</ul></div>
+<h3>2 cups extraneous vegetable</h3>
+<div class="bodytext"><ul>
+<li>Red cabbage</li>
+<li>Potatoes</li>
+<li>Sushi ginger</li>
+<li>Pickled red onion</li>
+<li>Sweet potatoes</li>
+</ul></div>
+<h3>1 sauce</h3>
+<div class="bodytext"><ul>
+<li>Hummus</li>
+<li>Tzatziki </li>
+</ul></div>
+<h3>A lil’ spice (optional)</h3>
+<div class="bodytext"><ul>
+<li>Jalapeno</li>
+<li>Hot sauce</li>
+</ul></div>
+<h3>A lil’ sweet (optional)</h3>
+<div class="bodytext"><ul>
+<li>Lime slices</li>
+<li>Chopped herbs (parsley, basil, etc.)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Cook potatoes and mixed vegetable on a lined baking sheet for 20-25 minutes</li>
+<li>Assemble Buddha bowls</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Making this meal for a party of 4, so I’m spitballing general times and how this will go</p></div>
+<div class="bodytext"><p>Let’s say eating at 6pm</p></div>
+<h3>Meat cooking times</h3>
+<div class="bodytext"><p>Tofu will take 30 minutes in the oven
+Salmon will take 20 minutes in the oven</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

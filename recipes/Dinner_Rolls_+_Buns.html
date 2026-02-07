@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Dinner Rolls + Buns - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Dinner Rolls + Buns</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breads and Doughs > Bread Appetizers and Sides</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 25 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 25 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 8 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>340 g (1 1/2 cups or 12 oz) Milk</li>
+<li>57 g (1/4 cup or 4 Tbs) Salted butter</li>
+<li>560 g (~4 1/2 cups) Bread flour</li>
+<li>10 g (1 1/2 tsp) Salt</li>
+<li>30 g (2 Tbs) Sugar</li>
+<li>4 g (1 tsp) Instant yeast</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Melt butter into warm milk. The milk/butter mixture should be warm to the touch. Not hot. (Over 130º F (54º C) can kill the yeast).</li>
+<li>Pour the milk/butter into a large mixing bowl and then mix in the combined dry ingredients until fairly well incorporated.</li>
+<li>Let rest 10 minutes.</li>
+<li>Knead for 5 minutes or do series of short stretch and folds per the Dinner Roll video.</li>
+<li>Let proof at room temp until dough has about doubled in volume (roughly 2-3 hours).</li>
+<li>Divide dough in balls according to what you're baking. 57 g (2 oz) balls for dinner rolls. 85 g (3 oz) for hotdog buns. 114 g (4 oz) for hamburger buns. Or you can use all the dough to make a sandwich loaf.</li>
+<li>Cover with plastic wrap and let proof another hour or so.</li>
+<li>Bake in 400º F (204º C) preheated oven. Pull-apart dinner rolls take about 25 minutes. Hamburger and hotdog buns take about 18 minutes. Loaf of bread about 35-40 minutes. Can check doneness with instant read thermometer when internal temp reaches 200º F (93º C).</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>The dough I used in the video actually consisted of a 50-50 blend of bread flour and bolted spelt flour. Same total four weight as what's shown in the above instructions.</p></div>
+<div class="bodytext"><p>Try not to over bake as the dough tends to dry out quickly</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

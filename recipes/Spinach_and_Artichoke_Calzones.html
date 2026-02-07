@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Spinach and Artichoke Calzones - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Spinach and Artichoke Calzones</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pizza</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 20 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 25 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 6 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>About xxx ounces of  pizza dough</li>
+<li>4 oz. cream cheese</li>
+<li>4 oz. full-fat ricotta cheese</li>
+<li>1 cup shredded mozzarella cheese</li>
+<li>¼ cup grated parmesan cheese</li>
+<li>2 cloves garlic, minced</li>
+<li>5 oz. frozen spinach, defrosted and squeezed dry (see notes)</li>
+<li>6 oz. marinated artichoke hearts, chopped</li>
+<li>4 tablespoon unsalted butter</li>
+<li>½ teaspoon garlic powder</li>
+<li>½ teaspoon Italian seasoning</li>
+<li>¼ teaspoon salt</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat the oven to 425°F. Line a large baking sheet with parchment paper.</li>
+<li>In a large bowl, mix together the cream cheese, ricotta, shredded mozzarella, and parmesan with a rubber spatula or sturdy spoon. It's okay if there's still some chunks, but it will be best if it's completely mixed together.</li>
+<li>Add the minced garlic, defrosted and dried spinach, and chopped artichokes. Mix together until thoroughly combined. Set aside.</li>
+<li>On a clean work surface dusted heavily with flour, split your pizza dough into four pieces. (You can also split into six or eight pieces and make smaller calzones). Either use a rolling pin to roll the pieces out into circles, about 10 inches in diameter and ¼-inch thick, OR use your hands to gently press/pull the dough into the desired shape.</li>
+<li>Add about ⅓ cup of filling to each circle. Use a smaller amount for smaller calzones.</li>
+<li>Fold the calzone in half to form a half circle. Use your figners to press the ends together to seal – I like to pinch/fold the dough to create a crimped edge. If the dough is not sticking together, wet your finger with a little bit of water and run it along the edge of the dough before pressing together.</li>
+<li>Transfer the calzones to the parchment-lined baking sheet. You want the calzones to be about 2 inches apart, so you may need to use two baking sheets depending on how large your calzones are.</li>
+<li>In a microwave safe bowl, melt the butter. Stir in the garlic powder, Italian seasoning, and salt. Use a pastry brush to brush the mixture onto the tops of all the calzones. If you don't have a brush, you can use a spoon to drizzle the butter on top and use the back of the spoon to spread around to coat the dough.</li>
+<li>Using a sharp knife, score the calzones. To do this, cut three small slits (about 1-2 inches) in the dough on the tops of the calzones. This will allow the steam to escape from the inside as they cook.</li>
+<li>Bake the calzones for 20-25 minutes, until deeply golden brown and the bottoms are not soft or soggy.</li>
+<li>
+<div class="bodytext"><p>Let cool for about 5 minutes before serving. If you made the large calzones, I recommend cutting in half so they are easier to eat. Serve with warm marinara or ranch for dipping.</p></div>
+</li>
+<li>
+<div class="bodytext"><p>Notes</p></div>
+</li>
+<li>Make sure to squeeze the spinach dry with some paper towels after it’s defrosted. This will make sure it doesn’t add too much moisture to the filling.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

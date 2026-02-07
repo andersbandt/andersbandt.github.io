@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Slow Cooker Garlic Mashed Potatoes - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Slow Cooker Garlic Mashed Potatoes</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Vegetables > Potatoes</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>3 pounds baking potatoes (Russet or Yukon gold) peeled and cut into 2-inch pieces</li>
+<li>6 cloves garlic, halved</li>
+<li>1 bay leaf</li>
+<li>2 (14 ounce) cans seasoned chicken broth with roasted garlic</li>
+<li>1 cup whole milk</li>
+<li>1/4 cup butter</li>
+<li>1 teaspoon salt</li>
+<li>Freshly ground black pepper</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a 3 ½ or 4 quart slow cooker, combine potatoes, garlic, and bay leaf. Pour broth over potato mixture.</li>
+<li>Cover and cook on low-heat setting for 6 to 8 hours or on high-heat setting for 3 to 4 hours. </li>
+<li>Drain potatoes in a colander over a bowl to catch the cooking liquid. Remove and discard bay leaf. Return potatoes to slow cooker. Mash potatoes with a potato masher.</li>
+<li>In a small saucepan, heat milk and butter until steaming and butter almost melts. Add milk mixture, salt, and enough of the reserved cooking liquid to mash potatoes to reach desired consistency.</li>
+<li>To serve, transfer potatoes to a serving bowl. Sprinkle with freshly ground black pepper. If desired, garnish with bay leaves.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Return mashed potato to slow cooker; keeps warm on low or warm setting for up to 2 hours. If the mixture thickens, stir in more of the reserved cooking juices to reach desired consistency. 
+Line your slow cooker with a disposable slow cooker liner. Add ingredients as directed in recipe. Once your dish is finished cooking, spoon the food out of your slow cooker and simple dispose of the liner.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

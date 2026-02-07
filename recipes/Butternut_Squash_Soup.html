@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Butternut Squash Soup - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Butternut Squash Soup</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Soups</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 45 minutes, mainly for chopping the butternut squash</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 15 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 6 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>3 lb roasted butternut squash</li>
+<li>2 tbsp butter or olive oil, for dairy free option</li>
+<li>1.5 cups chopped yellow onion</li>
+<li>1/4 tsp salt</li>
+<li>1/8 tsp black pepper</li>
+<li>1/8 tsp ground cinnamon</li>
+<li>1/8 tsp ground nutmeg</li>
+<li>6 cups vegetable or chicken broth**</li>
+<li>drizzle of heavy cream optional, for garnish</li>
+<li>toasted pumpkin seeds optional, for garnish</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat the oven to 400 F. Line a baking sheet with parchment paper.</li>
+<li>Peel and cut the squash into 1" cubes</li>
+<li>Place the cubes into a large bowl, and toss well with the oil, salt, and black pepper.</li>
+<li>Spread the pieces out evenly onto the parchment lined baking sheet, scraping any oil from the bowl onto the paper as well.</li>
+<li>Roast for 30 minutes, until the cubes are starting to brown on the edges.</li>
+<li>Use a turner to flip and redistribute the squash throughout the pan, and roast for another 10-20 minutes, until the pieces are soft and thoroughly caramelized on the outer surfaces, but not burned. It's important to keep your eye on it.</li>
+<li>Melt the butter in a large pot over medium heat, then add the onion, salt, and pepper, and cook for 10 minutes, until the onions are soft.</li>
+<li>Add the roasted butternut squash cubes and cinnamon, and stir for 2 minutes, until the cinnamon smells fragrant.</li>
+<li>Add the stock, bring the liquid to a boil over high heat, then reduce to a simmer. Cook for 2 minutes at a simmer.</li>
+<li>Puree everything together, either using an immersion blender, or by cooling the soup slightly and blending in a blender (you will likely need to do this in batches).</li>
+<li>Taste, and see if it needs more salt or pepper.</li>
+<li>Serve as is, or with a drizzle of heavy cream and a few pumpkin seeds, if desired. Enjoy!</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Purchasing 8 pounds of translate to about 5 pounds of cut butternut squash. However, that’s with some crude peeling with a butcher knife instead of a proper peeler.</p></div>
+<div class="bodytext"><p>I added a splash of heavy cream, could do half-and-half as well.</p></div>
+<div class="bodytext"><p>I’m tempted to make a garlic/celery version as well.</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>Made this first for Thanksgiving 2025</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

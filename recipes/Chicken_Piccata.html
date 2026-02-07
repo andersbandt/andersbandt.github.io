@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Chicken Piccata - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Chicken Piccata</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Chicken</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 10 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 20 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 4 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>4 (4 ounce) boneless, skinless chicken breast halves</li>
+<li>1 1/2 teaspoons kosher salt</li>
+<li>1 teaspoon ground black pepper</li>
+<li>2/3 cup all-purpose flour</li>
+<li>3 tablespoons olive oil, divided</li>
+<li>3 tablespoons butter, divided</li>
+<li>1/4 cup dry white wine, such as Pinot Grigio</li>
+<li>3 tablespoons capers, rinsed and drained</li>
+<li>3/4 cup chicken stock</li>
+<li>1/4 cup fresh lemon juice</li>
+<li>1 teaspoon lemon zest</li>
+<li>1/4 cup chopped fresh parsley</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Slice chicken breasts in half lengthwise and lightly pound to 1/2-inch thick. Season evenly on both sides with salt and pepper. Dredge each piece in flour to coat the surface and shake off any excess flour.</li>
+<li>Heat 2 tablespoons oil and 1 1/2 tablespoons butter in a large skillet over medium-high heat until just beginning to smoke. Add 1/2 of the chicken and cook, undisturbed, until browned and easily released from the skillet, 2 1/2 to 3 minutes. Flip and cook for 2 more minutes. Remove from the skillet. Add remaining 1 tablespoon oil to the drippings and repeat the cooking process with remaining chicken. Reserve all chicken on a plate.</li>
+<li>Reduce heat to medium and melt remaining 1 1/2 tablespoons butter in the skillet. Add wine and capers and stir, scraping to release any browned bits from the skillet; bring to a simmer. Cook for 2 minutes to slightly reduce. Add chicken stock, lemon juice, and lemon zest; stir to combine. Bring to a simmer and cook for 2 minutes.</li>
+<li>Return chicken to the skillet and cook, turning occasionally in the sauce, until chicken is no longer pink in the center, the juices run clear, and the sauce has thickened slightly, 3 to 5 minutes.</li>
+<li>Remove from heat and sprinkle with parsley to serve.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>For easy prep, use chicken cutlets instead of breasts</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>Brooklyn last meal 🙂</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

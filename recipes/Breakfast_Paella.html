@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Breakfast Paella - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Breakfast Paella</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Rice Dishes</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 tablespoon paprika</li>
+<li>2 teaspoons dried oregano</li>
+<li>Salt and black pepper</li>
+<li>2 pounds skinless, boneless chicken breasts, cut into 2 inch pieces</li>
+<li>2 tablespoons olive oil, divided</li>
+<li>3 cloves garlic, crushed</li>
+<li>1 teaspoon crushed red pepper flakes</li>
+<li>2.5 cups uncooked short-grain white rice (original recipe 2 cups)</li>
+<li>1 pinch saffron threads</li>
+<li>1 bay leaf</li>
+<li>1/2 bunch Italian flat leaf parsley, chopped</li>
+<li>1 quart chicken stock</li>
+<li>2 lemons, zested</li>
+<li>2 tablespoons olive oil</li>
+<li>1 yellow onion, chopped (Spanish onion if you can find it)</li>
+<li>1 red bell pepper, coarsely chopped</li>
+<li>1 pound chorizo sausage, casings removed and crumbled</li>
+<li>1 pound shrimp, peeled and deveined</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

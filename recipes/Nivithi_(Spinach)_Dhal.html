@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Nivithi (Spinach) Dhal - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Nivithi (Spinach) Dhal</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Indian</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>150g (5.3oz) of red lentils</li>
+<li>700ml (0.74quarts) of vegetable stock</li>
+<li>400ml (0.42quarts) of coconut milk</li>
+<li>400g (14.1oz) sweet potato small dice, skin removed</li>
+<li>80g (2.8oz) of spinach</li>
+<li>2 medium tomatoes</li>
+<li>1 red pepper, diced</li>
+<li>1 medium-size onion</li>
+<li>2 garlic cloves</li>
+<li>2 teaspoons turmeric</li>
+<li>1/2 tsp cumin</li>
+<li>1 teaspoon garam masala</li>
+<li>1 cinnamon stick</li>
+<li>pinch of chili powder (adjust to preference)</li>
+<li>3 tablespoons of canola oil</li>
+<li>dash of lime juice</li>
+<li>Salt</li>
+<li>Coriander (optional)</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>Oven roast sweet potato and red pepper</h3>
+<div class="bodytext"><ul>
+<li>Preheat the oven to 180C (365F) . Mix diced sweet potato and diced red pepper with enough oil to coat and a little bit of salt. Place on a tray with baking paper ready to roast. On the same tray place 2 medium tomatoes and put everything in the oven for 20-25 minutes.</li>
+</ul></div>
+<h3>Cook lentils</h3>
+<div class="bodytext"><ul>
+<li>Place red lentils, vegetable stock and cinnamon stick in a medium-size pot, bring to the boil then reduce to simmer for around 30 minutes.</li>
+</ul></div>
+<h3>Make onion spice mixture</h3>
+<div class="bodytext"><ul>
+<li>In a frying pan, heat oil over medium heat and add diced onion. Sweat the onion for 5 minutes then add minced garlic cloves, turmeric, cumin, garam masala (add a little more oil if it looks too dry) Once the spices release the fragrance you can transfer everything to the pot with lentils.</li>
+</ul></div>
+<h3>Add coconut milk to lentils</h3>
+<div class="bodytext"><ul>
+<li>By this time your lentils should be cooked nicely, add 400ml of coconut milk and bring it back to simmer.</li>
+</ul></div>
+<h3>Add roasted vegetables, spinach, etc.</h3>
+<div class="bodytext"><ul>
+<li>Once roasted vegetables are ready transfer them to the master pot, remember to remove the skin from the tomatoes and smash them apart first.</li>
+<li>Add spinach, a dash of lime juice and a pinch of chili powder.</li>
+<li>Continue simmering Dhal until the right consistency is reached, add more water if it seems too thick.</li>
+<li>Serve with rice, flatbread or enjoy on its own!</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Reserve adding some coconut milk towards the later stages of the cooking to preserve the bright color of the dish</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

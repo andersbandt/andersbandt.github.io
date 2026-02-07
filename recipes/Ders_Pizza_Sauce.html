@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Ders Pizza Sauce - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Ders Pizza Sauce</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pizza</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 5 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 30 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 6 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>Olive oil</li>
+<li>Half an onion</li>
+<li>Garlic</li>
+<li>1 can of tomato sauce</li>
+<li>A little water</li>
+<li>Salt and pepper</li>
+<li>Spices (red pepper flakes, paprika, cayenne pepper)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Saute the onion with the garlic, red pepper flakes, oil.</li>
+<li>After starting to brown, add the tomato sauce</li>
+<li>Add a little water and bring to boil (or whatever you would call it for a sauce)</li>
+<li>Let it simmer for 30 minutes. Then it should be good to put on your pizza.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>This makes enough pizza sauce for about 1-2 pizzas. Definitely more than 1 though, so closer to 2. Maybe 1.75 pizzas.</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>I made this recipe once (October 21st, 2023) and Nolan really liked it so decided to write it down</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Banh Mi - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Banh Mi</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Vietnamese</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>4 crusty long bread rolls</li>
+<li>6 tablespoon pork or chicken pate</li>
+<li>6 tablespoon mayonnaise</li>
+<li>4 - 8 slices Thi Nguoi ("pink ham") OR brawn</li>
+<li>4 - 8 slices Cha Lua Vietnamese pork loaf OR chicken loaf</li>
+<li>4 - 8 slices roast or grilled pork cold cuts</li>
+<li>1.5 cups fresh coriander/cilantro sprigs</li>
+<li>2 cucumbers, finely sliced lengthwise into long strips</li>
+<li>4 green onion stems, cut into the length of the rolls</li>
+<li>2 jalapenos</li>
+<li>2 red chillies</li>
+<li>2 tsp Maggi Seasoning , for drizzling</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Split rolls down the centre of the top (see video).</li>
+<li>Spread 1.5 tbsp pate on one side, then 1.5 tbsp mayonnaise on top.</li>
+<li>Layer in the hams, cucumber slices and green onion.</li>
+<li>Stuff in plenty of carrots and coriander sprigs.</li>
+<li>Sprinkle with fresh chilli - as much as you dare!</li>
+<li>Drizzle with Maggi Seasoning (about 1/2 tsp per roll).</li>
+<li>Close sandwich together and devour!</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Pork loaf (Cha Lua) - basically the pork version of the more common chicken loaf sold at everyday delis. Find this at Vietnamese grocery stores. Sub: Chicken loaf from every day delis!
+Grilled/roast pork slices - authentic is to use pork belly cold cuts. I can't find them even in Vietnamese grocery stores, so I use supermarket roast pork slices - tastes the same, just less fat</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>I first really got introduced to Banh Mi while working at Texas Instruments, where it would get brought for breakfast on some Fridays! Until everyone quit!</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

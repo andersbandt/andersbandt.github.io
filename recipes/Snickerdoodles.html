@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Snickerdoodles - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Snickerdoodles</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 cup butter</li>
+<li>1 1⁄2 cups sugar</li>
+<li>1 teaspoon vanilla extract</li>
+<li>2 large eggs</li>
+<li>2 3⁄4 cups flour</li>
+<li>2 teaspoons cream of tartar</li>
+<li>1 teaspoon baking soda</li>
+<li>1⁄4 teaspoon salt</li>
+<li>3 tablespoons sugar</li>
+<li>3 teaspoons cinnamon</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat oven to 350°F.</li>
+<li>Mix butter, 1 1/2 cups sugar, vanilla extract and eggs thoroughly in a large bowl.</li>
+<li>Combine flour, cream of tartar, baking soda and salt in a separate bowl. Blend dry ingredients into butter mixture.</li>
+<li>Chill dough, and chill an ungreased cookie sheet for about 10-15 minutes in the fridge.</li>
+<li>Meanwhile, mix 3 tablespoons sugar, and 3 teaspoons cinnamon in a small bowl.</li>
+<li>Scoop 1 inch globs of dough into the sugar/ cinnamon mixture. Coat by gently rolling balls of dough in the sugar mixture. </li>
+<li>Place on chilled ungreased cookie sheet, and bake 10 minutes.</li>
+<li>Remove from pan immediately.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>You a pussy if you chill the dough because it might be a waste of time. But try it if you have the time maybe it helps. Also use the 1 cup measuring cup to pour the sugar and cinnamon in and then put the 1-inch balls in there and do a little shake with it. Gets them coated real nice. Peace.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

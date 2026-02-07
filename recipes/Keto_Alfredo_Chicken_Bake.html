@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Keto Alfredo Chicken Bake - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Keto Alfredo Chicken Bake</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Chicken</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 15 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 30 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 3-4 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>3 tablespoons olive or avocado oil</li>
+<li>1 lb. (approximately 8 cups) broccoli </li>
+<li>8 oz sliced mushrooms</li>
+<li>1.5 lbs boneless, skinless chicken breast</li>
+<li>1 tsp. Italian seasoning (or something like rosemary)</li>
+<li>1 tsp. sea salt</li>
+<li>¼ tsp. pepper</li>
+<li>1 cup shredded mozzarella cheese</li>
+<li>Alfredo sauce</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat the oven to 400 degrees F. Line a large baking sheet with foil or parchment paper and set aside.</li>
+<li>Place the chicken breasts, broccoli florets, and mushrooms on the prepared pan. Drizzle everything with oil and season with sea salt, pepper, and Italian seasoning - including both sides of the chicken.</li>
+<li>Bake for 20 to 25 minutes, or until the chicken is cooked through and the broccoli is tender.</li>
+<li>Prepare the alfredo sauce (recipe below, or use the dairy-free version in the notes) while the chicken and broccoli are cooking.</li>
+<li>When the chicken and broccoli are done cooking, let the chicken slightly cool, then chop or shred the chicken with 2 forks and place in a large mixing bowl.</li>
+<li>Add the broccoli, mushrooms, and alfredo sauce. Toss to combine.</li>
+<li>Transfer mixture to a large casserole dish and evenly sprinkle the top with mozzarella cheese. Bake for 10 minutes, or until the cheese is melted and browned.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

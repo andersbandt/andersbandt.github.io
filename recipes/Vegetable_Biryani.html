@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Vegetable Biryani - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Vegetable Biryani</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Rice Dishes</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 20 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 20 mins simmering, 15 mins simmering</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 6 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>3 cups of extra long basmati rice</li>
+<li>4 tablespoons of ghee or vegetable oil</li>
+<li>1 small cinnamon stick</li>
+<li>7 cardamom pods</li>
+<li>7 cloves</li>
+<li>1 star anise</li>
+<li>1 large red onion, sliced</li>
+<li>2 large green chillies, seeds removed and sliced</li>
+<li>3 teaspoons of garlic and ginger paste, or equivalent amount of garlic and ginger</li>
+<li>2 small potatoes, small dice</li>
+<li>1 medium carrot, sliced </li>
+<li>160 g of green beans, sliced</li>
+<li>1 teaspoon of salt</li>
+<li>1 tsp garam masala</li>
+<li>1/2 tsp turmeric</li>
+<li>1/2 tsp Kashmiri mild chili powder</li>
+<li>1/2 tsp ground cumin</li>
+<li>5 curry leaves (optional)</li>
+<li>3 tablespoons of natural yogurt</li>
+<li>half lemon juice and zest</li>
+<li>550ml (0.6quarts) of vegetable stock</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Soak the washed rice in water for 30-50 minutes.</li>
+<li>In a large frying pan or a pot, medium heat ghee and fry aromatics (cinnamon, cardamom, cloves and star anise) for 2 minutes </li>
+<li>Next, add sliced red onion, sliced green chilli and garlic and ginger paste, cook for 5 minutes.</li>
+<li>Turn up the heat and add 2 diced potatoes, sliced carrot and green beans, season with salt and cook until starts to brown, about 10 minutes</li>
+<li>Lower the heat and mix in garam masala, turmeric, mild chilli powder and cumin.</li>
+<li>Add 5 curry leaves, yoghurt, rice and vegetable stock, bring to a boil and reduce to a simmer, cover with a lid and continue cooking for around 15 minutes or until rice absorbs all the liquid.</li>
+<li>Once ready, mix it with a spoon, cover with a lid and rest for another 15 minutes.</li>
+<li>Your Biryani is ready to be served, drizzle with lemon juice and zest, adjust the saltiness if necessary. Enjoy!</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>At first I was like wtf too much ghee with 4 tbs but then after eating it I’m kinda like nah that’s a good amount of ghee</p></div>
+<div class="bodytext"><p>I made it with jalapenos and honestly don’t think its half bad</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Chocolate Chip Cookies - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Chocolate Chip Cookies</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 cup butter, softened</li>
+<li>1 cup white sugar</li>
+<li>1 cup packed brown sugar</li>
+<li>2 eggs</li>
+<li>2 teaspoons vanilla extract</li>
+<li>1 teaspoon baking soda</li>
+<li>4 teaspoons hot water</li>
+<li>½ teaspoon salt</li>
+<li>3 cups all-purpose flour <em>NOTE: might be too much?</em></li>
+<li>2 cups semisweet chocolate chips</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat oven to 350 degrees F (175 degrees C).</li>
+<li>Cream together the butter, white sugar, and brown sugar until smooth. Beat in the eggs one at a time, then stir in the vanilla. </li>
+<li>Dissolve baking soda in hot water. Add to batter along with salt. Stir in flour, chocolate chips, and nuts. Drop by large spoonfuls onto ungreased pans.</li>
+<li>Bake for about 10-13 minutes in the preheated oven, or until edges are nicely browned.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>With the baking soda, this recipe definitely produces a “risier” cookie. The dough doesn’t flatten out as much, and instead rises into a small mound.</p></div>
+<div class="bodytext"><p>If you are slightly high when you are cooking this recipe, and the dough doesn’t feel off - the RECIPE IS RIGHT. Verify that you have in fact added things such as TWO sticks of butter and TWO eggs.</p></div>
+<div class="bodytext"><p>Another thing to note is that if you kind of just have a craving to bake some cookies, consider making a half recipe. You (Anders) don’t REALLY eat cookies that often. So you’ll likely be satisfied with just the 8-10 or so that a half recipe makes.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

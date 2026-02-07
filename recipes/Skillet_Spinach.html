@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Skillet Spinach - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Skillet Spinach</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Vegetables</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 1/2 pounds baby spinach leaves</li>
+<li>2 tablespoons good olive oil</li>
+<li>2 tablespoons chopped garlic (6 cloves)</li>
+<li>2 teaspoons kosher salt</li>
+<li>3/4 teaspoon freshly ground black pepper</li>
+<li>1 tablespoon unsalted butter</li>
+<li>Lemon</li>
+<li>Sea or kosher salt, optional</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Rinse the spinach well in cold water to make sure it's very clean. Spin it dry in a salad spinner, leaving just a little water clinging to the leaves.</li>
+<li>In a very large pot or Dutch oven, heat the olive oil and saute the garlic over medium heat for about 1 minute, but not until it's browned. Add all the spinach, the salt, and pepper to the pot, toss it with the garlic and oil, cover the pot, and cook it for 2 minutes. Uncover the pot, turn the heat on high, and cook the spinach for another minute, stirring with a wooden spoon, until all the spinach is wilted. </li>
+<li>Using a slotted spoon, lift the spinach to a serving bowl and top with the butter, a squeeze of lemon, and a sprinkling of sea or kosher salt. Serve hot.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Steak Sandwich - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Steak Sandwich</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Sandwiches</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 3-4 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>3/4 cup mayonnaise , preferably whole egg</li>
+<li>1 large garlic clove , minced</li>
+<li>3 large onions , peeled and finely sliced (brown, white or yellow) (see note)</li>
+<li>40 g / 3 tbsp butter</li>
+<li>2 tablespoon brown sugar</li>
+<li>1 tablespoon balsamic vinegar</li>
+<li>1/4 teaspoon salt &amp; pepper</li>
+<li>600 - 700 g / 1.2 - 1.4 lb grilling beef steak</li>
+<li>Salt and pepper</li>
+<li>1 tablespoon vegetable oil</li>
+<li>60 g / 2 oz rocket /arugula or other lettuce of choice</li>
+<li>Mustard (I use American)</li>
+<li>Some good ass bread</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>Garlic aioli</h3>
+<div class="bodytext"><ul>
+<li>Mix mayonnaise and garlic together. Set aside for 30 minutes for the flavor to develop </li>
+</ul></div>
+<h3>Caramelized Onion</h3>
+<div class="bodytext"><ul>
+<li>Melt butter in a skillet over medium low heat. Add onions and stir to coat in butter. Place lid on (or place a baking tray over skillet) and leave for 20 minutes, stirring once or twice. Remove lid then cook for a further 20 minutes, stirring every now and then, until onion is golden (increase heat slightly if the color is not changing). Add sugar, vinegar, salt and pepper. Cook for a further 10 minutes until jammy. Remove from heat and keep warm.</li>
+</ul></div>
+<h3>Sandwich</h3>
+<div class="bodytext"><ul>
+<li>Take beef out of fridge 20 minutes before cooking. Season generously with salt and pepper.</li>
+<li>Heat oil in a skillet over high heat (or heat BBQ). Cook steak to your liking - if using a secondary cut like Bavette, skirt or flat iron, it's best medium rare.</li>
+<li>Transfer beef to a plate, cover loosely with foil and rest for 5 - 10 minutes. Then slice thinly against the grain.</li>
+<li>Cut your good ass bread and toast lightly.</li>
+<li>Spread the bottom piece generously with garlic aioli. Top with rocket, then tomato slices, beef, caramelized onion. Spread the top piece of bread with mustard then place on top.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>3 onions seems like a lot but properly carmalized onions reduce down a lot</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>Context here</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

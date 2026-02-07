@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Grilled Pork Ribs - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Grilled Pork Ribs</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pork</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1/4 cup light brown sugar</li>
+<li>2 Tbsp. smoked paprika</li>
+<li>1 1/2 tsp. onion powder </li>
+<li>1 1/2 tsp. garlic powder</li>
+<li>1 1/2 tsp. kosher salt</li>
+<li>1 tsp. ground black pepper</li>
+<li>1/2 tsp. ground cayenne pepper (optional)</li>
+<li>2 racks baby back ribs (about 5 to 6 lb. total)</li>
+<li>3 Tbsp. vegetable oil, plus more for oiling the grates</li>
+<li>1/2 cup chicken stock</li>
+<li>1/4 cup apple cider vinegar</li>
+<li>1 1/2 cups barbecue sauce, plus more to serve</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat a grill (charcoal or gas) to 300°F, with the coals or flames only under one half of the grill.</li>
+<li>For the spice rub: In a small bowl, mix the brown sugar, smoked paprika, onion powder, garlic powder, salt, black pepper, and cayenne, if using.</li>
+<li>Place the rack of ribs on a large sheet tray and remove the membrane from the underside of the ribs. Rub the vegetable oil all over both sides of the ribs, then sprinkle evenly with the spice rub. </li>
+<li>Place the ribs on the sheet tray, with the curves of the bones facing down. Add the chicken stock and vinegar to the tray. Wrap the tray tightly with aluminum foil and place on the grill over the side with no coals/flame. Cook over indirect heat until the internal temperature of the ribs reads 180°F to 190°F, about 90 minutes to 2 hours. (Alternatively, you can bake these ribs in a 300°F oven.)</li>
+<li>Increase the grill temperature to 375°F and oil the grill grates well. Transfer the ribs directly over the grill grates and brush the tops with the BBQ sauce. Cover and cook for 5 minutes. Carefully turn the ribs over and baste the other side with the barbecue sauce. Cover again and cook for an additional 5 minutes. Continue basting and turning the ribs until the barbecue sauce has created a sticky coating and the ribs are charred in spots, 10 to 20 minutes longer.</li>
+<li>Transfer the ribs to a cutting board, brush with any remaining sauce, cut into pieces and serve.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Yeah the recipe says 90 minutes to 2 hours but I’ve been fine cooking like 2.5 pounds of ribs at 350-400 degrees for only an hour. Then hit them for the last 5 minutes unwrapped.</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>I mean it’s grilled ribs. Classic.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Creamy Lemon Garlic Skillet Salmon - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Creamy Lemon Garlic Skillet Salmon</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Seafood</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredient</h2>
+<div class="bodytext"><p>4  (6-oz.) salmon fillets
+Kosher salt 
+Freshly ground black pepper 
+1 tbsp. extra-virgin olive oil 
+1 tbsp. butter 
+3 cloves garlic, minced
+1 tbsp. all-purpose flour 
+1 1/4 cup heavy cream 
+Juice and zest of 1 lemon 
+2 tablespoons chopped dill 
+Crushed red pepper flakes</p></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Season salmon all over with salt and pepper. In a large skillet over medium-high heat, heat oil. Add salmon, skin side-up, and cook until golden and seared, 6 minutes. Flip and cook until skin is crispy, about 5 minutes. Remove salmon from skillet and transfer to a plate. </li>
+<li>Reduce heat to medium, and melt butter. Stir in garlic and cook 30 seconds, then stir in flour and cook 30 seconds more. Whisk in heavy cream. Bring to a simmer and let thicken slightly, 2 to 4 minutes. Stir in lemon zest and juice and dill. Season with salt and pepper then return salmon to skillet and let simmer in sauce for 1 minute.</li>
+<li>Garnish with crushed red pepper flakes before serving.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Makes a little TOO much sauce. Possibly reduce the amount of heavy cream down from 1 ¼</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

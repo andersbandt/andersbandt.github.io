@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Cinnamon Bread - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Cinnamon Bread</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breads and Doughs</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 20 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 50 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 8 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Bread</h3>
+<div class="bodytext"><ul>
+<li>2 cups all-purpose flour</li>
+<li>1 cup white sugar</li>
+<li>1 cup buttermilk</li>
+<li>2 large eggs</li>
+<li>1/4  cup vegetable oil</li>
+<li>2 teaspoons vanilla extract</li>
+<li>2 teaspoons baking powder</li>
+<li>1 ½ teaspoons ground cinnamon</li>
+<li>1 teaspoon salt</li>
+<li>½ teaspoon baking soda</li>
+</ul></div>
+<h3>Topping</h3>
+<div class="bodytext"><ul>
+<li>2 tablespoons white sugar</li>
+<li>2 teaspoons margarine</li>
+<li>1 teaspoon ground cinnamon</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat the oven to 350 degrees F (175 degrees C). Grease a 9x5-inch loaf pan.</li>
+<li><strong>For bread:</strong> Beat flour, sugar, buttermilk, eggs, oil, vanilla, baking powder, cinnamon, salt, and baking soda in a large mixing bowl until well combined, about 3 minutes. Pour batter into the prepared loaf pan; smooth the top.</li>
+<li><strong>For topping:</strong> Stir together sugar, margarine, and cinnamon in a small bowl until crumbly; sprinkle over batter. Use a paring knife to swirl batter for a marbled effect.</li>
+<li>Bake in the preheated oven until a toothpick inserted into the center comes out clean, about 50 minutes. Remove bread from the pan to a wire rack to cool completely.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>If you don't have buttermilk, you may substitute it with milk plus 1 tablespoon vinegar to measure 1 cup.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

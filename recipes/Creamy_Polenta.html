@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Creamy Polenta - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Creamy Polenta</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; General</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 5 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 25 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 3 people for a side dish, 2 people for a larger portion</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>4 cups water</li>
+<li>1 1/2 teaspoons salt, or 1 teaspoon if using salted butter</li>
+<li>1 cup yellow polenta or coarsely ground cornmeal</li>
+<li>2 tablespoons unsalted butter</li>
+<li>1/4 cup cream cheese</li>
+<li>2 teaspoons parsley for serving</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Heat salted water (1 1/2 teaspoons of salt for 1 quart of water) to a boil over high heat in a thick-bottomed 2 or 3 quart pan. Slowly add the polenta into the boiling water, whisking while you add it to prevent any lumps from forming.</li>
+<li>Lower the heat to a very low simmer and add the butter. Continue to whisk the polenta until it starts to thicken. Then cover the pan and let the polenta cook for 25 minutes. Stir occasionally with a wooden spoon so that the polenta doesn't stick to the bottom of the pan. The polenta should be soft and tender when done. If not, let it cook a little longer.</li>
+<li>Add the cream cheese and stir it into the polenta. Taste and add more salt if necessary. (You can also add more cream cheese if you want it to be even creamier.)</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>This recipe really thickened up. As in, if you scoop some onto your plate it will be thick enough to cut a slice out of it with a fork. Not sure how to remedy that, probably more water?</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

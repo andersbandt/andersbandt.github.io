@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Swedish Pancakes - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Swedish Pancakes</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breakfast > Pancakes</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 5-7 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 4 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <div class="bodytext"><p><strong>Cooking Time: </strong>idk it’s pancakes maybe like 4-5 minutes per big pan pancake</p></div>
+<h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>4 eggs</li>
+<li>2 cups milk</li>
+<li>1/2 to 1 cup all-purpose flour</li>
+<li>1 tablespoon sugar</li>
+<li>1 pinch salt</li>
+<li>A little cinnamon</li>
+<li>2 tablespoons melted butter</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a large bowl, beat eggs with a wire whisk. Mix in milk, flour, sugar, salt,and cinnamon and melted butter.</li>
+<li>Preheat a skillet to medium heat. Pour a thin layer of batter on skillet, and spread to edges. Cook until the top surface appears dry. Cut into 2 or 4 sections, and flip with a spatula. Cook for another 2 minutes, or until golden brown. Roll each pancake up, and serve.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Butter the skillet really well, even adding more butter between pancakes.</p></div>
+<div class="bodytext"><p>It’s pretty hard to not get your pancake to completely disintegrate. So going to have to spend some time to figure out how to accomplish a nice, complete pancake that you can actually roll up.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

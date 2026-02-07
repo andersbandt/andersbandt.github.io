@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Chicken and Riced Cauliflower Casserole - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Chicken and Riced Cauliflower Casserole</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Chicken</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>nonstick cooking spray</li>
+<li>1/2 yellow onion (large)</li>
+<li>8 ounces cremini mushrooms</li>
+<li>2 cloves garlic</li>
+<li>2 tablespoons butter</li>
+<li>4 cups frozen riced cauliflower (thawed and drained)</li>
+<li>3 cups cooked chicken (diced or shredded)</li>
+<li>1 cup sour cream</li>
+<li>1 teaspoon dried parsley (optional)</li>
+<li>1 teaspoon garlic powder</li>
+<li>1/2 teaspoon paprika</li>
+<li>1 teaspoon salt</li>
+<li>1/4 teaspoon black pepper</li>
+<li>1 cup shredded cheddar cheese (for chicken mixture)</li>
+<li>1 cup shredded cheddar cheese (for topping)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat the oven to 375°F.</li>
+<li>Spray a 9x13-inch baking dish with nonstick cooking spray. Set aside.</li>
+<li>Finely the chop onion. Slice the mushrooms. Mince the garlic.</li>
+<li>Set a large pot over medium-high heat and add the butter. Once melted, add the onion and mushrooms. Saute until vegetables are browned and softened, 6-7 minutes. Add the minced garlic and continue cooking until fragrant, about 30 seconds. Add the riced cauliflower to the pot and cook, stirring constantly, for 1 minute longer. Remove pot from heat and transfer vegetable mixture to a large mixing bowl.</li>
+<li>Add the chicken, sour cream, dried parsley, garlic powder, paprika, salt, black pepper, and shredded cheese to the bowl. Fold into the vegetable mixture until all the ingredients are thoroughly combined.</li>
+<li>Transfer the chicken and vegetable mixture to the prepared baking dish. Sprinkle the shredded cheese evenly over the top.</li>
+<li>Bake the casserole on middle rack of oven until cheese is golden brown and dish is gently bubbling at the edges, 30-35 minutes.</li>
+<li>Check to see that casserole is done. Remove from oven or add time as needed.</li>
+<li>Allow the casserole to rest for 10-15 minutes before serving.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

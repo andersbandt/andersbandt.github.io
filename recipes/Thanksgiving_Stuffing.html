@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Thanksgiving Stuffing - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Thanksgiving Stuffing</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Sides</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 45 minutes, depending on how quickly you can cut vegetables</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 60 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 10 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>2 baguettes, country or sourdough bread</li>
+<li>8 tablespoons butter</li>
+<li>2 onions, chopped</li>
+<li>4 stalks celery, thinly sliced</li>
+<li>4 cloves garlic, minced</li>
+<li>1/2 tablespoon freshly chopped sage</li>
+<li>1/2 tablespoon fresh thyme leaves</li>
+<li>1/2 tablespoon freshly chopped rosemary</li>
+<li>Kosher salt</li>
+<li>Freshly ground black pepper</li>
+<li>1/4 cup freshly chopped parsley</li>
+<li>3 cups chicken broth**
+**</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Tear or slice bread into cubes and leave out overnight to dry out.</li>
+<li>Preheat the oven to 350º and butter a large baking dish.</li>
+<li>Next, cook vegetables. In a large skillet over medium heat, melt 3 tablespoons butter. Once butter is melted, add onion and celery and cook until soft and fragrant, 8 minutes. Stir in garlic, sage, thyme, and rosemary and cook until fragrant, 1 minute more. Season with salt and pepper.</li>
+<li>Stir in remaining 5 tablespoons butter and parsley to skillet.</li>
+<li>Place bread in a large bowl and add skillet mixture and chicken broth.</li>
+<li>Transfer mixture to prepared baking dish and cover with foil. Bake until cooked through at 350º F for 45 minutes. Then remove foil and cook until bread is golden, 15 minutes more.</li>
+<li>Garnish with parsley and serve.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>If in a rush to dry out bread - place bread on baking sheets and bake at 200º for 20 minutes. Although, this method yields worse results.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

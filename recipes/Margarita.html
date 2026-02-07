@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Margarita - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Margarita</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Drinks</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 wedge lime</li>
+<li>1 teaspoon coarse sea salt, or as needed</li>
+<li>1 large ice cube</li>
+<li>1 cup ice cubes, or as needed</li>
+<li>2 fluid ounces white tequila</li>
+<li>1 1/2 fluid ounces triple sec (or Cointreau for niceness)</li>
+<li>Sweetness (optional)</li>
+<li>Simple syrup (1:1 ratio water/sugar)</li>
+<li>Agave nectar</li>
+<li>1 fluid ounce freshly squeezed lime juice</li>
+<li>1 slice lime</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Gather all ingredients.</li>
+<li>Moisten the rim of a glass with a lime wedge. Sprinkle salt onto a plate. Lightly dip the moistened rim into the salt.</li>
+<li>Place a large ice cube in the glass and freeze the prepared glass until ready to serve.</li>
+<li>Fill a cocktail shaker with fresh ice. Add tequila, triple sec, and lime juice. Cover and shake vigorously until the outside of the shaker has frosted.</li>
+<li>Strain margarita into the chilled glass and garnish with a slice of lime.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>For the best results, be sure to use fresh ice, fresh limes, and a nice bottle of triple sec, like Cointreau. You'll also want to use a decent 100% agave white tequila.</p></div>
+<div class="bodytext"><p>Some like to add a dash of agave nectar for a little extra sweetness, simple syrup would have the same effect.</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>Fell in love with these in Dallas, TX baby!</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Rigatoni Italiano (with Sausage) - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Rigatoni Italiano (with Sausage)</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pasta</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 3-4 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>2 tablespoons olive oil</li>
+<li>1 large onion</li>
+<li>4 garlic cloves</li>
+<li>1 - 1/2 lb. italian sausage</li>
+<li>28 oz whole or crushed tomatoes</li>
+<li>1/4 cup fresh basil</li>
+<li>1/4 cup fresh oregano</li>
+<li>1 teaspoon red chili flakes</li>
+<li>2 teaspoons salt</li>
+<li>1 teaspoon pepper</li>
+<li>2 cups heavy cream</li>
+<li>1 1/2 cups grated parmesan cheese</li>
+<li>1 lb. rigatoni pasta</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Heat a large pot over medium heat. Add oil. Add onions and cook for 7-8 minutes until softened. Add garlic cloves and sausage. Cook for 7-8 minutes more until sausage begins to brown.</li>
+<li>Fill a large pot with water. Bring to a boil over high heat. Add a generous amount of salt to the water to infuse the pasta with flavor. Add pasta and cook according to package instructions.</li>
+<li>Add tomatoes. If using whole tomatoes, blend in a blender until smooth. Add fresh basil, oregano, red pepper flakes, salt, and pepper. Let it come to a boil and reduce.</li>
+<li>Stir in heavy cream and 1 cup of parmesan cheese, reserving 1/2 cup for garnish. Reduce heat to medium-low and let it simmer.</li>
+<li>Drain the pasta and add to the sauce. If you want it to be less "saucy" let the sauce simmer for 10 minutes longer.</li>
+<li>Taste for seasonings. Serve with remaining 1/2 cup of parmesan cheese and fresh basil.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Play with the tomato to cream ratio.
+Can either cook sausage on the side and add in, or cook in with the onions (like the recipe above says).</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>This is a mimic of one of my favorite dishes from Cremona in Dallas. They really make the sauce creamy, and serve the dish with a hefty cream to pasta ratio. Amazing garlic bread served on the side too, of course.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

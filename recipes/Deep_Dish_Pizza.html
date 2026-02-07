@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Deep Dish Pizza - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Deep Dish Pizza</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pizza</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 lb. pizza dough</li>
+</ul></div>
+<h2>Toppings</h2>
+<div class="bodytext"><ul>
+<li>½ lb Italian sausage</li>
+<li>10 slices mozzarella cheese</li>
+<li>½ cup freshly grated parmesan cheese</li>
+</ul></div>
+<h3>Sauce</h3>
+<div class="bodytext"><ul>
+<li>2 tablespoons butter</li>
+<li>1 onion, diced</li>
+<li>1 teaspoon salt</li>
+<li>1 teaspoon crushed red pepper</li>
+<li>1 teaspoon dried oregano</li>
+<li>2 cloves garlic, chopped</li>
+<li>1 teaspoon sugar</li>
+<li>30 oz crushed tomato with basil, 1 can</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>Pizza Sauce</h3>
+<div class="bodytext"><ul>
+<li>For the pizza sauce, melt the butter in a small saucepan and add the onion, salt, red pepper flakes, and oregano, and sauté until golden brown.</li>
+<li>Add the garlic, sugar, and crushed tomatoes, and simmer for roughly 20 minutes or until sauce thickens.</li>
+<li>Remove dough and bring onto floured surface.</li>
+<li>Cut dough in half and begin working dough out, ensuring that it is at least 2 inches (5 cm) wider than your deep dish pan.</li>
+</ul></div>
+<h3>Toppings and Assembly</h3>
+<div class="bodytext"><ul>
+<li>Preheat your oven to 425 °F</li>
+<li>Cook Italian sausage.</li>
+<li>Bring your dough into your oiled and floured deep dish pan.</li>
+<li>Using your hands press dough into sides of your dish making it as even as possible.</li>
+<li>Lay slices of mozzarella across the dough, covering the entire bottom.</li>
+<li>Add pieces of uncased italian sausage on top of the mozzarella and top with tomato sauce.</li>
+<li>Bake for 20-25 minutes or until crust starts to lightly brown and the cheese is melted.</li>
+<li>Enjoy! Sometimes it’s best for the pizza to cool for a couple minutes  to let the pizza thicken up.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

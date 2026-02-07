@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Asparagus Pizza - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Asparagus Pizza</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pizza</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Asparagus Pizza</h3>
+<div class="bodytext"><ul>
+<li>1 bunch asparagus</li>
+<li>1/2 small red onion</li>
+<li>2 tablespoons olive oil</li>
+<li>1/2 teaspoon pepper</li>
+<li>4 ounces fontina cheese</li>
+</ul></div>
+<h3>Pizza Dough</h3>
+<div class="bodytext"><ul>
+<li>3/4 cup warm water (105° to 115°)</li>
+<li>1 envelope active dry yeast</li>
+<li>325 grams [2 cups] all purpose flour</li>
+<li>1 teaspoon sugar</li>
+<li>3/4 teaspoon salt</li>
+<li>3 tablespoons olive oil</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>Asparagus Pizza</h3>
+<div class="bodytext"><ul>
+<li>Place a large cookie sheet in a 475° oven.</li>
+<li>In a large bowl, toss asparagus, red onion, olive oil, pepper.</li>
+<li>Stretch and roll out pizza dough into a 12-inch circle on large sheet of parchment paper. Top dough with fontina cheese, then the asparagus mixture.</li>
+<li>Remove hot cookie sheet from oven. Carefully slide parchment with dough onto the cookie sheet. Place in oven, bake 20 to 25 minutes or until bottom and edges are deep golden brown.</li>
+</ul></div>
+<h3>Pizza Dough</h3>
+<div class="bodytext"><ul>
+<li>Pour warm water into small bowl; stir in yeast. Let stand until yeast dissolves, about 5 minutes.</li>
+<li>Brush large bowl lightly with olive oil. Mix flour, sugar, and salt in processor. </li>
+<li>Add yeast mixture and 3 tablespoons oil; process until dough forms a sticky ball. </li>
+<li>Transfer to lightly floured surface. Knead dough until smooth, adding more flour by tablespoonfuls if dough is very sticky, about 1 minute. Transfer to prepared bowl; turn dough in bowl to coat with oil. Cover bowl with plastic wrap and let dough rise in warm draft-free area until doubled in volume, about 1 hour. Punch down dough. Roll out dough according to recipe instructions. (Start in center of dough, working outward toward edges but not rolling over them.)</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>The dough can be made ahead of time. Store in an airtight container in refrigerator.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Buffalo Chicken Wings with Blue Cheese Dressing - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Buffalo Chicken Wings with Blue Cheese Dressing</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Chicken</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 5 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 10 minutes for initial steam, 40-50 minutes after chilling in fridge</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 8 people, depends on use and how hungry you are!</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Buffalo Wings</h3>
+<div class="bodytext"><ul>
+<li>12 whole chicken wings</li>
+<li>3 ounces unsalted butter</li>
+<li>1 small clove garlic, minced</li>
+<li>1/4 cup hot sauce</li>
+<li>1/2 teaspoon kosher salt</li>
+</ul></div>
+<h3>Blue Cheese Dressing</h3>
+<div class="bodytext"><ul>
+<li>1 cup sour cream</li>
+<li>1 cup mayonnaise</li>
+<li>2/3 cup buttermilk</li>
+<li>1 teaspoon Worcestershire sauce</li>
+<li>1/2 teaspoon granulated sugar</li>
+<li>1/2 teaspoon dry mustard</li>
+<li>1/2 teaspoon garlic powder</li>
+<li>1/2 teaspoon freshly ground black pepper</li>
+<li>1/2 teaspoon kosher salt, or to taste</li>
+<li>4 ounces blue cheese, finely crumbled</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>Buffalo Wings</h3>
+<div class="bodytext"><ul>
+<li>Place a 6-quart saucepan with a steamer basket and 1-inch of water in the bottom, over high heat, cover and bring to a boil.</li>
+<li>Remove the tips of the wings and discard or save for making stock. Using kitchen shears, or a knife, separate the wings at the joint. </li>
+<li>Place the wings into the steamer basket, cover, reduce the heat to medium and steam for 10 minutes. Remove the wings from the basket and carefully pat dry. Lay the wings out on a cooling rack set in a half sheet pan lined with paper towels and place in the refrigerator for 1 hour.</li>
+<li>Preheat the oven to 425 degrees F.</li>
+<li>When you take the chicken wings out, toss a little salt and pepper on them. Maybe a spritz of olive oil too.</li>
+<li>Replace the paper towels with parchment paper. Roast on the middle rack of the oven for 20 minutes. Turn the wings over and cook another 20 minutes or until meat is cooked through and the skin is golden brown.</li>
+<li>While the chicken is roasting, melt the butter in a small bowl along with the garlic. Pour this along with hot sauce and salt into a bowl large enough to hold all of the chicken and stir to combine.</li>
+<li>Remove the wings from the oven and transfer to the bowl and toss with the sauce. Serve warm.</li>
+</ul></div>
+<h3>Blue Cheese Dressing</h3>
+<div class="bodytext"><ul>
+<li>Gather the ingredients.</li>
+<li>Whisk together the sour cream, mayonnaise, buttermilk, Worcestershire sauce, sugar, mustard, garlic powder, pepper, and salt.</li>
+<li>Once thoroughly mixed, stir in the crumbled blue cheese. Cover and refrigerate at least 8 hours before serving. Overnight is even better.</li>
+<li>Taste and adjust the seasoning with salt and ground black pepper if necessary.</li>
+</ul></div>
+<h2>Notes</h2>
+<h3>Crispiness</h3>
+<div class="bodytext"><p>I THINK it’s ok to leave the wings in the fridge for more than an hour after the initial steaming. I left them in the fridge for about 6 hours after steaming. But also…</p></div>
+<div class="bodytext"><p>… I’m not sure if this is the best recipe for CRISPY chicken wings. Possibly look into other methods.</p></div>
+<h3>General</h3>
+<div class="bodytext"><p>Remember to really try to coat the wings in a lot of sauce. Possibly ACTUALLY use the amount of butter and Frank’s next time, instead of just guessing.</p></div>
+<h3>Blue cheese dressing</h3>
+<div class="bodytext"><p>The blue cheese dressing CAN and SHOULD be made the day before. This helps with time management when cooking the actual wings!
+Possibly up the spice level on the dressing!!!</p></div>
+<div class="bodytext"><p>2/3 cup of milk in the recipe does make it a little runny. If you’re looking for a thicker dressing, consider decreasing the amount of milk</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Chicken and Chorizo Paella - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Chicken and Chorizo Paella</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Rice Dishes</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 15 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 30-45 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 8 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>2 tablespoons olive oil</li>
+<li>1 tablespoon paprika</li>
+<li>2 teaspoons dried oregano</li>
+<li>Salt and black pepper</li>
+<li>1-2 pounds skinless, boneless chicken breasts, cut into 2 inch pieces</li>
+<li>2 tablespoons olive oil, divided</li>
+<li>3 cloves garlic, crushed</li>
+<li>1 teaspoon crushed red pepper flakes</li>
+<li>2.5-3 cups uncooked short-grain white rice</li>
+<li>1 pinch saffron threads</li>
+<li>1-2  bay leaf</li>
+<li>1/2 bunch Italian flat leaf parsley, chopped</li>
+<li>1.25 quarts chicken stock (or just 1 quart and add some extra water)</li>
+<li>2 lemons, zested</li>
+<li>2 tablespoons olive oil</li>
+<li>1 yellow onion, chopped (Spanish onion if you can find it)</li>
+<li>1 red bell pepper, coarsely chopped</li>
+<li>2 pound chorizo sausage, casings removed and crumbled</li>
+</ul></div>
+<h2>Directions</h2>
+<div class="bodytext"><ul>
+<li>In a medium bowl, mix together 2 tablespoons olive oil, paprika, oregano, and salt and pepper. Stir in chicken pieces to coat. Cover, and refrigerate.</li>
+<li>Heat 2 tablespoons olive oil in a large skillet or paella pan over medium heat. Stir in garlic, red pepper flakes, and rice. Cook, stirring, to coat rice with oil, about 3 minutes. The rice should be lightly toasted. You will see a change in color in the rice.</li>
+<li>Stir in saffron threads, bay leaf, parsley, chicken stock, and lemon zest.  Bring to a boil, cover, and reduce heat to medium low. Simmer 20 minutes.</li>
+<li>Meanwhile, heat 2 tablespoons olive oil in a separate skillet over medium heat. Stir in marinated chicken and onion; cook 5 minutes. Stir in bell pepper and sausage; cook 5 minutes.</li>
+<li>Spread rice mixture onto a serving tray. Top with meat and seafood mixture.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Zest lemon before starting it’s a shitshow if you don’t</p></div>
+<div class="bodytext"><p>With 3 cups of uncooked rice and 3 lbs. total of meat should serve 8 people at most</p></div>
+<h3>Background</h3>
+<div class="bodytext"><p>This is the greatest dish of my career no doubt about it. I originally learned about this dish in elementary school when my aunt and uncle made it at Madeline Island. Not sure what made me want to make it 6 years later but now it’s so good! Yummy lemon saffron rice mixed with spicy chorizo and paprika chicken.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

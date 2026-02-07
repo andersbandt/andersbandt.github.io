@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Lemon Ricotta Muffins - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Lemon Ricotta Muffins</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breads and Doughs</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h2>Instructions</h2>
+<h3>Ingredients for the Muffins:</h3>
+<h3>2 cups, all purpose flour</h3>
+<h3>1 tsp, baking soda</h3>
+<h3>¼ tsp, salt</h3>
+<h3>1 cup, granulated sugar</h3>
+<h3>½ cup, coconut oil, solidified</h3>
+<h3>1 tbsp, lemon zest</h3>
+<h3>1 egg</h3>
+<h3>1 cup, part-skim ricotta cheese</h3>
+<h3>1 tbsp, lemon juice</h3>
+<h3>½ tsp, vanilla extract</h3>
+<h3>Ingredients for Lemon Thyme Butter Topping</h3>
+<h3>3 tbsp, unsalted butter</h3>
+<h3>1 tbsp, lemon juice</h3>
+<h3>1 tsp, dried thyme</h3>
+<h2>Directions:</h2>
+<div class="bodytext"><ul>
+<li>
+<div class="bodytext"><p><strong>Line a muffin tin with paper liners or grease with oil. Preheat the oven to 350° F.</strong></p></div>
+</li>
+<li>
+<div class="bodytext"><p><strong>In a medium-sized bowl, whisk together the flour, baking soda, and salt.</strong></p></div>
+</li>
+<li>
+<div class="bodytext"><p><strong>With an electric mixer on low speed, beat the sugar, coconut oil, and lemon zest in a large bowl.</strong></p></div>
+</li>
+<li>
+<div class="bodytext"><p><strong>On low speed, beat in the egg. Beat in the ricotta cheese, lemon juice, and vanilla extract until combined and fluffy.</strong></p></div>
+</li>
+<li>
+<div class="bodytext"><p><strong>Beat in the dry ingredients to the wet ingredients until fully combined.</strong></p></div>
+</li>
+<li>
+<div class="bodytext"><p><strong>Scoop approx. ⅓ cup of muffin batter into the prepared muffin tin.</strong></p></div>
+</li>
+<li>
+<div class="bodytext"><p><strong>Bake in the oven for 25-28 minutes until muffins are lightly browned on the top.</strong></p></div>
+</li>
+<li>
+<div class="bodytext"><p><strong>Prepare the lemon thyme butter topping. Melt butter with the lemon juice in the microwave for 45 seconds. Stir in the thyme. Set aside to drizzle on your muffins.</strong></p></div>
+</li>
+<li>
+<div class="bodytext"><p><strong>Remove muffins from the oven and let cool in the tin for a ~5 minutes before transferring to a wire cooling rack.</strong></p></div>
+</li>
+</ul></div>
+<h3>Serve and enjoy warm or cold!</h3>
+<h2>Notes</h2>
+<div class="bodytext"><p>Notes here</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>Context here</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

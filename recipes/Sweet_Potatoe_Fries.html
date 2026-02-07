@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Sweet Potatoe Fries - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Sweet Potatoe Fries</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Vegetables > Potatoes</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>2 pound sweet potatoes</li>
+<li>4 tablespoons potato starch or cornstarch</li>
+<li>1 teaspoon kosher salt</li>
+<li>6 tablespoons vegetable oil</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Arrange 2 racks to divide the oven into thirds and heat to 400°F. Line 2 rimmed baking sheets with parchment paper if desired.</li>
+<li>Peel and cut the sweet potato. Cut in half lengthwise. Turn onto the cut side, then cut lengthwise into 1/4-inch wide planks. Lay the planks flat and cut lengthwise into 1/4-inch-thick sticks or wedges.</li>
+<li>Place the sweet potato in a large zip-top plastic bag or bowl, add the potato starch or cornstarch and salt, and shake or toss to combine until all the starch is absorbed into the sweet potato.</li>
+<li>Add the oil and toss vigorously to coat.</li>
+<li>Transfer to 2 baking sheets. Divide the sweet potato among the 2 baking sheets and spread into a single, even layer, leaving space around each fry.</li>
+<li>Roast until some of the fries are just starting to brown around the edges, about 15 minutes. Remove the baking sheets from the oven. Using a flat spatula or turner, flip the sweet potatoes. Place back in the oven, switching the sheets between racks, and continue to roast until the fries are tender on the inside and crispy on the outside, 5 to 15 minutes more. They will crisp up a little more as they cool.</li>
+<li>Season and serve. Sprinkle with more salt (and pepper!) if desired before serving.</li>
+</ul></div>
+<h2>Notes</h2>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

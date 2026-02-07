@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Oyster Stew - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Oyster Stew</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Soups</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>6 tablespoons butter or margarine</li>
+<li>1 teaspoon minced fresh garlic</li>
+<li>1/2 cup flour</li>
+<li>1 teaspoon salt</li>
+<li>1/4 teaspoon ground white pepper</li>
+<li>2 cups milk</li>
+<li>2 cups half and half</li>
+<li>1 pint fresh oysters</li>
+<li>2 tablespoons snipped fresh parsley</li>
+<li>Paprika </li>
+<li>Toasted croutons (optional)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a 3 quart saucepan, melt butter.</li>
+<li>Stir in garlic. Saute until tender (1 to 2 mins)</li>
+<li>Gradually stir in flour, salt and pepper; stir in milk and half-and half. Cook over medium heat, stirring constantly, until mixture comes to a boil; boil and stir 1 min. Stir in oysters and oyster juice. Simmer until edges of oysters begin to curl (3 to 4 mins). Stir in parsley.</li>
+<li>Ladle into 8 small warmed soup bowls, dividing oysters equally among each. Garnish with dash of paprika. Top with croutons if desired.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

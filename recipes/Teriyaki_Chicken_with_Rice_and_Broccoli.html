@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Teriyaki Chicken with Rice and Broccoli - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Teriyaki Chicken with Rice and Broccoli</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Chicken</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 lb. boneless sinless chicken bresat</li>
+<li>1 tablespoon oil</li>
+<li>2 cups broccoli florists</li>
+<li>1 bell pepper sliced into strips</li>
+<li>1 onion</li>
+<li>2 cups cooked brown rice</li>
+<li>Sesame seeds, optional</li>
+</ul></div>
+<h3>Teriyaki Sauce</h3>
+<div class="bodytext"><ul>
+<li>1/4 cup light soy sauce</li>
+<li>2 tablespoons honey</li>
+<li>2 tablespoons rice wine vinegar</li>
+<li>1 tablespoon cornstarch</li>
+<li>1 clove garlic</li>
+<li>1/2 teaspoon sesame oil</li>
+<li>1/4 teaspoon ground ginger</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Heat a large pan to medium-high heat. Add chicken, season with salt and pepper and cook until no longer pink</li>
+<li>Whisk all the ingredients together for the teriyaki sauce</li>
+<li>Add the teriyaki sauce to chicken and cook for 4-5 minutes or until sauce is thick. Remove chicken from heat.</li>
+<li>Add the broccoli florets and bell pepper to the same pan. Stir fry for 2-3 minutes or until and bell pepper is slightly softened.</li>
+</ul></div>
+<h2>Notes</h2>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

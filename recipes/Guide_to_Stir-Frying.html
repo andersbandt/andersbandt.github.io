@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Guide to Stir-Frying - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Guide to Stir-Frying</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Guides</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Stir Fry</h3>
+<div class="bodytext"><ul>
+<li>1 pound meat (chicken, beef, pork, tofu which is actually fake meat)</li>
+<li>2 pounds vegetables (carrots, peppers, broccoli, mushrooms, spinach, bok choy, baby corn)</li>
+<li>2 tablespoons aromatics (garlic, shallots, ginger)</li>
+<li>2 tablespoons herbs (basil, cilantro)</li>
+</ul></div>
+<h3>Stir Fry Sauce</h3>
+<div class="bodytext"><ul>
+<li>1 cup broth</li>
+<li>2 tablespoons soy sauce</li>
+<li>1 tablespoon sugar</li>
+<li>1 tablespoon rice wine vinegar</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Have all your ingredients chopped and at the ready including the sauce of your choice. If you’re using cornflour to thicken your sauce, add it to the cold liquid otherwise it will go lumpy. Stir again just before using.</li>
+<li>Use a wok if you have one and because it needs to be hot, use an oil with a high smoking point, like groundnut, sunflower or corn oil.</li>
+<li>Heat the oil until hot, spreading it around the pan.</li>
+<li>Brown any ingredients that may burn or overcook – nuts, onions, garlic, ginger and spices. Remove and set aside.</li>
+<li>Add more oil if necessary. Cook the meat for a few minutes until opaque but not totally cooked through.</li>
+<li>Add the vegetables and cook to your liking. Firm vegetables like carrots, peppers and thick broccoli stalks will take longer. Leafy vegetables like spinach and bok choy as well as bean sprouts can go in towards the end.</li>
+<li>Toss the ingredients from centre to side of the wok. Add your sauce and any reserved ingredients. Cover to steam if further cooking is required. Stir through fresh herbs and serve.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

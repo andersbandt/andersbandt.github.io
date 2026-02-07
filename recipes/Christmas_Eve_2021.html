@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Christmas Eve 2021 - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Christmas Eve 2021</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Meal Plans</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Meal</h2>
+<div class="bodytext"><p>Main
+ with </p></div>
+<div class="bodytext"><p>Sides-</p></div>
+<h2>Bacon, Beer, and Breadcrumbs Mac and Cheese</h2>
+<h2>Brussel Sprouts Salad with Hazelnut</h2>
+<div class="bodytext"><p>Dessert-</p></div>
+<h2>Crème Brûlée</h2>
+<h2>General Outline</h2>
+<div class="bodytext"><p>Creme brulee can be made ahead of time and stored in the fridge until ready to serve
+Beef wellington needs the oven at 425 degrees for 40 to 45 minutes and then some time to rest
+Mac and cheese needs the oven at 350 degrees for 20 to 25 minutes</p></div>
+<div class="bodytext"><p>Hoping to eat at 5 o clock</p></div>
+<div class="bodytext"><p>Cheese sauce should take around 20 mins to make
+Mac and cheese in the oven at 3:30</p></div>
+<div class="bodytext"><p>Should start duxelles around 2:20, and sear beef around 2:40
+Beef wellington should go into the fridge around 3:10
+Beef wellington needs to rest in the fridge for 30 minutes
+15-20 minutes of work after the fridge before oven ready
+Beef Wellington in the oven at 4</p></div>
+<div class="bodytext"><p>Salad can be made between 4 and 5</p></div>
+<h2>Feedback after making it:</h2>
+<div class="bodytext"><p>Creme brulee can really be made any time, even the day before
+Duxelles can definitely be made quite a bit ahead of time and left to cool</p></div>
+<div class="bodytext"><p>Prep for the mac and cheese includes things like mincing garlic, making sure cheese is shredded, and cooking pasta.</p></div>
+<div class="bodytext"><p>Green peppercorn sauce can be made right after creme brulee</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

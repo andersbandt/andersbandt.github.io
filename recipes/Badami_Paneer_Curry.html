@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Badami Paneer Curry - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Badami Paneer Curry</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Indian</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 20 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 25 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 3-4 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>250 grams paneer cubed (see notes)</li>
+<li>1 tablespoon ghee / oil of choice</li>
+<li>Pinch of hing / asafetida</li>
+<li>1 tablespoon minced garlic</li>
+<li>1 teaspoon minced / grated ginger</li>
+<li>1 onion, chopped in big chunks</li>
+<li>2 red bell pepper, finely chopped</li>
+<li>3/4 cup canned tomato sauce (see notes)</li>
+<li>2 tablespoon almond flour (see notes)</li>
+<li>1 teaspoon red chili powder/cayenne/paprika for mild spice</li>
+<li>1.5 teaspoon garam masala</li>
+<li>1 teaspoon coriander powder</li>
+<li>1/4 teaspoon turmeric</li>
+<li>1/4 teaspoon ground cumin</li>
+<li>1/2 cup water or more to adjust consistency</li>
+<li>4 tablespoons heavy cream / malai (see notes)</li>
+<li>1 cup milk, room temperature</li>
+<li>1/4 teaspoon cardamom powder</li>
+<li>1/2 teaspoon sugar/ honey/ agave for sweetness</li>
+<li>1 teaspoon crushed kasoori methi</li>
+<li>Salt to taste</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Set out your milk to get to room temperature</li>
+<li>In a wide skillet heat up ghee/oil. Once hot add in the ginger garlic and sauté until browned.</li>
+<li>Add in onion and bell pepper and sauté for at least several minutes.</li>
+<li>Add in tomato sauce and almond flour and stir continuously until almond flour is cooked through (about 1-2 minutes).</li>
+<li>Add in water and stir.</li>
+<li>Add spices and salt to taste. Turn heat to low, cover with lid, and let simmer for 5-7 minutes.</li>
+<li>Slowly pour in the cream, a tablespoon at a time and keep stirring the gravy.</li>
+<li>Add in room temperature milk slowly while stirring the gravy to avoid any curdling or splattering.</li>
+<li>Cook covered for 2 minutes.</li>
+<li>Now add in cardamom, sugar and kasoori methi .</li>
+<li>Give a taste test and add paneer</li>
+<li>Let it cook for 3-4 minutes covered on low heat.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>It’s quite easy to over-crisp the paneer if you pan fry it
+You may sub canned tomato sauce with store bought crushed tomatoes or puree. Fresh tomato puree won’t work in this recipe
+Use almond flour and not almond meal.
+You may substitute almond flour with almond or cashew paste. Or honestly regular flour too.
+Replace heavy cream with equal amounts of beaten yogurt.
+Add milk or water to adjust the consistency of the gravy. The gravy will thicken as it cools.
+The almond gravy is rich, creamy and versatile . You can even add other veggies like carrots, baby corn, peas, potatoes , green beans , and cauliflower to the gravy . You will need to cook them separately and then add it to the almond gravy.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

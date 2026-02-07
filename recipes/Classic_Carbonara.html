@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Classic Carbonara - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Classic Carbonara</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pasta</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>120 grams spaghetti (or rigatoni pasta)</li>
+<li>2 eggs</li>
+<li>1/2 cup grated pecorino cheese (Parmigiano Reggiano is an acceptable substitute). But according to Brooklyn it’s actually the only cheese to use</li>
+<li>1 cup guanciale (chopped, Pork jowl. If not available in your area, use pancetta. Thick cut bacon in an emergency)</li>
+<li>salt</li>
+<li>pepper</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Bring a large pot of water to a rolling boil and salt it lightly (the guanciale and pecorino are quite salty so in this case use about half the salt you would normally add). Add the pasta and cook as directed by the package.</li>
+<li>If using guanciale, trim off the tough outer skin. Cut the meat into 1/2-inch cubes and place in a large skillet over medium heat. If using pancetta, add a pinch of salt and pepper into the pan. Sauté for 4-6 minutes, or until deeply browned and crispy. Turn off the heat.</li>
+<li>Meanwhile, separate the eggs and add the yolks into a large mixing bowl. If you prefer a slightly thinner sauce, feel free to add the white of one of the eggs as well. Into the bowl, add the pecorino cheese and a generous sprinkle of black pepper. Whisk the eggs and cheese together until thoroughly mixed.</li>
+<li>When the pasta is al dente to your taste, drain it and add it into the egg mixture. Stir vigorously until the egg yolks completely coat the pasta, then add the guanciale and the fat in the skillet into the bowl. Stir again to evenly mix the sauce.</li>
+<li>Serve immediately. Top with extra black pepper (optional). Buon appetito!</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

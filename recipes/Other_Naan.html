@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Other Naan - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Other Naan</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breads and Doughs > Naan</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 15 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 2 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 3</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <div class="bodytext"><p><strong>Rise Time: </strong>30 minutes</p></div>
+<h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>250 grams plain flour</li>
+<li>2 teaspoon sugar</li>
+<li>1/2 teaspoon salt</li>
+<li>1/2 teaspoon baking powder</li>
+<li>1/2 cup and 2 tablespoons milk</li>
+<li>1 tablespoon canola oil</li>
+<li>3 tablespoon ghee (for pan frying)</li>
+<li>1 teaspoon Nigella seeds</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Mix all the dry ingredients together</li>
+<li>Add milk and canola oil. Bring the dough together by hand or a stand mixer. Knead until smooth (around 10 minutes by hand, 6 minutes by mixer).</li>
+<li>Rest the dough covered with cloth for a minimum of 30 minutes to relax the gluten.</li>
+<li>Divide the dough into 10 equal portions and roll with a pin as thin as possible.</li>
+<li>High heat the frying pan with ghee, cook naan bread on each side until golden brown. Repeat and add more ghee if needed.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Very good recipe. I made it when I was a little high once I think there’s a photo in Adam’s St. kitchen.</p></div>
+<div class="bodytext"><p>It’s very interesting this dough has no yeast. Don’t expect it to rise much</p></div>
+<div class="bodytext"><p>This dough does not really work well in the food processor. Haven’t tried in a stand mixer yet.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

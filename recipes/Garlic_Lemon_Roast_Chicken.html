@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Garlic Lemon Roast Chicken - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Garlic Lemon Roast Chicken</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Chicken</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>Multiple pound chicken (4-5 pounds)</li>
+<li>1/4 cup unsalted butter, melted</li>
+<li>3 tablespoons olive oil</li>
+<li>1/4 cup white wine (optional)</li>
+<li>1 lemon</li>
+<li>Salt and pepper</li>
+<li>2 tablespoons fresh chopped parsley</li>
+<li>4 garlic cloves</li>
+<li>1 head of garlic</li>
+<li>3 fresh rosemary sprigs</li>
+<li>4 carrots, 2-inch chunks</li>
+<li>1 bulb of fennel (optional if you used rosemary and parsley)</li>
+<li>1 large yellow onion, thickly sliced</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat oven to 420 degrees Fahrenheit.</li>
+<li>Pat the outside your chicken dry.</li>
+<li>Pour the olive oil, melted butter, wine (if using) and the juice of half a lemon over the chicken and inside the cavity. Make sure to get some under the skin. Liberally season the chicken with salt and pepper. Sprinkle with parsley.</li>
+<li>Rub minced garlic over the chicken, making sure again to mix over the chicken and under the skin.</li>
+<li>Stuff the garlic head into the chicken cavity along with the rosemary sprigs.</li>
+<li>Place the carrots, fennel, and yellow onion in the roasting pan. Toss with olive oil and butter as well.</li>
+<li>Roast chicken for around 1 hour but probably just short of 1 hour.  or until the juices run clear. Remove chicken from oven and cover with aluminum foil for 20 minutes. Then serve.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>**  **I made this recipe on October 4th, 2020. Ollie’s mom walked in and smelled the kitchen and was very surprised to smell that coming from a college kitchen!</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Sour Cream Pancakes - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Sour Cream Pancakes</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breakfast > Pancakes</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 cup sour cream</li>
+<li>3/4 cup all-purpose flour</li>
+<li>2 tablespoons sugar</li>
+<li>1 teaspoon baking soda</li>
+<li>1/2 teaspoon salt</li>
+<li>2 whole large eggs</li>
+<li>1/2 teaspoon vanilla extract</li>
+<li>Butter, for frying and serving</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a small bowl, whisk together eggs and vanilla. Set aside.</li>
+<li>In a separate small bowl, stir together flour, sugar, baking soda, and salt. </li>
+<li>In a medium bowl, stir together the sour cream with the dry ingredients until just barely combined (don't overmix.) Whisk in the egg mixture until just combined.</li>
+<li>Heat a griddle over medium-low heat and melt some butter in the pan. Drop batter by 1/4 cup servings onto the griddle. Cook on the first side until bubbles start to form on the surface and edges are starting to brown. Flip to the other side and cook for another minute. (Pancakes will be a little on the soft side.)</li>
+<li>Serve with softened butter and syrup.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

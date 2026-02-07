@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Chocolate Cookies - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Chocolate Cookies</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>2 sticks unsalted butter, at room temperature</li>
+<li>2 cups sugar</li>
+<li>2 large eggs</li>
+<li>1 tablespoon vanilla extract</li>
+<li>3/4 cup Dutch process cocoa powder</li>
+<li>2 cups all-purpose flour</li>
+<li>1 teaspoon baking soda</li>
+<li>1/2 teaspoon salt</li>
+<li>White sugar, for garnish</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a large bowl, add the butter and sugar and cream together with a hand mixer. Add the eggs and vanilla extract to the creamed mixture and mix until combined. In a medium bowl, mix the cocoa powder, flour, baking soda, and salt. Slowly add the dry ingredients and continue mixing until incorporated.</li>
+<li>Roll the dough into 2 logs that are about 2-inches high and 1-foot long. Wrap them in waxed paper and place in the refrigerator for 2 hours.</li>
+<li>Preheat oven to 350 degrees F.</li>
+<li>Once thoroughly chilled, slice the cookies into 1/2-inch thick rounds and cover with sanding sugar. Place on a parchment paper lined cookie sheet and bake for 10 minutes.</li>
+<li>
+<div class="bodytext"><p>Remove to a wire rack to cool.</p></div>
+</li>
+<li>
+<div class="bodytext"><p>notes</p></div>
+</li>
+<li>
+<div class="bodytext"><p>I tried to add more salt (about a teaspoon) and it was too salty for my liking</p></div>
+</li>
+<li>
+<div class="bodytext"><p>10 minutes seems to be a tad too short, aim for 13 unless I messed something up with the recipe</p></div>
+</li>
+<li>
+<div class="bodytext"><p>I also subbed honey for vanilla extract and can’t say that I really noticed it, but also had the salt thing going on</p></div>
+</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

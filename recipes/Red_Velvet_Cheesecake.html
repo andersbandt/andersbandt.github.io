@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Red Velvet Cheesecake - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Red Velvet Cheesecake</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>Butter</li>
+<li>Flour</li>
+<li>1 box red velvet cake mix, plus ingredients called for on the box</li>
+</ul></div>
+<h3>Cheesecake Layer</h3>
+<div class="bodytext"><ul>
+<li>2 (8 ounce) packages cream cheese, softened</li>
+<li>2/3 cup sugar</li>
+<li>2 large eggs</li>
+<li>1/3 cup sour cream</li>
+<li>1 tablespoon flour</li>
+<li>1 teaspoon vanilla extract</li>
+<li>1/4 teaspoon kosher salt</li>
+</ul></div>
+<h3>Cream Cheese Frosting</h3>
+<div class="bodytext"><ul>
+<li>2 (8 ounce) packages cream cheese, softened</li>
+<li>1 stick butter, softened</li>
+<li>2 ¼ cup powdered sugar</li>
+<li>1 teaspoon vanilla extract</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Preheat oven to 350º and butter and flour two 9" cake pans. Prepare red velvet cake batter according to box directions. Divide batter among prepared cake pans and bake until a toothpick inserted in the center comes out clean, 30 to 32 minutes. Let cool slightly in cake pans, then invert onto a wire rack to cool completely.</li>
+<li>After the cheesecake layer and the frosting have been made, on a cake platter place one red velvet cake. Using a serrated knife, level out the top of the cake so it's flat (save scraps for decorating!). Top with cheesecake layer, pressing down firmly, then top with second red velvet cake.</li>
+<li>Using an offset spatula, frost cake with cream cheese frosting. Garnish with red velvet cake crumbs and serve.</li>
+</ul></div>
+<h3>Cheesecake Layer</h3>
+<div class="bodytext"><ul>
+<li>Line a 9" springform pan with parchment and spray with cooking spray. In a large bowl using a hand mixer or the bowl of a stand mixer fitted with the paddle attachment, beat cream cheese and sugar until fluffy and combined, 3 minutes. Add eggs, one a time, until combined. Add sour cream, flour, vanilla, and salt and beat until combined.</li>
+<li>Pour filling into prepared pan and bake until only slightly jiggly in the center, 1 hour. Let cool slightly, then transfer to the freezer to cool completely and firm up before assembling.</li>
+</ul></div>
+<h3>Cream Cheese Frosting</h3>
+<div class="bodytext"><ul>
+<li>In a large bowl, beat cream cheese and butter until light and fluffy, then add powdered sugar and vanilla and mix until combined.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

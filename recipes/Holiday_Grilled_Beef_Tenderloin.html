@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Holiday Grilled Beef Tenderloin - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Holiday Grilled Beef Tenderloin</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Beef</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>3 lb. beef tenderloin</li>
+<li>4 tablespoon olive oil</li>
+<li>6 large garlic cloves (minced)</li>
+<li>1.5 tablespoon fresh rosemary (minced)</li>
+<li>1 tablespoon dried thyme leaves</li>
+<li>2 tablespoon cracked black pepper</li>
+<li>1 tablespoon salt</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Bring beef tenderloin to room temperature by letting it sit out of the refrigerator for 30 minutes to 1 hour before cooking. Once ready to cook, preheat the grill to medium-high heat.</li>
+<li>Mix rosemary, thyme, garlic powder, sea salt, and black pepper in a bowl. Sprinkle both sides of the beef with seasoning, patting it down to coat it well. If you prefer a stronger flavor, you can do this the night before and refrigerate the tenderloin overnight.</li>
+<li>Grill for 30 minutes with the lid closed. Check often with a meat thermometer. For medium-rare beef tenderloin, grill until beef reaches an internal temperature of 135°F or 145°F for medium.</li>
+<li>Let the beef rest for 10 minutes before slicing. Serve, and enjoy!</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Always let your beef reach room temperature before you grill it. It will cook more evenly throughout this way.
+Use a meat thermometer for best results.
+Let your beef rest for at least 10 minutes before you slice it.
+Use sea salt instead of table salt for best results. Sea salt is flakier and will give your beef tenderloin on the grill a beautiful crust.</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>I first made this recipe for Christmas ‘23!!!</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

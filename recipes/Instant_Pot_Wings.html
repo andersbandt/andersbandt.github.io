@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Instant Pot Wings - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Instant Pot Wings</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Chicken</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 5 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 30-40 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 8 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>4 lb. chicken wings</li>
+<li>1 tsp. garlic powder</li>
+<li>1 tsp. paprika</li>
+<li>Kosher salt</li>
+<li>Freshly ground black pepper</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Line 2 medium baking sheets with aluminum foil. In a large bowl, combine chicken wings with garlic powder and paprika and season with salt and pepper. Toss to coat.</li>
+<li>Add 3/4 cup water to bottom of Instant Pot. Place trivet inside pot and add wings. Secure lid and press the manual setting. Cook on high for 10 minutes. When cooking has finished, do a quick release.</li>
+<li>Meanwhile, make sauce: In a microwave safe bowl, microwave butter until melted completely. Whisk in hot sauce. Heat broiler to high.</li>
+<li>Transfer cooked wings to a large bowl and toss with a sauce of your choosing. Buffalo sauce is a good choice.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>This recipe is just for cooked wings, which you can then apply any sauce to!</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

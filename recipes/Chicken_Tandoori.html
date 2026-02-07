@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Chicken Tandoori - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Chicken Tandoori</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Chicken</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>3 good quality chicken legs</li>
+<li>3 tablespoons of natural yogurt</li>
+<li>1/2 teaspoon of salt</li>
+<li>Juice of half a lemon and zest</li>
+<li>3 teaspoon of garlic and ginger paste</li>
+<li>2 tablespoons of Kashmiri mild chili powder (if you are not a big fan of spicy food substitute with 2 tbsp of paprika)</li>
+<li>1 teaspoon of turmeric</li>
+<li>1/2 teaspoon ground coriander</li>
+<li>1 tablespoon oil</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Prepare the chicken by removing the skin and separating the drumstick from the thigh. Next, make three deep cuts on each side of the pieces (This helps the marinade to penetrate deeper)</li>
+<li>Place the chicken in the bowl and rub with lemon juice and salt.</li>
+<li>Mix remaining marinade ingredients and rub in the meat.</li>
+<li>Place in the fridge for 24 hours (2 hours minimum if you are in a rush)</li>
+<li>To cook the chicken, preheat the oven to a 220C fan (428F) setting and place the meat on a flat tray with some baking paper. Once the oven is hot, roast the chicken for 30 minutes on one side, flip to another, and continue on the grill setting for another 10-15 minutes.</li>
+<li>Rest under foil for 5 minutes before serving.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

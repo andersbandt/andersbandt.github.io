@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Lemon Pasta - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Lemon Pasta</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pasta</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 10 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 15-20 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 4 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>12 ounces spaghetti (don’t be tryna make 1 lb. here!)</li>
+<li>Kosher salt</li>
+<li>1/4 cup extra virgin olive oil, more if needed</li>
+<li>6 large garlic cloves, minced</li>
+<li>1/2 teaspoon crushed red pepper flakes, more to your liking</li>
+<li>Zest and juice of 1 lemon</li>
+<li>1/2 cup fresh parsley, chopped</li>
+<li>kosher salt and freshly ground black pepper to taste</li>
+<li>1/4 cup Parmesan cheese to finish, more to your liking, optional</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Bring a pot of water to a boil and salt the water well. Cook the spaghetti according to package instructions to al dente (about 8 minutes). Reserve 1 cup of the pasta cooking water before draining.</li>
+<li>When the pasta is nearly done (about 5 minutes into cooking it), heat the olive oil in a large skillet over medium heat. Add the minced garlic and crushed red pepper flakes, and cook, stirring until fragrant, about 30 seconds. Add the lemon juice and about ¼ cup of the pasta cooking water for now.</li>
+<li>Drain the pasta and add it to the skillet and toss over medium heat.</li>
+<li>Remove the skillet from the heat and add the parsley, lemon zest and grated parmesan. Season with kosher salt and black pepper to taste. Toss again to combine, and if needed, add a little bit more of the pasta cooking water and a drizzle of extra virgin olive oil. Serve immediately!</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Can cook the pasta with the parsley for at least a little bit. Don’t have to remove from the heat immediately so the parsley can cook down a little bit.
+Make sure you add salt and pepper (and parmesan) at the end. It really makes the dish</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>Brooklyn put me onto this !!!</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

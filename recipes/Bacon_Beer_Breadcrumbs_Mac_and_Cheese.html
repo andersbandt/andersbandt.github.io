@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Bacon Beer Breadcrumbs Mac and Cheese - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Bacon Beer Breadcrumbs Mac and Cheese</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pasta</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 30 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 25 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 8 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>6 strips bacon, cooked and crumbled, divided</li>
+<li>4 tablespoons unsalted butter, divided</li>
+<li>3 tablespoons all-purpose flour</li>
+<li>2 large cloves garlic, minced</li>
+<li>1 ½ teaspoon fresh thyme leaves, divided</li>
+<li>2 cups milk</li>
+<li>3/4 cup stout beer (such as Guinness)</li>
+<li>1 teaspoon kosher salt</li>
+<li>Pinch fresh cracked pepper</li>
+<li>2 cups shredded sharp cheddar cheese</li>
+<li>1/2 cup sharp cheddar cheese spread</li>
+<li>8 ounces elbow macaroni</li>
+<li>1/2 cup panko breadcrumbs</li>
+<li>Fresh thyme leaves and couple pinches barbecue seasoning (optional)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Heat oven to 350<strong>°</strong>. Bring a large pot of water to a boil.</li>
+<li>In a medium saucepan, heat 3 tablespoons butter with the flour over medium heat, whisking until bubbly. Cook for 2 minutes. Add the garlic and 1 teaspoon thyme, and cook for an additional minute. Slowly whisk in the milk and beer. Heat, stirring constantly, a couple minutes until quite warm but not boiling. </li>
+<li>Reduce heat to medium-low, add both cheeses, salt, and pepper, and cook, whisking, until smooth. Remove from the heat. Stir in half the bacon.</li>
+<li>Cook the macaroni to al dente according to package directions in salted water. Drain and add to the cheese sauce. Transfer to a 2 quart baking dish.</li>
+<li>In a small saucepan, melt the remaining 1 tablespoon butter. Add the panko, remaining 1/2 teaspoon thyme, and remaining bacon. sprinkle over the macaroni. Bake at 350<strong>°</strong> for 20-25 minutes until bubbly. Serve garnished with fresh thyme leaves and a pinch of barbecue seasoning.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

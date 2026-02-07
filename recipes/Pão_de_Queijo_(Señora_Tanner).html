@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Pão de Queijo (Señora Tanner) - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Pão de Queijo (Señora Tanner)</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breads and Doughs > Bread Appetizers and Sides</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1/2 cup whole milk</li>
+<li>1/4 cup unsalted butter</li>
+<li>1½ teaspoons kosher salt</li>
+<li>2 cups tapioca flour</li>
+<li>2 large eggs</li>
+<li>5 ounces fresh farmer's cheese, crumbled (about 1 cup)</li>
+<li>2 ounces crumbled Parmesan (about 1/2 cup)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Arrange a rack in center of oven; preheat to 425°. Heat milk, butter, salt, and ¼ cup water in a large saucepan over medium-high, stirring occasionally, until butter is melted and mixture begins to boil, about 4 minutes. Remove from heat and add flour; vigorously stir with a wooden spoon until dough is dry and shaggy, about 10 seconds. Transfer to the bowl of a stand mixer fitted with the paddle attachment or a large bowl. Let cool 5 minutes.</li>
+<li>Beat mixture on low speed just until dough starts to come together, about 30 seconds (alternatively, vigorously stir with a wooden spoon). Add eggs, one at a time, and continue to beat on low speed until incorporated (dough will look broken at first, then come together). Continue to beat on low speed until dough is smooth, sticky, and somewhat stretchy; do not overbeat or dough will lose its stretch. Add farmer cheese and Parmesan and beat on low speed until evenly distributed.</li>
+<li>Using a 1⅓-oz. ice cream scoop, portion dough and transfer to a parchment-lined rimmed baking sheet, spacing about 2" apart (alternatively, form dough into ping pong ball-sized pieces with your hands).</li>
+<li>Bake 5 minutes, then reduce oven temperature to 350° and continue to bake until pão are very light brown, with some darker brown speckles all over (that’s the cheese), and sound hollow when tapped on the bottom, 20−25 minutes. Let cool 10 minutes before serving.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

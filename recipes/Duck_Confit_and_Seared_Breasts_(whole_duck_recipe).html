@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Duck Confit and Seared Breasts (whole duck recipe) - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Duck Confit and Seared Breasts (whole duck recipe)</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; General</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 30 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 4-5 people if you use 2 ducks (a little less than 5 lbs each)</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Duck</h3>
+<div class="bodytext"><ul>
+<li>4 duck legs (skin-on, bone-in)</li>
+<li>1 tablespoon coarse salt</li>
+<li>½ teaspoon black pepper</li>
+<li>2 cloves garlic, minced</li>
+<li>1 teaspoon fresh thyme leaves (or 1/2 teaspoon dried thyme)</li>
+<li>2 bay leaves, crushed</li>
+<li>1 teaspoon crushed black peppercorns</li>
+<li>4 cups duck fat (or enough to submerge the duck legs)</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>Cure the duck legs</h3>
+<div class="bodytext"><ul>
+<li>Pat the duck legs dry with paper towels.</li>
+<li>Rub the legs with salt, black pepper, garlic, thyme, bay leaves, and crushed peppercorns.</li>
+<li>Place the duck in a dish, cover, and refrigerate overnight (or at least 12 hours).</li>
+</ul></div>
+<h3>Slow-cook the duck</h3>
+<div class="bodytext"><ul>
+<li>Preheat the oven to 250°F (120°C).</li>
+<li>Rinse off excess salt from the duck legs and pat them dry.</li>
+<li>Melt the duck fat in an ovenproof dish or Dutch oven.</li>
+<li>Submerge the duck legs in the fat, ensuring they are fully covered.</li>
+<li>Slow-cook in the oven for 2 ½ to 3 hours until the meat is tender and easily pulls away from the bone.</li>
+<li>Remove the duck from the fat and let it drain on paper towels.</li>
+</ul></div>
+<h3>Crisp the skin and serve</h3>
+<div class="bodytext"><ul>
+<li>Heat a skillet over medium-high heat.</li>
+<li>Place the duck legs skin-side down and sear for 3-4 minutes until golden and crispy.</li>
+<li>Serve hot with a nice sauce.</li>
+</ul></div>
+<h2>Notes</h2>
+<h3>To carve the duck</h3>
+<div class="bodytext"><p>Start with the legs. Place the duck with the breasts facing up and start cutting the leg away from the body. Halfway through your cut, tilt the duck on its side and break the bone. Complete the cut. Repeat both legs.</p></div>
+<div class="bodytext"><p>Then do the breast. Place the duck with the breasts facing up. Slice down the middle and through the wishbone. Start peeling the breast away from the bone, using your knife to make short cuts. </p></div>
+<div class="bodytext"><p>I was worse at cutting the breast, and felt like I left some meat on the bone. Having the duck partially frozen did not help at all either.</p></div>
+<h3>https://www.youtube.com/watch?v=3V0acQF9NbU</h3>
+<h3>Key tips</h3>
+<div class="bodytext"><p>Cure the duck overnight to enhance flavor
+Use enough duck fat to fully submerge the legs
+Cook low and slow for tender, juicy meat
+Sear skin-side down for a crisp, golden finish
+Store the duck in fat for up to a month to develop deeper flavors</p></div>
+<h3>Context</h3>
+<div class="bodytext"><p>Bold Christmas Eve 2025 recipe</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

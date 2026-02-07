@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Latkes (Hanukkah Potato Pancakes) - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Latkes (Hanukkah Potato Pancakes)</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Sides</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>2 1/2 to 3 pounds potatoes, shredded</li>
+<li>2 onions, peeled</li>
+<li>3 large eggs, lightly beaten</li>
+<li>1 teaspoon kosher salt</li>
+<li>1/4 teaspoon freshly ground black pepper</li>
+<li>1/4 to 3/4 cup all-purpose flour</li>
+<li>1 cup canola oil, for frying</li>
+<li>Applesauce, or sour cream, for garnish</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a large bowl, mix together shredded potatoes, onion, eggs, flour, salt, and pepper. Heat large cast-iron pan with 1 to 1.5 inches of oil.</li>
+<li>You will know oil is ready for frying if you carefully drop a single shred of potato into the oil and it begins to bubble. If you are using a thermometer, bring oil up to 350 degrees.</li>
+<li>Form potato mixture into ¼ cup sized patties and carefully drop into oil using a spatula.</li>
+<li>Cook about 5 minutes on each side or until both sizes are golden brown.</li>
+<li>Allow excess oil to drip from latkes when you remove them from cast-iron pan and place on a baking pan lined with several layers of paper towels to soak excess oil.</li>
+<li>Serve immediately or reheat later in the over.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

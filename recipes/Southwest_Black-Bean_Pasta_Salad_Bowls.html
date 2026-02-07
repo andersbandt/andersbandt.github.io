@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Southwest Black-Bean Pasta Salad Bowls - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Southwest Black-Bean Pasta Salad Bowls</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Chicken</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>14 ounces package frozen Mexican-style corn</li>
+<li>2 cups black-bean rotini</li>
+<li>12 ounces package cooked chili-lime chicken</li>
+<li>½ cup mild pico de gallo</li>
+<li>½ cup Italian dressing</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Heat corn according to package directions; set aside to cool.</li>
+<li>Cook pasta according to package directions. Drain and rinse with cold water. Drain again and toss with the corn; set aside.</li>
+<li>Slice chicken strips into bite-size pieces; set aside.</li>
+<li>Divide pico de gallo into 4 small lidded containers and refrigerate. Measure salad dressing into 4 small lidded containers and refrigerate. (Timesaving tip: You can also carry the bottle of dressing in your lunch bag--or store in the office fridge--and dress when ready to serve.)</li>
+<li>Divide the corn and pasta mixture among 4 single-serving containers, then top each with one-fourth of the chicken. Seal the containers and refrigerate for up to 4 days. Toss with the dressing just before serving and top with the pico de gallo.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>To make ahead: Refrigerate pasta salad, salsa and dressing separately for up to 4 days. Top salad with dressing and pico de gallo just before serving.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

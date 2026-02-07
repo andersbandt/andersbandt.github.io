@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Street Tacos - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Street Tacos</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Mexican</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 6-8 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Sources:</h2>
+<h2>Amazing Street Tacos | The Recipe Critic</h2>
+<h2>Chicken Street Tacos {easy to make} - Spend With Pennies</h2>
+<h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li><strong>Meat (ingredients below meats are for both, others are just for specific meat)</strong></li>
+<li>1 pound flank steak or skirt steak</li>
+<li>1/2 cup soy sauce</li>
+<li>1 tablespoon Worcestershire sauce</li>
+<li>2 tablespoons cilantro chopped</li>
+<li>1 teaspoon chili powder</li>
+<li>1 teaspoon cumin</li>
+<li>2 tablespoons lime juice</li>
+<li>3 cloves garlic, mined</li>
+<li>1 pound chicken</li>
+<li>1 teaspoon oregano</li>
+<li>1/4 cup orange juice</li>
+<li>3 tablespoons olive oil</li>
+<li>1 teaspoon cumin</li>
+<li>2 tablespoons lime juice</li>
+<li>3 cloves garlic, mined</li>
+<li>5 tilapia filets</li>
+<li>1 tablespoon olive oil</li>
+<li>Juice of 1 lime</li>
+<li>1 tablespoon cumin</li>
+<li>1 tablespoon paprika</li>
+<li>2 teaspoons of salt</li>
+</ul></div>
+<h3>Tacos</h3>
+<div class="bodytext"><ul>
+<li>Cotija cheese (technically optional but really good)</li>
+<li>6-8 small flour or corn tortillas</li>
+</ul></div>
+<h3>Optional Toppings</h3>
+<div class="bodytext"><ul>
+<li>Tomatoes, chopped</li>
+<li>Red onion, chopped</li>
+<li>Avocado, diced</li>
+<li>Cilantro, chopped</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>Pick meat and marinade</h3>
+<div class="bodytext"><ul>
+<li>Pick if using steak or chicken (or both! But double everything else)</li>
+<li><em>For steak: </em>Cut the flank steak into one-inch pieces. In a medium-sized bowl add the soy sauce, Worcestershire, juice from one lime, garlic, cilantro, chili powder, cumin, and salt and pepper. Add the steak and let marinate in the fridge for 1-2 hours.</li>
+<li><em>For chicken: </em>Combine chicken, cumin, oregano, lime juice, orange juice, garlic, and olive oil in a bowl. Marinate at least 1 hour or up to 4 hours.</li>
+</ul></div>
+<h3>Prepare toppings</h3>
+<div class="bodytext"><ul>
+<li>Grill chicken over medium heat until no pink remains, about 4 minutes per side.</li>
+</ul></div>
+<h3>Final grill and assembly</h3>
+<h3>Take two tortillas and put cojo cheese between them</h3>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

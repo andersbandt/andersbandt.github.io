@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Pita Bread - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Pita Bread</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breads and Doughs</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 30 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 6 minutes per pita, 20 minutes in total (depending on pan size)</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> Makes about 8, serves 3-4 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 cup warm water</li>
+<li>2 tsp. active dry yeast</li>
+<li>1 tsp. granulated sugar</li>
+<li>3 cups all-purpose flour, divided</li>
+<li>1 tbsp. extra-virgin olive oil</li>
+<li>1 1/2 tsp. kosher salt</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a large bowl, combine warm water, yeast, and sugar and stir until dissolved. Stir in half cup flour and let sit for 15 minutes, until mixture foams. </li>
+<li>Add oil, salt, and 2 cups flour (reserving half cup) and stir with a wooden spoon until a shaggy mass forms. Dust a clean surface with some of reserved flour and knead until smooth and elastic, about 7 minutes, adding more of the reserved flour if the dough is too sticky. Dough should be soft and moist. (You can cover the dough and let rest 10 minutes if you need a rest from kneading.) </li>
+<li>Place dough in a clean large bowl and cover with plastic wrap. Leave in a warm place until dough has doubled in size, about 1 hour. </li>
+<li>Place a pizza stone or large cast-iron skillet in your oven and preheat to 500°. Lightly dust a clean surface with flour. Punch down dough and turn it out onto surface. Divide dough into 8 pieces and roll into balls. Cover with a towel or plastic wrap and let rest 10 minutes. </li>
+<li>Working one at a time, roll each round into a ¼”-thick circle about 8” wide, sprinkling dough with extra flour if it starts to stick. </li>
+<li>Working as quickly as possible, open your oven and place as many pitas that will fit on your skillet or stone without touching. Let bake until an air pocket balloons and the pita begins to turn golden brown, 3 to 5 minutes. Repeat with remaining rounds. </li>
+<li>Cover baked pitas with a clean kitchen towel to keep warm.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Last time I cooked (granted, using a regular baking sheet) the cooking time was longer than 3-5 minutes</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

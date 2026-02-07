@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Lasagna - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Lasagna</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pasta</a></p>
+      <div class="recipe-meta"><span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <div class="bodytext"><p><strong>Sauce Prep Time: </strong>30-45 minutes
+<strong>Sauce Cook Time: </strong>1.5 hours</p></div>
+<h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 pound sweet Italian sausage</li>
+<li>3/4 pound lean ground beef</li>
+<li>1/2 cup minced onion</li>
+<li>3 cloves garlic, crushed</li>
+<li>1 (28 ounce) can crushed tomatoes</li>
+<li>12 ounces canned tomato paste</li>
+<li>13 ounces canned tomato sauce</li>
+<li>1/2 cup water</li>
+<li>2 tablespoons white sugar</li>
+<li>1 1/2 teaspoons dried basil leaves</li>
+<li>1/2 teaspoon fennel seeds</li>
+<li>1 teaspoon Italian seasoning</li>
+<li>1 1/2 teaspoons salt, divided, or to taste</li>
+<li>1/4 teaspoon ground black pepper</li>
+<li>4 tablespoons chopped fresh parsley</li>
+<li>12 lasagna noodles</li>
+<li>16 ounces ricotta cheese</li>
+<li>1 egg</li>
+<li>3/4 pound mozzarella cheese, sliced</li>
+<li>3/4 cup grated Parmesan cheese</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned. Stir in crushed tomatoes, tomato paste, tomato sauce, and water. Season with sugar, basil, fennel seeds, Italian seasoning, 1 teaspoon salt, pepper, and 2 tablespoons parsley. Simmer, covered, for about 1 1/2 hours, stirring occasionally.</li>
+<li>Bring a large pot of lightly salted water to a boil. Cook lasagna noodles in boiling water for 8 to 10 minutes. Drain noodles, and rinse with cold water. In a mixing bowl, combine ricotta cheese with egg, remaining parsley, and 1/2 teaspoon salt.</li>
+<li>Preheat oven to 375 degrees F (190 degrees C).</li>
+<li>To assemble, spread 1 1/2 cups of meat sauce in the bottom of a 9x13-inch baking dish. Arrange 6 noodles lengthwise over meat sauce. Spread with one half of the ricotta cheese mixture. Top with a third of mozzarella cheese slices. Spoon 1 1/2 cups meat sauce over mozzarella, and sprinkle with 1/4 cup Parmesan cheese. Repeat layers, and top with remaining mozzarella and Parmesan cheese. Cover with foil: to prevent sticking, either spray foil with cooking spray, or make sure the foil does not touch the cheese.</li>
+<li>Bake in a preheated oven for 25 minutes. Remove foil, and bake for an additional 25 minutes. Cool for 15 minutes before serving.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>I have “successfully” done this recipe only cooking the sauce for about 45 minutes
+I have also done this recipe omitting the foil because I overloaded the pan and didn’t want to “make sure the foil does not touch the cheese”</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

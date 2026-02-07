@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Spiced Black Beans with Rice - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Spiced Black Beans with Rice</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Rice Dishes</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 20 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 40 minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 5 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 pound dried black beans</li>
+<li>1 tablespoon pink Himalayan salt</li>
+<li>1 teaspoon freshly ground black pepper</li>
+<li>1 teaspoon crushed red pepper</li>
+<li>1 1/2 teaspoons ground cumin</li>
+<li>2 cups white rice</li>
+<li>4 cups water</li>
+<li>1 teaspoon salt</li>
+<li>2 teaspoons ground coriander</li>
+<li>6 green onions, thinly sliced (for garnish, option)</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>For the beans</h3>
+<div class="bodytext"><ul>
+<li>In a stockpot or large saucepan, combine the beans and plenty of cold water to cover. Sprinkle in a little salt as well. Bring the pot to a boil over high heat. Once the water boils, remove the pot from the heat and let stand for 30 minutes to an hour. (alternatively, you can soak the beans overnight!).</li>
+<li>Drain the beans and return them to the pot. Add fresh water to cover the beans by 1 inch. Add the Himalayan salt, black pepper, and crushed red pepper, and bring to a boil.</li>
+<li>Reduce the heat so that the water is simmering. Add the cumin and cook for about 30 minutes, until the beans are tender.</li>
+</ul></div>
+<h3>For the rice</h3>
+<div class="bodytext"><ul>
+<li>While the beans are cooking, make the rice. Combine the rice, water, sea salt, and coriander in a saucepan. Bring to a boil, reduce the heat to low, cover, and let simmer for about 20 minutes until the rice is tender.</li>
+<li>To serve, scoop a small amount of rice onto a plate and then add some of the beans, along with the cooking liquid, over the top. Garnish with the green onions.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>The coriander in the rice is very good.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

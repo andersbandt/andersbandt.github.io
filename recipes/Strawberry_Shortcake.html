@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Strawberry Shortcake - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Strawberry Shortcake</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Cake and Strawberries</h3>
+<div class="bodytext"><ul>
+<li>2 pints fresh strawberries, sliced</li>
+<li>1/4 cup plus 3 tbsp. sugar, divided</li>
+<li>Cooking spray, for pan</li>
+<li>2 ¼ cup all-purpose flour</li>
+<li>2 teaspoon baking powder</li>
+<li>1/2 teaspoon baking soda</li>
+<li>1/4 teaspoon kosher salt</li>
+<li>1 ½  c. heavy cream</li>
+</ul></div>
+<h3>Whipped Cream</h3>
+<div class="bodytext"><ul>
+<li>1 ½  cup heavy cream</li>
+<li>1 ½  tsp. pure vanilla extract</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>Cake and Strawberries</h3>
+<div class="bodytext"><ul>
+<li>In a large bowl, combine strawberries and 3 tablespoons sugar and toss until coated. Refrigerate, 30 minutes, or up to 1 hour.</li>
+<li>Preheat oven to 400° and spray an 8x8 baking pan with cooking spray. Stir together flour, remaining 1/4 cup sugar, baking powder, baking soda, and salt in a large bowl. Pour in heavy cream and stir until just combined.</li>
+<li>Drop dough into prepared pan and press down evenly. Bake until edges are golden and a toothpick comes out clean, 18 to 20 minutes. Let cool.</li>
+</ul></div>
+<h3>Whipped Cream</h3>
+<div class="bodytext"><ul>
+<li>Meanwhile, make whipped cream topping: In a large bowl using a hand mixer or in the bowl of a stand mixer using the whisk attachment, beat heavy cream and vanilla until soft peaks form, 2 to 3 minutes. Keep chilled until ready to serve.</li>
+<li>To serve, slice cake into 12 pieces. Top bottom shortcake with sugared strawberries, then a second shortcake. Dollop with whipped cream.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Korean Style Hasselback Short Ribs - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Korean Style Hasselback Short Ribs</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Beef</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1" piece ginger, peeled, finely grated</li>
+<li>2 garlic cloves, finely grated</li>
+<li>1/4 cup soy sauce</li>
+<li>2 tablespoons unseasoned rice vinegar</li>
+<li>2 tablespoons light or dark brown sugar</li>
+<li>1 tablespoon gochugaru (coarse Korean red pepper powder) or 1 tsp. crushed red pepper flakes</li>
+<li>1 tablespoon toasted sesame oil</li>
+<li>1 1/2 lb. 1" to 1.5" thick boneless beef short ribs, trimmed</li>
+<li>Vegetable oil (for grill)</li>
+<li>Kosher salt</li>
+<li>Lettuce leaves (for serving; optional)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Mix ginger, garlic, soy sauce, rice vinegar, brown sugar, gochugaru, and sesame oil in a medium bowl to combine.</li>
+<li>Using a sharp knife, slice short ribs at a steep angle every ¼", cutting no more than halfway through meat. Turn over and slice on the second side, maintaining the same angle as the first side (this helps to keep meat in 1 piece by minimizing the danger of slicing all the way through). Place meat inside bowl with marinade and toss well to coat, working marinade into slashes in meat. Cover bowl with a large plate and let sit at room temperature at least 2 hours or chill up to 1 day.</li>
+<li>Prepare a grill for medium-high heat; oil grate with vegetable oil. Remove short ribs from marinade and very lightly season with salt. Grill, turning every 1–2 minutes and moving to a cooler part of grill if needed, until meat is firm to the touch and peeking inside deepest slashes shows just a streak of pink (cooking the meat to at least medium helps build flavor and yields the best texture), 8–10 minutes.</li>
+<li>Transfer short ribs to a cutting board and let rest at least 5 minutes before slicing across the slashes—or frankly, just tear it apart.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

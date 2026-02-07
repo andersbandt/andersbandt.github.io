@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Food Processor Pizza Dough - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Food Processor Pizza Dough</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Breads and Doughs > Pizza Doughs</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 15 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> NA</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 4 people, depends on use and how hungry you are!</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 tablespoon (about 7 grams) active dry yeast</li>
+<li>2 teaspoon sugar (about 8 grams), separated</li>
+<li>1 cup warm water (105° to 115°F)</li>
+<li>375 grams (about 3 cups) all-purpose flour</li>
+<li>1 teaspoon salt</li>
+<li>3 tablespoons extra-virgin olive oil, separated</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a small bowl, dissolve the yeast and 1 teaspoon of the sugar in the warm water and let stand until foamy, about 5 minutes. If the yeast doesn’t get foamy, you likely have dead yeast.</li>
+<li>In the bowl of a food processor fitted with the dough blade, combine the flour and salt and process with 3 or 4 pulses. Also add a splash of olive oil.</li>
+<li>With the motor running on the dough speed, slowly add the yeast mixture, allowing each addition to be absorbed before adding more. Continue processing until the dough forms a ball and cleans the sides of the bowl, about 1 minute, then process for 1 minute more.</li>
+<li>Depending on the strength of your food processor, I like to hand knead for a little longer because my processor isn’t that strong. However when I’m feeling lazy I just kind of say fuck it and use whatever comes out of the food processor.</li>
+<li>Coat the inside of a large bowl with the olive oil and place the dough in the bowl. Cover with a clean kitchen towel and let the dough rise in a warm place until doubled in size, about 1 1/2 hours.</li>
+<li>Use dough however you like. Pizza, calzones, anything!</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>This recipe is pretty good. For amount produced, it’s about a little TOO much for a cast iron pizza. It’s good for a typical baking sheet to cover entirely to produce a thin(ish) crust pizza</p></div>
+<div class="bodytext"><p><em>Weight Log</em>
+1 lb. 8 oz (this one I added too much water and had to add more flour)</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

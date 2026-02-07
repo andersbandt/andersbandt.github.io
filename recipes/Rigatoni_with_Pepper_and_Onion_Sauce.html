@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Rigatoni with Pepper and Onion Sauce - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Rigatoni with Pepper and Onion Sauce</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pasta</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 20 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>2 red bell pepper</li>
+<li>1 white onion (or possibly yellow, give it a try sometime) &lt;3</li>
+<li>3-4 cloves garlic</li>
+<li>3/4 cup heavy cream</li>
+<li>1/2 lb. nice and salty meat (optional)</li>
+<li>1 lb. of rigatoni pasta</li>
+<li>Pasta water, reserved from cooking (REMEMBER THIS!!!) </li>
+<li>Some olive oil</li>
+<li>Salt and pepper</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Chop red pepper, put on a pan and roast. Roast for about 40 minutes at 400 degrees Fahrenheit, until soft and blistered. At this point, you can remove the skins, but I prefer to leave them on.</li>
+<li>If you want, cook the meat in a skillet. Reserve a little of the oil for cooking the onion and garlic. Set meat aside for later.</li>
+<li>Dice onion and garlic cloves and cook in a skillet with some olive oil until soft and fragrant.</li>
+<li>Add in the red pepper just for the final bit of cooking.</li>
+<li>Let mixture cool for a little, and add to a food processor, blend until a single color and texture. Meanwhile, start to cook rigatoni al dente! Remember to save some of the pasta water for potential dry sauce.</li>
+<li>Return the blended mixture to a pan on low heat, and add heavy cream.</li>
+<li>Add rigatoni and mix. Add pasta water if too dry.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>This recipe was inspired by a short form video I saw on the Internet, and with some assistance of another recipe viewed online.</p></div>
+<div class="bodytext"><p>Could possibly use a little more heavy cream, so I changed the recipe from 1/4 cup heavy cream to 3/4 cup</p></div>
+<div class="bodytext"><p>^^^ adding onto that note, both times (2 times now) I’ve made this recipe it has been very good but more like a coating across all the pasta, and less of a true sauce. So maybe look back at the source material for the recipe or add more heavy cream.</p></div>
+<div class="bodytext"><p>Add chicken bouillon and parmigiana reggiano if you have it :) -b</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

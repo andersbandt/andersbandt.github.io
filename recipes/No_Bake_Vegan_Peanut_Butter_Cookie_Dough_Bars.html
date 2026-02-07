@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>No Bake Vegan Peanut Butter Cookie Dough Bars - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>No Bake Vegan Peanut Butter Cookie Dough Bars</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Desserts</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> xx minutes</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> x people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1/4 cup rolled oats</li>
+<li>1/2 cup protein powder</li>
+<li>1 cup raw cashews</li>
+<li>10 large medjool dates</li>
+<li>3 tablespoons peanut butter</li>
+<li>2 tablespoons maple syrup</li>
+<li>Pinch of salt</li>
+<li>Whole peanuts to garnish (optional)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Make “oat flour” by adding the rolled oats to the food processor and pulsing until you have something that resembles flour. Leave that in the processor, add the protein powder, and top with everything else (cashews, dates, peanut butter, maple syrup, and salt) and pulse a few times, then turn it on full strength and let it completely puree everything until smooth. Think of this like peanut butter, at first it will be crumbly but let it run long enough and it will get progressively more sticky until the consistency is perfect. Note: It’s important to add the protein powder to the bottom and cover with the other ingredients, otherwise it will burst through every seam of your processor and leave a coating of protein dust far and wide.</li>
+<li>Pinch a chunk of this mixture and give it a taste to determine if you need to make any adjustments. If it’s too crumbly and won’t stick together, add a teaspoon of maple syrup or another date to give it more stickiness. Want more peanut butter flavor? Add another tablespoon of peanut butter. This recipe is totally fool-proof and can handle pretty much any adjustments you want to make.</li>
+<li>
+<div class="bodytext"><p>Transfer to an 8×8 inch glass pan and press down until it evenly coats the pan, about 1/3 inch thick. You can optionally sprinkle on whole or halved peanuts and press them into the surface. Transfer to the refrigerator for at least 3 hours to further solidify. Once firm, cut into 8-10 bar-sized pieces and try not to eat all of them at once. 🙂 For best texture, keep refrigerated until ready to serve.</p></div>
+</li>
+<li>
+<div class="bodytext"><p>Variation: Cookie Dough Bites</p></div>
+</li>
+<li>If you prefer, you can roll into cookie dough bites instead of bars – simply pinch off about 2 tablespoons and roll between your hands into spheres. The bites are more portable and can make sense if you’d like to take some with you, such as on a hike or road trip.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

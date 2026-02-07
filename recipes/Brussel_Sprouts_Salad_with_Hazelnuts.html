@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Brussel Sprouts Salad with Hazelnuts - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Brussel Sprouts Salad with Hazelnuts</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Salads</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 pound Brussel sprouts</li>
+<li>2 tablespoons water</li>
+<li>1/2 cup hazelnuts (filberts), toasted and coarsely chopped</li>
+<li>1/2 cup finely shredded pecorino Romano cheese (about 2 ounces)</li>
+<li>1/4 cup red wine vinegar</li>
+<li>3 tablespoons olive oil</li>
+<li>1/4 teaspoons salt</li>
+<li>1/4 teaspoon ground black pepper</li>
+<li>Pine nuts (optional)</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>Trim stems and remove any wilted out leaves from Brussels sprouts. Thinly slice sprouts. In a microwave-safe dish combine Brussels sprouts and the water; cover with vented plastic wrap. Microwave about 3 minutes or until sprouts are bright green, stirring once. Drain in a colander. Rinse with cold water to cool; drain again. Pat dry with paper towels or use a salad spinner to dry.</li>
+<li>In a large bowl combine Brussels sprouts, hazelnuts, and the shredded cheese. For dressing, in a small screw-top jar combine vinegar, oil, salt, and pepper. Cover and shake well to combine. Pour dressing over sprouts mixture; toss gently to coat. If desired, top with shaved cheese and pine nuts.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>To thinly slice Brussels sprouts, use the thin slicing blade of a food processor (watch out for making a brussel sprout paste, however!). Another option is to halve the sprouts lengthwise with a sharp knife, then place halves, cut sides down, on the cutting board and cut into thin slices.</p></div>
+<div class="bodytext"><p>Watch out: when toasting nuts there is a very critical point between toasted and burnt</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

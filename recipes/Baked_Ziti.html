@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Baked Ziti - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Baked Ziti</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Pasta</a></p>
+      <div class="recipe-meta"><span><strong>Prep Time:</strong> 10 minutes</span> &nbsp;|&nbsp; <span><strong>Cook Time:</strong> 55 minutes** (**25 minutes on the stove, 30 minutes in the oven)</span> &nbsp;|&nbsp; <span><strong>Serves:</strong> 6 people</span></div>
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1 pound dry ziti pasta</li>
+<li>3 cloves garlic</li>
+<li>1 onion, chopped</li>
+<li>1 pound lean ground beef</li>
+<li>26 ounces spaghetti sauce or tomato sauce</li>
+<li>28 ounces canned whole tomatoes (optional)</li>
+<li>1/2 teaspoon red pepper flakes </li>
+<li>2 teaspoons Italian seasoning</li>
+<li>2 eggs</li>
+<li>6 ounces provolone cheese, sliced</li>
+<li>1 1/2 cups sour cream (can also be substituted for ricotta - either for a more lasagna style taste or a unique one with sour cream!)</li>
+<li>6 ounces mozzarella cheese, shredded</li>
+<li>
+<div class="bodytext"><p>2 tablespoons grated Parmesan cheese</p></div>
+</li>
+<li>
+<div class="bodytext"><p><strong>Instructions</strong>.</p></div>
+</li>
+<li>In a large skillet, brown onion and garlic. Add ground beef and cook over medium heat. Add spaghetti sauce, canned whole tomatoes, Italian seasoning, and red pepper flakes. Simmer 25-30 minutes.</li>
+<li>Bring a large pot of lightly salted water to a boil. Add ziti pasta, and cook until just before al dente, about 8 minutes; drain. Rinse pasta under cold water to stop the pasta from cooking (maybe not really necessary but probably helps).</li>
+<li>Preheat the oven to 375<strong>°</strong>.</li>
+<li>Butter a 9x13 inch baking dish. Layer as follows: 1/2 of the ziti, Provolone cheese, sour cream, 1/2 sauce mixture, remaining ziti, mozzarella cheese and remaining sauce mixture. Top with grated Parmesan cheese.</li>
+<li>Bake for 30 minutes in the preheated oven, or until cheeses are melted.</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>The sour cream is a pretty good addition but I MIGHT prefer ricotta. More trial and tasting will be needed to fully determine that.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

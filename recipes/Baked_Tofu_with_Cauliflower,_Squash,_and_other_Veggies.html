@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Baked Tofu with Cauliflower, Squash, and other Veggies - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Baked Tofu with Cauliflower, Squash, and other Veggies</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Vegetarian</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<h3>Baked Tofu</h3>
+<div class="bodytext"><ul>
+<li>1 block (12 to 15 ounces) extra-firm tofu</li>
+<li>1-2 tablespoon olive oil</li>
+<li>1 tablespoon tamari</li>
+<li>1 tablespoon cornstarch</li>
+</ul></div>
+<h3>Riced Cauliflower and Veggies</h3>
+<div class="bodytext"><ul>
+<li>2 heads cauliflower</li>
+<li>Squash</li>
+<li>Chickpeas</li>
+<li>3 tablespoons olive oil</li>
+<li>Salt and pepper to taste</li>
+</ul></div>
+<h2>Instructions</h2>
+<h3>Baked Tofu</h3>
+<div class="bodytext"><ul>
+<li>Preheat the oven to 400 degrees Fahrenheit and line a large, rimmed baking sheet with parchment paper to prevent the tofu from sticking.</li>
+<li>To prepare the tofu: Drain the tofu and use your palms to gently squeeze out some of the water. Slice the tofu into thirds lengthwise so you have 3 even slabs. Stack the slabs on top of each other and slice through them lengthwise to make 3 even columns, then slice across to make 5 even rows (see photos).</li>
+<li>Line a cutting board with a lint-free tea towel or paper towels, then arrange the tofu in an even layer on the towel(s). Fold the towel(s) over the cubed tofu, then place something heavy on top (like another cutting board, topped with a cast iron pan or large cans of tomatoes) to help the tofu drain. Let the tofu rest for at least 10 minutes (preferably more like 30 minutes, if you have the time).</li>
+<li>Transfer the pressed tofu to a medium mixing bowl and drizzle with the olive oil and tamari. Toss to combine. Sprinkle the starch over the tofu, and toss the tofu until the starch is evenly coated, so there are no powdery spots remaining.</li>
+<li>Tip the bowl of tofu over onto your prepared baking sheet and arrange the tofu in an even layer. Bake for 25 to 30 minutes, tossing the tofu halfway, until the tofu is deeply golden on the edges. Use as desired.</li>
+</ul></div>
+<h3>Riced Cauliflower</h3>
+<div class="bodytext"><ul>
+<li>Grate cauliflower using a grater or a food processor</li>
+<li>Heat olive oil in a large skillet and cook until tender, about ten minutes</li>
+</ul></div>
+<h2>Notes</h2>
+<div class="bodytext"><p>Freezing the tofu and then thawing it out before use gives it a spongy texture
+You can also use sweet potatoes instead of squash, or pretty much any vegetables you desire.</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

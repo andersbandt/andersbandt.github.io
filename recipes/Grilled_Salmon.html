@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Grilled Salmon - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+    <li><a href="/pages/about-me.html">About Me</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Grilled Salmon</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; Seafood</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>Ingredients</h2>
+<div class="bodytext"><ul>
+<li>1/4 cup Dijon mustard</li>
+<li>1/4 cup whole-grain mustard</li>
+<li>1/4 cup honey</li>
+<li>2 tablespoons soy sauce</li>
+<li>1 garlic clove, minced</li>
+<li>1 ½ teaspoons finely chopped thyme</li>
+<li>Four 6-ounce skinless salmon fillets or 6- to 8-ounce salmon steaks (about 3/4 inch thick)</li>
+<li>Kosher salt</li>
+<li>Freshly ground pepper</li>
+</ul></div>
+<h2>Instructions</h2>
+<div class="bodytext"><ul>
+<li>In a medium bowl, whisk the mustards with the honey, soy sauce, garlic and thyme.</li>
+<li>Light a grill or preheat a grill pan and oil the grate or pan. Brush the salmon fillets with oil and season with salt and pepper. Grill the salmon fillets skinless side down over moderate heat for about 3 minutes. Turn and grill about 3 minutes longer, until the salmon is nearly cooked through. </li>
+<li>Generously brush both sides of the salmon with the honey mustard and grill, turning frequently, until richly glazed, about 1 minute. (For salmon steaks, grill over moderately high heat, turning once, for 4 to 5 minutes, then brush with the honey mustard, turning frequently, for 1 minute.) </li>
+<li>Transfer to a platter or plates and serve, passing the remaining honey mustard at the table.</li>
+</ul></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>
