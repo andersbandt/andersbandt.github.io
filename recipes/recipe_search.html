@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>recipe_search - FlavoWorks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>recipe_search</h2>
+      <p class="recipe-back-link"><a href="../pages/recipes.html">&larr; General</a></p>
+      
+    </header>
+
+
+    <main>
+
+
+      <article>
+
+        <h2>All Dinner Ideas</h2>
+<div class="bodytext"><p><code>dataview
+TABLE tags as Tags, prep_time as Prep, cook_time as Cook
+FROM "recipes"
+WHERE contains(tags, "dinner")
+SORT file.name ASC</code></p></div>
+<h2>Quick Meals</h2>
+<div class="bodytext"><p><code>dataview
+TABLE tags as Tags, prep_time as Prep, cook_time as Cook
+FROM "recipes"
+WHERE contains(tags, "quick")
+SORT file.name ASC</code></p></div>
+<h2>Vegetarian Dinners</h2>
+<div class="bodytext"><p><code>dataview
+TABLE tags as Tags, prep_time as Prep, cook_time as Cook
+FROM "recipes"
+WHERE contains(tags, "dinner") AND contains(tags, "vegetarian")
+SORT file.name ASC</code></p></div>
+<hr/>
+<h2>By Cuisine</h2>
+<h3>Indian</h3>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "indian")
+SORT file.name ASC</code></p></div>
+<h3>Italian</h3>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "italian")
+SORT file.name ASC</code></p></div>
+<h3>Japanese</h3>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "japanese")
+SORT file.name ASC</code></p></div>
+<h3>Korean</h3>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "korean")
+SORT file.name ASC</code></p></div>
+<h3>Mexican</h3>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "mexican")
+SORT file.name ASC</code></p></div>
+<h3>French</h3>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "french")
+SORT file.name ASC</code></p></div>
+<h3>Vietnamese</h3>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "vietnamese")
+SORT file.name ASC</code></p></div>
+<hr/>
+<h2>By Cooking Method</h2>
+<h3>Grilled</h3>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "grilled")
+SORT file.name ASC</code></p></div>
+<h3>Slow Cook</h3>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "slow-cook")
+SORT file.name ASC</code></p></div>
+<h3>Baked</h3>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "baked") AND contains(tags, "dinner")
+SORT file.name ASC</code></p></div>
+<hr/>
+<h2>Breakfast</h2>
+<div class="bodytext"><p><code>dataview
+TABLE tags as Tags, prep_time as Prep, cook_time as Cook
+FROM "recipes"
+WHERE contains(tags, "breakfast")
+SORT file.name ASC</code></p></div>
+<h2>Sides &amp; Accompaniments</h2>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "side") OR contains(tags, "appetizer") OR contains(tags, "condiment")
+SORT file.name ASC</code></p></div>
+<h2>Desserts</h2>
+<div class="bodytext"><p><code>dataview
+LIST
+FROM "recipes"
+WHERE contains(tags, "dessert")
+SORT file.name ASC</code></p></div>
+<hr/>
+<h2>Custom Query Examples</h2>
+<div class="bodytext"><p>Copy any of these into a new note or modify them here:</p></div>
+<div class="bodytext"><p>Find dinner recipes by cuisine and protein:
+<code>TABLE tags as Tags, prep_time as Prep, cook_time as Cook
+FROM "recipes"
+WHERE contains(tags, "dinner") AND contains(tags, "indian") AND contains(tags, "chicken")
+SORT file.name ASC</code></p></div>
+<div class="bodytext"><p>Find all vegan options:
+<code>LIST
+FROM "recipes"
+WHERE contains(tags, "vegan")
+SORT file.name ASC</code></p></div>
+<div class="bodytext"><p>Find recipes by multiple tags (any match):
+<code>LIST
+FROM "recipes"
+WHERE contains(tags, "korean") OR contains(tags, "japanese") OR contains(tags, "vietnamese") OR contains(tags, "chinese")
+SORT file.name ASC</code></p></div>
+<h3>Available Tags</h3>
+<div class="bodytext"><p><strong>Cuisine:</strong> american, brazilian, british, chinese, danish, french, german, greek, indian, italian, japanese, jewish, korean, mexican, middle-eastern, norwegian, spanish, swedish, vietnamese</p></div>
+<div class="bodytext"><p><strong>Protein:</strong> beef, chicken, duck, fish, pork, seafood, shrimp, tofu</p></div>
+<div class="bodytext"><p><strong>Meal type:</strong> appetizer, breakfast, dessert, dinner, drink, side, snack</p></div>
+<div class="bodytext"><p><strong>Cooking method:</strong> baked, cast-iron, fried, grilled, instant-pot, microwave, no-bake, roasted, slow-cook, stovetop</p></div>
+<div class="bodytext"><p><strong>Dietary:</strong> keto, vegan, vegetarian</p></div>
+<div class="bodytext"><p><strong>Dish type:</strong> bowl, bread, cake, cheesecake, cocktail, cookie, cupcake, curry, deep-dish, dip, dough, muffin, pancake, pasta, pastry, pie, pizza, potato, rice, salad, sandwich, sauce, seasoning, soup, sweet, taco, vegetable, wings</p></div>
+
+      </article>
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>
