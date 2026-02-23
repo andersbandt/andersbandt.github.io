@@ -54,8 +54,7 @@
     </header>
 
 
-    <main>
-
+    <main class="article-layout">
 
       <article>
 
@@ -148,12 +147,59 @@ One thing to consider is the shape of the probe tip you select. Depending on you
 </ul></div> <!-- This is where the Markdown content will be injected -->
 
       </article>
+
+      <aside class="sticky-toc" aria-label="Table of contents"></aside>
+
     </main>
 
 
 
     <!-- Google Archive code-prettify -->
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+    <script>
+      (function () {
+        var headings = document.querySelectorAll('article h2.section_heading');
+        var aside = document.querySelector('.sticky-toc');
+        if (!headings.length || !aside) return;
+
+        // Build sticky TOC from article headings
+        var title = document.createElement('p');
+        title.className = 'toc_title';
+        title.textContent = 'Contents';
+
+        var ul = document.createElement('ul');
+        ul.className = 'toc_list';
+
+        var links = [];
+        headings.forEach(function (h) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '#' + h.id;
+          a.textContent = h.textContent;
+          a.className = 'sticky-toc-link';
+          li.appendChild(a);
+          ul.appendChild(li);
+          links.push({ heading: h, link: a });
+        });
+
+        aside.appendChild(title);
+        aside.appendChild(ul);
+
+        // Highlight active section on scroll
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              links.forEach(function (item) {
+                item.link.classList.toggle('toc-active', item.heading === entry.target);
+              });
+            }
+          });
+        }, { rootMargin: '-10% 0px -80% 0px' });
+
+        headings.forEach(function (h) { observer.observe(h); });
+      })();
+    </script>
 
     <!-- Footer -->
     <div id="footer">

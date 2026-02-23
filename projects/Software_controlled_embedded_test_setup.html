@@ -39,7 +39,7 @@
       <div>
     <div class="about-section">
         <p>Created on: 2024-12-22 23:37:13</p>
-        <p>Modified on: 2026-01-15 17:35:41</p>
+        <p>Modified on: 2026-02-23 16:59:51</p>
         <p><strong>Scope:</strong> <em>this article is about a software-controlled test setup using power supplies, multimeters, USB relays, and debug probes. The purpose of this test setup is for testing embedded devices</em></p>
     </div>
     </div>
@@ -54,8 +54,7 @@
     </header>
 
 
-    <main>
-
+    <main class="article-layout">
 
       <article>
 
@@ -73,7 +72,6 @@
 <div class="bodytext"><p>These features create a safer, more efficient debugging experience and enable remote testing capabilities. I began thinking how I could replicate this testing framework (both at the hardware and software level) in my personal project sphere, mainly involving embedded systems.</p></div>
 <h3>Motivations</h3>
 <div class="bodytext"><p>The main motivation for developing this project was my bringup of another personal electronics project - a wearable PCB. Bringup involved many separate tasks that quickly became tedious. In my original setup, I had to open my IDE to flash the program, use a separate tool to monitor UART output, and physically power-cycle the DUT if the debugger got stuck. Worse yet, a simple mistake - like applying an incorrect voltage - could fry a chip, leaving me upset in my lack of care.</p></div>
-<div class="bodytext"><p>==maybe somehow add an image in this section?==</p></div>
 <div class="bodytext"><p>Frustrated with these pain points, I thought: why not replicate the advantages of an ATE system in a setup tailored for embedded systems? At the core, I really needed many of the same capabilities as a semiconductor test platform:</p></div>
 <div class="bodytext"><ul>
 <li>Supplying controlled power to a device</li>
@@ -89,7 +87,7 @@
 <div class="bodytext"><p>I will talk about each component in detail in the next sections.</p></div>
 <h4>Hardware side</h4>
 <div class="bodytext"><p>On the hardware side, what I really needed is basically an "interface board". No complicated components, pretty much just need a way to connect the signals and power rails on the DUT to an easy to access test board. From my semiconductor testing days, that was the main purpose of our hardware - providing an interface between the tester and the DUT.</p></div>
-<div class="bodytext"><p>==add a picture of a loadboard?==</p></div>
+<figure><div class="bodytext"><p><img src="images/Pasted image 20260223164831.png" width="250"/></p></div><figcaption>An example loadboard on a v93k ATE tester. Unsure where the DUT on this one goes</figcaption></figure>
 <div class="bodytext"><p>When you break it down, I want these things to connect to the DUT</p></div>
 <div class="bodytext"><ul>
 <li>power delivery</li>
@@ -124,7 +122,6 @@
 </ul></div>
 <div class="bodytext"><p>I chose <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" rel="noopener noreferrer" target="_blank">Python</a> as my language of choice. for software development. Python has lots of good test equipment controls like <code>pyvisa</code>. There are many native plot tools like <code>matplotlib</code>. You can code basic UIs with Python through <code>tkinter</code>. Probably most importantly - I also have much more experience with it compared to other languages!</p></div>
 <h3>Resources</h3>
-<div class="bodytext"><p>==I think this section has to move up one! - change template?==</p></div>
 <div class="bodytext"><p>This project is pretty resource intensive. There is a decent amount of hardware that I purchased, along with all the test equipment.</p></div>
 <div class="bodytext"><ul>
 <li><strong>Power supply</strong> <ul>
@@ -154,7 +151,6 @@
 <div class="bodytext"><p><img src="images/Pasted image 20241224113855.png" width="400"/></p></div>
 <div class="bodytext"><p><em>SPD3303X-E Programmable DC Power supply from Siglent</em></p></div>
 <figure><div class="bodytext"><p><img src="images/Pasted image 20241224113932.png" width="400"/></p></div><figcaption>OWON XDM1041 digital multimeter</figcaption></figure>
-<div class="bodytext"><p>==add pic of my host PC==</p></div>
 <div class="bodytext"><p>You obviously don't have to use my specific models of lab equipment, you can use whatever you have in your lab. You will just have to adjust the code for what SCPI commands correspond to what. Luckily through abstraction the main application will still work normally once this is setup!</p></div>
 <h2 class="section_heading" id="capabilities-and-implementation">Capabilities and Implementation</h2>
 <hr/>
@@ -219,7 +215,6 @@ except KeyboardInterrupt:
 <div class="bodytext"><p>In my test setup I have two of these connected. This may not be needed for most test setups, but I find it useful when I have two prototypes with just slightly different hardware configurations.</p></div>
 <div class="bodytext"><p>==insert photo of my test setup==</p></div>
 <div class="bodytext"><p>You can set and then call a specific serial number to issue commands to.</p></div>
-<div class="bodytext"><p>==insert a screenshot of grabbing the serial number from my XDS110==</p></div>
 <div class="bodytext"><p>Being able to separate myself from an IDE allowed me to do most of my coding in Emacs, a text editor I started using in late 2022.</p></div>
 <div class="bodytext"><p>I have not yet figured out how to actually perform debug abilities without usage of the IDE (breakpoints, reading from register memories, etc.) Maybe in a future update ....</p></div>
 <h3>Test equipment control</h3>
@@ -362,16 +357,11 @@ I've updated the application to actually have some drop-down where you can selec
 <div class="bodytext"><p>Development flow was slightly stuttered by developing the application in parallel with what I was testing. You're trying to work on firmware development for your device, then something bothers you about the test application so you switch what you're working on, then you try to switch back ..... you get the point. Multi-tasking code writing hard!</p></div>
 <div class="bodytext"><p>Some of the most productive work on this project took place offline in "simulator" mode when I wasn't actually even connected to any test hardware. This way I just solely focused on code improvements and closing <code>TODO</code> items, and then cleaning up any bugs once I was back connected to everything.</p></div>
 <h3>Looking forward</h3>
-<div class="bodytext"><p>I think I will continue to interface with project in the same way that 90% of the development has happened, really just slowly adding features as I use it more and more.</p></div>
 <div class="bodytext"><p>I'm still actively working on this project, and likely will be for a while. Fortunately, I enjoy coding as it's a good break from hardware design. I will likely continue to work on the project in the same way that 90% of development has happened - really slowly adding features as I use it more and desire something. Much of my programming happens "on the fly" as I actively use the software. When necessary, I jot down TODOs so I can revisit certain features later without needing to be physically connected to the hardware</p></div>
-<div class="bodytext"><p>Sometimes it distracts me from actually working on the project at hand that I'm using the equipment for, which is a dangerous trap :)</p></div>
-<div class="bodytext"><p>One thing that will cause an issue in the future is if I ever replace any of my test equipment. I have abstracted away much of the finer details of the code implementation through classes, but there will still have to be some API written and formatted for each device.</p></div>
-<div class="bodytext"><p>==maybe add examples of my EEequipment repository ?==</p></div>
+<div class="bodytext"><p>I think I will continue to interface with project in the same way that 90% of the development has happened, really just slowly adding features as I use it more and more. Sometimes it distracts me from actually working on the project at hand that I'm using the equipment for, which is a dangerous trap :) </p></div>
 <div class="bodytext"><p>I think also in the future my hardware design will become more and more complex. Right now it is pretty much a glorified connector interface, with banana jack inputs and header pins. In the future, I would like to add more active component such as an FTDI converter for UART to USB conversion or some current-sensing module built in.</p></div>
-<div class="bodytext"><p>I would also like to integrate more closely with my [[Probe testing for embedded devices]] hardware. </p></div>
-<div class="bodytext"><p>==add some picture of my probe hardware==</p></div>
-<div class="bodytext"><p>It would be interesting to add a tab in the software application with a nice graphical display of all the various voltage levels the probe pins are at .... maybe something like this</p></div>
-<div class="bodytext"><p>==add really basic sketch </p></div>
+<div class="bodytext"><p>I would also like to integrate more closely with my [[Probe testing for embedded devices]] hardware, possibly adding another piece of equipment that can sample the analog voltages of the probe pins.</p></div>
+<div class="bodytext"><p><img src="images/embedded_probe_test.jpeg" width="350"/></p></div>
 <h2 class="section_heading" id="additional-information">Additional Information</h2>
 <hr/>
 <h3>Online Resources</h3>
@@ -381,12 +371,59 @@ I've updated the application to actually have some drop-down where you can selec
 </ul></div> <!-- This is where the Markdown content will be injected -->
 
       </article>
+
+      <aside class="sticky-toc" aria-label="Table of contents"></aside>
+
     </main>
 
 
 
     <!-- Google Archive code-prettify -->
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+    <script>
+      (function () {
+        var headings = document.querySelectorAll('article h2.section_heading');
+        var aside = document.querySelector('.sticky-toc');
+        if (!headings.length || !aside) return;
+
+        // Build sticky TOC from article headings
+        var title = document.createElement('p');
+        title.className = 'toc_title';
+        title.textContent = 'Contents';
+
+        var ul = document.createElement('ul');
+        ul.className = 'toc_list';
+
+        var links = [];
+        headings.forEach(function (h) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '#' + h.id;
+          a.textContent = h.textContent;
+          a.className = 'sticky-toc-link';
+          li.appendChild(a);
+          ul.appendChild(li);
+          links.push({ heading: h, link: a });
+        });
+
+        aside.appendChild(title);
+        aside.appendChild(ul);
+
+        // Highlight active section on scroll
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              links.forEach(function (item) {
+                item.link.classList.toggle('toc-active', item.heading === entry.target);
+              });
+            }
+          });
+        }, { rootMargin: '-10% 0px -80% 0px' });
+
+        headings.forEach(function (h) { observer.observe(h); });
+      })();
+    </script>
 
     <!-- Footer -->
     <div id="footer">

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Spotify-Scraper</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="icon" href="../favicon.ico" />
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+  </head>
+
+
+  <body>
+    <!--Main Heading -->
+    <div id="heading">
+      <h1>FlavoWorks</h1>
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<div id="cssmenu">
+  <ul id="navbar">
+    <li><a href="/index.html">Home</a>
+    </li>
+    <li><a href="/pages/blog.html">Blog</a>
+    </li>
+    <li><a href="/pages/projects.html">Projects</a>
+    </li>
+    <li><a href="/pages/recipes.html">Recipes</a>
+    </li>
+  </ul>
+</div>
+
+
+    <header>
+      <h2>Spotify-Scraper</h2>
+      <div>
+    <div class="about-section">
+        <p>Created on: 2026-02-20 14:49:11</p>
+        <p>Modified on: 2026-02-20 14:50:29</p>
+        <p><strong>Scope:</strong> <em>write the scope here</em></p>
+    </div>
+    </div>
+      <nav>
+        <div id="toc_container">
+          <p class="toc_title">Table of Contents</p>
+          <ul class="toc_list">
+            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements" id="toc_section">Requirements</a></li><li><a href="#design" id="toc_section">Design</a></li><li><a href="#implementation-and-building" id="toc_section">Implementation and Building</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
+          </ul>
+        </div>
+    </nav>
+    </header>
+
+
+    <main class="article-layout">
+
+      <article>
+
+        <h2 class="section_heading" id="introduction">Introduction</h2>
+<hr/>
+<h3>Background</h3>
+<h3>Motivations</h3>
+<h2 class="section_heading" id="requirements">Requirements</h2>
+<hr/>
+<h3>Scope of work</h3>
+<blockquote>
+<div class="bodytext"><p>What work is required of this project?</p></div>
+</blockquote>
+<h3>Capabilities</h3>
+<div class="bodytext"><p>==delete this section for non-technical projects or otherwise small projects==</p></div>
+<h3>Resources</h3>
+<blockquote>
+<div class="bodytext"><p>Time, budget, and tools needed</p></div>
+</blockquote>
+<h2 class="section_heading" id="design">Design</h2>
+<hr/>
+<h3>Sketches, Diagrams, or Mockups</h3>
+<blockquote>
+<div class="bodytext"><p>early sketches of what is </p></div>
+</blockquote>
+<div class="bodytext"><p>==can delete this section for smaller articles. If you do then delete all subheadings in this section==</p></div>
+<h3>Design Approach</h3>
+<blockquote>
+<div class="bodytext"><p>(methods, models, etc.)</p></div>
+</blockquote>
+<h2 class="section_heading" id="implementation-and-building">Implementation and Building</h2>
+<hr/>
+<h3>Process</h3>
+<h3>Wins</h3>
+<div class="bodytext"><p>==possibly change the name of this section depending on the project context==</p></div>
+<h3>Challenges</h3>
+<h2 class="section_heading" id="conclusion">Conclusion</h2>
+<hr/>
+<h3>Status and Results</h3>
+<h3>Reflection</h3>
+<h3>Looking forward</h3>
+<h2 class="section_heading" id="additional-information">Additional Information</h2>
+<hr/>
+<h3>Online Resources</h3>
+<div class="bodytext"><ul>
+<li><a href="fuck you" rel="noopener noreferrer" target="_blank">link</a></li>
+</ul></div> <!-- This is where the Markdown content will be injected -->
+
+      </article>
+
+      <aside class="sticky-toc" aria-label="Table of contents"></aside>
+
+    </main>
+
+
+
+    <!-- Google Archive code-prettify -->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+    <script>
+      (function () {
+        var headings = document.querySelectorAll('article h2.section_heading');
+        var aside = document.querySelector('.sticky-toc');
+        if (!headings.length || !aside) return;
+
+        // Build sticky TOC from article headings
+        var title = document.createElement('p');
+        title.className = 'toc_title';
+        title.textContent = 'Contents';
+
+        var ul = document.createElement('ul');
+        ul.className = 'toc_list';
+
+        var links = [];
+        headings.forEach(function (h) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '#' + h.id;
+          a.textContent = h.textContent;
+          a.className = 'sticky-toc-link';
+          li.appendChild(a);
+          ul.appendChild(li);
+          links.push({ heading: h, link: a });
+        });
+
+        aside.appendChild(title);
+        aside.appendChild(ul);
+
+        // Highlight active section on scroll
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              links.forEach(function (item) {
+                item.link.classList.toggle('toc-active', item.heading === entry.target);
+              });
+            }
+          });
+        }, { rootMargin: '-10% 0px -80% 0px' });
+
+        headings.forEach(function (h) { observer.observe(h); });
+      })();
+    </script>
+
+    <!-- Footer -->
+    <div id="footer">
+  <p>&copy; 2026 Anders Bandt &nbsp;|&nbsp; <span id="email-link"></span></p>
+</div>
+
+<script>
+  // Email link
+  const user = "andersbandt";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.createElement("a");
+  link.href = "mailto:" + email;
+  link.textContent = "Contact me";
+  document.getElementById("email-link").appendChild(link);
+
+  // Scroll reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+      'section, .project-card, body > .bodytext, body > h2, body > header'
+    ).forEach(function(el) {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  });
+</script>
+
+  </body>
+
+</html>

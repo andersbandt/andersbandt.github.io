@@ -54,8 +54,7 @@
     </header>
 
 
-    <main>
-
+    <main class="article-layout">
 
       <article>
 
@@ -80,14 +79,40 @@
 <div class="bodytext"><p>Time, budget, and tools needed</p></div>
 </blockquote>
 <div class="bodytext"><p>Here is a breakdown of all the parts I ended up using in my helmet. It was a little easier for me to find a ski helmet and goggles because I already own ski gear. If you don't have a ski helmet specifically, you could try to use a bike helmet but it might take a little more effort to look nice. For goggles/visor, you could use a diffused acrylic or any plastic.</p></div>
-<div class="bodytext"><p>|Item|Cost (USD $)|
-|---|---|
-|Addressable LED Strip (WS2812B)|30|
-|Arduino|15|
-|11.1 V Li-ion batteries (I used 2 total)|30|
-|L7805 Voltage Regulator|2|
-|Ski Helmet|Previously Owned|
-|Ski Goggles|Previously Owned|</p></div>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Cost (USD $)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addressable LED Strip (WS2812B)</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Arduino</td>
+<td>15</td>
+</tr>
+<tr>
+<td>11.1 V Li-ion batteries (I used 2 total)</td>
+<td>30</td>
+</tr>
+<tr>
+<td>L7805 Voltage Regulator</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Ski Helmet</td>
+<td>Previously Owned</td>
+</tr>
+<tr>
+<td>Ski Goggles</td>
+<td>Previously Owned</td>
+</tr>
+</tbody>
+</table>
 <h2 class="section_heading" id="concept-and-design">Concept and Design</h2>
 <hr/>
 <h3>Sketches, Diagrams, or Mockups</h3>
@@ -130,12 +155,59 @@
 <h1>template</h1> <!-- This is where the Markdown content will be injected -->
 
       </article>
+
+      <aside class="sticky-toc" aria-label="Table of contents"></aside>
+
     </main>
 
 
 
     <!-- Google Archive code-prettify -->
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+    <script>
+      (function () {
+        var headings = document.querySelectorAll('article h2.section_heading');
+        var aside = document.querySelector('.sticky-toc');
+        if (!headings.length || !aside) return;
+
+        // Build sticky TOC from article headings
+        var title = document.createElement('p');
+        title.className = 'toc_title';
+        title.textContent = 'Contents';
+
+        var ul = document.createElement('ul');
+        ul.className = 'toc_list';
+
+        var links = [];
+        headings.forEach(function (h) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '#' + h.id;
+          a.textContent = h.textContent;
+          a.className = 'sticky-toc-link';
+          li.appendChild(a);
+          ul.appendChild(li);
+          links.push({ heading: h, link: a });
+        });
+
+        aside.appendChild(title);
+        aside.appendChild(ul);
+
+        // Highlight active section on scroll
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              links.forEach(function (item) {
+                item.link.classList.toggle('toc-active', item.heading === entry.target);
+              });
+            }
+          });
+        }, { rootMargin: '-10% 0px -80% 0px' });
+
+        headings.forEach(function (h) { observer.observe(h); });
+      })();
+    </script>
 
     <!-- Footer -->
     <div id="footer">
