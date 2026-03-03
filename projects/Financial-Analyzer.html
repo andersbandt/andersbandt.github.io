@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="icon" href="../favicon.ico" />
+    <meta name="generator" content="FlavoWorks v0.1 (2026-03-03)">
+    <!-- Open Graph -->
+    <meta property="og:type"  content="article">
+    <meta property="og:title" content="Financial-Analyzer">
+    <meta property="og:description" content="this will discuss a Python application for analyzing spending, balances, and investments">
+    <meta property="og:url" content="https://andersbandt.github.io/projects/Financial-Analyzer.html">
+    <meta property="og:image" content="https://andersbandt.github.io/projects/images/Financial-Analyzer.PNG">
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
   </head>
 
@@ -14,7 +21,7 @@
   <body>
     <!--Main Heading -->
     <div id="heading">
-      <h1>FlavoWorks</h1>
+      <h1>Anders Bandt</h1>
     </div>
 
 
@@ -38,16 +45,16 @@
       <h2>Financial-Analyzer</h2>
       <div>
     <div class="about-section">
-        <p>Created on: 2025-02-10 19:30:01</p>
-        <p>Modified on: 2026-01-19 11:15:56</p>
-        <p><strong>Scope:</strong> <em>write the scope here</em></p>
+        <p>Created on: 2025-02-10</p>
+        <p>Modified on: 2026-03-02 14:27:39</p>
+        <p><strong>Scope:</strong> <em>this will discuss a Python application for analyzing spending, balances, and investments</em></p>
     </div>
     </div>
       <nav>
         <div id="toc_container">
           <p class="toc_title">Table of Contents</p>
           <ul class="toc_list">
-            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements-" id="toc_section">Requirements </a></li><li><a href="#design-" id="toc_section">Design </a></li><li><a href="#implementation-/-building" id="toc_section">Implementation / Building</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
+            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements" id="toc_section">Requirements </a></li><li><a href="#design" id="toc_section">Design </a></li><li class="toc_sub_item"><a href="#sketches" id="toc_section">Sketches</a></li><li class="toc_sub_item"><a href="#code-infrastructure" id="toc_section">Code infrastructure</a></li><li><a href="#usage" id="toc_section">Usage</a></li><li class="toc_sub_item"><a href="#importing-data" id="toc_section">Importing data</a></li><li class="toc_sub_item"><a href="#analysis-features" id="toc_section">Analysis features</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li><li class="toc_sub_item"><a href="#online-resources" id="toc_section">Online Resources</a></li>
           </ul>
         </div>
     </nav>
@@ -60,66 +67,85 @@
 
         <h2 class="section_heading" id="introduction">Introduction</h2>
 <hr/>
-<h3>Background</h3>
 <div class="bodytext"><p>Spending money. We do it nearly every day of our lives. It is a need for living in the modern world.</p></div>
-<h3>Motivations</h3>
+<div class="bodytext"><p>This is a project I have been working on for the past several years, very off and on. It is a fully customizable financial analyzer — built for and by myself.</p></div>
 <div class="bodytext"><p>I mainly started this project to</p></div>
 <div class="bodytext"><ul>
 <li>capture my financial data from multiple sources and </li>
 <li>Didn’t like idea of financial data being held by 3rd party company</li>
 <li>Building tool to use for the long term</li>
 <li>Also just kinda fun to code J</li>
+<li>Financials will be a part of my life forever — why not invest the time to produce something of high quality for myself?</li>
 </ul></div>
 <div class="bodytext"><p>I'm fully aware companies are out there that do this stuff for you, but what if they shut down? Example: Mint.</p></div>
 <h2 class="section_heading" id="requirements">Requirements</h2>
 <hr/>
-<h3>Scope of work</h3>
 <blockquote>
 <div class="bodytext"><p>What work is required of this project?</p></div>
 </blockquote>
-<div class="bodytext"><p>•Python CLI application
-•Data has to be loaded in “manually” (currently through .csv files) (this is the largest turn off for most users)
-•SQLite backend, stored in a singular .db file</p></div>
-<h3>Capabilities</h3>
-<div class="bodytext"><p>•By being in control of my data and software, I have more flexibility in performing the type of analysis I want to perform</p></div>
-<div class="bodytext"><p>•Wanted to be able to have very specific spending categories!!!</p></div>
-<div class="bodytext"><p>•Fast food vs. restaurants vs. grocery</p></div>
-<div class="bodytext"><p>•Niche tracking of shopping spending</p></div>
-<div class="bodytext"><p>•Analysis on investments and account balances</p></div>
-<div class="bodytext"><p><img src="images/historical_price_data_of_portfolio_snapshot.png"/></p></div>
-<h3>Resources</h3>
+<div class="bodytext"><ul>
+<li>Python CLI application</li>
+<li>Data has to be loaded in “manually” (currently through .csv files) (this is the largest turn off for most users)</li>
+<li>SQLite backend, stored in a singular .db file</li>
+</ul></div>
 <blockquote>
-<div class="bodytext"><p>Time, budget, and tools needed</p></div>
+<div class="bodytext"><p>What capabilities do I want?</p></div>
 </blockquote>
+<div class="bodytext"><ul>
+<li>By being in control of my data and software, I have more flexibility in performing the type of analysis I want to perform</li>
+<li>Wanted to be able to have very specific spending categories!!!</li>
+<li>Fast food vs. restaurants vs. grocery</li>
+<li>Niche tracking of shopping spending</li>
+<li>Analysis on investments and account balances</li>
+</ul></div>
 <h2 class="section_heading" id="design">Design</h2>
 <hr/>
-<h3>Sketches, Diagrams, or Mockups</h3>
+<h3 id="sketches">Sketches</h3>
 <div class="bodytext"><p>Early on I chose to use a GUI. I used the Tkinter framework.
 I got basic functionality working for many of the sub menus, although to a much lesser extent than the program state was today.\</p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20250416223953.png" width="350"/></p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20250416223959.png" width="350"/></p></div>
-<h3>Design Approach</h3>
-<blockquote>
-<div class="bodytext"><p>(methods, models, etc.)</p></div>
-</blockquote>
-<h2 class="section_heading" id="implementation-building">Implementation / Building</h2>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20250416223953.png" width="450"/></p></div><figcaption>Image of the GUI version category management page</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20250416223959.png" width="450"/></p></div><figcaption>Screenshot of the GUI analysis tab</figcaption></figure>
+<h3 id="code-infrastructure">Code infrastructure</h3>
+<div class="bodytext"><p>The whole thing is written in Python. Most libraries used are fairly simple and lightweight. The two most notable dependencies are:</p></div>
+<div class="bodytext"><ul>
+<li><strong>yfinance (Yahoo Finance)</strong>: Pulls live stock information for portfolio analysis</li>
+<li><strong>prompt_toolkit</strong>: Provides a better CLI experience</li>
+</ul></div>
+<h4>SQL Organization</h4>
+<div class="bodytext"><p>All financial data is stored in an SQLite database, kept in a single <code>.db</code> file that is easy to back up and manage.</p></div>
+<h4>Category Tree</h4>
+<div class="bodytext"><p>The heart of the program is the category tree — composed of high-level "root" nodes that represent major expense categories (e.g., fast food, restaurants, groceries, shopping). Each root can have subcategories for granular tracking.</p></div>
+<h4>Data Loading</h4>
+<div class="bodytext"><p>Data loading is tied to a specific folder structure set up on your machine. Currently, only <code>.csv</code> files are fully supported. PDF parsing has been attempted with some success, but is considerably more difficult.</p></div>
+<h2 class="section_heading" id="usage">Usage</h2>
 <hr/>
-<h3>Process</h3>
-<h3>Wins</h3>
-<div class="bodytext"><p>==possibly change the name of this section depending on the project context==</p></div>
-<h3>Challenges</h3>
-<div class="bodytext"><p>This is a solo project and I've definitely moved beyond dedicating more than an hour at a time to it.</p></div>
-<div class="bodytext"><p>==add some details about the brief open source community here==</p></div>
+<h3 id="importing-data">Importing data</h3>
+<div class="bodytext"><p>The general flow for usage goes like so. Data for each account is loaded in monthly segments, matching how most financial institutions structure their statements. In practice this only takes about 10–15 minutes — log into each account, download the transaction history (usually <code>.csv</code> format), and place it in the correct folder.</p></div>
+<div class="bodytext"><p><strong>Example: Venmo</strong>
+Venmo has the best download experience for this workflow:
+- Select a specific statement month (rather than a confusing date range)
+- Export filetype is <code>.csv</code></p></div>
+<div class="bodytext"><p><strong>Example: Wells Fargo</strong>
+<em>(Details to be added)</em></p></div>
+<h3 id="analysis-features">Analysis features</h3>
+<div class="bodytext"><p><img loading="lazy" src="images/historical_price_data_of_portfolio_snapshot.png"/></p></div>
 <h2 class="section_heading" id="conclusion">Conclusion</h2>
 <hr/>
-<h3>Status and Results</h3>
-<h3>Reflection</h3>
-<h3>Looking forward</h3>
+<div class="bodytext"><p>In its current state, the program works well for someone with at least a little technical coding knowledge, who doesn't mind sparse documentation, and is willing to invest some effort into managing their finances with greater granularity than most off-the-shelf tools allow.</p></div>
+<div class="bodytext"><p>I've tried to have this program reach the masses, but I was not interested in maintaining an open-source community</p></div>
+<div class="bodytext"><p><mark>add some details about the brief open source community here</mark></p></div>
+<blockquote>
+<div class="bodytext"><p>Looking forward</p></div>
+</blockquote>
+<div class="bodytext"><ul>
+<li>Improve code infrastructure for accounts — one file/class per account doesn't seem the most optimal</li>
+<li>Better documentation and onboarding for new users</li>
+</ul></div>
 <h2 class="section_heading" id="additional-information">Additional Information</h2>
 <hr/>
-<h3>Online Resources</h3>
+<h3 id="online-resources">Online Resources</h3>
 <div class="bodytext"><ul>
-<li><a href="fuck you" rel="noopener noreferrer" target="_blank">link</a></li>
+<li><a href="https://github.com/andersbandt/Financial-Analyzer" rel="noopener noreferrer" target="_blank">Financial-Analyzer | GitHub</a></li>
 </ul></div> <!-- This is where the Markdown content will be injected -->
 
       </article>

@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="icon" href="../favicon.ico" />
+    <meta name="generator" content="FlavoWorks v0.1 (2026-03-03)">
+    <!-- Open Graph -->
+    <meta property="og:type"  content="article">
+    <meta property="og:title" content="Using internal MCU RC oscillators as RTC">
+    <meta property="og:description" content="this article is about calibrating the internal oscillator of an MCU to be a real-time clock (RTC)">
+    <meta property="og:url" content="https://andersbandt.github.io/projects/Using_internal_MCU_RC_oscillators_as_RTC.html">
+    <meta property="og:image" content="https://andersbandt.github.io/projects/images/Figure_4.png">
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
   </head>
 
@@ -14,7 +21,7 @@
   <body>
     <!--Main Heading -->
     <div id="heading">
-      <h1>FlavoWorks</h1>
+      <h1>Anders Bandt</h1>
     </div>
 
 
@@ -38,8 +45,8 @@
       <h2>Using internal MCU RC oscillators as RTC</h2>
       <div>
     <div class="about-section">
-        <p>Created on: 2024-12-18 15:12:02</p>
-        <p>Modified on: 2026-01-17 14:19:33</p>
+        <p>Created on: 2024-12-18</p>
+        <p>Modified on: 2026-03-03 07:29:58</p>
         <p><strong>Scope:</strong> <em>this article is about calibrating the internal oscillator of an MCU to be a real-time clock (RTC)</em></p>
     </div>
     </div>
@@ -47,7 +54,7 @@
         <div id="toc_container">
           <p class="toc_title">Table of Contents</p>
           <ul class="toc_list">
-            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements" id="toc_section">Requirements</a></li><li><a href="#concept-and-design" id="toc_section">Concept and Design</a></li><li><a href="#implementation-and-building" id="toc_section">Implementation and Building</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
+            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements" id="toc_section">Requirements</a></li><li><a href="#concept-and-design" id="toc_section">Concept and Design</a></li><li class="toc_sub_item"><a href="#introduction-to-calculating-time-from-clock-frequency" id="toc_section">Introduction to calculating time from clock frequency</a></li><li class="toc_sub_item"><a href="#a-brief-aside-on-least-squares-best-fit" id="toc_section">A brief aside on least squares best-fit</a></li><li class="toc_sub_item"><a href="#applying-to-our-example" id="toc_section">Applying to our example</a></li><li><a href="#implementation-and-building" id="toc_section">Implementation and Building</a></li><li class="toc_sub_item"><a href="#process" id="toc_section">Process</a></li><li class="toc_sub_item"><a href="#wins" id="toc_section">Wins</a></li><li class="toc_sub_item"><a href="#challenges" id="toc_section">Challenges</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li class="toc_sub_item"><a href="#status-and-results" id="toc_section">Status and Results</a></li><li class="toc_sub_item"><a href="#reflection" id="toc_section">Reflection</a></li><li class="toc_sub_item"><a href="#looking-forward" id="toc_section">Looking forward</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li><li class="toc_sub_item"><a href="#resources" id="toc_section">Resources</a></li>
           </ul>
         </div>
     </nav>
@@ -59,33 +66,31 @@
       <article>
 
         <h2 class="section_heading" id="introduction">Introduction</h2>
-<hr/>
-<h3>Background</h3>
+<h4>Background</h4>
 <div class="bodytext"><p>A real-time clock (RTC) is a clock that can be used to track "real-time". That is, the actual passing of seconds in the universe, with which we can keep accurate time of day. A simple alarm clock on your nightstand would be a good example. Real-time clocks often rely on some interesting techniques to keep time. Some use the power-line frequency of 60 Hz (50 Hz for those outside the Americas) as a baseline frequency to count off. Most end up using a specialized crystal oscillator that has some known frequency, commonly 32.768 kHz. This is a convenient frequency to use as 32.768 kHz is exactly 2^15 cycles per second, so it is easy to use with binary counter circuits.</p></div>
 <div class="bodytext"><p>Compared to real-time clocks, the clocks on a typical microprocessor are built differently. Many rely on internal <a href="https://en.wikipedia.org/wiki/RC_oscillator" rel="noopener noreferrer" target="_blank">RC oscillators</a> that use a resistor-capacitor network as their frequency selective element. Internal RC oscillators are typically only good for 1-2% accuracy, this is due to a variety of factors but deviations in the production of the resistors and capacitors in the network is a common one. In addition to production tolerances, capacitors experience derating across temperature, making them difficult to use as RTC if the device experiences temperature swings. Some processors include tuning adjustment registers that allow the user to fine tune to get better results on top of the <a href="https://www.ti.com/lit/an/sbot037/sbot037.pdf" rel="noopener noreferrer" target="_blank">trim process</a> they typically do at the fab, but I believe it is not the norm to make these registers accessible to the end-user.</p></div>
-<figure><div class="bodytext"><p><img src="images/Pasted image 20241220124035.png" width="550"/></p></div><figcaption>Simple schematic showing a quartz crystal feeding the internal MPU oscillator</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20241220124035.png" width="550"/></p></div><figcaption>Simple schematic showing a quartz crystal feeding the internal MPU oscillator</figcaption></figure>
 <div class="bodytext"><p>Many microprocessors also use crystal oscillators, which have better frequency stability compared to RC oscillators. Instead of a resistor-capacitor network, crystal oscillators use a piezoelectric crystal as the frequency-selective element. This is much more stable, and is often used to keep time in quartz wristwatches. However things are not perfect in the real world and there is typically still some error. This can be due to crystal deviations or any other number of imperfections in the circuit. </p></div>
-<h3>Motivations</h3>
+<h4>Motivations</h4>
 <div class="bodytext"><p>There are many reasons why we may want to keep accurate time in an embedded system. </p></div>
 <div class="bodytext"><ul>
 <li>Reliably maintains and provides current time through disruptive system states (sleeps, reboot, shutdown, etc)<ul>
-<li>Note that this wil only work if your RTC is separate from your main system</li>
+<li>Note that this will only work if your RTC is separate from your main system</li>
 </ul>
 </li>
 <li>Frees the main system for time-critical tasks</li>
 <li>Display real-time to the user</li>
 </ul></div>
 <div class="bodytext"><p>A really neat example is a GPS receiver, which can shorten its startup time by comparing the current time according to an RTC to show when it last had a valid signal (I believe it can triangulate the GNSS satellites quicker with this information)</p></div>
-<div class="bodytext"><p>And of course, if we just want to keep time and display it (such as a watch, micro-wave, alarm-clock) we will need RTC. If we rely on those RC and crystal-oscillators I talked about in the previous section, any small error will acculumate over time and we will most certainly have some drift. Maybe this drift is fine, say a couple minutes a year. More often than not, it's a minutes per day, which quickly becomes annoying to deal with.</p></div>
+<div class="bodytext"><p>And of course, if we just want to keep time and display it (such as a watch, micro-wave, alarm-clock) we will need RTC. If we rely on those RC and crystal-oscillators I talked about in the previous section, any small error will accumulate over time and we will most certainly have some drift. Maybe this drift is fine, say a couple minutes a year. More often than not, it's a minutes per day, which quickly becomes annoying to deal with.</p></div>
 <div class="bodytext"><p>Why would this project need to be done when many RTC modules already exist? Well, in my first version design of a wearable wrist device I opted not to include an RTC module in there. The main focus of the wearable was sensing the human body, so this was not critical. However, later I did want to add time-keeping features, but the cost of each PCB was driven quite high because of my use of <a href="Fine-pitch_BGA_layout_and_manufacture.html">fine-pitch BGA footprints</a>. </p></div>
 <h2 class="section_heading" id="requirements">Requirements</h2>
-<hr/>
-<h3>Scope of work</h3>
+<h4>Scope of work</h4>
 <div class="bodytext"><p>The final goal will be to calibrate an internal MCU oscillator to keep real-time as an RTC. In order to accomplish this we will need to do some data collection, numerical analysis, and the implement our final calibration solution in embedded C code. </p></div>
 <div class="bodytext"><p>Since I am most comfortable in Python, I will use it to handle data collection and numerical analysis. This will involve recording tick data from the MCU and using Python to process the data, identify deviations, and determine any potential corrections or compensations needed to achieve better accuracy.</p></div>
 <div class="bodytext"><p>For numerical analysis, I'll use some least-squares regression techniques using matrices that I learned in a machine learning course in college.</p></div>
 <div class="bodytext"><p>On the device itself, the C language will be used as embedded code. It wlil be generic (and small) enough that you can copy and paste it on whatever MCU line you are working on.</p></div>
-<h3>Capabilities</h3>
+<h4>Capabilities</h4>
 <div class="bodytext"><p>The project will aim to:</p></div>
 <div class="bodytext"><ul>
 <li>Characterize the frequency stability of the internal RC oscillator over time</li>
@@ -96,7 +101,7 @@
 </ul>
 </li>
 </ul></div>
-<h3>Resources</h3>
+<h4>Resources</h4>
 <div class="bodytext"><p>The project aims to be hardware-agnostic, meaning that any MCU vendor choice can be used. Basically the only capability I'm using is the ability to read system ticks. However, access to certain features, like frequency adjustment registers or trim controls, could improve results (I personally did not have any of such features accessible)</p></div>
 <div class="bodytext"><p>Essential resources include:</p></div>
 <div class="bodytext"><ul>
@@ -104,31 +109,31 @@
 <li><strong>Data Collection Setup</strong>: This includes hardware to log tick data from the MCU to a host system (e.g., via UART or USB) and software to process the data.</li>
 <li><strong>Analysis Tools</strong>: Python scripts to analyze frequency drift, calculate corrections, and visualize results.</li>
 </ul></div>
-<div class="bodytext"><p>Those are the generic things you need. I specifically used the CC2642R made by Texas Instruments and my home-grown software test system [[Software controlled embedded test setup]].</p></div>
+<div class="bodytext"><p>Those are the generic things you need. I specifically used the CC2642R made by Texas Instruments and my home-grown software test system <a href="Software_controlled_embedded_test_setup.html">Software controlled embedded test setup</a>.</p></div>
 <div class="bodytext"><p>I have provided sample code linked at the bottom of this document, which can be used to facilitate data logging, analysis, and corrections. This code serves as a foundation for the project, but it may require adjustments for specific MCUs or communication protocols you are intending to use</p></div>
-<div class="bodytext"><p>==need to actually make this link==</p></div>
 <h2 class="section_heading" id="concept-and-design">Concept and Design</h2>
-<hr/>
-<h3>Introduction to calculating time from clock frequency</h3>
+<h3 id="introduction-to-calculating-time-from-clock-frequency">Introduction to calculating time from clock frequency</h3>
 <div class="bodytext"><p>Let's just introduce ourself to the basic arithmetic needed to calculate the passage of timing using "number of ticks" of a clock. The number of clock ticks is often tracked internally by MCU devices and can be read from a register. Let's write out the two variables we will use to calculate time, ticks (cycles) and frequency (HZ).</p></div>
 <div class="bodytext"><p>$$t \text{ (cycles)}$$
 $$f \text{ (HZ)}$$</p></div>
 <div class="bodytext"><p>we can convert Hz into what it really means, which is how many cycles of something happened per second. The inverse of this would be seconds per cycle.</p></div>
 <div class="bodytext"><p>$$\frac{1}{f} \text{ (seconds/cycles)}$$
 With these two variables, we can form an equation to calculate time. Units cancel on the left hand side to be left with just seconds on on the right.</p></div>
-<div class="bodytext"><p>$$\frac{t}{f} \text{ (cycles)} \times\text{ (seconds/cycles)} = s \text{ (seconds)}$$</p></div>
+<div class="bodytext"><p>$$t \text{ (cycles)} \times \frac{1}{f} \text{ (seconds/cycles)} = s \text{ (seconds)}$$</p></div>
 <div class="bodytext"><p>Note that <strong>1/f</strong> is simply period, so we can simplify the calculation a bit. It just makes a little more intuitive sense to leave <strong>f</strong> in there as that's what is commonly specified in the datasheet for system clocks.</p></div>
-<div class="bodytext"><p>$$t*T \text{ (cycles)} \times\text{ (seconds/cycles)} = s \text{ (seconds)}$$</p></div>
-<div class="bodytext"><p>This is great if our frequency (period) is known exactly, but in the real-world there will very likely be a deviation between the calculated period and real period. We need to come up with a way to correlate our system time with real-time.</p></div>
-<h3>A brief aside on least squares best-fit</h3>
-<div class="bodytext"><p>Ok, so we know we need a way to correlate our system time with real-time, but how do we arrive at what correlation to use? How can we input some sample data and get out exactly what coefficients and equation to use to perform this mapping of times? Well, that's where the least squares best-fit method comes in. This is a common method used in machine learning, but can be used for finding any statistical relationship. I will try and provide some mathematical background behind the method and how we will use it in this project.</p></div>
-<div class="bodytext"><p>==clean up previous introduction paragraph==</p></div>
+<div class="bodytext"><p>$$t\text{ (cycles)}\times T \text{ (seconds/cycles)} = s \text{ (seconds)}$$</p></div>
+<div class="bodytext"><p>This is great if our frequency (period) is completely accurate, but in the real-world there will very likely be a deviation between the calculated period and real period. There are many different reasons why this happen (crystal inaccuracy, clock jitter, temperature effects) and I won't take the time to explain them all. </p></div>
+<div class="bodytext"><p>Let's say your 32 MHz crystal is actually a 31 MHz crystal (this would be a large deviation, just using simple numbers). This means after 60 seconds, our system is running slow so we would think that only 58.125 seconds has passed. This is unacceptable for most RTC systems, as in a matter of hours you will have a large deviation.</p></div>
+<div class="bodytext"><p>With all these deviations, we need to come up with a way to correlate our system time with real-time.</p></div>
+<h3 id="a-brief-aside-on-least-squares-best-fit">A brief aside on least squares best-fit</h3>
+<div class="bodytext"><p>Ok, so in the previous section I introduced how one can calculate time from a clock signal, and why there will be deviation between what we observe and actual real-time. So how can we correct this out? How can we make some function where we input our observed time and get accurate time out?</p></div>
+<div class="bodytext"><p>Well, that's where the least squares best-fit method comes in. This is a common method used in machine learning, but can be used for finding any statistical relationship. I will try and provide some mathematical background behind the method and how we will use it in this project.</p></div>
 <blockquote>
 <div class="bodytext"><p>The least squares best-fit method is essentially an optimization problem where the goal is to minimize the sum of the squared residuals (Euclidean norm) between an equation output and some known "truth values"</p></div>
 </blockquote>
-<div class="bodytext"><p>==really improve the thing above because it's a quote so lots of people will read if skimming the article==</p></div>
-<div class="bodytext"><p>==on top of improving I should add a nice picture explaining least squares fit==</p></div>
 <div class="bodytext"><p>Whoa, lots to unpack there. Optimization problems, are fairly straightforward, we typically want to find the maximum or minimum of some value. Residuals are the differences between the measured values and the values predicted by our model. Often the Euclidean norm is used to capture these differences well. So putting it all together, least squares best-fit minimizing the difference between what our model would output and what we input as what our actual "truth values".</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20260227090648.png" width="350"/></p></div><figcaption>The values of a function (top) with their residuals (bottom)</figcaption></figure>
+<div class="bodytext"><p>The picture above explains it for a simple linear equation. Our input data would be the top graphs black dots, and running linear regression would give us the red line. That math governing HOW we got to the red line would be a sort of optimization problem that minimizes the residuals (bottom graph).</p></div>
 <div class="bodytext"><p>Let's start looking at some equations for this, specifically what our model looks like. Any linear relationship can be represented using a vector of coefficients. For example, matrix <strong>A</strong> is commonly used to represent the inputs to the model, and the goal is to solve for the coefficients <strong>w</strong>.</p></div>
 <div class="bodytext"><p>$$[y] = [A]*[w]$$</p></div>
 <div class="bodytext"><p>as a very brief example, let's use the classic linear fit equation of <strong>y = mx + b</strong></p></div>
@@ -147,7 +152,7 @@ I will skip all the actual basis for this and skip straight to the solution.
 If you do the math, you eventually find that you can see that</p></div>
 <div class="bodytext"><p>$$w = (A^T*A)^{-1}A^{T}y$$
 If you are interested in reading more about the topic, <a href="https://www.math.umd.edu/~immortal/MATH401/book/ch_least_squares.pdf" rel="noopener noreferrer" target="_blank">these notes from the University of Marlyland are a good read</a></p></div>
-<h3>Applying to our example</h3>
+<h3 id="applying-to-our-example">Applying to our example</h3>
 <div class="bodytext"><p>In this example, we want to find the relationship between the "system" passage of time with the "real world" passage of time. We want to be able to input system time and get out real time. For our input, let's start talking in terms of microprocessor ticks as our base unit.. We could convert this to uncalibrated system time using our clock period, but it's easier to "bundle" that conversion into our final coefficients in my opinion.</p></div>
 <div class="bodytext"><p>Let's also assume we have a simple linear relationship between the system time and real-time. I actually did try higher-order fits with little success, so let's keep it simple with this coefficient matrix <strong>A</strong>, where <strong>t</strong> in this case is the number of ticks</p></div>
 <div class="bodytext"><p>$$[A] = \begin{bmatrix} t &amp; 1 \end{bmatrix}$$</p></div>
@@ -179,13 +184,12 @@ def linear_fit(x_arr, y_arr):
     )  
     stats = [slope, intercept, r_value, p_value, std_err]
     return stats</code></pre>
+<div class="bodytext"><p>I created a GitHub Gist page for these files, you can view them <a href="https://gist.github.com/andersbandt/f86bc32295d23c4d8428222c8bf0f316" rel="noopener noreferrer" target="_blank">here</a>.</p></div>
 <h2 class="section_heading" id="implementation-and-building">Implementation and Building</h2>
-<hr/>
-<h3>Process</h3>
+<h3 id="process">Process</h3>
 <div class="bodytext"><p>Ok, I think I explained all the background needed. Now I'll talk about execution.</p></div>
 <div class="bodytext"><p>Really the first step was to get sample data on the clock. I hooked up my board over UART/USB and flashed a simple program to output the system (microcontroller) time. With the host PC, I was able to sync up real-time and system time and log each datapoint to a CSV file.</p></div>
 <div class="bodytext"><p>Now, we run some Python code to perform the least-squares best fit analysis on. I won't do a deep dive on the code here, if you are interested you should just check out the GitHub repo.</p></div>
-<div class="bodytext"><p>==need to add link to the GitHub repo==</p></div>
 <div class="bodytext"><p>Basically when I run my Python script I get the following for (w)</p></div>
 <div class="bodytext"><p>$$[w] =\begin{bmatrix} w_1 \\ w_0 \end{bmatrix} = \begin{bmatrix} 9.9006656*10^{-7} \\ -2.149 \end{bmatrix}$$</p></div>
 <div class="bodytext"><p>this would translate to an equation like so, with (t) as our system ticks.</p></div>
@@ -238,30 +242,29 @@ Time get_sys_time() {
     return sys_time;
 }</code></pre>
 <div class="bodytext"><p>and the actual last part (which may or may not be needed depending on your application and use-case) would be to adjust the offset of our system time to actually line up with time of day.</p></div>
-<div class="bodytext"><p>I will just flash the basics of my function, which are missing a <code>struct</code> for handling <code>Time</code> with hours, minutes, and seconds and a function for adding two times together and handling overwrap into the next day.</p></div>
+<div class="bodytext"><p>I will just flash the basics of my function, which are missing a <code>struct</code> for handling <code>Time</code> with hours, minutes, and seconds and a function for adding two times together and handling overflow into the next day.</p></div>
 <pre><code class="prettyprint">Time get_current_time() {
     return add_time(get_sys_time(), time_offset);
 }</code></pre>
-<h3>Wins</h3>
+<h3 id="wins">Wins</h3>
 <div class="bodytext"><p>Once I got the basic data collection and analysis skeleton down, getting more data and analyzing it was super seamless. It was actually quite enjoyable compared to other analysis like when I'm analyzing my IMU where I actually need some physical stimuli to perform analysis. With the clock I could just hook up my embedded target and crank away collecting data with ease.</p></div>
 <div class="bodytext"><p>I was also greatly helped on the least-squares analysis side by the fact that I've used this in at least a couple projects before, mainly in the context of sensor calibration. I was able to leverage some of the same code and get something running much faster than if I was doing all the research and code writing from scratch.</p></div>
-<h3>Challenges</h3>
+<h3 id="challenges">Challenges</h3>
 <div class="bodytext"><p>One of the biggest hurdles that I didn't expect was actually writing the firmware to handle all the processing. It was easy enough to get a basic thing working for several hours, but getting the system to handle things like overwraps and lining it up to real time took some code iterations. </p></div>
 <div class="bodytext"><p>The ticker counter on most devices is probably 32 bits, maybe 64 bits for some larger processors. But eventually this will overwrap and we want to be able to track this so we don't lose time. In the code above there is a line that handles this overflow and adds it to our final result.</p></div>
 <h2 class="section_heading" id="conclusion">Conclusion</h2>
-<hr/>
-<h3>Status and Results</h3>
+<h3 id="status-and-results">Status and Results</h3>
 <div class="bodytext"><p>When I actually implement my linear fit on the MCU, I get the following results</p></div>
 <div class="bodytext"><p>Please note that for my tests I actually used a slope of</p></div>
 <div class="bodytext"><p>$$w_0=[7.193e-3]$$</p></div>
 <div class="bodytext"><p>We can run this on some verification data and see the following residual plot.</p></div>
-<div class="bodytext"><p><img src="images/Figure_4.png" width="1000"/></p></div>
+<div class="bodytext"><p><img loading="lazy" src="images/Figure_4.png" width="1000"/></p></div>
 <div class="bodytext"><p>To summarize what this residual shows, after an hour I'm off by about 0.5 seconds.</p></div>
 <div class="bodytext"><p>That turns out to be about 73 minutes per year, which is outside of my 10 minute per year bench mark I was hoping for.</p></div>
-<h3>Reflection</h3>
+<h3 id="reflection">Reflection</h3>
 <div class="bodytext"><p>Although I didn't hit my 10 minutes per year benchmark, I am happy I could patch-work my initial PCB design to be able to tell time. Oh well, version 2 of my wearable design will include a real-time clock module so this may have been a hopeless activity.</p></div>
 <div class="bodytext"><p>One thing that surprised me was <em>the same coefficients worked (well enough)</em> across all boards. As in, I didn't have to repeat the data collection and coefficient computation process for each specific hardware combination. This surprised me. Possibly it helps if your microcontrollers are from the same lot of material.</p></div>
-<h3>Looking forward</h3>
+<h3 id="looking-forward">Looking forward</h3>
 <div class="bodytext"><p>I don't think I will continue working on internal RC oscillators to be used as real-time clock modules. I think this implementation only makes sense if you are</p></div>
 <div class="bodytext"><ul>
 <li>looking for a low-cost RTC solution</li>
@@ -270,10 +273,10 @@ Time get_sys_time() {
 </ul></div>
 <div class="bodytext"><p>However, if I were to do future work on this I would probably first look at temperature calibration. I included a temperature variable in my equation, but it didn't improve results at all because my device was at room temperature. If I bring it down below 0 degrees Celsius or above 100 C, I am certain I would see some devations in my model. Adding another variable to calibrate out temperature deviations would hopefully allow for real-time clock keeping performance across temperature.</p></div>
 <h2 class="section_heading" id="additional-information">Additional Information</h2>
-<hr/>
-<h3>Resources</h3>
+<h3 id="resources">Resources</h3>
 <div class="bodytext"><ul>
 <li><a href="https://en.wikipedia.org/wiki/Real-time_clock" rel="noopener noreferrer" target="_blank">Real-time clock | Wikipedia</a></li>
+<li><a href="https://gist.github.com/andersbandt/f86bc32295d23c4d8428222c8bf0f316" rel="noopener noreferrer" target="_blank">Python analysis files | GitHub</a></li>
 </ul></div> <!-- This is where the Markdown content will be injected -->
 
       </article>

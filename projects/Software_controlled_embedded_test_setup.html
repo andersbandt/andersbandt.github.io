@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="icon" href="../favicon.ico" />
+    <meta name="generator" content="FlavoWorks v0.1 (2026-03-03)">
+    <!-- Open Graph -->
+    <meta property="og:type"  content="article">
+    <meta property="og:title" content="Software controlled embedded test setup">
+    <meta property="og:description" content="this article is about a software-controlled test setup using power supplies, multimeters, USB relays, and debug probes. The purpose of this test setup is for testing embedded devices">
+    <meta property="og:url" content="https://andersbandt.github.io/projects/Software_controlled_embedded_test_setup.html">
+    <meta property="og:image" content="https://andersbandt.github.io/projects/images/wwd_gui_api.PNG">
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
   </head>
 
@@ -14,7 +21,7 @@
   <body>
     <!--Main Heading -->
     <div id="heading">
-      <h1>FlavoWorks</h1>
+      <h1>Anders Bandt</h1>
     </div>
 
 
@@ -38,8 +45,8 @@
       <h2>Software controlled embedded test setup</h2>
       <div>
     <div class="about-section">
-        <p>Created on: 2024-12-22 23:37:13</p>
-        <p>Modified on: 2026-02-23 16:59:51</p>
+        <p>Created on: 2024-12-23</p>
+        <p>Modified on: 2026-03-03 09:19:06</p>
         <p><strong>Scope:</strong> <em>this article is about a software-controlled test setup using power supplies, multimeters, USB relays, and debug probes. The purpose of this test setup is for testing embedded devices</em></p>
     </div>
     </div>
@@ -47,7 +54,7 @@
         <div id="toc_container">
           <p class="toc_title">Table of Contents</p>
           <ul class="toc_list">
-            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements-" id="toc_section">Requirements </a></li><li><a href="#capabilities-and-implementation" id="toc_section">Capabilities and Implementation</a></li><li><a href="#design-" id="toc_section">Design </a></li><li><a href="#implementation-/-building" id="toc_section">Implementation / Building</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
+            <li><a href="#introduction" id="toc_section">Introduction</a></li><li class="toc_sub_item"><a href="#background" id="toc_section">Background</a></li><li class="toc_sub_item"><a href="#motivations" id="toc_section">Motivations</a></li><li><a href="#requirements" id="toc_section">Requirements </a></li><li class="toc_sub_item"><a href="#scope-of-work" id="toc_section">Scope of work</a></li><li class="toc_sub_item"><a href="#resources" id="toc_section">Resources</a></li><li><a href="#capabilities-and-implementation" id="toc_section">Capabilities and Implementation</a></li><li class="toc_sub_item"><a href="#relay-usb-control" id="toc_section">Relay USB control</a></li><li class="toc_sub_item"><a href="#usb-serial-logging" id="toc_section">USB serial logging</a></li><li class="toc_sub_item"><a href="#debug-probe-toolsets-reset-compilation-flashing" id="toc_section">Debug probe toolsets - reset, compilation, flashing</a></li><li class="toc_sub_item"><a href="#test-equipment-control" id="toc_section">Test equipment control</a></li><li class="toc_sub_item"><a href="#hil-controller" id="toc_section">HIL controller</a></li><li><a href="#design" id="toc_section">Design </a></li><li class="toc_sub_item"><a href="#sketches-diagrams-or-mockups" id="toc_section">Sketches, Diagrams, or Mockups </a></li><li class="toc_sub_item"><a href="#design-approach" id="toc_section">Design Approach </a></li><li><a href="#implementation-building" id="toc_section">Implementation / Building</a></li><li class="toc_sub_item"><a href="#process" id="toc_section">Process</a></li><li class="toc_sub_item"><a href="#building-wins" id="toc_section">Building Wins</a></li><li class="toc_sub_item"><a href="#challenges" id="toc_section">Challenges</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li class="toc_sub_item"><a href="#status-and-results" id="toc_section">Status and Results</a></li><li class="toc_sub_item"><a href="#reflection" id="toc_section">Reflection</a></li><li class="toc_sub_item"><a href="#looking-forward" id="toc_section">Looking forward</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li><li class="toc_sub_item"><a href="#online-resources" id="toc_section">Online Resources</a></li>
           </ul>
         </div>
     </nav>
@@ -59,10 +66,9 @@
       <article>
 
         <h2 class="section_heading" id="introduction">Introduction</h2>
-<hr/>
-<h3>Background</h3>
+<h3 id="background">Background</h3>
 <div class="bodytext"><p>After graduating college, I began working as a test engineer for a semiconductor company. My primary role was to develop test programs for microcontroller devices. This testing was conducted using automated test equipment (ATE) platforms, similar to the one shown below</p></div>
-<figure><div class="bodytext"><p><img src="images/Pasted image 20241224112436.png" width="350"/></p></div><figcaption>An example of semiconductor ATE equipment from the company Advantest</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20241224112436.png" width="350"/></p></div><figcaption>An example of semiconductor ATE equipment from the company Advantest</figcaption></figure>
 <div class="bodytext"><p>I became quite enamored with the whole testing flow, from the tester hardware to the robust software interface provided for control. By predefining voltage levels, current ranges, and test setups, it is quite seamless for me to hop on my computer and execute tests, benefiting from several key advantages:</p></div>
 <div class="bodytext"><ul>
 <li><strong>Automated control</strong>: Everything is wired once and controlled via relays, eliminating the need to manually toggle switches or connect/disconnect cables. This prevents accidental things like shorts/opens.</li>
@@ -70,8 +76,8 @@
 <li><strong>Remote access</strong>: Once the DUT is connected to my test hardware, I can simply log into my host PC and debug away</li>
 </ul></div>
 <div class="bodytext"><p>These features create a safer, more efficient debugging experience and enable remote testing capabilities. I began thinking how I could replicate this testing framework (both at the hardware and software level) in my personal project sphere, mainly involving embedded systems.</p></div>
-<h3>Motivations</h3>
-<div class="bodytext"><p>The main motivation for developing this project was my bringup of another personal electronics project - a wearable PCB. Bringup involved many separate tasks that quickly became tedious. In my original setup, I had to open my IDE to flash the program, use a separate tool to monitor UART output, and physically power-cycle the DUT if the debugger got stuck. Worse yet, a simple mistake - like applying an incorrect voltage - could fry a chip, leaving me upset in my lack of care.</p></div>
+<h3 id="motivations">Motivations</h3>
+<div class="bodytext"><p>The main motivation for developing this project was my bring up of another personal electronics project - a wearable PCB. Bring up involved many separate tasks that quickly became tedious. In my original setup, I had to open my IDE to flash the program, use a separate tool to monitor UART output, and physically power-cycle the DUT if the debugger got stuck. Worse yet, a simple mistake - like applying an incorrect voltage - could fry a chip, leaving me upset in my lack of care.</p></div>
 <div class="bodytext"><p>Frustrated with these pain points, I thought: why not replicate the advantages of an ATE system in a setup tailored for embedded systems? At the core, I really needed many of the same capabilities as a semiconductor test platform:</p></div>
 <div class="bodytext"><ul>
 <li>Supplying controlled power to a device</li>
@@ -82,12 +88,12 @@
 <div class="bodytext"><p>I scoured the internet for DIY or commercial solutions that could handle both testing and flashing for embedded devices. However, I found very few options that met my specific needs. There were solutions for some of the specific tasks I wanted to do (maybe sample from EE equipment, or log UART data) but I wanted an integrated solution that could do all of these things together. And so—story of my life—I decided to build my own solution.</p></div>
 <h2 class="section_heading" id="requirements">Requirements</h2>
 <hr/>
-<h3>Scope of work</h3>
+<h3 id="scope-of-work">Scope of work</h3>
 <div class="bodytext"><p>Like any good electronics project, there are two sides to this, the hardware and the software.</p></div>
 <div class="bodytext"><p>I will talk about each component in detail in the next sections.</p></div>
 <h4>Hardware side</h4>
 <div class="bodytext"><p>On the hardware side, what I really needed is basically an "interface board". No complicated components, pretty much just need a way to connect the signals and power rails on the DUT to an easy to access test board. From my semiconductor testing days, that was the main purpose of our hardware - providing an interface between the tester and the DUT.</p></div>
-<figure><div class="bodytext"><p><img src="images/Pasted image 20260223164831.png" width="250"/></p></div><figcaption>An example loadboard on a v93k ATE tester. Unsure where the DUT on this one goes</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20260223164831.png" width="250"/></p></div><figcaption>An example loadboard on a v93k ATE tester. Unsure where the DUT on this one goes</figcaption></figure>
 <div class="bodytext"><p>When you break it down, I want these things to connect to the DUT</p></div>
 <div class="bodytext"><ul>
 <li>power delivery</li>
@@ -100,7 +106,7 @@
 </ul></div>
 <div class="bodytext"><p>This interface needs to be repeatable and reliable, meaning I can quickly swap it between boards.</p></div>
 <div class="bodytext"><p>Another important thing for me was being able to control USB power. My DUT had a micro-USB slot for USB power, but often I would like to power-cycle this. To prevent the pain point of having to disconnect/connect this connector, I wanted the option to remote toggle this USB power.</p></div>
-<div class="bodytext"><p>Another small thing is the conversion of UART to FTDI signals. The project I originally designed this for had one on chip, but in future versions I want to save board space so I want my testing solution to accomodate the version on the tester instead of the DUT.</p></div>
+<div class="bodytext"><p>Another small thing is the conversion of UART to FTDI signals. The project I originally designed this for had one on chip, but in future versions I want to save board space so I want my testing solution to accommodate the version on the tester instead of the DUT.</p></div>
 <div class="bodytext"><p>So to summarize what we need out of the hardware</p></div>
 <div class="bodytext"><ul>
 <li>custom PCB solution allowing access to relevant DUT power and signal</li>
@@ -121,7 +127,7 @@
 </li>
 </ul></div>
 <div class="bodytext"><p>I chose <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" rel="noopener noreferrer" target="_blank">Python</a> as my language of choice. for software development. Python has lots of good test equipment controls like <code>pyvisa</code>. There are many native plot tools like <code>matplotlib</code>. You can code basic UIs with Python through <code>tkinter</code>. Probably most importantly - I also have much more experience with it compared to other languages!</p></div>
-<h3>Resources</h3>
+<h3 id="resources">Resources</h3>
 <div class="bodytext"><p>This project is pretty resource intensive. There is a decent amount of hardware that I purchased, along with all the test equipment.</p></div>
 <div class="bodytext"><ul>
 <li><strong>Power supply</strong> <ul>
@@ -148,22 +154,24 @@
 </ul>
 </li>
 </ul></div>
-<div class="bodytext"><p><img src="images/Pasted image 20241224113855.png" width="400"/></p></div>
+<div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20241224113855.png" width="400"/></p></div>
 <div class="bodytext"><p><em>SPD3303X-E Programmable DC Power supply from Siglent</em></p></div>
-<figure><div class="bodytext"><p><img src="images/Pasted image 20241224113932.png" width="400"/></p></div><figcaption>OWON XDM1041 digital multimeter</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20241224113932.png" width="400"/></p></div><figcaption>OWON XDM1041 digital multimeter</figcaption></figure>
 <div class="bodytext"><p>You obviously don't have to use my specific models of lab equipment, you can use whatever you have in your lab. You will just have to adjust the code for what SCPI commands correspond to what. Luckily through abstraction the main application will still work normally once this is setup!</p></div>
 <h2 class="section_heading" id="capabilities-and-implementation">Capabilities and Implementation</h2>
 <hr/>
-<div class="bodytext"><p>This section will focus on the main core features of the application, with some basic introduction to how each one works technically. This section will contain the most technical content, and the [[#Design]] section will mostly cover the integration of these various components into a final, complete system.</p></div>
-<h3>Relay USB control</h3>
+<div class="bodytext"><p>This section will focus on the main core features of the application, with some basic introduction to how each one works technically. This section will contain the most technical content, and the <a href="#design">Design</a> section will mostly cover the integration of these various components into a final, complete system.</p></div>
+<h3 id="relay-usb-control">Relay USB control</h3>
 <div class="bodytext"><p>I wanted a way to toggle the state of an individual USB port through software. Why would I want this? Well, in the early stage of my project I was powering only through USB power instead of a power supply. Sometimes over USB power the target would become bricked so the debugger couldn't talk to it and require a power cycle. This would require plugging and unplugging the micro-USB (later I did switch to a USB hub with a button, but it was still annoying). I wanted to be able to not even take my eyes off my computer, click a button, and power-cycle my DUT.</p></div>
 <div class="bodytext"><p>It seems like such a simple thing, but it really is distracting in a heated debug session to have to perform this task. It also avoids uncessesary mating/unmating cycles that risk connectors getting ripped off if your solder job is sub-par. By adding automated control of USB ports, we can also cycle between power sources easily. This allows us to do automated testing on things like battery charging, disconnecting the USB power when we reach full capacity to start discharge.</p></div>
 <div class="bodytext"><p>For that I had to purchase a USB controllable relay and a standard USB hub. For the USB hub I found a nice one on Aliexpress that had good indicator lights and most importantly some manual switches.</p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20241224151601.png" width="250"/></p></div>
+<div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20241224151601.png" width="250"/></p></div>
 <div class="bodytext"><p>The next component was a USB relay module. This one below seems to be the standard online.</p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20241224151735.png" width="250"/></p></div>
+<div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20241224151735.png" width="250"/></p></div>
 <div class="bodytext"><p><em>USB relay module in all its glory</em></p></div>
-<h3>USB serial logging</h3>
+<div class="bodytext"><p>Putting them together yields something like this</p></div>
+<div class="bodytext"><p><img loading="lazy" src="images/usb_relay_diy.jpg"/></p></div>
+<h3 id="usb-serial-logging">USB serial logging</h3>
 <div class="bodytext"><p>Another feature I wanted was showing output of any serial port, and being able to log that data into a text or Excel file. Most people are familiar with serial monitor applications - when I was developing on Windows, I used <a href="https://teratermproject.github.io/index-en.html">TeraTerm</a> and when I moved to Linux I switched to <a href="https://chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a>. But I wanted more control over how this was conducted, including</p></div>
 <div class="bodytext"><ul>
 <li>logging serial data to a standard location with standard file naming</li>
@@ -194,10 +202,10 @@ except KeyboardInterrupt:
     print("\nClosing serial connection.")
     ser.close()</code></pre>
 <div class="bodytext"><p>This is a very basic example. Full integration with the main application took some design effort, which I will get into in later sections.</p></div>
-<h3>Debug probe toolsets - reset, compilation, flashing</h3>
+<h3 id="debug-probe-toolsets-reset-compilation-flashing">Debug probe toolsets - reset, compilation, flashing</h3>
 <div class="bodytext"><p>Another one of the main repetive tasks during debug is program flashing to your target. I needed a way to easily have access to typical debug features in my software application. This would also allow me to move from a chip vendors IDE and do my programming in Emacs, my preferred text editor.</p></div>
 <div class="bodytext"><p>The debug probe I'm using is the XDS110 from Texas Instruments. Luckily, the debug probe I'm using includes some API where you can run scripts and flash the program.</p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20231010082039.png" width="350"/></p></div>
+<div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20231010082039.png" width="350"/></p></div>
 <div class="bodytext"><p><em>Everything included with the XDS110 from Texas Instruments</em></p></div>
 <div class="bodytext"><p>When you install their IDE, Code Composer Studio, and add the XDS110 as a debug probe a ton of different executables are installed on your system. These can be executed with flags for certain options</p></div>
 <div class="bodytext"><p>Capabilities include</p></div>
@@ -213,13 +221,13 @@ except KeyboardInterrupt:
 </ul></div>
 <div class="bodytext"><p>There is also some other capabilities including being able to assert nRESET low or high.</p></div>
 <div class="bodytext"><p>In my test setup I have two of these connected. This may not be needed for most test setups, but I find it useful when I have two prototypes with just slightly different hardware configurations.</p></div>
-<div class="bodytext"><p>==insert photo of my test setup==</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/xds110_debug_probes.jpg"/></p></div><figcaption>Both of my XDS110 debug probes, sitting on top of my USB relay module</figcaption></figure>
 <div class="bodytext"><p>You can set and then call a specific serial number to issue commands to.</p></div>
 <div class="bodytext"><p>Being able to separate myself from an IDE allowed me to do most of my coding in Emacs, a text editor I started using in late 2022.</p></div>
 <div class="bodytext"><p>I have not yet figured out how to actually perform debug abilities without usage of the IDE (breakpoints, reading from register memories, etc.) Maybe in a future update ....</p></div>
-<h3>Test equipment control</h3>
+<h3 id="test-equipment-control">Test equipment control</h3>
 <div class="bodytext"><p>The last main capability would be control standard electrical test equipment. This is enabled primarily through <a href="https://en.wikipedia.org/wiki/Standard_Commands_for_Programmable_Instruments" rel="noopener noreferrer" target="_blank">SCPI</a>   commands. SCPI was defined as an additional layer on top of the IEEE 488.2-1987 specification "Standard Codes, Formats, Protocols, and Common Commands". The standard specifies a common syntax, command structure, and data formats to be used with all instruments.</p></div>
-<div class="bodytext"><p>Similiar commands are grouped into a hierarchy or "tree" structure. The usage of the colon <code>:</code> can specify sub commands. For example, let's say we have a DMM and want to measure certain parameters. The command structure might look like</p></div>
+<div class="bodytext"><p>Similar commands are grouped into a hierarchy or "tree" structure. The usage of the colon <code>:</code> can specify sub commands. For example, let's say we have a DMM and want to measure certain parameters. The command structure might look like</p></div>
 <pre><code class="prettyprint">  :MEASure
        :VOLTage
             :DC?
@@ -231,56 +239,62 @@ except KeyboardInterrupt:
 <div class="bodytext"><p>In this project, the actual protocol in which SCPI commands are issued varies. Some pieces of equipment may use USB / serial, some may use the industry-standard <a href="https://en.wikipedia.org/wiki/Virtual_instrument_software_architecture" rel="noopener noreferrer" target="_blank">VISA</a>.</p></div>
 <h4>Use-cases</h4>
 <div class="bodytext"><p><strong>Example 1: DUT power</strong>
-With power supplies I can power my DUT's voltage rails to a known voltage everytime. Let's say I'm powering some 24V device, forget that's what the voltage is set at, and come back to turn on my device that needs a 3.3V signal. Well, everything on that voltage rail is probably smoke after turning on that power supply! (this actually has happened to me)</p></div>
+With power supplies I can power my DUT's voltage rails to a known voltage every time. Let's say I'm powering some 24V device, forget that's what the voltage is set at, and come back to turn on my device that needs a 3.3V signal. Well, everything on that voltage rail is probably smoke after turning on that power supply! (this actually has happened to me)</p></div>
 <div class="bodytext"><p>With a software controlled solution, I can save the device voltage off in a configuration file and </p></div>
 <div class="bodytext"><p><strong>Example 2: recording power draw</strong>
 When I'm using my power supply, I actually know exactly how much current my device is drawing. I can record this and basically make a nice "power profiler"</p></div>
-<div class="bodytext"><p>==add.a graph of live plot current measurements==</p></div>
+<div class="bodytext"><p><mark>add.a graph of live plot current measurements</mark></p></div>
 <div class="bodytext"><p><strong>Example 3: making DMM measurements</strong>
 Ok, the first example was supplying power but what about recording voltages or currents? We can leverage the same framework for making these measurements.</p></div>
 <div class="bodytext"><p>Because I'm using a power supply to power my device's voltage, I also know how much current it's drawing.</p></div>
-<h3>HIL controller</h3>
+<h3 id="hil-controller">HIL controller</h3>
 <div class="bodytext"><p>Hardware-in-the-loop (HIL) testing involves validating systems by connecting systems to simulated models of a stimulus system. I know them mostly in the context of automotive parts. Car manufacturers use them to actually simulate sensors and actuators, say for testing an electronic control unit (ECU). Or some processor may be running that is emulating the engine dynamics. My usage of a "HIL" controlled was wayyy simpler .... simply controlling buttons. I wanted a way to be able to remotely "push" those buttons to expand my debug capabilities away from my lab. </p></div>
-<div class="bodytext"><p>Essentially, all I'm doing is connecting the GPIO inputs to my button input leg (direct connect to the MCU). The pins are tri-stated on the Arduino with a few lines of code. </p></div>
-<div class="bodytext"><p>==add the line of code where I'm tri-stating the GPIO pins==</p></div>
+<div class="bodytext"><p>Essentially, all I'm doing is connecting the GPIO inputs to my button input leg (direct connect to the MCU). The pins are tri-stated on the Arduino with a few lines of code (just setting them to an input)</p></div>
+<pre><code class="prettyprint">// set back to tri-state
+pinMode(gpio_pin, INPUT);</code></pre>
 <div class="bodytext"><p>when I want to press them, I write them to go to ground (0V) and as my buttons are active-high </p></div>
-<div class="bodytext"><p>I even took some oscilloscope shots of what my "average" human press looked like, and arrived at roughly xxx ms.</p></div>
-<div class="bodytext"><p>==add a scope shot of a human button press==</p></div>
-<div class="bodytext"><p>Combining this with a webcam feed of my electronic display and I can remotely debug at ease!</p></div>
-<div class="bodytext"><p>==add a picture of my buttons==</p></div>
-<div class="bodytext"><p>==add a picture of my webcam control==</p></div>
-<div class="bodytext"><p>This is likely as far as my HIL controller will go (if you can call it that). In future projects I may need to add simulated sensor inputs, but thats likely the extend of the scope of my personal projects at this point.</p></div>
+<pre><code class="prettyprint">// set up as OUTPUT
+pinMode(gpio_pin, OUTPUT);
+
+// "click"
+digitalWrite(gpio_pin, BUTTON_ON_STATE);
+delay(BUTTON_DUR_MS);
+digitalWrite(gpio_pin, BUTTON_OFF_STATE);</code></pre>
+<div class="bodytext"><p>I even took some oscilloscope shots of what my "average" human press looked like, and arrived at roughly 120ms. This is reflected in my code</p></div>
+<pre><code class="prettyprint">#define BUTTON_DUR_MS 120</code></pre>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20260303084353.png"/></p></div><figcaption>Screenshot of the section of the application to control the Arduino</figcaption></figure>
+<div class="bodytext"><p>Combining this with a webcam feed of my electronic display and I can remotely debug at ease! </p></div>
+<div class="bodytext"><p>This is likely as far as my HIL controller will go (if you can call it that). In future projects I may need to add simulated sensor inputs, but that's likely the extend of the scope of my personal projects at this point.</p></div>
 <h2 class="section_heading" id="design">Design</h2>
-<hr/>
-<h3>Sketches, Diagrams, or Mockups</h3>
+<h3 id="sketches-diagrams-or-mockups">Sketches, Diagrams, or Mockups</h3>
 <div class="bodytext"><p>To start the design process I made a block diagram to see what all the inputs and outputs I would want in my system are.</p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20241224114201.png" width="700"/></p></div>
+<div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20241224114201.png" width="700"/></p></div>
 <div class="bodytext"><p>You can see the main inputs and outputs in the right hand side of the block diagram. Mainly USB outputs that are controlled through the relay and power outputs through banana jacks. </p></div>
 <div class="bodytext"><p>The yellow block includes some examples of USB devices I want to power. I actually found some issues in testing when the debug probe was hooked up, so this was directly connected to my host PC now.</p></div>
-<h3>Design Approach</h3>
+<h3 id="design-approach">Design Approach</h3>
 <h4>hardware interface</h4>
 <div class="bodytext"><p>For connecting to test equipment, banana jacks are the most common. Since my goal was to replicate some of the convenience of ATE systems, I also considered integrating relays or digital switches to automate power control and signal routing.</p></div>
-<figure><div class="bodytext"><p><img src="images/Pasted image 20250210130915.png" width="200"/></p></div><figcaption>Banana jacks, the standard connector for most electrical test equipment</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20250210130915.png" width="200"/></p></div><figcaption>Banana jacks, the standard connector for most electrical test equipment</figcaption></figure>
 <div class="bodytext"><p>The challenging part in the interface part was mainly getting the DUT signals, especially for a board of my size. I also wanted a very repeatable test jig, meaning I can quickly unhook it and hook it to say a different board or what not.</p></div>
 <div class="bodytext"><p>After some research I decided to move to a <a href="Probe_testing_for_embedded_devices.html">bed of nails solution</a>. This was after some time, however, and early versions did not have this board designed. The design of this was a project in itself, so I wrote that article if you want to read more about that specific aspect of the test setup.</p></div>
 <h4>software solution</h4>
 <div class="bodytext"><p>I would like to discuss the design approach of the software solution. From the software engineering crowd, my choices here might upset some people. But I stand by my choices, for reasons I'll explain.</p></div>
 <div class="bodytext"><p>I will be using <a href="https://docs.python.org/3/library/tkinter.html">tkinter</a> as the front-end, which is a standard Python interface to the Tcl/Tk GUI toolkit. This is available on Unix systems and Windows. The usage of this front-end gets a lot of hate from software engineers I know. Many people think it's dated and ugly looking. Some would prefer to use a more modern interface like PyQt. I however, love how simple it is to use.</p></div>
-<div class="bodytext"><p>==add some example photos of what Tkinter looks like==</p></div>
+<div class="bodytext"><p><mark>add some example photos of what Tkinter looks like</mark></p></div>
 <div class="bodytext"><p>I think it's quite easy to sink a lot of development time into a beautiful looking user interface. Yes, there are quite good frameworks that make it easy. But I don't need many GUI features in this project. Simple buttons and labels and colors and text fields is all I really need. The most complex item is probably a drop-down menu with certain options.</p></div>
-<div class="bodytext"><p>==add another few photos of the actual applications==</p></div>
+<div class="bodytext"><p><mark>add another few photos of the actual applications</mark></p></div>
 <h2 class="section_heading" id="implementation-building">Implementation / Building</h2>
 <hr/>
-<h3>Process</h3>
+<h3 id="process">Process</h3>
 <div class="bodytext"><p>The build process has been incredibly non-linear. I had a vision on some aspects of this project, but because I developed this in parallel with the device that I was actually trying to test I had bursts of feature additions and then long periods of solely working on device debug. Which is good, I was actually using what I built!</p></div>
 <h4>USB relay</h4>
 <div class="bodytext"><p>I first focused on getting my USB relay working as that was one of the main reasons I started the project. 
 I combined these two items in a nice wooden box, and after inadvertenly blowing a motherboard up on my host test PC computer trying to supply USB power I had it working.</p></div>
-<div class="bodytext"><p>==add actual photo of this thing in use==</p></div>
+<div class="bodytext"><p><mark>add actual photo of this thing in use</mark></p></div>
 <h4>embedded debug probe flashing</h4>
 <div class="bodytext"><p>The next thing I wanted to do was interface with my specific debug probe. I'm using the XDS110 from Texas Instruments. It is a pretty standard debug probe, nothing crazy. Retails for about 150 dollars.</p></div>
-<figure><div class="bodytext"><p><img src="images/Pasted image 20241224151259.png" width="400"/></p></div><figcaption>XDS110 debug probe from Texas Instruments</figcaption></figure>
-<div class="bodytext"><p>I already explained in [[#Debug probe toolsets - reset, compilation, flashing]] how some executables are installed</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20241224151259.png" width="400"/></p></div><figcaption>XDS110 debug probe from Texas Instruments</figcaption></figure>
+<div class="bodytext"><p>I already explained in <a href="#debug-probe-toolsets-reset-compilation-flashing">Debug probe toolsets - reset, compilation, flashing</a> how some executables are installed</p></div>
 <div class="bodytext"><p>For doing this I mainly rely on the Python submodule <strong>subprocess</strong>. This module is great for executing files on your system, and more importantly, getting the output back in great STDOUT and STDERR pipes.</p></div>
 <div class="bodytext"><p>TI provides these features in the form of executables</p></div>
 <div class="bodytext"><ul>
@@ -290,7 +304,6 @@ I combined these two items in a nice wooden box, and after inadvertenly blowing 
 <li>building code (not related to debugger)</li>
 <li>flashing target</li>
 </ul></div>
-<div class="bodytext"><p>==add a screenshot of flashing the target with the debug probe==</p></div>
 <div class="bodytext"><p>With this feature in place, I could avoid the vendor IDE entirely and do all my code programming in Emacs. I could then handle</p></div>
 <div class="bodytext"><p>One gap in this is I haven't figured out how to add proper debugger features like breakpoints and what not. I think this would be pretty intensive to add, and probably not worth it. So when I want to debug and view registers and memory I do load up CCS. Let me know if anyone has thoughts on debugger integration ... specifically breakpoints would be nice!</p></div>
 <h4>electrical test equipment control</h4>
@@ -300,7 +313,7 @@ I combined these two items in a nice wooden box, and after inadvertenly blowing 
 <li>serial (regular communication over a COM port)</li>
 <li>PyVISA</li>
 <li>GPIB</li>
-<li>VX11 ==need to audit the spelling of this one==</li>
+<li>VX11</li>
 </ul></div>
 <div class="bodytext"><p>The actual physical connection (type of cable) will likely be one of these things</p></div>
 <div class="bodytext"><ul>
@@ -312,63 +325,62 @@ I combined these two items in a nice wooden box, and after inadvertenly blowing 
 <li>Ethernet</li>
 </ul></div>
 <div class="bodytext"><p>I'm using Python to control all this test equipment, as it's my preferred language of choice. Some people complain about it being too slow for certain types of test equipment, compared to something like C or Java (I've gotten this feedback when sharing this project on forums). Well, obviously C is going to be faster but my god who wants to program a GUI application in C as a side-project? Java would be tempting and likely better performance, but I'm just so used to Python at this point it would be a big drain just for a side-project thing. This project is supposed to help me in my main projects not be a whole lot of work.</p></div>
-<div class="bodytext"><p>Anyway, I have a Github repo started for all my EE equipment control, you can <a href="==add link boy==" rel="noopener noreferrer" target="_blank">find that link here</a>. This is a submodule to my main module. In fall 2026 I completely overhauled it and tried to make it easy to abstract away the commands from the main application code I chose to use <code>.ini</code> files in which the user can simply add commands. </p></div>
-<div class="bodytext"><p>==need to insert blurb on command list==</p></div>
+<div class="bodytext"><p>Anyway, I have a Github repo started for all my EE equipment control, you can <a href="&lt;mark&gt;add link boy&lt;/mark&gt;" rel="noopener noreferrer" target="_blank">find that link here</a>. This is a submodule to my main module. I've been trying to get this side project (the EEequipment repo) (funny that it's really a side-project of a side-project) to get some online traction but haven't got much luck. </p></div>
+<div class="bodytext"><p>In fall 2026 I completely overhauled it and tried to make it easy to abstract away the commands from the main application code I chose to use <code>.ini</code> files in which the user can simply add commands. For example, here is a command list for a DMM </p></div>
+<pre><code class="prettyprint">[command]
+read = MEAS1?
+query = *IDN?
+get_mode = FUNC1?
+get_range = RANGE?
+range_auto = AUTO
+sample_slow = RATE S
+sample_medium = RATE M
+sample_fast = RATE F</code></pre>
 <div class="bodytext"><p>In practice, it's not as simple as adding commands this way. Each piece of equipment has weird quirks. Most of the quirks I've seen are on the reading side. For example, some power-supplies have reading if the channel is in constant-voltage mode or constant-current mode in a single read. Others lump it into a broader status reading and the user has to parse it out. Most of the simple functions (read DMM voltage, set supply, set range) should be easy enough to get going with your equipment pretty easily though. </p></div>
-<div class="bodytext"><p>I've been trying to get this side project (the EEequipment repo) (funny that it's really a side-project of a side-project) to get some online traction but haven't got much luck. If you are looking to add your own piece of equipment, I would check out the most recently added pieces of equipment (==need to list DMM and PS models here==) as they </p></div>
-<div class="bodytext"><p>Anyway, because EEequipment has pre-defined classes and methods we can simply load in your respective piece of test equpment into the main application.</p></div>
+<div class="bodytext"><p>Anyway, because EEequipment has pre-defined classes and methods we can simply load in your respective piece of test equipment into the main application.</p></div>
 <div class="bodytext"><p>Here is an example of loading in my Siglent SPD3303X power supply.</p></div>
 <pre><code class="prettyprint">ps = SPD3303X()
 ps.set_voltage(1, 2.3) # set channel 1 to 2.3 V
 ps.output_on(1) # turn channel 1 on</code></pre>
-<div class="bodytext"><p>==UPDATE in fall 2025==
-I've updated the application to actually have some drop-down where you can select your model in the application, no code re-writing needed.</p></div>
-<div class="bodytext"><p>==add a screenshot of the dropdown==</p></div>
-<h3>Building Wins</h3>
+<h3 id="building-wins">Building Wins</h3>
 <h4>Open-source GitHub projects</h4>
 <div class="bodytext"><p>I was greatly helped by some code I found on GitHub for the specific test equipment I was aiming to control. This code helped speed up the backend code development. Although my current equipment code has morphed to be pretty far from this open-source code I found, it was a great starting point.</p></div>
-<div class="bodytext"><p>I linked the GitHub repos I used for my test equipment initially below</p></div>
-<div class="bodytext"><p>==make these links===</p></div>
 <h4>low GUI overhead</h4>
-<div class="bodytext"><p>I was also helped by already having a basic Tkinter framework down for my [[Financial-Analyzer]] project, as that one previously was a GUI using Tkinter before I moved it to be command-line interface only. This example skeleton code (and more importantly some prior experience with elements and how to use them) was useful in getting started.</p></div>
+<div class="bodytext"><p>I was also helped by already having a basic Tkinter framework down for my <a href="Financial-Analyzer.html">Financial-Analyzer</a> project, as that one previously was a GUI using Tkinter before I moved it to be command-line interface only. This example skeleton code (and more importantly some prior experience with elements and how to use them) was useful in getting started.</p></div>
 <div class="bodytext"><p>Some people reading this may be laughing at me using Tkinter (ugly, old, etc) but for a simple test lab application I really don't require anything fancy.</p></div>
-<h3>Challenges</h3>
+<h3 id="challenges">Challenges</h3>
 <div class="bodytext"><p>The first main challenge (like all projects) was just plain getting started. Getting some basic communication going with all my hardware, getting a framework down for GUI code structure, learning my capabilities and how I was going to implement them. </p></div>
-<div class="bodytext"><p>But that's a lame answer as that's applicable for many projects! So I will list out a few of the major hurdles along the way</p></div>
 <h4>thread / runtime management</h4>
-<div class="bodytext"><p>Some of the tasks like logging and reading serial (UART) data require some threading to be happening so the main GUI application can continue. This was my first time writing a threaded application that runs on a regular computer, I have experience with embedded RTOS system threading. It was fairly simple to get the <code>threading</code> module in Python up and running ==verify that's the correct module== but took some tweaking which is why I'm marking it as a challenge.</p></div>
+<div class="bodytext"><p>Some of the tasks like logging and reading serial (UART) data require some threading to be happening so the main GUI application can continue. This was my first time writing a threaded application that runs on a regular computer, I have experience with embedded RTOS system threading. It was fairly simple to get the <code>threading</code> module in Python up and running but took some tweaking which is why I'm marking it as a challenge.</p></div>
 <div class="bodytext"><p>I had to get all proper with my serial thread, having it throw samples into a queue and process them as the CPU cycles become available. I haven't noticed much data dropping happening, but I haven't run it through a massive stress test with a high baud-rate and tons of data streaming while I'm clicking happy around the GUI.</p></div>
 <div class="bodytext"><p>I'm sure a more experienced software engineer could take one look at my code and improve my usage of buffers and threading, but for now it works.</p></div>
 <h4>decoupling the GUI and application logic</h4>
 <div class="bodytext"><p>This one is still ongoing. I really have a hard time properly writing code with everything that is GUI related in certain files, and all the application logic in another. I really want this separation to be clean if I ever want to switch from Tkinter, or Python completely as the GUI interface. I'm not sure what I would switch to (maybe pure HTML/CSS/Javascript? Java?) but I'm preparing for if that day comes. It also is just cleaner code, and allows me to reuse the application code in other stuff more easily (for example logging and graphing features)</p></div>
 <h4>operating system support</h4>
-<div class="bodytext"><p>Specifically for this project, one challenge was support for multiple operating systems. I started develoment on my main Windows computer, and made the switch over to a custom Linux PC I built. This was useful because Linux is completely free and (although slightly more complicated), allowed more control over how I wanted everything to interface with the host PC.</p></div>
-<div class="bodytext"><p>In practice, this mainly relies on an operating system check and multiple path options</p></div>
-<div class="bodytext"><p>==add some code snippets of multiple operating system work==</p></div>
-<div class="bodytext"><p>The other challenge was code testing. In order to fully test some features and discover bugs, I had to be fully connected to specific hardware. </p></div>
-<div class="bodytext"><p>However, as I mentioned previously in some ways this turned into an advantage. There was multiple vacations where I got a ton of major code work done because I wasn't constantly re-running the program and tweaking things. I had time to do big refactors and improvements offline, and then tweak the final details when I was back at my test setup.</p></div>
+<div class="bodytext"><p>Specifically for this project, one challenge was support for multiple operating systems. I started develoment on my main Windows computer, and made the switch over to a custom Linux PC I built. This was useful because Linux is completely free and (although slightly more complicated), allowed more control over how I wanted everything to interface with the host PC. In practice, this mainly relies on an operating system check and multiple path options</p></div>
+<div class="bodytext"><p>The other challenge was code testing. In order to fully test some features and discover bugs, I had to be fully connected to specific hardware. However, as I mentioned previously in some ways this turned into an advantage. There was multiple vacations where I got a ton of major code work done because I wasn't constantly re-running the program and tweaking things. I had time to do big refactors and improvements offline, and then tweak the final details when I was back at my test setup.</p></div>
 <h2 class="section_heading" id="conclusion">Conclusion</h2>
 <hr/>
-<h3>Status and Results</h3>
+<h3 id="status-and-results">Status and Results</h3>
 <div class="bodytext"><p>For what I originally set out to manage with this project, I am extremely pleased with the current status. Now that the basic feature set of program flashing, equipment control, and datalogging are in place and very robust I deemed this application good enough to show off to the world.</p></div>
 <div class="bodytext"><p>Overall, the project just works. There are some bugs I encounter once in a while, but the feature set is basic enough and the program features separate enough in the code that debugging is often quite simple. When I finally started adding more test equipment I was surprised at how few hiccups there were, and I truly had created an equipment model agnostic piece of software.</p></div>
-<h3>Reflection</h3>
-<div class="bodytext"><p>This project was super enjoyable to build. The software is pretty polished now, and it indeed has made embedded debugging much more seamless. I don't have to rely on using an IDE to communicate with my debugger. I simply have to open one application to do everything from data managent, to controlling my embedded device with HIL testing.</p></div>
+<h3 id="reflection">Reflection</h3>
+<div class="bodytext"><p>This project was super enjoyable to build. The software is pretty polished now, and it indeed has made embedded debugging much more seamless. I don't have to rely on using an IDE to communicate with my debugger. I simply have to open one application to do everything from data management, to controlling my embedded device with HIL testing.</p></div>
 <div class="bodytext"><p>Development flow was slightly stuttered by developing the application in parallel with what I was testing. You're trying to work on firmware development for your device, then something bothers you about the test application so you switch what you're working on, then you try to switch back ..... you get the point. Multi-tasking code writing hard!</p></div>
 <div class="bodytext"><p>Some of the most productive work on this project took place offline in "simulator" mode when I wasn't actually even connected to any test hardware. This way I just solely focused on code improvements and closing <code>TODO</code> items, and then cleaning up any bugs once I was back connected to everything.</p></div>
-<h3>Looking forward</h3>
-<div class="bodytext"><p>I'm still actively working on this project, and likely will be for a while. Fortunately, I enjoy coding as it's a good break from hardware design. I will likely continue to work on the project in the same way that 90% of development has happened - really slowly adding features as I use it more and desire something. Much of my programming happens "on the fly" as I actively use the software. When necessary, I jot down TODOs so I can revisit certain features later without needing to be physically connected to the hardware</p></div>
-<div class="bodytext"><p>I think I will continue to interface with project in the same way that 90% of the development has happened, really just slowly adding features as I use it more and more. Sometimes it distracts me from actually working on the project at hand that I'm using the equipment for, which is a dangerous trap :) </p></div>
+<h3 id="looking-forward">Looking forward</h3>
+<div class="bodytext"><p>I'm still actively working on this project, and likely will be for a while. Fortunately, I enjoy coding as it's a good break from hardware design. I will likely continue to work on the project in the same way that 90% of development has happened - really slowly adding features as I use it more and desire something. Much of my programming happens "on the fly" as I actively use the software. When necessary, I jot down TODOs so I can revisit certain features later without needing to be physically connected to the hardware. Sometimes it distracts me from actually working on the project at hand that I'm using the equipment for, which is a dangerous trap :) </p></div>
 <div class="bodytext"><p>I think also in the future my hardware design will become more and more complex. Right now it is pretty much a glorified connector interface, with banana jack inputs and header pins. In the future, I would like to add more active component such as an FTDI converter for UART to USB conversion or some current-sensing module built in.</p></div>
-<div class="bodytext"><p>I would also like to integrate more closely with my [[Probe testing for embedded devices]] hardware, possibly adding another piece of equipment that can sample the analog voltages of the probe pins.</p></div>
-<div class="bodytext"><p><img src="images/embedded_probe_test.jpeg" width="350"/></p></div>
+<div class="bodytext"><p>I would also like to integrate more closely with my <a href="Probe_testing_for_embedded_devices.html">embedded probe testing</a> hardware, possibly adding another piece of equipment that can sample the analog voltages of the probe pins.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/probe_v3_pic1.jpeg" width="350"/></p></div><figcaption>Sneak peak of my probe testing hardware. Check out that article for more information!</figcaption></figure>
 <h2 class="section_heading" id="additional-information">Additional Information</h2>
 <hr/>
-<h3>Online Resources</h3>
+<h3 id="online-resources">Online Resources</h3>
 <div class="bodytext"><ul>
 <li><a href="https://www.edn.com/how-to-automate-measurements-with-python/" rel="noopener noreferrer" target="_blank">How to automate measurements with Python | EDN</a></li>
 <li><a href="https://www.digikey.com/en/articles/simplify-electromechanical-testing-usb-based-data-acquisition-system?utm_cid=13058671" rel="noopener noreferrer" target="_blank">Simplify Electromechanical Testing with a USB-Based Data Acquisition System | DigiKey</a></li>
-</ul></div> <!-- This is where the Markdown content will be injected -->
+</ul></div>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" loading="lazy" src="https://www.youtube.com/embed/QSbQLreiuhU"></iframe></div> <!-- This is where the Markdown content will be injected -->
 
       </article>
 

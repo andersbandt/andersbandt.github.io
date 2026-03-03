@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="icon" href="../favicon.ico" />
+    <meta name="generator" content="FlavoWorks v0.1 (2026-03-03)">
+    <!-- Open Graph -->
+    <meta property="og:type"  content="article">
+    <meta property="og:title" content="Spotify-Scraper">
+    <meta property="og:description" content="this article will focus on a Spotify data analytics tool">
+    <meta property="og:url" content="https://andersbandt.github.io/projects/Spotify-Scraper.html">
+    
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
   </head>
 
@@ -14,7 +21,7 @@
   <body>
     <!--Main Heading -->
     <div id="heading">
-      <h1>FlavoWorks</h1>
+      <h1>Anders Bandt</h1>
     </div>
 
 
@@ -38,16 +45,16 @@
       <h2>Spotify-Scraper</h2>
       <div>
     <div class="about-section">
-        <p>Created on: 2026-02-20 14:49:11</p>
-        <p>Modified on: 2026-02-20 14:50:29</p>
-        <p><strong>Scope:</strong> <em>write the scope here</em></p>
+        <p>Created on: 2026-02-20</p>
+        <p>Modified on: 2026-03-02 14:27:43</p>
+        <p><strong>Scope:</strong> <em>this article will focus on a Spotify data analytics tool</em></p>
     </div>
     </div>
       <nav>
         <div id="toc_container">
           <p class="toc_title">Table of Contents</p>
           <ul class="toc_list">
-            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements" id="toc_section">Requirements</a></li><li><a href="#design" id="toc_section">Design</a></li><li><a href="#implementation-and-building" id="toc_section">Implementation and Building</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
+            <li><a href="#what-is-spotify-scraper" id="toc_section">What Is Spotify Scraper?</a></li><li><a href="#getting-your-data-from-spotify" id="toc_section">Getting Your Data from Spotify</a></li><li><a href="#analysis-breakdown" id="toc_section">Analysis Breakdown</a></li><li class="toc_sub_item"><a href="#top-artists-by-play-count" id="toc_section">Top Artists by Play Count</a></li><li class="toc_sub_item"><a href="#top-artists-by-listening-time" id="toc_section">Top Artists by Listening Time</a></li><li class="toc_sub_item"><a href="#unique-vs-repeated-songs" id="toc_section">Unique vs. Repeated Songs</a></li><li class="toc_sub_item"><a href="#listening-distribution-across-the-year" id="toc_section">Listening Distribution Across the Year</a></li><li class="toc_sub_item"><a href="#listening-activity-throughout-the-day" id="toc_section">Listening Activity Throughout the Day</a></li><li class="toc_sub_item"><a href="#day-of-week-x-hour-heatmap" id="toc_section">Day-of-Week x Hour Heatmap</a></li><li class="toc_sub_item"><a href="#songs-played-per-day-over-time" id="toc_section">Songs Played per Day Over Time</a></li><li class="toc_sub_item"><a href="#year-over-year-comparison" id="toc_section">Year-Over-Year Comparison</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li><li class="toc_sub_item"><a href="#online-resources" id="toc_section">Online Resources</a></li>
           </ul>
         </div>
     </nav>
@@ -58,49 +65,43 @@
 
       <article>
 
-        <h2 class="section_heading" id="introduction">Introduction</h2>
-<hr/>
-<h3>Background</h3>
-<h3>Motivations</h3>
-<h2 class="section_heading" id="requirements">Requirements</h2>
-<hr/>
-<h3>Scope of work</h3>
-<blockquote>
-<div class="bodytext"><p>What work is required of this project?</p></div>
-</blockquote>
-<h3>Capabilities</h3>
-<div class="bodytext"><p>==delete this section for non-technical projects or otherwise small projects==</p></div>
-<h3>Resources</h3>
-<blockquote>
-<div class="bodytext"><p>Time, budget, and tools needed</p></div>
-</blockquote>
-<h2 class="section_heading" id="design">Design</h2>
-<hr/>
-<h3>Sketches, Diagrams, or Mockups</h3>
-<blockquote>
-<div class="bodytext"><p>early sketches of what is </p></div>
-</blockquote>
-<div class="bodytext"><p>==can delete this section for smaller articles. If you do then delete all subheadings in this section==</p></div>
-<h3>Design Approach</h3>
-<blockquote>
-<div class="bodytext"><p>(methods, models, etc.)</p></div>
-</blockquote>
-<h2 class="section_heading" id="implementation-and-building">Implementation and Building</h2>
-<hr/>
-<h3>Process</h3>
-<h3>Wins</h3>
-<div class="bodytext"><p>==possibly change the name of this section depending on the project context==</p></div>
-<h3>Challenges</h3>
-<h2 class="section_heading" id="conclusion">Conclusion</h2>
-<hr/>
-<h3>Status and Results</h3>
-<h3>Reflection</h3>
-<h3>Looking forward</h3>
+        <div class="bodytext"><p><strong>Heads up, this article was creating using AI tools!</strong></p></div>
+<h2 class="section_heading" id="what-is-spotify-scraper">What Is Spotify Scraper?</h2>
+<div class="bodytext"><p>Spotify Scraper is a Python CLI tool that turns your raw Spotify streaming history into visual insights. You point it at the JSON files Spotify gives you, and it produces charts, stats, and breakdowns of your listening habits — everything from your most-played artists to what time of day you listen the most.</p></div>
+<div class="bodytext"><p>The tool is built around an interactive numbered menu with 25+ options covering three areas: <strong>streaming history analysis</strong> (charts and graphs of your listening data), <strong>playlist management</strong> (view, export, and diff your playlists), and <strong>liked songs analysis</strong> (cross-reference your library with what you actually stream). Under the hood it uses pandas for data processing and matplotlib/seaborn for visualization.</p></div>
+<h2 class="section_heading" id="getting-your-data-from-spotify">Getting Your Data from Spotify</h2>
+<div class="bodytext"><p>Before you can use this tool, you need to request your data from Spotify. Go to your <a href="https://www.spotify.com/account/privacy/" rel="noopener noreferrer" target="_blank">Spotify Privacy Settings</a> and request the <strong>Extended Streaming History</strong> — this is different from the basic "Account Data" download. The extended history includes every single stream you've ever played on the platform, with timestamps, track names, artist names, and milliseconds played. Spotify says it can take up to 30 days to prepare, but it usually arrives within a week or two. You'll get an email when it's ready, and the download will contain a set of <code>endsong_*.json</code> files. For playlist and library features, you'll also want the standard <strong>Account Data</strong> export which includes <code>Playlist1.json</code> and <code>YourLibrary.json</code>.</p></div>
+<h2 class="section_heading" id="analysis-breakdown">Analysis Breakdown</h2>
+<div class="bodytext"><p>Here's a walkthrough of some of the visualizations the tool produces.</p></div>
+<h3 id="top-artists-by-play-count">Top Artists by Play Count</h3>
+<div class="bodytext"><p><img loading="lazy" src="images/spotify_top_artists.png"/></p></div>
+<div class="bodytext"><p>This bar chart ranks your most-played artists by raw play count — every time a song by that artist started playing counts as one play. It's a straightforward look at who dominates your listening. You can configure how many artists to show (default is 20).</p></div>
+<h3 id="top-artists-by-listening-time">Top Artists by Listening Time</h3>
+<div class="bodytext"><p><img loading="lazy" src="images/spotify_top_artists_playtime.png"/></p></div>
+<div class="bodytext"><p>Same idea, but ranked by total hours spent listening instead of play count. This can tell a different story — an artist whose songs you let play all the way through will rank higher here than one you skip after 30 seconds, even if the skip-heavy artist has more raw plays.</p></div>
+<h3 id="unique-vs-repeated-songs">Unique vs. Repeated Songs</h3>
+<div class="bodytext"><p><img loading="lazy" src="images/spotify_unique_repeat_songs.png"/></p></div>
+<div class="bodytext"><p>A pie chart showing what percentage of your total plays were unique songs versus repeat listens. A low unique percentage means you tend to replay the same tracks over and over. A high percentage means you're constantly exploring new music. Most people fall somewhere in the middle.</p></div>
+<h3 id="listening-distribution-across-the-year">Listening Distribution Across the Year</h3>
+<div class="bodytext"><p><img loading="lazy" src="images/spotify_usage_across_year.png"/></p></div>
+<div class="bodytext"><p>This horizontal bar chart aggregates all your streams by calendar month (January through December), across all years in your data. It reveals seasonal patterns — maybe you listen more during winter months, or there's a summer slump when you're outdoors more. It's an aggregate view, so a month with data from multiple years will naturally appear larger.</p></div>
+<h3 id="listening-activity-throughout-the-day">Listening Activity Throughout the Day</h3>
+<div class="bodytext"><p><img loading="lazy" src="images/spotify_usage_across_day.png"/></p></div>
+<div class="bodytext"><p>A histogram with a KDE (kernel density estimate) curve showing when during the day you listen to music, broken down by hour (0-23). Timestamps are converted to your local timezone. You can spot your peak listening hours at a glance — late-night listening sessions, morning commute habits, or afternoon work playlists all show up clearly here.</p></div>
+<h3 id="day-of-week-x-hour-heatmap">Day-of-Week x Hour Heatmap</h3>
+<div class="bodytext"><p><img loading="lazy" src="images/spotify_week_heatmap.png"/></p></div>
+<div class="bodytext"><p>A heatmap with days of the week on the vertical axis and hours of the day on the horizontal axis. The color intensity represents how many songs you played during that specific day-hour combination. This is one of the most revealing charts — it shows not just <em>when</em> you listen, but how your listening patterns differ between weekdays and weekends. Dark green cells are your peak listening slots.</p></div>
+<h3 id="songs-played-per-day-over-time">Songs Played per Day Over Time</h3>
+<div class="bodytext"><p><img loading="lazy" src="images/spotify_perday_across_years.png"/></p></div>
+<div class="bodytext"><p>A scatter plot where each dot represents a single day, plotted over time on the x-axis with the number of songs played that day on the y-axis. A red dashed line shows your daily average. This chart is great for spotting outlier days (a long road trip, a music binge, a day you left Spotify on shuffle for hours) and for seeing how your overall listening volume has trended over the months and years.</p></div>
+<h3 id="year-over-year-comparison">Year-Over-Year Comparison</h3>
+<div class="bodytext"><p><img loading="lazy" src="images/spotify_hours_per_year.png"/></p></div>
+<div class="bodytext"><p>A side-by-side pair of bar charts comparing your listening across years. The left chart shows total play count per year, and the right shows total hours listened per year. Together they give you a high-level view of how your Spotify usage has grown or declined over time. A year with a high play count but relatively low hours might mean you were skipping a lot; the reverse could mean you were deep into long albums or podcasts.</p></div>
 <h2 class="section_heading" id="additional-information">Additional Information</h2>
 <hr/>
-<h3>Online Resources</h3>
+<h3 id="online-resources">Online Resources</h3>
 <div class="bodytext"><ul>
-<li><a href="fuck you" rel="noopener noreferrer" target="_blank">link</a></li>
+<li><a href="https://github.com/anders-ekenworx/Spotify-Scraper" rel="noopener noreferrer" target="_blank">GitHub Repository</a></li>
 </ul></div> <!-- This is where the Markdown content will be injected -->
 
       </article>

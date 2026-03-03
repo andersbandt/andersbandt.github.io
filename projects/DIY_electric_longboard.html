@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="icon" href="../favicon.ico" />
+    <meta name="generator" content="FlavoWorks v0.1 (2026-03-03)">
+    <!-- Open Graph -->
+    <meta property="og:type"  content="article">
+    <meta property="og:title" content="DIY electric longboard">
+    <meta property="og:description" content="this document will discuss how I approached building a DIY electric longboard">
+    <meta property="og:url" content="https://andersbandt.github.io/projects/DIY_electric_longboard.html">
+    <meta property="og:image" content="https://andersbandt.github.io/projects/images/side_angle.jpg">
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
   </head>
 
@@ -14,7 +21,7 @@
   <body>
     <!--Main Heading -->
     <div id="heading">
-      <h1>FlavoWorks</h1>
+      <h1>Anders Bandt</h1>
     </div>
 
 
@@ -38,8 +45,8 @@
       <h2>DIY electric longboard</h2>
       <div>
     <div class="about-section">
-        <p>Created on: 2025-04-13 13:14:10</p>
-        <p>Modified on: 2026-02-22 16:52:26</p>
+        <p>Created on: 2025-04-13</p>
+        <p>Modified on: 2026-03-03 07:15:19</p>
         <p><strong>Scope:</strong> <em>this document will discuss how I approached building a DIY electric longboard</em></p>
     </div>
     </div>
@@ -47,7 +54,7 @@
         <div id="toc_container">
           <p class="toc_title">Table of Contents</p>
           <ul class="toc_list">
-            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements-" id="toc_section">Requirements </a></li><li><a href="#physical-design" id="toc_section">Physical design</a></li><li><a href="#electronics" id="toc_section">Electronics</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
+            <li><a href="#introduction" id="toc_section">Introduction</a></li><li><a href="#requirements" id="toc_section">Requirements </a></li><li><a href="#board-construction" id="toc_section">Board construction</a></li><li class="toc_sub_item"><a href="#longboard-trucks-wheels" id="toc_section">Longboard, trucks, wheels</a></li><li class="toc_sub_item"><a href="#electronics-casing" id="toc_section">Electronics casing</a></li><li><a href="#drive-train" id="toc_section">Drive train</a></li><li class="toc_sub_item"><a href="#motor-mount" id="toc_section">Motor mount</a></li><li class="toc_sub_item"><a href="#gearing" id="toc_section">Gearing</a></li><li><a href="#electronics" id="toc_section">Electronics</a></li><li class="toc_sub_item"><a href="#batteries" id="toc_section">Batteries</a></li><li class="toc_sub_item"><a href="#electronic-speed-controller" id="toc_section">Electronic speed controller</a></li><li><a href="#the-final-product" id="toc_section">The final product</a></li><li><a href="#conclusion" id="toc_section">Conclusion</a></li><li><a href="#additional-information" id="toc_section">Additional Information</a></li>
           </ul>
         </div>
     </nav>
@@ -59,23 +66,18 @@
       <article>
 
         <h2 class="section_heading" id="introduction">Introduction</h2>
-<hr/>
-<h3>Background</h3>
+<h4>Background</h4>
 <div class="bodytext"><p>Over my freshman year of college I spent some spare time buying and assembling parts for a DIY electric longboard build. I wanted to do this build as DIY as I could, trying to avoid purchasing any premade kits where possible.</p></div>
-<div class="bodytext"><p>In hindsight, I wish I did more extensive research before starting to buy parts. I ended up having to modify and change my plans which cost me money and lots of wasted time.</p></div>
-<div class="bodytext"><p>I hope this guide helps other electric longboard builders because internet research was really valuable to me when I was designing and assembling my board so I'm just spreading the love! I hope someone finds value in this guide!</p></div>
-<figure><div class="bodytext"><p><img src="images/IMG_6140 (2019_10_17 13_30_32 UTC).jpg" width="350"/></p></div><figcaption>The final product</figcaption></figure>
-<h3>Motivations</h3>
+<div class="bodytext"><p>Looking back, I wish I had done more thorough research before I started buying parts. I ended up changing direction several times, which cost me both time and money.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/IMG_6140 (2019_10_17 13_30_32 UTC).jpg"/></p></div><figcaption>The final product</figcaption></figure>
+<div class="bodytext"><p>I hope this guide helps other electric longboard builders — internet research was invaluable when I was designing my board, so I'm paying it forward. I also made some critical mistakes with the battery design that caused permanent damage. Hopefully someone can learn from those.</p></div>
+<h4>Motivations</h4>
 <div class="bodytext"><p>I really wanted to build this from the Boosted Board / Casey Neistat craze. </p></div>
-<div class="bodytext"><p><img src="images/Pasted image 20260221111227.png" width="450"/></p></div>
+<div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20260221111227.png" width="450"/></p></div>
 <h2 class="section_heading" id="requirements">Requirements</h2>
-<hr/>
-<h3>Scope of work</h3>
 <div class="bodytext"><p>I tried to complete this build in a very DIY fashion, without the use of pre-made kits. A lot of DIY boards are mainly just a board assembled with a premade drive-train kit, battery, and electronic speed controller.</p></div>
-<div class="bodytext"><p>HOWEVER, if you are looking for a little more simplicity I would still HIGHLY suggest this option as buying a premade kit <em>should</em> ensure that there is compatability between your parts. Keep in mind that this build took me a fair amount of time to build, although a lot of that time went into planning and design. Following this guide closely should reduce that the design time significantly (hopefully).  </p></div>
+<div class="bodytext"><p>HOWEVER, if you are looking for a little more simplicity I would still HIGHLY suggest this option as buying a premade kit <em>should</em> ensure that there is compatibility between your parts. Keep in mind that this build took me a fair amount of time to build, although a lot of that time went into planning and design. Following this guide closely should reduce that the design time (hopefully).  </p></div>
 <div class="bodytext"><p>Another thing to keep in mind is the cost of an electric skateboard. Here is a cost breakdown of all the parts I ended up using in the build.</p></div>
-<h3>Resources</h3>
-<div class="bodytext"><p>Another thing to keep in mind is the cost of an electric skateboard. Here is a cost breakdown of all the parts I ended up using in the build</p></div>
 <table>
 <thead>
 <tr>
@@ -113,7 +115,7 @@
 <td>25</td>
 </tr>
 <tr>
-<td>18650 cells</td>
+<td>18650 cells (battery)</td>
 <td>80</td>
 </tr>
 <tr>
@@ -131,23 +133,34 @@
 </tbody>
 </table>
 <div class="bodytext"><p>As you can see, this project is not cheap at all!</p></div>
-<h2 class="section_heading" id="physical-design">Physical design</h2>
-<hr/>
-<h3>Longboard</h3>
+<h2 class="section_heading" id="board-construction">Board construction</h2>
+<h3 id="longboard-trucks-wheels">Longboard, trucks, wheels</h3>
 <div class="bodytext"><p>If you are doing a DIY build, you will have freedom to choose whatever longboard components you want. These are still important to your build and I suggest you invest in just as high quality longboard parts as you do with your electronic components. The parts of the longboard are as follows...</p></div>
 <div class="bodytext"><ul>
 <li>Deck</li>
 <li>Trucks</li>
 <li>Wheels</li>
 </ul></div>
-<div class="bodytext"><p>A strong, lightweight deck will keep your build safe and secure. I think any longboard design will pretty much do (pintail, carving, drop through). Drop through decreases your availible clearance so I would be wary about building with that style unless you know your components case plus the longboard will leave several inches of clearance from the board the road.</p></div>
-<div class="bodytext"><p>Your trucks are important because they provide stability and grip between your board and the road. They are the main factors in your turning stability as well. For e-board builds, they also serve the purpose of holding your motor mount. I ended up buying the Caliber II trucks because they had a nice flat surface so a mount could securely be attached. If you are looking for the easiest (but most expensive) approach, you can buy kits that come with trucks so you know everything will fit together. The second easiest approach would probably be</p></div>
-<figure><div class="bodytext"><p><img src="images/Pasted image 20260221111540.png" width="350"/></p></div><figcaption>A cool diagram showing a breakout parts diagram of trucks and wheels of a longboard (or skateboard)</figcaption></figure>
+<h4>Deck</h4>
+<div class="bodytext"><p>A strong, lightweight deck will keep your build safe and secure. I think any longboard design will pretty much do (pintail, carving, drop through). Drop through decreases your availible clearance so I would be wary about building with that style unless you know your components case plus the longboard will leave several inches of clearance from the board the road (I for some reason decided to buy this deck style, and although it worked I had limited clearance)</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20260302160750.png"/></p></div><figcaption>Diagram showing the different deck styles, for both shortboard and longboard</figcaption></figure>
+<h4>Trucks</h4>
+<div class="bodytext"><p>Your trucks are important because they provide stability and grip between your board and the road when you are cruising. They are the main factors in your turning stability as well. For e-board builds, they also serve the purpose of holding your motor mount. </p></div>
+<div class="bodytext"><p>I ended up buying the Caliber II trucks because they had a nice flat surface so a mount could securely be attached. If you are looking for the easiest (but most expensive) approach, you can buy kits that come with trucks so you know everything will fit together. The second easiest approach would probably be</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20260221111540.png" width="550"/></p></div><figcaption>A cool diagram showing a breakout parts diagram of trucks and wheels of a longboard (or skateboard)</figcaption></figure>
+<h4>Wheels</h4>
 <div class="bodytext"><p>Wheels are crucial because of their diameter and also the material that they are made of inside. Common sizes used for electric skateboards are between 80 and 90 mm diameter. This is slightly larger than typical longboard wheels because larger wheels allow for a smoother and more stable ride.</p></div>
-<div class="bodytext"><p>The wheels I purchased are from <a href="https://orangatangwheels.com/kegel-80mm" rel="noopener noreferrer" target="_blank">Orangatang wheels</a>. I purchased these wheels becasue they have a good diameter (80 mm) and also have nice holes that will come in handy later for mounting the gear system.</p></div>
-<figure><div class="bodytext"><p><img src="images/kegels.jpg" width="350"/></p></div><figcaption>Orangatang wheels</figcaption></figure>
-<h3>Drive train</h3>
-<div class="bodytext"><p>This part of the project was the most labor intensive, required a lot of going back to the drawing board, and is also a crucial part of the board! If your drivetrain is poorly built your board will be extremely unsafe.</p></div>
+<div class="bodytext"><p>The wheels I purchased are from <a href="https://orangatangwheels.com/kegel-80mm" rel="noopener noreferrer" target="_blank">Orangatang wheels</a>. I purchased these wheels because they have a good diameter (80 mm), but main reason was they have nice holes that will come in handy later for mounting the gear system.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/kegels.jpg" width="350"/></p></div><figcaption>Orangatang wheels</figcaption></figure>
+<h3 id="electronics-casing">Electronics casing</h3>
+<div class="bodytext"><p>I'll jump ahead in the order here slightly to discuss the final casing, housing all our electronics.</p></div>
+<div class="bodytext"><p>My case is constructed from fiberglass, a super strong and lightweight material. I had done some fiberglass work on my dad's car before this, so I had at least some experience. If you don't have any fiberglass experience, don't worry it is still very doable to construct but maybe do some practice before.</p></div>
+<div class="bodytext"><p>You can buy a premade case, but (time and money tradeoff). I think after </p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/component_top.jpg" width="450"/></p></div><figcaption>My (ugly looking) casing, with all the batteries mounted inside</figcaption></figure>
+<div class="bodytext"><p>The first step in creating my case was a cardboard core. I measured the dimensions of my battery pack and constructed the cardboard cutout, leaving a little clearance for the eventual fiberglass layers. After this I laid down 2-3 layers over the whole thing, allowing a fair amount of drying time between layers. The eventual case is super sturdy and has survived multiple hard collisions with curbs!</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/fiberglass_Case.jpg" width="450"/></p></div><figcaption>Fiberglass case before painting. The fiberglass is translucent enough you can see the cardboard core underneath. You can also see the cutouts I made for battery charging</figcaption></figure>
+<h2 class="section_heading" id="drive-train">Drive train</h2>
+<div class="bodytext"><p>The drive train is next. This part of the project was the most labor intensive, required a lot of going back to the drawing board, and is also a crucial part of the board! If your drivetrain is poorly built your board will be extremely unsafe.</p></div>
 <div class="bodytext"><p>The drivetrain itself can be separated into a few different components</p></div>
 <div class="bodytext"><ul>
 <li>Motor mount</li>
@@ -155,48 +168,88 @@
 <li>Motor shaft gear</li>
 <li>Belt</li>
 </ul></div>
-<div class="bodytext"><p><strong>Motor Mount</strong>
-The part I spent the most time on was the motor mount. I had bought the Caliber II trucks because they had a nice flat surface on one edge. My hope was that I could save some money and CNC mill my own motor mount. This was a lot easier said than done. I did come up with a model, but it required a little reworking to be functional and I had to go home for the summer, losing access to the machine shop at my university.</p></div>
-<figure><div class="bodytext"><p><img src="images/motor_mount_attempt.jpg.jpg" width="350"/></p></div><figcaption>My initial attempt at machining out a custom motor mount with aluminum</figcaption></figure>
+<h3 id="motor-mount">Motor mount</h3>
+<div class="bodytext"><p>The part I spent the most time on was the motor mount. I had bought the Caliber II trucks because they had a nice flat surface on one edge. My hope was that I could save some money and CNC mill my own motor mount. I was also just excited to try and mill something! </p></div>
+<div class="bodytext"><p>This was a lot easier said than done. I did come up with a model, but it required a little reworking to be functional and I had to go home for the summer, losing access to the machine shop at my university.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/motor_mount_attempt.jpg.jpg" width="350"/></p></div><figcaption>My initial attempt at machining out a custom motor mount with aluminum</figcaption></figure>
 <div class="bodytext"><p>At home I spent roughly 30 minutes trying to reshape the mount with a Sawzall before realizing I needed another solution. After shopping around a bit online I found out that premade mounts for the Caliber II trucks are pretty widespread, <a href="https://boardnamics.com/product/surfrodz-63mm-motor-mount-stealth-edition/" rel="noopener noreferrer" target="_blank">here</a> is an example. This is not the exact mount I bought, but it's a very similiar price and design. One VERY important note is to add Loctite to all your nuts and bolts.</p></div>
-<figure><div class="bodytext"><p><img src="images/motor_mount.jpg" width="350"/></p></div><figcaption>Parts breakout of the motor mount I bought on eBay</figcaption></figure>
-<figure><div class="bodytext"><p><img src="images/loctite.jpg" width="325"/></p></div><figcaption>Loctite: critical for the motor mount!</figcaption></figure>
-<h3>Casing</h3>
-<div class="bodytext"><p>My case is constructed from fiberglass, a super strong and lightweight material. I had done some fiberglass work on my dad's car before this, so I had at least some experience. If you don't have any fiberglass experience, don't worry it is still very doable to construct but maybe do some practice before.</p></div>
-<figure><div class="bodytext"><p><img src="images/component_top.jpg" width="350"/></p></div><figcaption>My (ugly looking) casing, with all the batteries mounted inside</figcaption></figure>
-<div class="bodytext"><p>Before I talk more about my case, I'm going to bring up the other options. Time and money again. Your first option is buying a premade case. <a href="https://psychotiller.com/collections" rel="noopener noreferrer" target="_blank">This website</a> is super cool and has a lot of other components</p></div>
-<div class="bodytext"><p>The first step in creating my case was a cardboard core. I measured the dimensions of my battery pack and constructed the cardboard cutout, leaving a little clearance for the eventual fiberglass layers. After this I laid down 2-3 layers over the whole thing, allowing a fair amount of drying time between layers. The eventual case is super sturdy and has survived multiple hard collisions with curbs!</p></div>
-<div class="bodytext"><p><img src="images/fiberglass_Case.jpg" width="350"/></p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/motor_mount.jpg" width="350"/></p></div><figcaption>Parts breakout of the motor mount I bought on eBay</figcaption></figure>
+<div class="bodytext"><p>The way this mount works is one piece clamps to the trucks (lower right, two pieces), and the rest of the mount screws into that with 4 screws. It worked well with the trucks I selected.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/IMG_6130 (2019_10_17 13_30_32 UTC).jpg"/></p></div><figcaption>Motor mount on the trucks</figcaption></figure>
+<div class="bodytext"><p>You should remember when you're assembling the motor mount, gears, etc to use Loctite.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/loctite.jpg" width="325"/></p></div><figcaption>Loctite: critical! Remember to use the blue kind.</figcaption></figure>
+<div class="bodytext"><p>Now that the motor is secured to our trucks we can add the gears.</p></div>
+<h3 id="gearing">Gearing</h3>
+<div class="bodytext"><p>There will be two gears, one mounted on the motor shaft, and the other mounted on the wheels. I already gave a sneak peak of them in previous picture of the motor mount.</p></div>
+<h4>Motor shaft gear</h4>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/motor_shaft.jpg"/></p></div><figcaption>A blurry photo of my motor shaft gear</figcaption></figure>
+<div class="bodytext"><p>The motor gear is pretty straightforward. There will be a single set-screw (you can see the hole for it on the gear), that you will tighten down to secure it to the shaft. One thing that I had to fix was the location of the set screw "receptacle" (not sure what to call it)</p></div>
+<div class="bodytext"><p>You can see in this photo that for some reason the original slot was too low. I had to the shaft and mill out another slot farther up the shaft.</p></div>
+<h4>Drive-wheel gear</h4>
+<div class="bodytext"><p>The other gear is the one mounted to your drive wheel. I talked earlier about why I chose my wheels, because they had really solid holes for mounting the gear to.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/gear_shot.jpg"/></p></div><figcaption>Mounted gear on the wheel</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/gear_close.jpg"/></p></div><figcaption>Close-up shot of the outside of my gear. You can see some of the holes I drilled didn't line up with the wheel holes, making them useless</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/outside_wheel.jpg"/></p></div><figcaption>I just used simple nuts (with Loctite!) to secure the mounting bolts</figcaption></figure>
+<div class="bodytext"><p>Pictures are worth 1000 words, so not much else to comment on the motor gearing.</p></div>
+<h4>Assembled drivetrain</h4>
+<div class="bodytext"><p>Putting it all together will look something like this</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/drivetrain_assembled.jpg"/></p></div><figcaption>Assembled drive-train</figcaption></figure>
+<div class="bodytext"><p>The main thing to keep in mind with assembly is</p></div>
+<div class="bodytext"><ol>
+<li>Belt alignment / rubbing<ul>
+<li>ensure that the belt will not rub against the side of the wheel, damaging it</li>
+</ul>
+</li>
+<li>Tensioning<ul>
+<li>ensure there is enough tension on the belt so it won't slip</li>
+</ul>
+</li>
+</ol></div>
 <h2 class="section_heading" id="electronics">Electronics</h2>
-<hr/>
-<h3>Batteries</h3>
-<div class="bodytext"><p>Batteries are a crucial part of the build because essentially they determine how fast and how far you go. The type of motor you want is somewhat dependent on what kind of battery setup you have, so I personally would suggest securing your battery design and information before making a motor purchase. Batteries come in a few different types, but I would say only lithium types are suitable for electric longboards. Other types have disadvantages. Lead Acid and Nickel Cadmium are heavy and Nickel-Metal hybrid batteries don't last that long. Lithium is the wave to ride. Within lithium batteries the two main types are LiPo and Li-ion.</p></div>
+<h3 id="batteries">Batteries</h3>
+<div class="bodytext"><p>Batteries are a crucial part of the build because they essentially determine how fast and how far you go. The type of motor you want is somewhat dependent on what kind of battery setup you have, so I personally would suggest securing your battery design and information before making a motor purchase, or at least making both purchases at the same time.</p></div>
+<div class="bodytext"><p>Batteries come in a few different types, but I would say only lithium types are suitable for electric longboards. Other types have disadvantages. Lead Acid and Nickel Cadmium are heavy and Nickel-Metal hybrid batteries don't last that long. Lithium is the wave to ride. Within lithium batteries the two main types are LiPo and Li-ion.</p></div>
 <div class="bodytext"><p>LiPo, however, have significant downsides that limit their use in commercial boards. For one, they are less safe and could start a fire if not handled properly. They also require a user to drain the battery to a specific charge for storage, so they just aren't for the everyone. On top of that, they have a shorter life-cycle compared to a Li-ion and LiFePo4 battery.</p></div>
-<div class="bodytext"><p>This is a picture of one of my packs in my build. It is made from 18650 cells, a very standard cell size. I bought them from <a href="https://www.imrbatteries.com/samsung-25r-18650-2500mah-20a-battery/" rel="noopener noreferrer" target="_blank">here, IMR batteries</a>. The pack in the picture is called a 6s2p pack, which means it contains 6 cells in series and then 2 in parallel, hence the 6 batteries lined up in a row with each row connected in parallel. My whole board however, uses 2 of these 6s2p packs in series to get a total of 12s2p. The reason I did this was because I had bought <a href="https://www.amazon.com/SKYRC-Professional-Balance-Discharger-Charging/dp/B00L5YBJI2/ref=pd_lpo_sbs_21_t_2?_encoding=UTF8&amp;psc=1&amp;refRID=YMB4V5NNMBGRYFY7EPRG" rel="noopener noreferrer" target="_blank">this</a> charger which only can support 6 cell charging. Therefore my board has two charging ports, one for each battery. If you purchase a charger that can support a higher cell count, then go for a higher cell pack just for simplicity of wiring.</p></div>
-<div class="bodytext"><p><strong>Building the battery pack</strong>
-Now if you selected LiPo, your pack is premade and you are done! Just wire it up! But if you selected lithium-ion and just bought a bunch of individual cells like me, you will have to somehow assemble those into a pack.</p></div>
-<div class="bodytext"><p>I was in a real dilemma at this stage because I wanted to spot weld my battery pack. You can read about spot welding <a href="https://en.wikipedia.org/wiki/Electric_resistance_welding" rel="noopener noreferrer" target="_blank">here</a>. Essentially it is a welding process that is very quick which is ideal for lithium-ion batteries because if you heat them up they will get damaged and lose potential charge. I searched everywhere at my college and found a spot welder, but the terminals of it were for welding plates together and not for batteries. Here is a picture of a battery spot welder.</p></div>
-<figure><div class="bodytext"><p><img src="images/spot_welder.jpg" width="350"/></p></div><figcaption>Example of a workbench spot welder</figcaption></figure>
-<div class="bodytext"><p>These can be bought for about $170 bucks which is money I did not have in college. My next approach was to build my own spot welder which can be <a href="https://www.youtube.com/watch?v=neR_RFTblqg" rel="noopener noreferrer" target="_blank">done with a microwave transformer</a>. Again, there is a tradeoff between time/money here. The reading I did about microwave transformer spot welders led me to believe that there is a lot that goes into them and more often than not they don't produce enough volts to create a good weld. So I decided to explore other options.</p></div>
-<div class="bodytext"><p>An option similiar to spot welding would be soldering nickel strips on the cells. This is fairly easy to do, but the heat produced by the solder iron is more likely than not to leave some damage on the cells.</p></div>
-<div class="bodytext"><p>The option I decided on and you can probably tell from my picture is a kit from a company called <a href="https://vruzend.com/" rel="noopener noreferrer" target="_blank">Vruzend</a>. These are little plastic caps that cover each cell and have screw terminals for you to place your nickel strips. My kit cost me $35 which is a LOT less than a spot welder and saved me a ton of time, also saving my precious cells from heat damage. Looking for an even more DIY route? You can theoretically 3D print the caps that Vruzend has and create your own kit, I know there was an .STL file somewhere. I decided to just buy the kit for simplicity. Again, a tradeoff between time/money.</p></div>
-<h3>Electronic speed controller</h3>
-<div class="bodytext"><p>I didn't do too much research into speed controllers. I know they are POSSIBLE to build by yourself, but I thought the time would be a lot. I ended up buying a 4.12 VESC from HobbyKing. After adjusting the settings on my VESC my motor started spinning out of control and I ended up burning the DRV8302 chip on the VESC. Had to buy a second one which is working great. I don't have much to say about this section because I didn't do a lot of research. The VESC I bought is compatible with software that has a lot of settings suitable for electric longboard riding. You can grab that software <a href="https://vesc-project.com/" rel="noopener noreferrer" target="_blank">here</a>.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/lipo_example.jpg"/></p></div><figcaption>A premade LiPo battery, I bought this one from HobbyKing. This is the easiest path to get something quick</figcaption></figure>
+<div class="bodytext"><p>This is a picture of one of my packs in my build. It is made from 18650 cells, a very standard cell size. I bought them from <a href="https://www.imrbatteries.com/samsung-25r-18650-2500mah-20a-battery/" rel="noopener noreferrer" target="_blank">here, IMR batteries</a>. </p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20260302165040.png" width="450"/></p></div><figcaption>Individual battery cell</figcaption></figure>
+<h4>Constructing the pack</h4>
+<div class="bodytext"><p>We need a way to take these individual cells and mount them together physically, and make the needed electrical connections.</p></div>
+<div class="bodytext"><p>One method for making commercial packs is to weld a strip of metal together using something called a spot welder. You can read about spot welding <a href="https://en.wikipedia.org/wiki/Electric_resistance_welding" rel="noopener noreferrer" target="_blank">here</a>. Essentially it is a welding process that is very quick which is ideal for lithium-ion batteries because if you heat them up they will get damaged and lose potential charge. This is the reason we can't solder batteries, because it will heat them up too much.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/Pasted image 20260302165337.png"/></p></div><figcaption>Image I found of a spot welder working on a battery pack</figcaption></figure>
+<div class="bodytext"><p>I searched everywhere at my college and found a spot welder, but the terminals of it were for welding plates together and not for batteries. Here is a picture of a battery spot welder.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/spot_welder.jpg" width="350"/></p></div><figcaption>Example workbench spot welder</figcaption></figure>
+<div class="bodytext"><p>These can be bought for about $170 bucks which is money I did not have in college. My next approach was to build my own spot welder which can be <a href="https://www.youtube.com/watch?v=neR_RFTblqg" rel="noopener noreferrer" target="_blank">done with a microwave transformer</a>. Again, there is a tradeoff between time/money here. The reading I did about microwave transformer spot welders led me to believe that there is a lot that goes into them and more often than not they don't produce enough volts to create a good weld. </p></div>
+<div class="bodytext"><p>So I decided to explore other options, which led me to the practical (and colorful) solution pictured below.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/battery_shot.jpg"/></p></div><figcaption>One half of my cell</figcaption></figure>
+<div class="bodytext"><p>The option I decided on is a kit from a company called <a href="https://vruzend.co.uk/" rel="noopener noreferrer" target="_blank">Vruzend</a>. These are little plastic caps that cover each cell and have screw terminals for you to place your nickel strips. My kit cost me $35 which is a LOT less than a spot welder and saved me a ton of time, also saving my precious cells from heat damage. Looking for an even more DIY route? You can theoretically 3D print the caps that Vruzend has and create your own kit, I know there was an .STL file somewhere. I decided to just buy the kit for simplicity. Again, a tradeoff between time/money.</p></div>
+<h4>Series and parallel configuration</h4>
+<div class="bodytext"><p>The pack in the picture is called a 6s2p pack, which means it contains 6 cells in series and then 2 in parallel, hence the 6 batteries lined up in a row with each row connected in parallel. My whole board however, uses 2 of these 6s2p packs in series to get a total of 12s2p. The reason I did this was because I had bought <a href="https://www.amazon.com/SKYRC-Professional-Balance-Discharger-Charging/dp/B00L5YBJI2/ref=pd_lpo_sbs_21_t_2?_encoding=UTF8&amp;psc=1&amp;refRID=YMB4V5NNMBGRYFY7EPRG" rel="noopener noreferrer" target="_blank">this</a> charger which only can support 6 cell charging. Therefore my board has two charging ports, one for each battery. If you purchase a charger that can support a higher cell count, then go for a higher cell pack just for simplicity of wiring</p></div>
+<h4>BMS</h4>
+<div class="bodytext"><p>I will add just a small comment on adding a BMS (if you are making a custom battery pack). I neglected to add a BMS because I was an inexperienced little engineer when I made this, and it eventually ruined my battery cells.</p></div>
+<h3 id="electronic-speed-controller">Electronic speed controller</h3>
+<div class="bodytext"><p>I didn't do too much research into speed controllers. I know they are POSSIBLE to build by yourself, but I thought the time would be a lot. I ended up buying a 4.12 VESC from HobbyKing.  The VESC I bought is compatible with software that has a lot of settings suitable for electric longboard riding. You can grab that software <a href="https://vesc-project.com/" rel="noopener noreferrer" target="_blank">here</a>.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/VESC.jpg"/></p></div><figcaption>The VESC controller I chose</figcaption></figure>
+<div class="bodytext"><p>They are pretty simple to use. The colorful (blue, red, yellow) pins connect to your motor. The black and red wires connect to your battery pack. And the other wire connects to your remote transceiver. You can then plug in a USB to adjust settings through software.</p></div>
+<div class="bodytext"><p>The VESC worked well enough, but I do have to say that one time after adjusting the settings on my VESC my motor started spinning out of control and I ended up burning the DRV8302 chip on the VESC. Had to buy a second one which is working great.</p></div>
+<div class="bodytext"><p>You will also have to buy a remote control. These must have some standard protocol, because I purchased a cheap one from Aliexpress and it worked. It will come with a receiver that you plug into the VESC.</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/remote.jpg"/></p></div><figcaption>Picture of the handheld remote (left) and the corresponding receiver that gets plugged into the VESC (right)</figcaption></figure>
+<div class="bodytext"><p>That pretty much sums it up for electronics.</p></div>
+<h2 class="section_heading" id="the-final-product">The final product</h2>
+<div class="bodytext"><p>I've talked enough in this article so here's just some pics showcasing the final product!</p></div>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/IMG_6115 (2019_10_17 13_30_32 UTC) 1.jpg"/></p></div><figcaption>Didn't talk about the custom grip-tape job I did, but I'm (kind of) happy with how it turned out. You can see which side I got bored on and was a lot less detail oriented with my cuts</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/IMG_6138 (2019_10_17 13_30_32 UTC).jpg"/></p></div><figcaption>Image of the bottomside of the board. You can actually see there are parts of the electronic case where the black paint is scraped off, that's not good. My clearance to the ground was way too small</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/low_profile.jpg"/></p></div><figcaption>This photo shows even more clearly how little clearance I have. One raised sidewalk slab and I'm done for.</figcaption></figure>
+<figure><div class="bodytext"><p><img loading="lazy" src="images/back_shot.jpg"/></p></div><figcaption>A cool low-profile shot of the assembled board</figcaption></figure>
 <h2 class="section_heading" id="conclusion">Conclusion</h2>
-<hr/>
-<h3>Status and Results</h3>
-<div class="bodytext"><p>The board is no longer-functional and it's parts have completely been dismantled and harvested.</p></div>
-<h3>Challenges</h3>
-<div class="bodytext"><p>This was one of my first large projects, so I really was not kee</p></div>
-<figure><div class="bodytext"><p><img src="images/low_profile.jpg" width="350"/></p></div><figcaption>You can see how little clearance I have on my battery pack. This is a hazard!</figcaption></figure>
-<figure><div class="bodytext"><p><img src="images/back_shot.jpg" width="350"/></p></div><figcaption>A cool low-profile shot of the assembled board</figcaption></figure>
-<h3>Reflection</h3>
-<div class="bodytext"><p>This project fills me with a lot of pride. I remember the moment I got my motor to spin, installing the component case, the first test ride. I think it's beautiful that an idea in my brain is now a real, functional thing. I hope this guide helps anyone else with their build!</p></div>
+<div class="bodytext"><p>This project fills me with a lot of pride. I remember the moment I got my motor to spin, installing the component case, the first test ride. I think it's beautiful that an idea in my brain is now a real, functional thing. This was also one of my first expensive, complex projects so it taught me a lot about the need for documentation, clear planning, and everything else that comes along with larger projects.</p></div>
+<div class="bodytext"><p>The board is no longer-functional and it's parts have completely been dismantled and harvested. The main reason the project got killed was because I did not put a BMS on my battery pack, and discharged the cells below 2 volts. BAD!</p></div>
+<div class="bodytext"><p>I hope this guide helps anyone else with their build!</p></div>
 <h2 class="section_heading" id="additional-information">Additional Information</h2>
 <hr/>
-<h3>Online Resources</h3>
+<h4>Online Resources</h4>
 <div class="bodytext"><ul>
-<li><a href="fuck you" rel="noopener noreferrer" target="_blank">link</a></li>
+<li><a href="https://vesc-project.com/" rel="noopener noreferrer" target="_blank">VESC Project</a></li>
 </ul></div> <!-- This is where the Markdown content will be injected -->
 
       </article>
